@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lions Club Mirandola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        section[id] { scroll-margin-top: 7.5rem; }
+        .card-hover { transition: all .35s ease; }
+        .card-hover:hover { transform: translateY(-8px) scale(1.02); }
+        .gradient-text {
+            background: linear-gradient(90deg, #FFC72C, #FFD666);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .quote-bg {
+            background:
+                radial-gradient(circle at top left, rgba(255,199,44,.18), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(3,78,162,.08), transparent 40%);
+        }
+        .hero-video { object-fit: cover; width: 100%; height: 100%; }
+        #heroVideoNext {
+            position: absolute;
+            right: clamp(1rem, 3vw, 1.75rem);
+            top: clamp(1rem, 4.5vw, 2rem);
+            transform: none;
+            width: clamp(2.75rem, 3.2vw, 3.75rem);
+            height: clamp(2.75rem, 3.2vw, 3.75rem);
+            min-width: 2.75rem;
+            min-height: 2.75rem;
+            font-size: clamp(1.4rem, 2.2vw, 2rem);
+        }
+        .nav-link { border: none !important; color: #000; position: relative; padding: 0.25rem 0 !important; }
+        .nav-link:not(.active) { background: none !important; }
+        .nav-link.active { color: #fff !important; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #FFC72C; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; background: #034EA2; }
+        .nav-link.active::after { width: 100%; background: #034EA2; }
+        .nav-top { color: #000; text-decoration: none; position: relative; font-size: 0.75rem; }
+
+        /* Jackpot — cifre non tagliate */
+        .jackpot-stat { overflow: visible; }
+        .jackpot-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.06em;
+            min-height: 3.5rem;
+            padding: 0.35rem 0;
+            font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+            line-height: 1;
+            overflow: visible;
+        }
+        .jackpot-digit {
+            position: relative;
+            width: 0.75em;
+            min-width: 0.75em;
+            height: 1em;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .jackpot-digit::before {
+            content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10em;
+            text-align: center;
+            white-space: pre;
+            line-height: 1em;
+            transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+            font-variant-numeric: tabular-nums;
+        }
+        .jackpot-digit.d-0::before { transform: translateY(0); }
+        .jackpot-digit.d-1::before { transform: translateY(-1em); }
+        .jackpot-digit.d-2::before { transform: translateY(-2em); }
+        .jackpot-digit.d-3::before { transform: translateY(-3em); }
+        .jackpot-digit.d-4::before { transform: translateY(-4em); }
+        .jackpot-digit.d-5::before { transform: translateY(-5em); }
+        .jackpot-digit.d-6::before { transform: translateY(-6em); }
+        .jackpot-digit.d-7::before { transform: translateY(-7em); }
+        .jackpot-digit.d-8::before { transform: translateY(-8em); }
+        .jackpot-digit.d-9::before { transform: translateY(-9em); }
+        .jackpot-static {
+            display: inline-block;
+            font-size: 0.75em;
+            margin-left: 0.08em;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 180px;
+            width: 4px;
+            height: calc(100% - 220px);
+            background: linear-gradient(to bottom, transparent 0%, #FFC72C 10%, #FFC72C 90%, transparent 100%);
+            transform: translateX(-50%);
+            border-radius: 999px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background: #FFC72C;
+            border: 4px solid white;
+            border-radius: 999px;
+            box-shadow: 0 0 0 4px #034EA2;
+            z-index: 20;
+        }
+
+        .articles-marquee { --gap: 1.25rem; --duration: 45s; --scroll-end: calc(-100% - var(--gap)); }
+        .articles-marquee .marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: var(--gap);
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        }
+        .articles-marquee .marquee__group {
+            flex-shrink: 0;
+            display: flex;
+            gap: var(--gap);
+            min-width: 100%;
+            animation: scroll-articles var(--duration) linear infinite;
+        }
+        .articles-marquee .marquee--reverse .marquee__group { animation-direction: reverse; }
+        @keyframes scroll-articles {
+            from { transform: translateX(0); }
+            to { transform: translateX(var(--scroll-end)); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .articles-marquee .marquee__group { animation-play-state: paused; }
+        }
+        .article-card { flex: 0 0 auto; width: min(22rem, 78vw); }
+
+        header { z-index: 1100; }
+
+        /* Trova Club (da trova_club1.html) */
+        #trova-club { font-family: 'Inter', system-ui, sans-serif; }
+        #trova-club .app-container {
+            display: flex;
+            min-height: min(85vh, calc(100vh - 7.5rem));
+            height: min(85vh, calc(100vh - 7.5rem));
+            background-color: #0B0F19;
+        }
+        #trova-club .sidebar {
+            width: 430px;
+            max-width: 100%;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            color: #0F172A;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.3);
+        }
+        #trova-club .search-wrapper { position: relative; }
+        #trova-club .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 20px;
+            border: 1px solid #CBD5E1;
+            background: #F8FAFC;
+            color: #0F172A;
+            outline: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        #trova-club .search-input:focus {
+            border-color: #FFC82E;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 200, 46, 0.15);
+        }
+        #trova-club .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748B;
+            z-index: 12;
+            pointer-events: none;
+        }
+        #trova-club .search-input:focus + .search-icon { color: #0F172A; }
+        #trova-club .club-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: #ffffff;
+        }
+        #trova-club .club-item {
+            position: relative;
+            padding: 24px;
+            border-radius: 24px;
+            background: #F8FAFC;
+            border: 1px solid #000000;
+            cursor: pointer;
+            color: #0F172A;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.03);
+        }
+        #trova-club .club-item:hover {
+            transform: translateY(-6px) scale(1.015);
+            background: #ffffff;
+            box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4), 0 4px 15px rgba(214, 198, 249, 0.15);
+            border-color: #cbd5e1;
+        }
+        #trova-club .club-item h3 {
+            font-weight: 800;
+            color: #0B0F19;
+            margin-bottom: 10px;
+            font-size: 18px;
+            letter-spacing: -0.4px;
+            padding-right: 90px;
+        }
+        #trova-club .club-item p {
+            font-size: 13.5px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        #trova-club .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #E9E3FF;
+            border-radius: 8px;
+            color: #7C3AED;
+            transition: all 0.3s ease;
+        }
+        #trova-club .club-item:hover .icon-box {
+            background: #7C3AED;
+            color: #0F172A;
+            transform: scale(1.1) rotate(-8deg);
+        }
+        #trova-club .club-tag-gold {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #0F172A;
+            background: #FFC82E;
+            padding: 6px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.6px;
+        }
+        #trova-club .club-quick-link {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #000000;
+            text-decoration: none;
+        }
+        #trova-club .club-item:hover .club-quick-link {
+            background: #ffffff;
+            color: #0F172A;
+            border-color: #0F172A;
+        }
+        #trova-club #trova-map {
+            flex: 1;
+            width: 100%;
+            min-height: 400px;
+            height: 100%;
+            background-color: #0B0F19;
+            z-index: 0;
+        }
+        #trova-club #trova-map.leaflet-container { font-family: inherit; }
+        #trova-club .popup-card { padding: 6px 4px; font-family: 'Inter', sans-serif; min-width: 190px; }
+        #trova-club .popup-card h4 { color: #0F172A; font-weight: 800; margin: 0 0 6px 0; font-size: 15px; text-transform: uppercase; }
+        #trova-club .popup-card p { font-size: 12px; color: #475569; margin: 0 0 14px 0; }
+        #trova-club .popup-card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            background: #FFC82E;
+            padding: 9px 12px;
+            border-radius: 8px;
+            border: 1px solid #FFC82E;
+            box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+            #trova-club .app-container { flex-direction: column; height: auto; min-height: auto; }
+            #trova-club .sidebar { width: 100%; max-height: 45vh; }
+            #trova-club #trova-map { min-height: 50vh; }
+        }
+
+        /* POPUP MAPPA (imported from trova_club1.html) */
+        #map { flex: 1; background-color: #0B0F19; }
+
+        .leaflet-popup-content-wrapper { 
+            border-radius: 24px; 
+            padding: 14px; 
+            box-shadow: 0 30px 60px rgba(11, 15, 25, 0.25);
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+        .popup-card {
+            padding: 6px 4px;
+            font-family: 'Inter', sans-serif;
+            min-width: 190px;
+        }
+        .popup-card h4 { 
+            color: #0F172A; 
+            font-weight: 800; 
+            margin: 0 0 6px 0; 
+            font-size: 15px; 
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        .popup-card p { 
+            font-size: 12px; 
+            color: #475569; 
+            margin: 0 0 14px 0; 
+            line-height: 1.5;
+            font-weight: 500; 
+        }
+        .popup-card b {
+            color: #0F172A;
+            font-weight: 700;
+        }
+        .popup-card a { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #000000; 
+            font-weight: 700; 
+            text-decoration: none; 
+            font-size: 11px; 
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: #FFC82E;
+            padding: 9px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid #FFC82E;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .popup-card a:hover {
+            background: #E6B422;
+            border-color: #E6B422;
+        }
+        /* Sovrascrittura stili Leaflet per rendere la finestrella più morbida */
+        .leaflet-popup-content-wrapper {
+            border-radius: 12px !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+            border: 1px solid #E2E8F0 !important;
+            padding: 6px !important;
+        }
+        .leaflet-popup-content {
+            margin: 12px 14px !important;
+            line-height: 1.4 !important;
+        }
+        .leaflet-popup-close-button {
+            padding: 8px 8px 0 0 !important;
+            color: #94A3B8 !important;
+        }
+        .popup-card a:hover { 
+            background: #FFC82E; 
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-white text-[#030213]">
+
+<header class="fixed top-0 left-0 right-0 z-50">
+    <div class="bg-white h-10 flex items-center border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-tight">
+            <span class="text-black">Lions Club Mirandola</span>
+            <div class="flex gap-4 md:gap-6 items-center">
+                <a href="#lions-ai" class="nav-top hover:opacity-70">LIONS AI ✨</a>
+                <a href="https://www.lionsclubs.org/it/donate" class="nav-top hover:opacity-70">♥ DONA</a>
+            </div>
+        </div>
+    </div>
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="container mx-auto px-6 flex justify-center items-center gap-8 flex-wrap">
+            <a href="#home" data-nav="home" class="nav-link active">HOME</a>
+            <a href="#notizie" data-nav="notizie" class="nav-link">NOTIZIE</a>
+            <a href="#chi-siamo" data-nav="chi-siamo" class="nav-link">CHI SIAMO</a>
+            <a href="#galleria" data-nav="galleria" class="nav-link">GALLERIA</a>
+            <a href="#trova-club" data-nav="trova-club" class="nav-link">TROVA CLUB</a>
+            <a href="#diventa-lions" data-nav="diventa-lions" class="nav-link">DIVENTA LIONS</a>
+            <a href="#contatti" data-nav="contatti" class="nav-link">CONTATTI</a>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-[90px]">
+
+    <!-- HOME -->
+    <section id="home" class="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
+        <video id="heroVideo" class="hero-video absolute inset-0" autoplay muted playsinline></video>
+        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/55 border-2 border-white text-white text-2xl font-black leading-none hover:bg-[#FFC72C] hover:text-black hover:border-black transition-all backdrop-blur-sm shadow-lg" aria-label="Salta al video successivo">›</button>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none"></div>
+        <div class="relative z-10 container mx-auto px-6 pb-16 w-full pointer-events-none">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+                <div class="max-w-3xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">We Serve · Dal 1967</p>
+                    <h1 class="text-white text-5xl md:text-7xl font-black uppercase leading-[0.92] tracking-tighter">
+                        Lions Club <span class="text-[#FFC72C]">Mirandola</span>
+                    </h1>
+                </div>
+                <div class="flex items-center gap-6 bg-white/10 backdrop-blur-md rounded-[2rem] border-2 border-white/30 p-6 lg:p-8 pointer-events-auto">
+                    <img src="logo.png" alt="Logo Lions Club" class="w-24 h-24 md:w-32 md:h-32 object-contain" onerror="this.style.display='none'" />
+                    <div class="text-white">
+                        <p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-1">Servizio alla comunità</p>
+                        <p class="font-bold text-lg leading-snug">Mirandola e il mondo,<br/>uniti dal lionismo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTTO PRESIDENTE -->
+    <section id="motto" class="py-24 quote-bg">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.25em] mb-4 text-sm">Leadership</p>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-2">Presidente</h2>
+                    <p class="text-5xl md:text-6xl font-black uppercase text-[#034EA2] tracking-tight">Enzo Ragazzi</p>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-[2.5rem] p-10 md:p-12 border-[4px] border-black shadow-2xl">
+                        <p class="text-[#FFC72C] font-black uppercase tracking-[0.2em] text-sm mb-6">Motto del Presidente</p>
+                        <blockquote class="text-2xl md:text-3xl font-bold leading-snug mb-10">
+                            “Si punta all’ideale, partendo dal reale e si raggiunge il massimo possibile”
+                        </blockquote>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="inline-block bg-[#034EA2] text-white px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest">Anno Sociale 2025 – 2026</span>
+                            <span class="inline-block bg-[#FFC72C] text-black px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest border-2 border-black">60° di Fondazione</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTIZIE (marquee) -->
+    <section id="notizie" class="py-20 bg-gray-50 overflow-hidden articles-marquee">
+        <div class="container mx-auto px-6 mb-12 text-center">
+            <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Dal nostro club</p>
+            <h2 class="text-4xl md:text-5xl font-black uppercase">Ultime notizie</h2>
+            <div class="w-32 h-1 bg-[#FFC72C] mx-auto mt-5"></div>
+        </div>
+        <div class="space-y-6" id="articlesMarquee"></div>
+        <div class="container mx-auto px-6 mt-14 grid md:grid-cols-2 gap-6 max-w-4xl">
+            <article class="bg-white rounded-[2rem] p-8 border-[3px] border-black">
+                <span class="text-[10px] font-black uppercase text-[#FFC72C]">In evidenza</span>
+                <h3 class="text-xl font-black uppercase mt-2 mb-3">60° di fondazione</h3>
+                <p class="text-sm text-gray-700 font-medium">Un anno speciale per celebrare sei decenni di servizio a Mirandola e sul territorio.</p>
+            </article>
+            <article class="bg-[#034EA2] text-white rounded-[2rem] p-8 border-[3px] border-black">
+                <span class="text-[10px] font-black uppercase text-[#FFC72C]">Prossimi eventi</span>
+                <h3 class="text-xl font-black uppercase mt-2 mb-3">Calendario sociale</h3>
+                <p class="text-sm font-medium text-white/90">Incontri, service e iniziative del Club — contattaci per i dettagli.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section id="chi-siamo">
+        <div class="relative h-[42vh] min-h-[320px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('panoramica-mirandola.jpg')"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 container mx-auto px-6">
+                <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-3 text-sm">Dal 1967 al servizio della comunità</p>
+                <h2 class="text-white text-4xl md:text-6xl font-black uppercase leading-[0.95] tracking-tighter">Chi <span class="text-[#FFC72C]">Siamo</span></h2>
+                <p class="text-white/90 text-base md:text-lg font-medium max-w-3xl mt-5">Oltre mezzo secolo di servizio, solidarietà e impegno — <span class="text-[#FFC72C] font-black italic">“We Serve”</span>.</p>
+            </div>
+        </div>
+
+        <div class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <p class="text-[#FFC72C] font-black uppercase tracking-[0.25em] mb-5">Lions Club Mirandola</p>
+                        <h3 class="text-3xl md:text-4xl font-black uppercase leading-[0.95] tracking-tighter mb-6">Una storia di servizio lunga <span class="gradient-text">60 anni</span></h3>
+                        <div class="space-y-4 text-base leading-relaxed text-gray-700 font-medium">
+                            <p>Il Lions Club Mirandola è stato fondato il <strong>27 aprile 1967</strong> e da oltre mezzo secolo rappresenta un punto di riferimento per il servizio alla comunità locale.</p>
+                            <p>La sede del Club si trova presso <strong>Villa Fondo Tagliata</strong>, in Via Dorando Pietri 23 a Mirandola.</p>
+                            <p>Il Club ha contribuito a diffondere il lionismo sul territorio e sostenuto la nascita di nuovi club locali.</p>
+                        </div>
+                    </div>
+                    <div class="relative pb-16 lg:pb-8">
+                        <img src="lions-foto.jpg" alt="Foto Lions Club Mirandola"
+                             class="w-full h-auto object-cover rounded-[2rem] border-[4px] border-black shadow-2xl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-[#034EA2] text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-black uppercase mb-4">Il Club Oggi</h3>
+                    <div class="w-28 h-1 bg-[#FFC72C] mx-auto"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div class="jackpot-stat bg-white text-[#034EA2] rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="48">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Soci Attivi</p>
+                    </div>
+                    <div class="jackpot-stat bg-[#FFC72C] text-black rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="55">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Anni di Service</p>
+                    </div>
+                    <div class="jackpot-stat bg-white text-[#034EA2] rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="1">
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">M+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Euro Donati</p>
+                    </div>
+                    <div class="jackpot-stat bg-[#FFC72C] text-black rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="400">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Studenti Coinvolti</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-gray-50 relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-5xl relative">
+                <div class="text-center mb-12">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4">Momenti Significativi</p>
+                    <h3 class="text-3xl md:text-4xl font-black uppercase">La Nostra Storia</h3>
+                </div>
+                <div class="timeline-line hidden md:block"></div>
+                <div class="space-y-10 md:space-y-12 relative">
+                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="md:text-right">
+                            <div class="bg-white rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
+                                <p class="text-[#FFC72C] font-black text-4xl mb-4">2009</p>
+                                <h4 class="text-2xl font-black uppercase mb-3">Congresso Distrettuale</h4>
+                                <p class="text-gray-700 font-medium">Mirandola ospita il 34° Congresso Distrettuale del Distretto 108 Tb.</p>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div></div>
+                        <div class="bg-[#034EA2] text-white rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
+                            <p class="text-[#FFC72C] font-black text-4xl mb-4">2016</p>
+                            <h4 class="text-2xl font-black uppercase mb-3">50° Anniversario</h4>
+                            <p class="font-medium text-white/90">Celebrazione del cinquantesimo anniversario del Club.</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
+                        <div class="timeline-dot hidden md:block"></div>
+                        <div class="md:text-right">
+                            <div class="bg-[#FFC72C] text-black rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
+                                <p class="font-black text-4xl mb-4">2019</p>
+                                <h4 class="text-2xl font-black uppercase mb-3">Melvin Jones Fellow</h4>
+                                <p class="font-bold opacity-80">Due soci ricevono il prestigioso riconoscimento internazionale.</p>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-10">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4">Leadership</p>
+                    <h3 class="text-3xl md:text-4xl font-black uppercase mb-4">Consiglio Direttivo</h3>
+                    <div class="w-36 h-1 bg-[#FFC72C] mx-auto"></div>
+                </div>
+                <div class="bg-gradient-to-br from-[#034EA2] via-[#0B5FC2] to-[#034EA2] text-white rounded-[3rem] p-8 md:p-10 border-[4px] border-[#FFC72C] shadow-2xl mb-10 text-center">
+                    <p class="text-[#FFC72C] uppercase tracking-[0.35em] font-black mb-3 text-sm">Presidente</p>
+                    <h4 class="text-3xl md:text-4xl font-black uppercase mb-4">Enzo Ragazzi</h4>
+                    <span class="inline-block bg-[#FFC72C] text-[#034EA2] px-7 py-2 rounded-full font-black uppercase text-sm tracking-widest">Anno Sociale 2025 – 2026</span>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Past President</p><h4 class="text-2xl font-black uppercase">Nadia Poletti</h4></div>
+                    <div class="bg-[#034EA2] text-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Vice Presidente</p><h4 class="text-2xl font-black uppercase">Silvio Sacco</h4></div>
+                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">2° Vice Presidente</p><h4 class="text-2xl font-black uppercase">Claudio Prandi</h4></div>
+                    <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Segretario</p><h4 class="text-2xl font-black uppercase">Alberto Barbi</h4></div>
+                    <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Tesoriere</p><h4 class="text-2xl font-black uppercase">Lorella Silvestri</h4></div>
+                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">Officer Comunicazione</p><h4 class="text-2xl font-black uppercase">Ivo Panzani</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galleria" class="py-24 bg-[#F8FAFC]">
+    <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+            <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Galleria</p>
+            <h2 class="text-4xl md:text-5xl font-black uppercase">Momenti, eventi e service</h2>
+            <p class="max-w-2xl mx-auto mt-4 text-gray-600">
+                Uno spazio ampio per rivedere le attività e le iniziative più importanti del Lions Club Mirandola.
+            </p>
+        </div>
+
+        <article class="gallery grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Evento sociale" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Evento sociale</figcaption>
+                </figure>
+            </a>
+
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Progetto di servizio" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Progetto di servizio</figcaption>
+                </figure>
+            </a>
+
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Iniziativa sul territorio" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Iniziativa sul territorio</figcaption>
+                </figure>
+            </a>
+
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Momenti del Club" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Momenti del Club</figcaption>
+                </figure>
+            </a>
+
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Attività associative" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Attività associative</figcaption>
+                </figure>
+            </a>
+
+            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
+                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
+                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Service comunitario" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Service comunitario</figcaption>
+                </figure>
+            </a>
+
+        </article>
+    </div>
+</section>
+
+    <!-- TROVA CLUB -->
+    <section id="trova-club">
+        <div class="app-container">
+        <aside class="sidebar">
+            <div class="search-area" style="padding: 28px 24px 20px 24px; background: #ffffff; border-bottom: 1px solid #F1F5F9;">
+                <div style="margin-bottom: 16px;">
+                    <h2 style="color: #0F172A; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin: 0; padding: 0; display: flex; align-items: center; gap: 8px;">
+                        Esplora i Club
+                        <span id="clubCounter" style="font-size: 12px; font-weight: 700; background: #000000; color: #ffffff; padding: 2px 9px; border-radius: 20px; font-family: 'Inter', sans-serif;"></span>
+                    </h2>
+                    <p style="color: #3a3e44; font-size: 12px; margin: 4px 0 0 0; font-weight: 500;">Solo alcuni di tutti quelli esistenti in Italia</p>
+                    <p style="color: #64748B; font-size: 12px; margin: 4px 0 0 0; font-weight: 500;">Cerca per nome del club o comune</p>
+                </div>
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Cerca città o nome club...">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+            </div>
+            <div class="club-list" id="clubList"></div>
+        </aside>
+
+        <div id="trova-map"></div>
+    </div>
+    </section>
+
+    <!-- DIVENTA LIONS -->
+    <section id="diventa-lions" class="py-24 bg-[#C5B4E3]">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-4xl md:text-5xl font-black uppercase mb-6">Diventa Lions</h2>
+            <p class="text-lg font-medium text-gray-800 mb-8">Unisciti al Lions Club Mirandola: servizio alla comunità, amicizia e progetti concreti sul territorio.</p>
+            <a href="#contatti" class="inline-block px-10 py-4 bg-black text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-[#034EA2] transition-colors">Contattaci</a>
+        </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti" class="py-24 bg-white border-t-4 border-black">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-4xl font-black uppercase text-center mb-10">Contatti</h2>
+            <div class="bg-gray-50 rounded-[2rem] p-10 border-[3px] border-black space-y-4 font-medium">
+                <p><strong>Lions Club Mirandola</strong></p>
+                <p>Villa Fondo Tagliata — Via Dorando Pietri 23, Mirandola (MO)</p>
+                <p><a href="https://www.lionsmirandola.it" class="text-[#034EA2] font-bold underline" target="_blank" rel="noopener">www.lionsmirandola.it</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="lions-ai" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+            <h2 class="text-2xl font-black uppercase mb-3">LIONS AI ✨</h2>
+            <p class="text-gray-600 font-medium">Assistente intelligente del Club — sezione in arrivo.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-black text-white py-8 text-center text-[10px] font-bold uppercase tracking-widest">
+    Lions Club Mirandola · We Serve · Dal 1967
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="clubs-data.js"></script>
+<script>
+/* ========== VIDEO HERO ========== */
+(function () {
+    const playlist = ['MunicipioCompr.mp4', 'DuomoCompr.mp4'];
+    const video = document.getElementById('heroVideo');
+    const btn = document.getElementById('heroVideoNext');
+    let index = 0;
+    let resolved = [];
+
+    function resolvePlaylist() {
+        return Promise.all(playlist.map(src => new Promise(resolve => {
+            const probe = document.createElement('video');
+            probe.preload = 'metadata';
+            probe.onloadedmetadata = () => resolve(src);
+            probe.onerror = () => resolve(null);
+            probe.src = src;
+        }))).then(results => {
+            const ok = (i) => results[i];
+            const municipio = ok(0) || ok(1);
+            const duomo = ok(1);
+            resolved = [municipio, duomo].filter(Boolean);
+            if (!resolved.length) resolved = ['municipio3.mp4'];
+        });
+    }
+
+    function playAt(i) {
+        if (!resolved.length) return;
+        index = ((i % resolved.length) + resolved.length) % resolved.length;
+        video.src = resolved[index];
+        video.load();
+        video.play().catch(() => {});
+    }
+
+    resolvePlaylist().then(() => playAt(0));
+    video.addEventListener('ended', () => playAt(index + 1));
+    btn.addEventListener('click', () => playAt(index + 1));
+})();
+
+/* ========== NAV ATTIVA ========== */
+(function () {
+    const links = document.querySelectorAll('[data-nav]');
+    const sections = [...links].map(l => document.getElementById(l.getAttribute('href').slice(1))).filter(Boolean);
+
+    function setActive(id) {
+        links.forEach(link => {
+            const on = link.getAttribute('href') === '#' + id;
+            link.classList.toggle('active', on);
+            const colored = link.dataset.nav === 'diventa-lions' || link.dataset.nav === 'dona';
+            if (colored) {
+                link.classList.toggle('ring-4', on);
+                link.classList.toggle('ring-black', on);
+                return;
+            }
+            if (on) {
+                link.classList.add('bg-black', 'text-white');
+            } else {
+                link.classList.remove('bg-black', 'text-white');
+            }
+        });
+    }
+
+    const obs = new IntersectionObserver(entries => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.2, 0.5] });
+
+    sections.forEach(s => obs.observe(s));
+    if (location.hash) {
+        const el = document.querySelector(location.hash);
+        if (el) setTimeout(() => el.scrollIntoView(), 100);
+    }
+})();
+
+/* ========== MARQUEE NOTIZIE ========== */
+const ARTICLES = [
+    { title: "60° di fondazione", tag: "Anniversario", excerpt: "Sei decenni di servizio a Mirandola.", color: "bg-[#FFC72C] text-black" },
+    { title: "Anno sociale 2025–2026", tag: "Club", excerpt: "Il motto del Presidente Enzo Ragazzi.", color: "bg-[#034EA2] text-white" },
+    { title: "Progetti sul territorio", tag: "Service", excerpt: "Iniziative per scuole e famiglie.", color: "bg-white text-[#034EA2] border-[3px] border-black" },
+    { title: "Raccolta fondi", tag: "Solidarietà", excerpt: "Sostegno ai progetti locali.", color: "bg-[#C5B4E3] text-black" },
+    { title: "Diventa Lions", tag: "Membership", excerpt: "Unisciti al nostro Club.", color: "bg-black text-white" },
+    { title: "Melvin Jones Fellow", tag: "2019", excerpt: "Riconoscimento internazionale.", color: "bg-[#FFC72C] text-black" }
+];
+
+function articleCard(a) {
+    return `<article class="article-card ${a.color} rounded-[2rem] p-8 border-[3px] border-black shadow-lg flex flex-col min-h-[200px]">
+        <span class="text-[10px] font-black uppercase tracking-widest opacity-80">${a.tag}</span>
+        <h3 class="text-lg font-black uppercase mt-3 mb-2">${a.title}</h3>
+        <p class="text-sm font-medium opacity-90">${a.excerpt}</p>
+    </article>`;
+}
+
+(function () {
+    const cards = ARTICLES.map(articleCard).join('');
+    const row = rev => `<div class="marquee${rev ? ' marquee--reverse' : ''}"><div class="marquee__group">${cards}</div><div class="marquee__group" aria-hidden="true">${cards}</div></div>`;
+    document.getElementById('articlesMarquee').innerHTML = row(false) + row(true);
+})();
+
+/* ========== JACKPOT ========== */
+document.addEventListener('DOMContentLoaded', () => {
+    const animateJackpot = (entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const container = entry.target;
+            const value = (container.getAttribute('data-value') || '').split('');
+            const digits = container.querySelectorAll('.jackpot-digit');
+            digits.forEach((digit, i) => {
+                const vi = value.length - digits.length + i;
+                const d = vi >= 0 ? value[vi] : '0';
+                setTimeout(() => { digit.className = 'jackpot-digit d-' + d; }, i * 150);
+            });
+            observer.unobserve(container);
+        });
+    };
+    const obs = new IntersectionObserver(animateJackpot, { threshold: 0.35 });
+    document.querySelectorAll('.jackpot-container').forEach(c => obs.observe(c));
+});
+
+/* ========== TROVA CLUB ========== */
+(function () {
+    const CLUBS = [];
+
+    let map, clusterGroup, allMarkers = [];
+    let clubsLoaded = false;
+    let searchBound = false;
+
+    function initTrovaClubMap() {
+        if (!document.getElementById('trova-map')) return;
+        if (map) return;
+        
+        map = L.map('trova-map').setView([44.9, 11.07], 8);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+            maxZoom: 19
+        }).addTo(map);
+
+        clusterGroup = L.markerClusterGroup({ chunkedLoading: true });
+        renderClubs('');
+    }
+
+    function renderClubs(filter = '') {
+        if (!map) return;
+
+        const query = String(filter || '').trim().toLowerCase();
+        clusterGroup.clearLayers();
+        allMarkers = [];
+
+        const filtered = CLUBS.filter(club => {
+            const name = String(club.name || '').toLowerCase();
+            const city = String(club.city || '').toLowerCase();
+            return name.includes(query) || city.includes(query);
+        });
+
+        const clubListEl = document.getElementById('clubList');
+        if (!clubListEl) return;
+        clubListEl.innerHTML = '';
+
+        const buildSiteUrl = (site) => {
+            if (!site) return '';
+            const trimmed = String(site).trim();
+            if (!trimmed) return '';
+            const asUrl = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+            try {
+                const u = new URL(asUrl);
+                // reject hosts without a dot or containing spaces
+                const host = String(u.hostname || '').toLowerCase();
+                if (host.indexOf(' ') !== -1) return '';
+                if (host.indexOf('.') === -1) return '';
+                // treat lions.it internal pages as untrusted (do not expose links)
+                if (host.includes('lions.it')) return '';
+                return u.href;
+            } catch (e) {
+                return '';
+            }
+        };
+
+           const lavenderIcon = L.divIcon({
+            html: `<svg width="32" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#7C3AED" stroke="#ffffff" stroke-width="1.5"/>
+                    <circle cx="12" cy="9" r="3" fill="#ffffff"/>
+                   </svg>`,
+            className: 'custom-lavender-pin',
+            iconSize: [32, 42],
+            iconAnchor: [16, 42],
+            popupAnchor: [0, -40]
+        });
+
+        filtered.forEach(club => {
+            const marker = L.marker([club.lat, club.lng], { title: club.name || '', icon: lavenderIcon });
+            const siteUrl = buildSiteUrl(club.site);
+            const hasLink = !!siteUrl;
+            marker.bindPopup(`
+                <div class="popup-card">
+                    <h4>${club.name}</h4>
+                    <p>${club.city}</p>
+                    <p>${club.address}</p>
+                    ${hasLink ? `<a href="${siteUrl}" target="_blank" rel="noopener">Visita sito</a>` : ''}
+                </div>
+            `, { minWidth: 160 });
+
+            clusterGroup.addLayer(marker);
+            allMarkers.push(marker);
+
+            const item = document.createElement('div');
+            item.className = 'club-item';
+            const showQuickLink = !!siteUrl;
+            item.innerHTML = `
+                <div style="display:flex;align-items:center;gap:12px">
+                    <div class="icon-box">🏛</div>
+                    <div style="flex:1">
+                        <h3 style="margin:0;font-weight:800;color:#0B0F19">${club.name}</h3>
+                        <div style="font-size:13px;color:#475569;font-weight:600">${club.city}</div>
+                    </div>
+                </div>
+                ${showQuickLink ? `<a href="${siteUrl}" target="_blank" class="club-quick-link" onclick="event.stopPropagation();">SITO</a>` : ''}
+            `;
+            item.style.cssText = 'cursor:pointer;transition:all .2s;position:relative;padding:16px;border-radius:16px;';
+            item.addEventListener('mouseenter', () => item.style.transform = 'translateY(-4px)');
+            item.addEventListener('mouseleave', () => item.style.transform = '');
+            item.addEventListener('click', () => {
+                const latLng = marker.getLatLng();
+                if (latLng) {
+                    map.setView(latLng, Math.max(map.getZoom(), 11), { animate: true });
+                    marker.openPopup();
+                }
+            });
+            clubListEl.appendChild(item);
+        });
+
+        const counter = document.getElementById('clubCounter');
+        if (counter) counter.textContent = filtered.length;
+
+        if (allMarkers.length > 0) {
+            clusterGroup.addTo(map);
+            const group = new L.featureGroup(allMarkers);
+            const bounds = group.getBounds();
+            if (bounds.isValid()) {
+                map.fitBounds(bounds.pad(0.1));
+            }
+        } else {
+            map.setView([44.9, 11.07], 8);
+        }
+
+        if (filtered.length === 0) {
+            clubListEl.innerHTML = '<div style="padding:16px;color:#475569;font-size:14px;">Nessun club trovato. Prova un altro nome o città.</div>';
+        }
+    }
+
+    
+    function parseClubsText(raw) {
+        return JSON.parse(`[${String(raw || '').trim().replace(/,\s*$/, '')}]`);
+    }
+
+    async function bootTrovaClub() {
+        if (!clubsLoaded) {
+            if (Array.isArray(window.CLUBS_DATA) && window.CLUBS_DATA.length) {
+                CLUBS.splice(0, CLUBS.length, ...window.CLUBS_DATA);
+                clubsLoaded = true;
+            }
+        }
+
+        if (!clubsLoaded) {
+            try {
+                const res = await fetch('clubs.json');
+                const raw = await res.text();
+                const parsed = parseClubsText(raw);
+                CLUBS.splice(0, CLUBS.length, ...parsed);
+                clubsLoaded = true;
+            } catch (e) {
+                // Fallback per apertura diretta file:// in locale
+                try {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'clubs.json', false);
+                    xhr.send(null);
+                    if (xhr.status === 200 || xhr.status === 0) {
+                        const parsed = parseClubsText(xhr.responseText);
+                        CLUBS.splice(0, CLUBS.length, ...parsed);
+                        clubsLoaded = true;
+                    }
+                } catch (_) {}
+                if (!clubsLoaded) {
+                    const mapEl = document.getElementById('trova-map');
+                    if (mapEl) {
+                        mapEl.innerHTML = '<p style="color:#94a3b8;padding:2rem;text-align:center;font-weight:600;">Impossibile caricare <code>clubs.json</code>. Avvia con Live Server e verifica che il file sia valido.</p>';
+                    }
+                    return;
+                }
+            }
+        }
+
+        initTrovaClubMap();
+        if (!searchBound) {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.addEventListener('input', (e) => renderClubs(e.target.value));
+            searchBound = true;
+        }
+    }
+
+    const trovaSection = document.getElementById('trova-club');
+    if (trovaSection) {
+        const trovaObs = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) bootTrovaClub();
+        }, { threshold: 0.05 });
+        trovaObs.observe(trovaSection);
+        if (location.hash === '#trova-club') setTimeout(bootTrovaClub, 100);
+    }
+})();
+</script>
+</body>
+</html>
