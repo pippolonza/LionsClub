@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8" />
@@ -88,7 +88,7 @@
             color: #034EA2;
         }
 
-        /* Jackpot — cifre non tagliate */
+        /* Jackpot - cifre non tagliate */
         .jackpot-stat { overflow: visible; }
         .jackpot-container {
             display: inline-flex;
@@ -236,32 +236,257 @@
                 overflow: hidden;
             }
         }
+        /* ==========================================================================
+           FILTRI E STILE DELLE CARD ORIZZONTALI (ALLARGATE E CON CONTRASTO)
+           ========================================================================== */
+        .filter-btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .filter-btn:hover:not(.active) {
+            background-color: #0d0c22;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .filter-btn.active {
+            background-color: #034EA2;
+            color: #ffffff;
+            border-color: #034EA2;
+            box-shadow: 0 6px 20px rgba(3, 78, 162, 0.4);
+        }
 
-        .articles-marquee { --gap: 1.25rem; --duration: 45s; --scroll-end: calc(-100% - var(--gap)); }
-        .articles-marquee .marquee {
+        .main-content-area {
+            max-width: 1240px;
+        }
+
+        .news-card {
             display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 24px;
             overflow: hidden;
-            user-select: none;
-            gap: var(--gap);
-            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
-        .articles-marquee .marquee__group {
+
+        @media (min-width: 768px) {
+            .news-card {
+                flex-direction: row;
+                height: 290px;
+            }
+        }
+
+        .news-card.cat-prima-pagina:hover {
+            transform: translateY(-6px);
+            border-color: #034EA2;
+            box-shadow: 0 20px 35px -10px rgba(3, 78, 162, 0.2);
+        }
+        .news-card.cat-prima-pagina:hover .news-title {
+            color: #034EA2;
+        }
+
+        .news-card.cat-rassegna-stampa:hover {
+            transform: translateY(-6px);
+            border-color: #FFC72C;
+            box-shadow: 0 20px 35px -10px rgba(212, 160, 23, 0.3);
+        }
+        .news-card.cat-rassegna-stampa:hover .news-title {
+            color: #d4a017;
+        }
+
+        .news-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
             flex-shrink: 0;
-            display: flex;
-            gap: var(--gap);
-            min-width: 100%;
-            animation: scroll-articles var(--duration) linear infinite;
+            background-color: #cbd5e1;
         }
-        .articles-marquee .marquee--reverse .marquee__group { animation-direction: reverse; }
-        @keyframes scroll-articles {
-            from { transform: translateX(0); }
-            to { transform: translateX(var(--scroll-end)); }
+
+        @media (min-width: 768px) {
+            .news-img-wrapper {
+                width: 380px;
+                height: 100%;
+            }
         }
-        @media (prefers-reduced-motion: reduce) {
-            .articles-marquee .marquee__group { animation-play-state: paused; }
+
+        .news-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .article-card { flex: 0 0 auto; width: min(22rem, 78vw); }
+
+        .news-card:hover .news-img-wrapper img {
+            transform: scale(1.06);
+        }
+        /* Animazioni Finestre Modal */
+        #detailOverlay, #imageLightbox {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #detailModal {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #notizie { background-color: #f1f5f9; }
+        #notizie .notizie-filter-bar { top: 90px; }
+        @media (max-width: 767px) { #notizie .notizie-filter-bar { top: 82px; } }
+        #galleria .brutal-shadow {
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+        }
+        #galleria .brutal-shadow:hover {
+            box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+        }
+        #galleria .gallery {
+            column-gap: 0;
+        }
+        @media (min-width: 480px) {
+            #galleria .gallery { column-count: 2; }
+        }
+        @media (min-width: 1260px) {
+            #galleria .gallery { column-count: 3; }
+        }
+        #galleria .gallery-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            break-inside: avoid;
+        }
+        #galleria .gallery-link.hidden {
+            display: none;
+        }
+        #galleria .gallery-image {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #111827;
+        }
+        #galleria .gallery-image::before,
+        #galleria .gallery-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 16px solid rgba(0, 0, 0, 0.12);
+            transition: border-width 0.2s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+        #galleria .gallery-image::after {
+            border-width: 0;
+        }
+        #galleria .gallery-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            min-height: 260px;
+            object-fit: cover;
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+        #galleria .gallery-image:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.72);
+        }
+        #galleria .gallery-image:hover::before {
+            border-width: 16px;
+        }
+        #galleria .gallery-image:hover::after {
+            border-width: 32px;
+        }
+        #galleria .gallery-image figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(80%, 18rem);
+            color: rgba(255, 255, 255, 0);
+            padding: 1rem;
+            text-align: center;
+            line-height: 1.25;
+            font-weight: 700;
+            transition: color 0.2s ease 0.12s;
+            z-index: 3;
+        }
+        #galleria .gallery-image figcaption::before,
+        #galleria .gallery-image figcaption::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.24);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            z-index: -1;
+        }
+        #galleria .gallery-image figcaption::before {
+            right: 100%;
+            bottom: 100%;
+        }
+        #galleria .gallery-image figcaption::after {
+            left: 100%;
+            top: 100%;
+        }
+        #galleria .gallery-image:hover figcaption {
+            color: #fff;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+        #galleria .gallery-image:hover figcaption::before,
+        #galleria .gallery-image:hover figcaption::after {
+            opacity: 1;
+        }
+        #galleria .gallery-image:hover figcaption::before {
+            right: -1.5rem;
+            bottom: -1.5rem;
+        }
+        #galleria .gallery-image:hover figcaption::after {
+            left: -1.5rem;
+            top: -1.5rem;
+        }
+        #galleria .gallery-count,
+        #galleria .gallery-image strong,
+        #galleria .gallery-image small {
+            display: block;
+        }
+        #galleria .gallery-count {
+            margin-bottom: 0.6rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #FFC72C;
+        }
+        #galleria .gallery-image strong {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            text-transform: uppercase;
+        }
+        #galleria .gallery-image small {
+            margin-top: 0.45rem;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            opacity: 0.86;
+        }
+        .pager-btn {
+            min-width: 2.75rem;
+            height: 2.75rem;
+            border: 2px solid #000;
+            border-radius: 999px;
+            background: #fff;
+            color: #030213;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        .pager-btn:hover,
+        .pager-btn.active {
+            background: #034EA2;
+            color: #fff;
+            border-color: #034EA2;
+        }
+        .pager-btn-wide {
+            width: auto;
+            padding: 0 1.25rem;
+        }
 
         header { z-index: 1100; }
 
@@ -556,8 +781,8 @@
         <div class="container mx-auto px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-tight">
             <span class="text-black">Lions Club Mirandola</span>
             <div class="flex gap-4 md:gap-6 items-center">
-                <a href="#lions-ai" class="nav-top hover:opacity-70">LIONS AI ✨</a>
-                <a href="https://www.lionsclubs.org/it/donate" class="nav-top hover:opacity-70">♥ DONA</a>
+                <a href="#lions-ai" class="nav-top hover:opacity-70">LIONS AI</a>
+                <a href="https://www.lionsclubs.org/it/donate" class="nav-top hover:opacity-70">&hearts; DONA</a>
             </div>
         </div>
     </div>
@@ -579,12 +804,12 @@
     <!-- HOME -->
     <section id="home" class="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
         <div id="heroVideo" class="hero-video"></div>
-        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Salta al video successivo">›</button>
+        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Salta al video successivo">&rsaquo;</button>
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none"></div>
         <div class="relative z-10 container mx-auto px-6 pb-16 w-full pointer-events-none">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
                 <div class="max-w-3xl">
-                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">We Serve · Dal 1967</p>
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">We Serve &middot; Dal 1967</p>
                     <h1 class="text-white text-5xl md:text-7xl font-black uppercase leading-[0.92] tracking-tighter">
                         Lions Club <span class="text-[#FFC72C]">Mirandola</span>
                     </h1>
@@ -613,11 +838,11 @@
                     <div class="bg-white rounded-[2.5rem] p-10 md:p-12 border-[4px] border-black shadow-2xl">
                         <p class="text-[#FFC72C] font-black uppercase tracking-[0.2em] text-sm mb-6">Motto del Presidente</p>
                         <blockquote class="text-2xl md:text-3xl font-bold leading-snug mb-10">
-                            “Si punta all’ideale, partendo dal reale e si raggiunge il massimo possibile”
+                            &ldquo;Si punta all&rsquo;ideale, partendo dal reale e si raggiunge il massimo possibile&rdquo;
                         </blockquote>
                         <div class="flex flex-wrap gap-4">
-                            <span class="inline-block bg-[#034EA2] text-white px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest">Anno Sociale 2025 – 2026</span>
-                            <span class="inline-block bg-[#FFC72C] text-black px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest border-2 border-black">60° di Fondazione</span>
+                            <span class="inline-block bg-[#034EA2] text-white px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest">Anno Sociale 2025 &ndash; 2026</span>
+                            <span class="inline-block bg-[#FFC72C] text-black px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest border-2 border-black">60&deg; di Fondazione</span>
                         </div>
                     </div>
                 </div>
@@ -625,28 +850,53 @@
         </div>
     </section>
 
-    <!-- NOTIZIE (marquee) -->
-    <section id="notizie" class="py-20 section-yellow overflow-hidden articles-marquee">
-        <div class="container mx-auto px-6 mb-12 text-center">
-            <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Dal nostro club</p>
-            <h2 class="text-4xl md:text-5xl font-black uppercase">Ultime notizie</h2>
-            <div class="w-32 h-1 bg-[#FFC72C] mx-auto mt-5"></div>
-        </div>
-        <div class="space-y-6" id="articlesMarquee"></div>
-        <div class="container mx-auto px-6 mt-14 grid md:grid-cols-2 gap-6 max-w-4xl">
-            <article class="bg-white rounded-[2rem] p-8 border-[3px] border-black">
-                <span class="text-[10px] font-black uppercase text-[#FFC72C]">In evidenza</span>
-                <h3 class="text-xl font-black uppercase mt-2 mb-3">60° di fondazione</h3>
-                <p class="text-sm text-gray-700 font-medium">Un anno speciale per celebrare sei decenni di servizio a Mirandola e sul territorio.</p>
-            </article>
-            <article class="bg-[#034EA2] text-white rounded-[2rem] p-8 border-[3px] border-black">
-                <span class="text-[10px] font-black uppercase text-[#FFC72C]">Prossimi eventi</span>
-                <h3 class="text-xl font-black uppercase mt-2 mb-3">Calendario sociale</h3>
-                <p class="text-sm font-medium text-white/90">Incontri, service e iniziative del Club — contattaci per i dettagli.</p>
-            </article>
-        </div>
-    </section>
+    <!-- NOTIZIE -->
+    <section id="notizie" class="section-white overflow-hidden bg-[#f1f5f9]">
+<section class="relative h-[56vh] min-h-[420px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('Notizie/Lions-Aprile-2026-copertina-800x445.jpg')">
+                <div class="absolute inset-0 bg-black/65"></div>
+            </div>
 
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-6 text-sm">
+                        Cronaca & Impatto nel Territorio
+                    </p>
+
+                    <h2 class="text-white text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
+                        Notizie & <span class="text-[#FFC72C]">Attività</span>
+                    </h2>
+
+                    <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed max-w-3xl">
+                        Le voci della nostra comunità, le iniziative in corso e i comunicati della rassegna stampa ufficiale del Lions Club Mirandola.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 bg-white sticky top-[90px] notizie-filter-bar z-30 border-b border-gray-300 shadow-md backdrop-blur-md bg-white/90">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="filterFeed('all', this)" class="filter-btn active px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Tutte le Storie
+                    </button>
+                    <button onclick="filterFeed('prima-pagina', this)" class="filter-btn px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Prima Pagina
+                    </button>
+                    <button onclick="filterFeed('rassegna-stampa', this)" class="filter-btn px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Rassegna Stampa
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14">
+            <div class="container mx-auto px-6 main-content-area">
+                <div class="flex flex-col gap-8" id="newsTimelineContainer"></div>
+                <div id="newsPagination" class="mt-10 flex flex-wrap justify-center gap-3"></div>
+            </div>
+        </section>
+    </section>
     <!-- CHI SIAMO -->
     <section id="chi-siamo" class="section-blue">
         <div class="relative h-[42vh] min-h-[320px] flex items-center overflow-hidden">
@@ -655,7 +905,7 @@
             <div class="relative z-10 container mx-auto px-6">
                 <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-3 text-sm">Dal 1967 al servizio della comunità</p>
                 <h2 class="text-white text-4xl md:text-6xl font-black uppercase leading-[0.95] tracking-tighter">Chi <span class="text-[#FFC72C]">Siamo</span></h2>
-                <p class="text-white/90 text-base md:text-lg font-medium max-w-3xl mt-5">Oltre mezzo secolo di servizio, solidarietà e impegno — <span class="text-[#FFC72C] font-black italic">“We Serve”</span>.</p>
+                <p class="text-white/90 text-base md:text-lg font-medium max-w-3xl mt-5">Oltre mezzo secolo di servizio, solidarietà e impegno &ndash; <span class="text-[#FFC72C] font-black italic">&ldquo;We Serve&rdquo;</span>.</p>
             </div>
         </div>
 
@@ -733,14 +983,14 @@
                         <div class="history-card bg-white text-[#034EA2]">
                             <span class="history-year text-[#FFC72C]">2009</span>
                             <h4>Congresso Distrettuale</h4>
-                                <p class="text-gray-700 font-medium">Mirandola ospita il 34° Congresso Distrettuale del Distretto 108 Tb.</p>
+                                <p class="text-gray-700 font-medium">Mirandola ospita il 34&deg; Congresso Distrettuale del Distretto 108 Tb.</p>
                         </div>
                     </article>
                     <article class="history-item">
                         <span class="history-dot" aria-hidden="true"></span>
                         <div class="history-card bg-[#034EA2] text-white">
                             <span class="history-year text-[#FFC72C]">2016</span>
-                            <h4 class="text-2xl font-black uppercase mb-3">50° Anniversario</h4>
+                            <h4 class="text-2xl font-black uppercase mb-3">50&deg; Anniversario</h4>
                             <p class="font-medium text-white/90">Celebrazione del cinquantesimo anniversario del Club.</p>
                         </div>
                     </article>
@@ -766,12 +1016,12 @@
                 <div class="bg-gradient-to-br from-[#034EA2] via-[#0B5FC2] to-[#034EA2] text-white rounded-[3rem] p-8 md:p-10 border-[4px] border-[#FFC72C] shadow-2xl mb-10 text-center">
                     <p class="text-[#FFC72C] uppercase tracking-[0.35em] font-black mb-3 text-sm">Presidente</p>
                     <h4 class="text-3xl md:text-4xl font-black uppercase mb-4">Enzo Ragazzi</h4>
-                    <span class="inline-block bg-[#FFC72C] text-[#034EA2] px-7 py-2 rounded-full font-black uppercase text-sm tracking-widest">Anno Sociale 2025 – 2026</span>
+                    <span class="inline-block bg-[#FFC72C] text-black px-7 py-2 rounded-full font-black uppercase text-sm tracking-widest">Anno Sociale 2025 &ndash; 2026</span>
                 </div>
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
                     <div class="bg-gray-50 rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Past President</p><h4 class="text-2xl font-black uppercase">Nadia Poletti</h4></div>
                     <div class="bg-[#034EA2] text-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Vice Presidente</p><h4 class="text-2xl font-black uppercase">Silvio Sacco</h4></div>
-                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">2° Vice Presidente</p><h4 class="text-2xl font-black uppercase">Claudio Prandi</h4></div>
+                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">2&deg; Vice Presidente</p><h4 class="text-2xl font-black uppercase">Claudio Prandi</h4></div>
                     <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Segretario</p><h4 class="text-2xl font-black uppercase">Alberto Barbi</h4></div>
                     <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Tesoriere</p><h4 class="text-2xl font-black uppercase">Lorella Silvestri</h4></div>
                     <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">Officer Comunicazione</p><h4 class="text-2xl font-black uppercase">Ivo Panzani</h4></div>
@@ -780,64 +1030,32 @@
         </div>
     </section>
 
-    <section id="galleria" class="py-24 section-white">
-    <div class="container mx-auto px-6 max-w-6xl">
-        <div class="text-center mb-16">
-            <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Galleria</p>
-            <h2 class="text-4xl md:text-5xl font-black uppercase">Momenti, eventi e service</h2>
-            <p class="max-w-2xl mx-auto mt-4 text-gray-600">
-                Uno spazio ampio per rivedere le attività e le iniziative più importanti del Lions Club Mirandola.
-            </p>
-        </div>
+        <section id="galleria" class="section-white overflow-hidden">
+        <section class="relative h-[40vh] min-h-[350px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('Sito-Galleria/Governatore_2021/Copertina.jpg')">
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">Memorie e Servizio</p>
+                    <h2 class="text-white text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter">
+                        Galleria <span class="text-[#FFC72C]">foto</span>
+                    </h2>
+                    <p class="text-white/90 text-lg font-medium mt-4 max-w-xl">
+                        Sfoglia i momenti pi&ugrave; significativi della nostra storia. Clicca su una copertina per esplorare l'intero album.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <article class="gallery grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Evento sociale" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Evento sociale</figcaption>
-                </figure>
-            </a>
-
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Progetto di servizio" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Progetto di servizio</figcaption>
-                </figure>
-            </a>
-
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Iniziativa sul territorio" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Iniziativa sul territorio</figcaption>
-                </figure>
-            </a>
-
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Momenti del Club" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Momenti del Club</figcaption>
-                </figure>
-            </a>
-
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Attività associative" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Attività associative</figcaption>
-                </figure>
-            </a>
-
-            <a class="gallery-link" href="Lions-Aprile-2026-9-1536x1152.jpg">
-                <figure class="gallery-image overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-lg group">
-                    <img src="Lions-Aprile-2026-9-1536x1152.jpg" alt="Service comunitario" class="w-full h-[260px] object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <figcaption class="p-6 text-center text-sm font-semibold uppercase tracking-[0.2em] text-[#034EA2]">Service comunitario</figcaption>
-                </figure>
-            </a>
-
-        </article>
-    </div>
-</section>
-
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <article id="album-grid" class="gallery magnific-gallery">
+                </article>
+                <div id="galleryPagination" class="mt-12 flex flex-wrap justify-center gap-3"></div>
+            </div>
+        </section>
+    </section>
     <!-- TROVA CLUB -->
     <section id="trova-club" class="section-yellow">
         <div class="app-container">
@@ -878,7 +1096,7 @@
             <h2 class="text-4xl font-black uppercase text-center mb-10">Contatti</h2>
             <div class="bg-gray-50 rounded-[2rem] p-10 border-[3px] border-black space-y-4 font-medium">
                 <p><strong>Lions Club Mirandola</strong></p>
-                <p>Villa Fondo Tagliata — Via Dorando Pietri 23, Mirandola (MO)</p>
+                <p>Villa Fondo Tagliata &mdash; Via Dorando Pietri 23, Mirandola (MO)</p>
                 <p><a href="https://www.lionsmirandola.it" class="text-[#034EA2] font-bold underline" target="_blank" rel="noopener">www.lionsmirandola.it</a></p>
             </div>
         </div>
@@ -886,19 +1104,80 @@
 
     <section id="lions-ai" class="py-16 section-yellow">
         <div class="container mx-auto px-6 text-center max-w-2xl">
-            <h2 class="text-2xl font-black uppercase mb-3">LIONS AI ✨</h2>
-            <p class="text-gray-600 font-medium">Assistente intelligente del Club — sezione in arrivo.</p>
+            <h2 class="text-2xl font-black uppercase mb-3">LIONS AI</h2>
+            <p class="text-gray-600 font-medium">Assistente intelligente del Club &mdash; sezione in arrivo.</p>
         </div>
     </section>
 
 </main>
 
+<div id="detailOverlay" class="fixed inset-0 bg-black/80 z-[1200] flex justify-end opacity-0 pointer-events-none backdrop-blur-md" onclick="closeNews()">
+        <div id="detailModal" class="w-full max-w-7xl bg-[#f8fafc] h-full overflow-y-auto p-6 md:p-10 shadow-2xl translate-x-full flex flex-col" onclick="event.stopPropagation()">
+            <div>
+                <div class="flex justify-between items-center mb-8">
+                    <span id="modalTag" class="text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider"></span>
+                    <button onclick="closeNews()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 text-slate-700 hover:bg-red-600 hover:text-white transition-all text-2xl shadow-sm font-light">
+                        &times;
+                    </button>
+                </div>
+                <p id="modalDate" class="text-sm text-slate-400 font-bold mb-2"></p>
+                <h2 id="modalTitle" class="text-3xl md:text-5xl font-black text-[#0d0c22] uppercase tracking-tight mb-8 leading-tight max-w-5xl"></h2>
+
+                <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] gap-8 lg:gap-12 items-start">
+                    <div id="modalContent" class="text-slate-700 font-medium text-lg md:text-xl leading-relaxed space-y-5 order-2 lg:order-1"></div>
+                    <aside class="order-1 lg:order-2 lg:sticky lg:top-8">
+                        <div class="w-full aspect-[4/5] max-h-[78vh] rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-200">
+                            <img id="modalImg" src="" class="w-full h-full object-cover cursor-zoom-in hover:scale-[1.03] transition-transform duration-300 ease-in-out" alt="Immagine Notizia" onclick="openLightbox(this.src)">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-slate-200 flex justify-end">
+                <button onclick="closeNews()" class="px-8 py-3.5 bg-[#0d0c22] text-white text-xs font-bold uppercase rounded-full tracking-widest hover:bg-opacity-90 transition-all shadow-md">Torna all'elenco notizie</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageLightbox" class="fixed inset-0 bg-black/95 z-[1300] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-zoom-out" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl" alt="Immagine ingrandita">
+    </div>
+
+    
+<div id="galleryLightbox" class="fixed inset-0 bg-black/95 z-[1250] hidden flex items-center justify-center p-1 md:p-2 select-none">
+    
+    <div class="absolute top-5 left-5 z-50 flex items-center gap-2 rounded-full bg-black/40 border border-white/20 p-2 backdrop-blur-sm">
+        <button type="button" onclick="galleryZoomOut()" class="w-10 h-10 rounded-full bg-white/10 text-white text-2xl font-bold leading-none hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Riduci zoom">−</button>
+        <button type="button" onclick="galleryResetZoom()" class="h-10 px-4 rounded-full bg-white/10 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Reimposta zoom">Reset</button>
+        <button type="button" onclick="galleryZoomIn()" class="w-10 h-10 rounded-full bg-white/10 text-white text-2xl font-bold leading-none hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Aumenta zoom">+</button>
+    </div>
+
+    <button onclick="galleryCloseLightbox()" class="absolute top-6 right-6 text-white hover:text-[#FFC72C] transition-colors z-50">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+
+    <button onclick="galleryPrevImage()" class="absolute left-4 md:left-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+
+    <div class="w-[99vw] max-w-none max-h-[98vh] flex flex-col items-center justify-center overflow-hidden">
+        <img id="galleryLightboxImg" src="" alt="" class="max-w-[98vw] max-h-[94vh] rounded-md object-contain shadow-2xl transition-transform duration-200 ease-out origin-center">
+        <p id="galleryLightboxCounter" class="text-gray-300 font-bold text-xs uppercase tracking-widest mt-2"></p>
+    </div>
+
+    <button onclick="galleryNextImage()" class="absolute right-4 md:right-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+</div>
+
+
 <footer class="bg-black text-white py-8 text-center text-[10px] font-bold uppercase tracking-widest">
-    Lions Club Mirandola · We Serve · Dal 1967
+    Lions Club Mirandola &middot; We Serve &middot; Dal 1967
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="clubs-data.js"></script>
+<script src="site-content.js"></script>
 <script>
 /* ========== VIDEO HERO ========== */
 (function () {
@@ -995,29 +1274,132 @@
 
 
 
-/* ========== MARQUEE NOTIZIE ========== */
-const ARTICLES = [
-    { title: "60° di fondazione", tag: "Anniversario", excerpt: "Sei decenni di servizio a Mirandola.", color: "bg-[#FFC72C] text-black" },
-    { title: "Anno sociale 2025–2026", tag: "Club", excerpt: "Il motto del Presidente Enzo Ragazzi.", color: "bg-[#034EA2] text-white" },
-    { title: "Progetti sul territorio", tag: "Service", excerpt: "Iniziative per scuole e famiglie.", color: "bg-white text-[#034EA2] border-[3px] border-black" },
-    { title: "Raccolta fondi", tag: "Solidarietà", excerpt: "Sostegno ai progetti locali.", color: "bg-[#C5B4E3] text-black" },
-    { title: "Diventa Lions", tag: "Membership", excerpt: "Unisciti al nostro Club.", color: "bg-black text-white" },
-    { title: "Melvin Jones Fellow", tag: "2019", excerpt: "Riconoscimento internazionale.", color: "bg-[#FFC72C] text-black" }
-];
+/* ========== NOTIZIE ========== */
+                const newsPageSize = 6;
+        let activeNewsCategory = 'all';
+        let activeNewsPage = 1;
 
-function articleCard(a) {
-    return `<article class="article-card ${a.color} rounded-[2rem] p-8 border-[3px] border-black shadow-lg flex flex-col min-h-[200px]">
-        <span class="text-[10px] font-black uppercase tracking-widest opacity-80">${a.tag}</span>
-        <h3 class="text-lg font-black uppercase mt-3 mb-2">${a.title}</h3>
-        <p class="text-sm font-medium opacity-90">${a.excerpt}</p>
-    </article>`;
-}
+        function filteredNews() {
+            return newsDatabase
+                .map((news, index) => ({ news, index }))
+                .filter(({ news }) => activeNewsCategory === 'all' || news.category === activeNewsCategory);
+        }
 
-(function () {
-    const cards = ARTICLES.map(articleCard).join('');
-    const row = rev => `<div class="marquee${rev ? ' marquee--reverse' : ''}"><div class="marquee__group">${cards}</div><div class="marquee__group" aria-hidden="true">${cards}</div></div>`;
-    document.getElementById('articlesMarquee').innerHTML = row(false) + row(true);
-})();
+        function renderNewsPagination(totalPages) {
+            const pagination = document.getElementById('newsPagination');
+            if (!pagination) return;
+            pagination.innerHTML = '';
+            if (totalPages <= 1) return;
+
+            for (let page = 1; page <= totalPages; page++) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `pager-btn ${page === activeNewsPage ? 'active' : ''}`;
+                button.textContent = page;
+                button.setAttribute('aria-label', `Vai alla pagina notizie ${page}`);
+                button.addEventListener('click', () => {
+                    activeNewsPage = page;
+                    generateNewsTimeline();
+                });
+                pagination.appendChild(button);
+            }
+        }
+
+        // Funzione per generare dinamicamente le card HTML all'avvio
+        function generateNewsTimeline() {
+            const container = document.getElementById('newsTimelineContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const items = filteredNews();
+            const totalPages = Math.max(1, Math.ceil(items.length / newsPageSize));
+            activeNewsPage = Math.min(activeNewsPage, totalPages);
+            const start = (activeNewsPage - 1) * newsPageSize;
+
+            items.slice(start, start + newsPageSize).forEach(({ news, index }) => {
+                const cardHtml = `
+                    <div class="news-card ${news.cardClass}" data-category="${news.category}" onclick="openNews(${index})">
+                        <div class="news-img-wrapper">
+                            <img src="${news.img}" alt="${news.title}">
+                        </div>
+                        <div class="flex flex-col justify-between p-6 md:p-8 flex-1">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="text-xs font-bold px-3 py-1 ${news.tagClass} rounded-full uppercase tracking-wider">${news.tag}</span>
+                                    <span class="text-xs text-gray-400 font-semibold">${news.date}</span>
+                                </div>
+                                <h3 class="news-title text-xl md:text-2xl font-extrabold uppercase tracking-tight text-[#0d0c22] mb-3 leading-snug transition-colors duration-300">
+                                    ${news.title}
+                                </h3>
+                                <p class="text-gray-500 font-medium text-sm md:text-[15px] leading-relaxed line-clamp-2">
+                                    ${news.excerpt}
+                                </p>
+                            </div>
+                            <div class="mt-4 flex items-center text-xs font-bold ${news.category === 'prima-pagina' ? 'text-[#034EA2]' : 'text-[#b58600]'} tracking-wider uppercase gap-1">
+                                Leggi l'articolo &rarr;
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+
+            renderNewsPagination(totalPages);
+
+        }
+
+        generateNewsTimeline();
+
+        // Filtri
+        function filterFeed(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            activeNewsCategory = category;
+            activeNewsPage = 1;
+            generateNewsTimeline();
+        }
+        // Apertura Notizia
+        function openNews(index) {
+            const data = newsDatabase[index];
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalTag').className = `text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider ${data.tagClass}`;
+            document.getElementById('modalDate').innerText = data.date;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalContent').innerHTML = data.content;
+
+            const overlay = document.getElementById('detailOverlay');
+            const modal = document.getElementById('detailModal');
+            modal.scrollTop = 0;
+            
+            overlay.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.remove('translate-x-full');
+            requestAnimationFrame(() => { modal.scrollTop = 0; });
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Chiusura Notizia
+        function closeNews() {
+            const overlay = document.getElementById('detailOverlay');
+            const modal = document.getElementById('detailModal');
+            
+            overlay.classList.add('pointer-events-none', 'opacity-0');
+            modal.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        // --- SISTEMA LIGHTBOX ---
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            const lb = document.getElementById('imageLightbox');
+            lb.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('imageLightbox');
+            lb.classList.add('opacity-0', 'pointer-events-none');
+        }
 
 /* ========== JACKPOT ========== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1038,6 +1420,155 @@ document.addEventListener('DOMContentLoaded', () => {
     const obs = new IntersectionObserver(animateJackpot, { threshold: 0.35 });
     document.querySelectorAll('.jackpot-container').forEach(c => obs.observe(c));
 });
+
+
+/* ========== GALLERIA ========== */
+    let galleryCurrentAlbum = [];
+    let galleryCurrentImageIndex = 0;
+    let galleryZoomLevel = 1;
+
+    function applyGalleryZoom() {
+        const img = document.getElementById('galleryLightboxImg');
+        if (!img) return;
+        img.style.transform = `scale(${galleryZoomLevel})`;
+        img.style.cursor = galleryZoomLevel > 1 ? 'zoom-out' : 'default';
+    }
+
+    function galleryZoomIn() {
+        galleryZoomLevel = Math.min(3, Number((galleryZoomLevel + 0.25).toFixed(2)));
+        applyGalleryZoom();
+    }
+
+    function galleryZoomOut() {
+        galleryZoomLevel = Math.max(1, Number((galleryZoomLevel - 0.25).toFixed(2)));
+        applyGalleryZoom();
+    }
+
+    function galleryResetZoom() {
+        galleryZoomLevel = 1;
+        applyGalleryZoom();
+    }
+
+    function galleryOpenAlbum(albumKey) {
+        if (!galleryAlbums[albumKey]) return;
+        galleryCurrentAlbum = galleryAlbums[albumKey];
+        galleryCurrentImageIndex = 0;
+        galleryResetZoom();
+        
+        updateGalleryLightboxContent();
+        document.getElementById('galleryLightbox').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function galleryCloseLightbox() {
+        document.getElementById('galleryLightbox').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function updateGalleryLightboxContent() {
+        const imgSrc = galleryCurrentAlbum[galleryCurrentImageIndex];
+        document.getElementById('galleryLightboxImg').src = imgSrc;
+        document.getElementById('galleryLightboxCounter').innerText = `Foto ${galleryCurrentImageIndex + 1} di ${galleryCurrentAlbum.length}`;
+        galleryResetZoom();
+    }
+
+    function galleryNextImage() {
+        if (galleryCurrentAlbum.length <= 1) return;
+        galleryCurrentImageIndex = (galleryCurrentImageIndex + 1) % galleryCurrentAlbum.length;
+        updateGalleryLightboxContent();
+    }
+
+    function galleryPrevImage() {
+        if (galleryCurrentAlbum.length <= 1) return;
+        galleryCurrentImageIndex = (galleryCurrentImageIndex - 1 + galleryCurrentAlbum.length) % galleryCurrentAlbum.length;
+        updateGalleryLightboxContent();
+    }
+
+    function escapeGalleryText(value) {
+        return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderGalleryAlbumGrid() {
+        const grid = document.getElementById('album-grid');
+        if (!grid) return;
+
+        grid.innerHTML = galleryAlbumCards.map(album => {
+            const photos = galleryAlbums[album.key] || [];
+            const count = photos.length || 1;
+            const title = escapeGalleryText(album.title);
+            const year = escapeGalleryText(album.year);
+            const alt = escapeGalleryText(album.alt || album.title);
+            const cover = album.cover || photos[0] || '';
+
+            return `
+                <a class="gallery-link" href="${cover}" onclick="event.preventDefault(); galleryOpenAlbum('${album.key}')" aria-label="Apri album ${title}">
+                    <figure class="gallery-image">
+                        <img src="${cover}" alt="${alt}" loading="lazy">
+                        <figcaption>
+                            <span class="gallery-count">${count} Foto</span>
+                            <strong>${title}</strong>
+                            <small>Anno ${year}</small>
+                        </figcaption>
+                    </figure>
+                </a>
+            `;
+        }).join('');
+    }
+
+    const galleryPageSize = 9;
+    let activeGalleryPage = 1;
+
+    function renderGalleryPage() {
+        const grid = document.getElementById('album-grid');
+        const pagination = document.getElementById('galleryPagination');
+        if (!grid || !pagination) return;
+
+        const cards = Array.from(grid.children);
+        const totalPages = Math.max(1, Math.ceil(cards.length / galleryPageSize));
+        activeGalleryPage = Math.min(activeGalleryPage, totalPages);
+        const start = (activeGalleryPage - 1) * galleryPageSize;
+
+        cards.forEach((card, index) => {
+            const visible = index >= start && index < start + galleryPageSize;
+            card.classList.toggle('hidden', !visible);
+        });
+
+        pagination.innerHTML = '';
+        if (totalPages <= 1) return;
+
+        for (let page = 1; page <= totalPages; page++) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `pager-btn ${page === activeGalleryPage ? 'active' : ''}`;
+            button.textContent = page;
+            button.setAttribute('aria-label', `Vai alla pagina galleria ${page}`);
+            button.addEventListener('click', () => {
+                activeGalleryPage = page;
+                renderGalleryPage();
+            });
+            pagination.appendChild(button);
+        }
+    }
+
+    renderGalleryAlbumGrid();
+    renderGalleryPage();
+
+    // Comandi tastiera
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('galleryLightbox');
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'Escape') galleryCloseLightbox();
+            if (e.key === 'ArrowRight') galleryNextImage();
+            if (e.key === 'ArrowLeft') galleryPrevImage();
+            if (e.key === '+' || e.key === '=') galleryZoomIn();
+            if (e.key === '-' || e.key === '_') galleryZoomOut();
+            if (e.key === '0') galleryResetZoom();
+        }
+    });
 
 /* ========== TROVA CLUB ========== */
 (function () {
@@ -1124,15 +1655,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const host = String(u.hostname || '').toLowerCase();
                 if (host.indexOf(' ') !== -1) return '';
                 if (host.indexOf('.') === -1) return '';
-                // treat lions.it internal pages as untrusted (do not expose links)
-                if (host.includes('lions.it')) return '';
+                // Nasconde solo le schede interne generiche di lions.it, lascia visibili gli altri siti validi.
+                if (host.includes('lions.it') && u.pathname.includes('/club/')) return '';
                 return u.href;
             } catch (e) {
                 return '';
             }
         };
 
-           const lavenderIcon = L.divIcon({
+        const lavenderIcon = L.divIcon({
             html: `<svg width="32" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#7C3AED" stroke="#ffffff" stroke-width="1.5"/>
                     <circle cx="12" cy="9" r="3" fill="#ffffff"/>
@@ -1143,16 +1674,28 @@ document.addEventListener('DOMContentLoaded', () => {
             popupAnchor: [0, -40]
         });
 
+        const goldIcon = L.divIcon({
+            html: `<div style="position:relative;width:36px;height:46px;">
+                    <svg viewBox="0 0 24 24" width="36" height="46" style="position:absolute;top:0;left:0;">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#FFC82E" stroke="#ffffff" stroke-width="1.5"/>
+                    </svg>
+                   </div>`,
+            className: 'custom-gold-marker',
+            iconSize: [36, 46],
+            iconAnchor: [18, 46],
+            popupAnchor: [0, -40]
+        });
+
         filtered.forEach(club => {
-            const marker = L.marker([club.lat, club.lng], { title: club.name || '', icon: lavenderIcon });
+            const isMirandola = String(club.name || '').toUpperCase().includes('MIRANDOLA');
+            const marker = L.marker([club.lat, club.lng], { title: club.name || '', icon: isMirandola ? goldIcon : lavenderIcon });
             const siteUrl = buildSiteUrl(club.site);
             const hasLink = !!siteUrl;
             marker.bindPopup(`
                 <div class="popup-card">
                     <h4>${club.name}</h4>
-                    <p>${club.city}</p>
-                    <p>${club.address}</p>
-                    ${hasLink ? `<a href="${siteUrl}" target="_blank" rel="noopener">Visita sito</a>` : ''}
+                    <p><b>${club.city || ''}</b>${club.country ? `, ${club.country}` : ''}</p>
+                    ${hasLink ? `<a href="${siteUrl}" target="_blank" rel="noopener">Esplora Club &rarr;</a>` : ''}
                 </div>
             `, { minWidth: 160 });
 
@@ -1163,44 +1706,47 @@ document.addEventListener('DOMContentLoaded', () => {
             item.className = 'club-item';
             const showQuickLink = !!siteUrl;
             item.innerHTML = `
-                <div style="display:flex;align-items:center;gap:12px">
-                    <div class="icon-box">🏛</div>
-                    <div style="flex:1">
-                        <h3 style="margin:0;font-weight:800;color:#0B0F19">${club.name}</h3>
-                        <div style="font-size:13px;color:#475569;font-weight:600">${club.city}</div>
-                    </div>
-                </div>
-                ${showQuickLink ? `<a href="${siteUrl}" target="_blank" class="club-quick-link" onclick="event.stopPropagation();">SITO</a>` : ''}
+                ${showQuickLink ? `<a href="${siteUrl}" target="_blank" rel="noopener" class="club-quick-link" onclick="event.stopPropagation();">Sito Web &nearr;</a>` : ''}
+                <h3>${club.name}</h3>
+                <p>
+                    <span class="icon-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </span>
+                    ${club.city || ''}${club.country ? `, ${club.country}` : ''}
+                </p>
+                <div><span class="club-tag-gold">Lions Club</span></div>
             `;
-            item.style.cssText = 'cursor:pointer;transition:all .2s;position:relative;padding:16px;border-radius:16px;';
-            item.addEventListener('mouseenter', () => item.style.transform = 'translateY(-4px)');
-            item.addEventListener('mouseleave', () => item.style.transform = '');
             item.addEventListener('click', () => {
                 const latLng = marker.getLatLng();
                 if (latLng) {
-                    map.setView(latLng, Math.max(map.getZoom(), 11), { animate: true });
-                    marker.openPopup();
+                    map.flyTo(latLng, map.getZoom() < 12 ? 12 : map.getZoom(), {
+                        animate: true,
+                        duration: 0.8
+                    });
+                    window.setTimeout(() => {
+                        if (clusterGroup.zoomToShowLayer) {
+                            clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+                        } else {
+                            marker.openPopup();
+                        }
+                    }, 400);
                 }
             });
             clubListEl.appendChild(item);
         });
 
         const counter = document.getElementById('clubCounter');
-        if (counter) counter.textContent = filtered.length;
+        if (counter) counter.textContent = `${filtered.length} CLUB`;
 
         if (allMarkers.length > 0) {
             clusterGroup.addTo(map);
-            const group = new L.featureGroup(allMarkers);
-            const bounds = group.getBounds();
-            if (bounds.isValid()) {
-                map.fitBounds(bounds.pad(0.1));
-            }
+            if (!query) map.setView([42.0, 12.5], 6);
         } else {
-            map.setView([44.9, 11.07], 8);
+            map.setView([42.0, 12.5], 6);
         }
 
         if (filtered.length === 0) {
-            clubListEl.innerHTML = '<div style="padding:16px;color:#475569;font-size:14px;">Nessun club trovato. Prova un altro nome o città.</div>';
+            clubListEl.innerHTML = '<div style="padding:40px 20px;color:#94a3b8;font-size:14px;text-align:center;font-weight:600;">Nessun club corrisponde alla ricerca.</div>';
         }
     }
 
@@ -1229,10 +1775,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clubsLoadPromise = (async () => {
             const url = clubsJsonUrl();
 
-            if (window.location.protocol === 'file:') {
-                throw new Error('Apri il sito con Live Server (http://), non come file locale.');
-            }
-
             const res = await fetch(url, { cache: 'no-store' });
             if (!res.ok) {
                 throw new Error(`clubs.json non trovato (HTTP ${res.status})`);
@@ -1260,7 +1802,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function bootTrovaClub() {
         if (!clubsLoaded) {
             try {
-                const parsed = await loadClubsFromJson();
+                const parsed = Array.isArray(window.CLUBS_DATA) && window.CLUBS_DATA.length
+                    ? window.CLUBS_DATA
+                    : await loadClubsFromJson();
                 CLUBS.splice(0, CLUBS.length, ...parsed);
                 clubsLoaded = true;
             } catch (e) {
@@ -1295,5 +1839,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })();
 </script>
+<script src="widget.js"></script>
 </body>
 </html>
