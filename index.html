@@ -27,25 +27,66 @@
                 radial-gradient(circle at top left, rgba(255,199,44,.18), transparent 40%),
                 radial-gradient(circle at bottom right, rgba(3,78,162,.08), transparent 40%);
         }
-        .hero-video { object-fit: cover; width: 100%; height: 100%; }
-        #heroVideoNext {
+        .hero-video {
             position: absolute;
-            right: clamp(1rem, 3vw, 1.75rem);
-            top: clamp(1rem, 4.5vw, 2rem);
-            transform: none;
-            width: clamp(2.75rem, 3.2vw, 3.75rem);
-            height: clamp(2.75rem, 3.2vw, 3.75rem);
-            min-width: 2.75rem;
-            min-height: 2.75rem;
-            font-size: clamp(1.4rem, 2.2vw, 2rem);
+            inset: 0;
+            overflow: hidden;
+            background: #000;
         }
+        .hero-video video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateX(0);
+            transition: transform .85s cubic-bezier(.22, 1, .36, 1);
+            will-change: transform;
+        }
+        .hero-video video.is-entering {
+            z-index: 2;
+            transform: translateX(100%);
+        }
+        .hero-video video.is-active {
+            z-index: 1;
+            transform: translateX(0);
+        }
+        .hero-video video.is-leaving {
+            z-index: 1;
+            transform: translateX(-100%);
+        }
+        
         .nav-link { border: none !important; color: #000; position: relative; padding: 0.25rem 0 !important; }
         .nav-link:not(.active) { background: none !important; }
-        .nav-link.active { color: #fff !important; }
+        .nav-link.active { color: #000 !important; background: none !important; }
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #FFC72C; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; background: #034EA2; }
         .nav-link.active::after { width: 100%; background: #034EA2; }
         .nav-top { color: #000; text-decoration: none; position: relative; font-size: 0.75rem; }
+
+        .section-white { background: #ffffff !important; color: #030213; }
+        .section-yellow { background: #FFC72C !important; color: #030213; }
+        .section-blue { background: #034EA2 !important; color: #ffffff; }
+        main > section {
+            transition: background-color .45s ease, color .45s ease;
+        }
+        .section-blue h2,
+        .section-blue h3,
+        .section-blue p,
+        .section-blue figcaption { color: inherit; }
+        .section-blue .bg-white,
+        .section-blue .bg-gray-50,
+        .section-blue figure,
+        .section-blue article {
+            color: #030213;
+        }
+        .section-blue .text-\[\#034EA2\] { color: #FFC72C !important; }
+        .section-yellow .text-\[\#FFC72C\] { color: #034EA2 !important; }
+        .section-yellow .gradient-text {
+            background: none;
+            -webkit-text-fill-color: #034EA2;
+            color: #034EA2;
+        }
 
         /* Jackpot — cifre non tagliate */
         .jackpot-stat { overflow: visible; }
@@ -100,28 +141,100 @@
             line-height: 1;
         }
 
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 180px;
-            width: 4px;
-            height: calc(100% - 220px);
-            background: linear-gradient(to bottom, transparent 0%, #FFC72C 10%, #FFC72C 90%, transparent 100%);
-            transform: translateX(-50%);
-            border-radius: 999px;
+        .history-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(.5rem, 2vw, 1.5rem);
+            padding-top: 3.25rem;
         }
-        .timeline-dot {
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 1.6rem;
+            height: 4px;
+            background: #FFC72C;
+            border-radius: 999px;
+            box-shadow: 0 0 0 2px #034EA2;
+        }
+        .history-item {
+            position: relative;
+            min-width: 0;
+        }
+        .history-dot {
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: -2.45rem;
             transform: translate(-50%, -50%);
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             background: #FFC72C;
             border: 4px solid white;
             border-radius: 999px;
             box-shadow: 0 0 0 4px #034EA2;
-            z-index: 20;
+            z-index: 2;
+        }
+        .history-card {
+            height: 100%;
+            border: 3px solid #000;
+            border-radius: 1.5rem;
+            padding: clamp(.8rem, 2vw, 2rem);
+            box-shadow: 0 16px 32px rgba(0,0,0,.14);
+        }
+        .history-year {
+            display: block;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: .75rem;
+        }
+        .history-card h4 {
+            font-size: clamp(.82rem, 2.5vw, 1.5rem);
+            line-height: 1.05;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: .65rem;
+            color: inherit !important;
+        }
+        .history-card p {
+            font-size: clamp(.68rem, 2vw, 1rem);
+            line-height: 1.35;
+            font-weight: 700;
+            color: inherit !important;
+            opacity: .9 !important;
+        }
+        @media (max-width: 520px) {
+            .history-timeline {
+                gap: .4rem;
+                padding-top: 2.75rem;
+            }
+            .history-timeline::before {
+                left: 12%;
+                right: 12%;
+                top: 1.35rem;
+                height: 3px;
+            }
+            .history-dot {
+                top: -2rem;
+                width: 18px;
+                height: 18px;
+                border-width: 3px;
+                box-shadow: 0 0 0 3px #034EA2;
+            }
+            .history-card {
+                border-width: 2px;
+                border-radius: 1rem;
+                padding: .7rem .45rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,.12);
+            }
+            .history-card p {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
         }
 
         .articles-marquee { --gap: 1.25rem; --duration: 45s; --scroll-end: calc(-100% - var(--gap)); }
@@ -171,6 +284,17 @@
             border-right: 1px solid rgba(255, 255, 255, 0.06);
             box-shadow: 20px 0 50px rgba(0, 0, 0, 0.3);
         }
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #E9E3FF;
+            border-radius: 8px;
+            color: #7C3AED;
+            transition: all 0.3s ease;
+        }
         #trova-club .search-wrapper { position: relative; }
         #trova-club .search-input {
             width: 100%;
@@ -207,6 +331,29 @@
             flex-direction: column;
             gap: 18px;
             background: #ffffff;
+        }
+        #trova-club .club-list::-webkit-scrollbar { width: 6px; }
+        #trova-club .club-list::-webkit-scrollbar-track { background: transparent; }
+        #trova-club .club-list::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.18); border-radius: 10px; }
+        .club-quick-link {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #000000;
+        }
+        .club-item:hover .club-quick-link {
+            background: #ffffff;
+            color: #0F172A;
+            border-color: #0F172A;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
         }
         #trova-club .club-item {
             position: relative;
@@ -431,8 +578,8 @@
 
     <!-- HOME -->
     <section id="home" class="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
-        <video id="heroVideo" class="hero-video absolute inset-0" autoplay muted playsinline></video>
-        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/55 border-2 border-white text-white text-2xl font-black leading-none hover:bg-[#FFC72C] hover:text-black hover:border-black transition-all backdrop-blur-sm shadow-lg" aria-label="Salta al video successivo">›</button>
+        <div id="heroVideo" class="hero-video"></div>
+        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Salta al video successivo">›</button>
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none"></div>
         <div class="relative z-10 container mx-auto px-6 pb-16 w-full pointer-events-none">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
@@ -454,7 +601,7 @@
     </section>
 
     <!-- MOTTO PRESIDENTE -->
-    <section id="motto" class="py-24 quote-bg">
+    <section id="motto" class="py-24 section-white">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-5">
@@ -479,7 +626,7 @@
     </section>
 
     <!-- NOTIZIE (marquee) -->
-    <section id="notizie" class="py-20 bg-gray-50 overflow-hidden articles-marquee">
+    <section id="notizie" class="py-20 section-yellow overflow-hidden articles-marquee">
         <div class="container mx-auto px-6 mb-12 text-center">
             <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Dal nostro club</p>
             <h2 class="text-4xl md:text-5xl font-black uppercase">Ultime notizie</h2>
@@ -501,7 +648,7 @@
     </section>
 
     <!-- CHI SIAMO -->
-    <section id="chi-siamo">
+    <section id="chi-siamo" class="section-blue">
         <div class="relative h-[42vh] min-h-[320px] flex items-center overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('panoramica-mirandola.jpg')"></div>
             <div class="absolute inset-0 bg-black/60"></div>
@@ -580,39 +727,31 @@
                     <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4">Momenti Significativi</p>
                     <h3 class="text-3xl md:text-4xl font-black uppercase">La Nostra Storia</h3>
                 </div>
-                <div class="timeline-line hidden md:block"></div>
-                <div class="space-y-10 md:space-y-12 relative">
-                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
-                        <div class="timeline-dot hidden md:block"></div>
-                        <div class="md:text-right">
-                            <div class="bg-white rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
-                                <p class="text-[#FFC72C] font-black text-4xl mb-4">2009</p>
-                                <h4 class="text-2xl font-black uppercase mb-3">Congresso Distrettuale</h4>
+                <div class="history-timeline">
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-white text-[#034EA2]">
+                            <span class="history-year text-[#FFC72C]">2009</span>
+                            <h4>Congresso Distrettuale</h4>
                                 <p class="text-gray-700 font-medium">Mirandola ospita il 34° Congresso Distrettuale del Distretto 108 Tb.</p>
-                            </div>
                         </div>
-                        <div></div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
-                        <div class="timeline-dot hidden md:block"></div>
-                        <div></div>
-                        <div class="bg-[#034EA2] text-white rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
-                            <p class="text-[#FFC72C] font-black text-4xl mb-4">2016</p>
+                    </article>
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-[#034EA2] text-white">
+                            <span class="history-year text-[#FFC72C]">2016</span>
                             <h4 class="text-2xl font-black uppercase mb-3">50° Anniversario</h4>
                             <p class="font-medium text-white/90">Celebrazione del cinquantesimo anniversario del Club.</p>
                         </div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-8 items-center relative">
-                        <div class="timeline-dot hidden md:block"></div>
-                        <div class="md:text-right">
-                            <div class="bg-[#FFC72C] text-black rounded-[2rem] p-8 border-[3px] border-black shadow-xl">
-                                <p class="font-black text-4xl mb-4">2019</p>
-                                <h4 class="text-2xl font-black uppercase mb-3">Melvin Jones Fellow</h4>
+                    </article>
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-[#FFC72C] text-black">
+                            <span class="history-year">2019</span>
+                            <h4>Melvin Jones Fellow</h4>
                                 <p class="font-bold opacity-80">Due soci ricevono il prestigioso riconoscimento internazionale.</p>
-                            </div>
                         </div>
-                        <div></div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -641,7 +780,7 @@
         </div>
     </section>
 
-    <section id="galleria" class="py-24 bg-[#F8FAFC]">
+    <section id="galleria" class="py-24 section-white">
     <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
             <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] text-sm mb-3">Galleria</p>
@@ -700,7 +839,7 @@
 </section>
 
     <!-- TROVA CLUB -->
-    <section id="trova-club">
+    <section id="trova-club" class="section-yellow">
         <div class="app-container">
         <aside class="sidebar">
             <div class="search-area" style="padding: 28px 24px 20px 24px; background: #ffffff; border-bottom: 1px solid #F1F5F9;">
@@ -725,7 +864,7 @@
     </section>
 
     <!-- DIVENTA LIONS -->
-    <section id="diventa-lions" class="py-24 bg-[#C5B4E3]">
+    <section id="diventa-lions" class="py-24 section-blue">
         <div class="container mx-auto px-6 max-w-3xl text-center">
             <h2 class="text-4xl md:text-5xl font-black uppercase mb-6">Diventa Lions</h2>
             <p class="text-lg font-medium text-gray-800 mb-8">Unisciti al Lions Club Mirandola: servizio alla comunità, amicizia e progetti concreti sul territorio.</p>
@@ -734,7 +873,7 @@
     </section>
 
     <!-- CONTATTI -->
-    <section id="contatti" class="py-24 bg-white border-t-4 border-black">
+    <section id="contatti" class="py-24 section-white border-t-4 border-black">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-4xl font-black uppercase text-center mb-10">Contatti</h2>
             <div class="bg-gray-50 rounded-[2rem] p-10 border-[3px] border-black space-y-4 font-medium">
@@ -745,7 +884,7 @@
         </div>
     </section>
 
-    <section id="lions-ai" class="py-16 bg-gray-100">
+    <section id="lions-ai" class="py-16 section-yellow">
         <div class="container mx-auto px-6 text-center max-w-2xl">
             <h2 class="text-2xl font-black uppercase mb-3">LIONS AI ✨</h2>
             <p class="text-gray-600 font-medium">Assistente intelligente del Club — sezione in arrivo.</p>
@@ -760,43 +899,73 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-<script src="clubs-data.js"></script>
 <script>
 /* ========== VIDEO HERO ========== */
 (function () {
-    const playlist = ['MunicipioCompr.mp4', 'DuomoCompr.mp4'];
-    const video = document.getElementById('heroVideo');
+    const playlist = [
+        "https://res.cloudinary.com/deent2btf/video/upload/v1779980683/municipio3_vkicd7.mp4",
+        "https://res.cloudinary.com/deent2btf/video/upload/v1779980681/duomo_l3qipr.mp4"
+    ];
+
+    const hero = document.getElementById('heroVideo');
     const btn = document.getElementById('heroVideoNext');
+    const videos = playlist.filter(Boolean);
     let index = 0;
-    let resolved = [];
+    let currentVideo = null;
+    let isTransitioning = false;
 
-    function resolvePlaylist() {
-        return Promise.all(playlist.map(src => new Promise(resolve => {
-            const probe = document.createElement('video');
-            probe.preload = 'metadata';
-            probe.onloadedmetadata = () => resolve(src);
-            probe.onerror = () => resolve(null);
-            probe.src = src;
-        }))).then(results => {
-            const ok = (i) => results[i];
-            const municipio = ok(0) || ok(1);
-            const duomo = ok(1);
-            resolved = [municipio, duomo].filter(Boolean);
-            if (!resolved.length) resolved = ['municipio3.mp4'];
+    function createVideo(src, className) {
+        const video = document.createElement('video');
+        video.className = className;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+
+        return video;
+    }
+
+    function renderVideo(i) {
+        if (!hero || !videos.length) return;
+        if (isTransitioning) return;
+
+        index = ((i % videos.length) + videos.length) % videos.length;
+        const src = videos[index];
+        const nextVideo = createVideo(src, currentVideo ? 'is-entering' : 'is-active');
+        hero.appendChild(nextVideo);
+        nextVideo.play().catch(() => {});
+
+        if (!currentVideo) {
+            currentVideo = nextVideo;
+            return;
+        }
+
+        isTransitioning = true;
+        if (btn) btn.disabled = true;
+
+        requestAnimationFrame(() => {
+            currentVideo.classList.remove('is-active');
+            currentVideo.classList.add('is-leaving');
+            nextVideo.classList.remove('is-entering');
+            nextVideo.classList.add('is-active');
         });
+
+        nextVideo.addEventListener('transitionend', () => {
+            currentVideo.remove();
+            currentVideo = nextVideo;
+            isTransitioning = false;
+            if (btn) btn.disabled = false;
+        }, { once: true });
     }
 
-    function playAt(i) {
-        if (!resolved.length) return;
-        index = ((i % resolved.length) + resolved.length) % resolved.length;
-        video.src = resolved[index];
-        video.load();
-        video.play().catch(() => {});
-    }
-
-    resolvePlaylist().then(() => playAt(0));
-    video.addEventListener('ended', () => playAt(index + 1));
-    btn.addEventListener('click', () => playAt(index + 1));
+    if (btn) btn.addEventListener('click', () => renderVideo(index + 1));
+    renderVideo(0);
 })();
 
 /* ========== NAV ATTIVA ========== */
@@ -808,17 +977,7 @@
         links.forEach(link => {
             const on = link.getAttribute('href') === '#' + id;
             link.classList.toggle('active', on);
-            const colored = link.dataset.nav === 'diventa-lions' || link.dataset.nav === 'dona';
-            if (colored) {
-                link.classList.toggle('ring-4', on);
-                link.classList.toggle('ring-black', on);
-                return;
-            }
-            if (on) {
-                link.classList.add('bg-black', 'text-white');
-            } else {
-                link.classList.remove('bg-black', 'text-white');
-            }
+            link.classList.remove('bg-black', 'text-white', 'ring-4', 'ring-black');
         });
     }
 
@@ -833,6 +992,8 @@
         if (el) setTimeout(() => el.scrollIntoView(), 100);
     }
 })();
+
+
 
 /* ========== MARQUEE NOTIZIE ========== */
 const ARTICLES = [
@@ -889,14 +1050,49 @@ document.addEventListener('DOMContentLoaded', () => {
     function initTrovaClubMap() {
         if (!document.getElementById('trova-map')) return;
         if (map) return;
-        
-        map = L.map('trova-map').setView([44.9, 11.07], 8);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+
+        const bounds = L.latLngBounds(
+            L.latLng(35.0, 5.0),
+            L.latLng(48.0, 20.0)
+        );
+
+        map = L.map('trova-map', {
+            zoomControl: false,
+            minZoom: 5,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+        }).setView([42.0, 12.5], 6);
+
+        L.control.zoom({ position: 'topright' }).addTo(map);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            noWrap: true,
             maxZoom: 19
         }).addTo(map);
 
-        clusterGroup = L.markerClusterGroup({ chunkedLoading: true });
+        clusterGroup = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            spiderfyOnMaxZoom: true,
+            animate: true,
+            animateAddingMarkers: true,
+            animationDuration: 350,
+            chunkedLoading: true,
+            iconCreateFunction: function (cluster) {
+                const count = cluster.getChildCount();
+                return L.divIcon({
+                    html: `<div style="position:relative;width:36px;height:46px;display:flex;justify-content:center;">
+                            <svg width="36" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#7C3AED" stroke="#ffffff" stroke-width="1.5"/>
+                            </svg>
+                            <span style="position:absolute;top:9px;left:0;width:36px;text-align:center;color:white;font-size:11px;font-weight:800;font-family:'Inter',sans-serif;z-index:5;line-height:1;">${count}</span>
+                           </div>`,
+                    className: 'custom-lavender-cluster',
+                    iconSize: [36, 46],
+                    iconAnchor: [18, 46]
+                });
+            }
+        });
         renderClubs('');
     }
 
@@ -1010,43 +1206,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     function parseClubsText(raw) {
-        return JSON.parse(`[${String(raw || '').trim().replace(/,\s*$/, '')}]`);
+        const text = String(raw || '').trim();
+        if (!text) return [];
+
+        try {
+            const parsed = JSON.parse(text);
+            if (Array.isArray(parsed)) return parsed;
+        } catch (_) {}
+
+        return JSON.parse(`[${text.replace(/,\s*$/, '')}]`);
+    }
+
+    function clubsJsonUrl() {
+        return new URL('clubs.json', document.baseURI || window.location.href).href;
+    }
+
+    let clubsLoadPromise = null;
+
+    function loadClubsFromJson() {
+        if (clubsLoadPromise) return clubsLoadPromise;
+
+        clubsLoadPromise = (async () => {
+            const url = clubsJsonUrl();
+
+            if (window.location.protocol === 'file:') {
+                throw new Error('Apri il sito con Live Server (http://), non come file locale.');
+            }
+
+            const res = await fetch(url, { cache: 'no-store' });
+            if (!res.ok) {
+                throw new Error(`clubs.json non trovato (HTTP ${res.status})`);
+            }
+
+            const raw = await res.text();
+            const parsed = parseClubsText(raw);
+            if (!Array.isArray(parsed) || parsed.length === 0) {
+                throw new Error('clubs.json vuoto o formato non valido');
+            }
+            return parsed;
+        })();
+
+        return clubsLoadPromise;
+    }
+
+    function showTrovaClubLoadError(message) {
+        const mapEl = document.getElementById('trova-map');
+        const listEl = document.getElementById('clubList');
+        const text = `<p style="color:#94a3b8;padding:2rem;text-align:center;font-weight:600;">Impossibile caricare <code>clubs.json</code>.<br><span style="font-size:13px;font-weight:500;">${message}</span></p>`;
+        if (mapEl) mapEl.innerHTML = text;
+        if (listEl) listEl.innerHTML = text;
     }
 
     async function bootTrovaClub() {
         if (!clubsLoaded) {
-            if (Array.isArray(window.CLUBS_DATA) && window.CLUBS_DATA.length) {
-                CLUBS.splice(0, CLUBS.length, ...window.CLUBS_DATA);
-                clubsLoaded = true;
-            }
-        }
-
-        if (!clubsLoaded) {
             try {
-                const res = await fetch('clubs.json');
-                const raw = await res.text();
-                const parsed = parseClubsText(raw);
+                const parsed = await loadClubsFromJson();
                 CLUBS.splice(0, CLUBS.length, ...parsed);
                 clubsLoaded = true;
             } catch (e) {
-                // Fallback per apertura diretta file:// in locale
-                try {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', 'clubs.json', false);
-                    xhr.send(null);
-                    if (xhr.status === 200 || xhr.status === 0) {
-                        const parsed = parseClubsText(xhr.responseText);
-                        CLUBS.splice(0, CLUBS.length, ...parsed);
-                        clubsLoaded = true;
-                    }
-                } catch (_) {}
-                if (!clubsLoaded) {
-                    const mapEl = document.getElementById('trova-map');
-                    if (mapEl) {
-                        mapEl.innerHTML = '<p style="color:#94a3b8;padding:2rem;text-align:center;font-weight:600;">Impossibile caricare <code>clubs.json</code>. Avvia con Live Server e verifica che il file sia valido.</p>';
-                    }
-                    return;
-                }
+                console.error('Trova Club:', e);
+                showTrovaClubLoadError(e && e.message ? e.message : 'Verifica che clubs.json sia nella stessa cartella di index.html.');
+                return;
             }
         }
 
@@ -1064,7 +1284,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entries[0].isIntersecting) bootTrovaClub();
         }, { threshold: 0.05 });
         trovaObs.observe(trovaSection);
-        if (location.hash === '#trova-club') setTimeout(bootTrovaClub, 100);
+
+        if (location.hash === '#trova-club') {
+            setTimeout(bootTrovaClub, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadClubsFromJson().catch(() => {});
+        });
     }
 })();
 </script>
