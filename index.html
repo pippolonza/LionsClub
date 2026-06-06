@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lions Club Mirandola</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        section[id] { scroll-margin-top: 7.5rem; }
+        .card-hover { transition: all .35s ease; }
+        .card-hover:hover { transform: translateY(-8px) scale(1.02); }
+        .gradient-text {
+            background: linear-gradient(90deg, #FFC72C, #FFD666);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .quote-bg {
+            background:
+                radial-gradient(circle at top left, rgba(255,199,44,.18), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(3,78,162,.08), transparent 40%);
+        }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .hero-video video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateX(0);
+            transition: transform .85s cubic-bezier(.22, 1, .36, 1);
+            will-change: transform;
+        }
+        .hero-video video.is-entering {
+            z-index: 2;
+            transform: translateX(100%);
+        }
+        .hero-video video.is-active {
+            z-index: 1;
+            transform: translateX(0);
+        }
+        .hero-video video.is-leaving {
+            z-index: 1;
+            transform: translateX(-100%);
+        }
+        
+        .nav-link { border: none !important; color: #000; position: relative; padding: 0.25rem 0 !important; }
+        .nav-link:not(.active) { background: none !important; }
+        .nav-link.active { color: #000 !important; background: none !important; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #FFC72C; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; background: #034EA2; }
+        .nav-link.active::after { width: 100%; background: #034EA2; }
+        .nav-top { color: #000; text-decoration: none; position: relative; font-size: 0.75rem; }
+        @media (max-width: 767px) {
+            header .h-10 { height: 2rem; }
+            header nav { padding-top: 0.35rem !important; padding-bottom: 0.35rem !important; }
+            header nav .container {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 1rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            header nav .container::-webkit-scrollbar { display: none; }
+            .nav-link {
+                flex: 0 0 auto;
+                font-size: 0.68rem;
+                line-height: 1;
+                white-space: nowrap;
+            }
+            .nav-top { font-size: 0.62rem; }
+            main { padding-top: 66px !important; }
+        }
+
+        .section-white { background: #ffffff !important; color: #030213; }
+        .section-yellow { background: #FFC72C !important; color: #030213; }
+        .section-blue { background: #034EA2 !important; color: #ffffff; }
+        main > section {
+            transition: background-color .45s ease, color .45s ease;
+        }
+        .section-blue h2,
+        .section-blue h3,
+        .section-blue p,
+        .section-blue figcaption { color: inherit; }
+        .section-blue .bg-white,
+        .section-blue .bg-gray-50,
+        .section-blue figure,
+        .section-blue article {
+            color: #030213;
+        }
+        .section-blue .text-\[\#034EA2\] { color: #FFC72C !important; }
+        .section-yellow .text-\[\#FFC72C\] { color: #034EA2 !important; }
+        .section-yellow .gradient-text {
+            background: none;
+            -webkit-text-fill-color: #034EA2;
+            color: #034EA2;
+        }
+
+        /* Jackpot - cifre non tagliate */
+        .jackpot-stat { overflow: visible; }
+        .jackpot-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.06em;
+            min-height: 3.5rem;
+            padding: 0.35rem 0;
+            font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+            line-height: 1;
+            overflow: visible;
+        }
+        .jackpot-digit {
+            position: relative;
+            width: 0.75em;
+            min-width: 0.75em;
+            height: 1em;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .jackpot-digit::before {
+            content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10em;
+            text-align: center;
+            white-space: pre;
+            line-height: 1em;
+            transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+            font-variant-numeric: tabular-nums;
+        }
+        .jackpot-digit.d-0::before { transform: translateY(0); }
+        .jackpot-digit.d-1::before { transform: translateY(-1em); }
+        .jackpot-digit.d-2::before { transform: translateY(-2em); }
+        .jackpot-digit.d-3::before { transform: translateY(-3em); }
+        .jackpot-digit.d-4::before { transform: translateY(-4em); }
+        .jackpot-digit.d-5::before { transform: translateY(-5em); }
+        .jackpot-digit.d-6::before { transform: translateY(-6em); }
+        .jackpot-digit.d-7::before { transform: translateY(-7em); }
+        .jackpot-digit.d-8::before { transform: translateY(-8em); }
+        .jackpot-digit.d-9::before { transform: translateY(-9em); }
+        .jackpot-static {
+            display: inline-block;
+            font-size: 0.75em;
+            margin-left: 0.08em;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .history-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(.5rem, 2vw, 1.5rem);
+            padding-top: 3.25rem;
+        }
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            top: 1.6rem;
+            height: 4px;
+            background: #FFC72C;
+            border-radius: 999px;
+            box-shadow: 0 0 0 2px #034EA2;
+        }
+        .history-item {
+            position: relative;
+            min-width: 0;
+        }
+        .history-dot {
+            position: absolute;
+            left: 50%;
+            top: -2.45rem;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            background: #FFC72C;
+            border: 4px solid white;
+            border-radius: 999px;
+            box-shadow: 0 0 0 4px #034EA2;
+            z-index: 2;
+        }
+        .history-card {
+            height: 100%;
+            border: 3px solid #000;
+            border-radius: 1.5rem;
+            padding: clamp(.8rem, 2vw, 2rem);
+            box-shadow: 0 16px 32px rgba(0,0,0,.14);
+            min-width: 0;
+            overflow: hidden;
+        }
+        .history-year {
+            display: block;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: .75rem;
+        }
+        .history-card h4 {
+            font-size: clamp(.82rem, 2.5vw, 1.5rem);
+            line-height: 1.05;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: .65rem;
+            color: inherit !important;
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+        .history-card p {
+            font-size: clamp(.68rem, 2vw, 1rem);
+            line-height: 1.35;
+            font-weight: 700;
+            color: inherit !important;
+            opacity: .9 !important;
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+        @media (max-width: 640px) {
+            .history-timeline {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding-top: 0;
+                padding-left: 1.35rem;
+            }
+            .history-timeline::before {
+                left: .55rem;
+                right: auto;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                height: auto;
+            }
+            .history-dot {
+                left: -1.35rem;
+                top: 1.25rem;
+                width: 18px;
+                height: 18px;
+                border-width: 3px;
+                box-shadow: 0 0 0 3px #034EA2;
+            }
+            .history-card {
+                border-width: 2px;
+                border-radius: 1rem;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,.12);
+            }
+            .history-year {
+                font-size: 1.7rem;
+                margin-bottom: .5rem;
+            }
+            .history-card h4 {
+                font-size: 1rem;
+                line-height: 1.12;
+            }
+            .history-card p {
+                font-size: .86rem;
+                line-height: 1.35;
+            }
+        }
+        /* ==========================================================================
+           FILTRI E STILE DELLE CARD ORIZZONTALI (ALLARGATE E CON CONTRASTO)
+           ========================================================================== */
+        .filter-btn {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .filter-btn:hover:not(.active) {
+            background-color: #0d0c22;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .filter-btn.active {
+            background-color: #034EA2;
+            color: #ffffff;
+            border-color: #034EA2;
+            box-shadow: 0 6px 20px rgba(3, 78, 162, 0.4);
+        }
+        .notizie-filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        @media (max-width: 640px) {
+            .notizie-filter-controls {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.35rem;
+            }
+            .notizie-filter-controls .filter-btn {
+                min-height: 44px;
+                padding: 0.65rem 0.35rem;
+                font-size: 9px;
+                line-height: 1.05;
+                text-align: center;
+                white-space: normal;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .main-content-area {
+            max-width: 1240px;
+        }
+
+        .news-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (min-width: 768px) {
+            .news-card {
+                flex-direction: row;
+                height: 290px;
+            }
+        }
+
+        .news-card.cat-prima-pagina:hover {
+            transform: translateY(-6px);
+            border-color: #034EA2;
+            box-shadow: 0 20px 35px -10px rgba(3, 78, 162, 0.2);
+        }
+        .news-card.cat-prima-pagina:hover .news-title {
+            color: #034EA2;
+        }
+
+        .news-card.cat-rassegna-stampa:hover {
+            transform: translateY(-6px);
+            border-color: #FFC72C;
+            box-shadow: 0 20px 35px -10px rgba(212, 160, 23, 0.3);
+        }
+        .news-card.cat-rassegna-stampa:hover .news-title {
+            color: #d4a017;
+        }
+
+        .news-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background-color: #cbd5e1;
+        }
+
+        @media (min-width: 768px) {
+            .news-img-wrapper {
+                width: 380px;
+                height: 100%;
+            }
+        }
+
+        .news-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .news-card:hover .news-img-wrapper img {
+            transform: scale(1.06);
+        }
+        /* Animazioni Finestre Modal */
+        #detailOverlay, #imageLightbox {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #detailModal {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #notizie { background-color: #f1f5f9; }
+        #notizie .notizie-filter-bar { top: 90px; }
+        @media (max-width: 767px) { #notizie .notizie-filter-bar { top: 66px; } }
+        #galleria .brutal-shadow {
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+        }
+        #galleria .brutal-shadow:hover {
+            box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18);
+        }
+        #galleria .gallery {
+            column-gap: 0;
+        }
+        @media (min-width: 480px) {
+            #galleria .gallery { column-count: 2; }
+        }
+        @media (min-width: 1260px) {
+            #galleria .gallery { column-count: 3; }
+        }
+        #galleria .gallery-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            break-inside: avoid;
+        }
+        #galleria .gallery-link.hidden {
+            display: none;
+        }
+        #galleria .gallery-image {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #111827;
+        }
+        #galleria .gallery-image::before,
+        #galleria .gallery-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 16px solid rgba(0, 0, 0, 0.12);
+            transition: border-width 0.2s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+        #galleria .gallery-image::after {
+            border-width: 0;
+        }
+        #galleria .gallery-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            min-height: 260px;
+            object-fit: cover;
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+        #galleria .gallery-image:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.72);
+        }
+        #galleria .gallery-image:hover::before {
+            border-width: 16px;
+        }
+        #galleria .gallery-image:hover::after {
+            border-width: 32px;
+        }
+        #galleria .gallery-image figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(80%, 18rem);
+            color: rgba(255, 255, 255, 0);
+            padding: 1rem;
+            text-align: center;
+            line-height: 1.25;
+            font-weight: 700;
+            transition: color 0.2s ease 0.12s;
+            z-index: 3;
+        }
+        #galleria .gallery-image figcaption::before,
+        #galleria .gallery-image figcaption::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.24);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            z-index: -1;
+        }
+        #galleria .gallery-image figcaption::before {
+            right: 100%;
+            bottom: 100%;
+        }
+        #galleria .gallery-image figcaption::after {
+            left: 100%;
+            top: 100%;
+        }
+        #galleria .gallery-image:hover figcaption {
+            color: #fff;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+        #galleria .gallery-image:hover figcaption::before,
+        #galleria .gallery-image:hover figcaption::after {
+            opacity: 1;
+        }
+        #galleria .gallery-image:hover figcaption::before {
+            right: -1.5rem;
+            bottom: -1.5rem;
+        }
+        #galleria .gallery-image:hover figcaption::after {
+            left: -1.5rem;
+            top: -1.5rem;
+        }
+        #galleria .gallery-count,
+        #galleria .gallery-image strong,
+        #galleria .gallery-image small {
+            display: block;
+        }
+        #galleria .gallery-count {
+            margin-bottom: 0.6rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #FFC72C;
+        }
+        #galleria .gallery-image strong {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            text-transform: uppercase;
+        }
+        #galleria .gallery-image small {
+            margin-top: 0.45rem;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            opacity: 0.86;
+        }
+        .pager-btn {
+            min-width: 2.75rem;
+            height: 2.75rem;
+            border: 2px solid #000;
+            border-radius: 999px;
+            background: #fff;
+            color: #030213;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        .pager-btn:hover,
+        .pager-btn.active {
+            background: #034EA2;
+            color: #fff;
+            border-color: #034EA2;
+        }
+        .pager-btn-wide {
+            width: auto;
+            padding: 0 1.25rem;
+        }
+
+        header { z-index: 1100; }
+
+        /* Trova Club (da trova_club1.html) */
+        #trova-club { font-family: 'Inter', system-ui, sans-serif; }
+        #trova-club .app-container {
+            display: flex;
+            min-height: min(85vh, calc(100vh - 7.5rem));
+            height: min(85vh, calc(100vh - 7.5rem));
+            background-color: #0B0F19;
+        }
+        #trova-club .sidebar {
+            width: 430px;
+            max-width: 100%;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            color: #0F172A;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.3);
+        }
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #E9E3FF;
+            border-radius: 8px;
+            color: #7C3AED;
+            transition: all 0.3s ease;
+        }
+        #trova-club .search-wrapper { position: relative; }
+        #trova-club .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 20px;
+            border: 1px solid #CBD5E1;
+            background: #F8FAFC;
+            color: #0F172A;
+            outline: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        #trova-club .search-input:focus {
+            border-color: #FFC82E;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 200, 46, 0.15);
+        }
+        #trova-club .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748B;
+            z-index: 12;
+            pointer-events: none;
+        }
+        #trova-club .search-input:focus + .search-icon { color: #0F172A; }
+        #trova-club .club-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            background: #ffffff;
+        }
+        #trova-club .club-list::-webkit-scrollbar { width: 6px; }
+        #trova-club .club-list::-webkit-scrollbar-track { background: transparent; }
+        #trova-club .club-list::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.18); border-radius: 10px; }
+        .club-quick-link {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #000000;
+        }
+        .club-item:hover .club-quick-link {
+            background: #ffffff;
+            color: #0F172A;
+            border-color: #0F172A;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        }
+        #trova-club .club-item {
+            position: relative;
+            padding: 24px;
+            border-radius: 24px;
+            background: #F8FAFC;
+            border: 1px solid #000000;
+            cursor: pointer;
+            color: #0F172A;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.03);
+        }
+        #trova-club .club-item:hover {
+            transform: translateY(-6px) scale(1.015);
+            background: #ffffff;
+            box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4), 0 4px 15px rgba(214, 198, 249, 0.15);
+            border-color: #cbd5e1;
+        }
+        #trova-club .club-item h3 {
+            font-weight: 800;
+            color: #0B0F19;
+            margin-bottom: 10px;
+            font-size: 18px;
+            letter-spacing: -0.4px;
+            padding-right: 90px;
+        }
+        #trova-club .club-item p {
+            font-size: 13.5px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+        #trova-club .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #E9E3FF;
+            border-radius: 8px;
+            color: #7C3AED;
+            transition: all 0.3s ease;
+        }
+        #trova-club .club-item:hover .icon-box {
+            background: #7C3AED;
+            color: #0F172A;
+            transform: scale(1.1) rotate(-8deg);
+        }
+        #trova-club .club-tag-gold {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #0F172A;
+            background: #FFC82E;
+            padding: 6px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.6px;
+        }
+        #trova-club .club-quick-link {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #000000;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #000000;
+            text-decoration: none;
+        }
+        #trova-club .club-item:hover .club-quick-link {
+            background: #ffffff;
+            color: #0F172A;
+            border-color: #0F172A;
+        }
+        #trova-club #trova-map {
+            flex: 1;
+            width: 100%;
+            min-height: 400px;
+            height: 100%;
+            background-color: #0B0F19;
+            z-index: 0;
+        }
+        #trova-club #trova-map.leaflet-container { font-family: inherit; }
+        #trova-club .popup-card { padding: 6px 4px; font-family: 'Inter', sans-serif; min-width: 190px; }
+        #trova-club .popup-card h4 { color: #0F172A; font-weight: 800; margin: 0 0 6px 0; font-size: 15px; text-transform: uppercase; }
+        #trova-club .popup-card p { font-size: 12px; color: #475569; margin: 0 0 14px 0; }
+        #trova-club .popup-card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #000000;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            background: #FFC82E;
+            padding: 9px 12px;
+            border-radius: 8px;
+            border: 1px solid #FFC82E;
+            box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+            #trova-club .app-container { flex-direction: column; height: auto; min-height: auto; }
+            #trova-club .sidebar { width: 100%; max-height: 45vh; }
+            #trova-club #trova-map { min-height: 50vh; }
+        }
+
+        /* POPUP MAPPA (imported from trova_club1.html) */
+        #map { flex: 1; background-color: #0B0F19; }
+
+        .leaflet-popup-content-wrapper { 
+            border-radius: 24px; 
+            padding: 14px; 
+            box-shadow: 0 30px 60px rgba(11, 15, 25, 0.25);
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
+        .popup-card {
+            padding: 6px 4px;
+            font-family: 'Inter', sans-serif;
+            min-width: 190px;
+        }
+        .popup-card h4 { 
+            color: #0F172A; 
+            font-weight: 800; 
+            margin: 0 0 6px 0; 
+            font-size: 15px; 
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        .popup-card p { 
+            font-size: 12px; 
+            color: #475569; 
+            margin: 0 0 14px 0; 
+            line-height: 1.5;
+            font-weight: 500; 
+        }
+        .popup-card b {
+            color: #0F172A;
+            font-weight: 700;
+        }
+        .popup-card a { 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            color: #000000; 
+            font-weight: 700; 
+            text-decoration: none; 
+            font-size: 11px; 
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: #FFC82E;
+            padding: 9px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid #FFC82E;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .popup-card a:hover {
+            background: #E6B422;
+            border-color: #E6B422;
+        }
+        /* Sovrascrittura stili Leaflet per rendere la finestrella più morbida */
+        .leaflet-popup-content-wrapper {
+            border-radius: 12px !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+            border: 1px solid #E2E8F0 !important;
+            padding: 6px !important;
+        }
+        .leaflet-popup-content {
+            margin: 12px 14px !important;
+            line-height: 1.4 !important;
+        }
+        .leaflet-popup-close-button {
+            padding: 8px 8px 0 0 !important;
+            color: #94A3B8 !important;
+        }
+        .popup-card a:hover { 
+            background: #FFC82E; 
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-white text-[#030213]">
+
+<header class="fixed top-0 left-0 right-0 z-50">
+    <div class="bg-white h-10 flex items-center border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-tight">
+            <span class="text-black inline-flex items-center gap-2">
+                <img src="favicon.png" alt="" class="w-6 h-6 rounded-full" aria-hidden="true">
+                Lions Club Mirandola
+            </span>
+            <div class="flex gap-4 md:gap-6 items-center">
+                <a href="#lions-ai" class="nav-top hover:opacity-70">LIONS AI</a>
+                <a href="https://www.lionsclubs.org/it/join" class="nav-top hover:opacity-70">Diventa un lions</a>
+                <a href="https://www.lionsclubs.org/it/donate" class="nav-top hover:opacity-70">&hearts; DONA</a>
+            </div>
+        </div>
+    </div>
+    <nav class="bg-white border-b border-gray-200 py-3">
+        <div class="container mx-auto px-6 flex justify-center items-center gap-8 flex-wrap">
+            <a href="#home" data-nav="home" class="nav-link active">HOME</a>
+            <a href="#notizie" data-nav="notizie" class="nav-link">NOTIZIE</a>
+            <a href="#chi-siamo" data-nav="chi-siamo" class="nav-link">CHI SIAMO</a>
+            <a href="#galleria" data-nav="galleria" class="nav-link">GALLERIA</a>
+            <a href="#trova-club" data-nav="trova-club" class="nav-link">TROVA CLUB</a>
+            <a href="#contatti" data-nav="contatti" class="nav-link">CONTATTI</a>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-[90px]">
+
+    <!-- HOME -->
+    <section id="home" class="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
+        <div id="heroVideo" class="hero-video"></div>
+        <button type="button" id="heroVideoPrev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Torna al video precedente">&lsaquo;</button>
+        <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Salta al video successivo">&rsaquo;</button>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none"></div>
+        <div class="relative z-10 container mx-auto px-6 pb-16 w-full pointer-events-none">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+                <div class="max-w-3xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">We Serve &middot; Dal 1967</p>
+                    <h1 class="text-white text-5xl md:text-7xl font-black uppercase leading-[0.92] tracking-tighter">
+                        <span class="text-black">Lions Club</span> <span class="text-[#FFC72C]">Mirandola</span>
+                    </h1>
+                </div>
+                <div class="flex items-center gap-6 bg-white/10 backdrop-blur-md rounded-[2rem] border-2 border-white/30 p-6 lg:p-8 pointer-events-auto">
+                    <img src="logo.png" alt="Logo Lions Club" class="w-24 h-24 md:w-32 md:h-32 object-contain" onerror="this.style.display='none'" />
+                    <div class="text-white">
+                        <p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-1">Servizio alla comunità</p>
+                        <p class="font-bold text-lg leading-snug">Mirandola e il mondo,<br/>uniti dal lionismo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTTO PRESIDENTE -->
+    <section id="motto" class="py-24 section-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.25em] mb-4 text-sm">Leadership</p>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight leading-[0.95] mb-2">Presidente</h2>
+                    <p class="text-5xl md:text-6xl font-black uppercase text-[#034EA2] tracking-tight">Enzo Ragazzi</p>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-[2.5rem] p-10 md:p-12 border-[4px] border-black shadow-2xl">
+                        <p class="text-[#FFC72C] font-black uppercase tracking-[0.2em] text-sm mb-6">Motto del Presidente</p>
+                        <blockquote class="text-2xl md:text-3xl font-bold leading-snug mb-10">
+                            &ldquo;Si punta all&rsquo;ideale, partendo dal reale e si raggiunge il massimo possibile&rdquo;
+                        </blockquote>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="inline-block bg-[#034EA2] text-white px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest">Anno Sociale 2025 &ndash; 2026</span>
+                            <span class="inline-block bg-[#FFC72C] text-black px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest border-2 border-black">60&deg; di Fondazione</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTIZIE -->
+    <section id="notizie" class="section-white overflow-hidden bg-[#f1f5f9]">
+<section class="relative h-[56vh] min-h-[420px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('notizie-hero.jpg')">
+                <div class="absolute inset-0 bg-black/65"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-6 text-sm">
+                        Cronaca & Impatto nel Territorio
+                    </p>
+
+                    <h2 class="text-white text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-8">
+                        Notizie & <span class="text-[#FFC72C]">Attività</span>
+                    </h2>
+
+                    <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed max-w-3xl">
+                        Le voci della nostra comunità, le iniziative in corso e i comunicati della rassegna stampa ufficiale del Lions Club Mirandola.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 bg-white sticky top-[90px] notizie-filter-bar z-30 border-b border-gray-300 shadow-md backdrop-blur-md bg-white/90">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="notizie-filter-controls">
+                    <button onclick="filterFeed('all', this)" class="filter-btn active px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Tutte le Notizie
+                    </button>
+                    <button onclick="filterFeed('prima-pagina', this)" class="filter-btn px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Prima Pagina
+                    </button>
+                    <button onclick="filterFeed('rassegna-stampa', this)" class="filter-btn px-7 py-3 bg-white text-black border border-gray-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Rassegna Stampa
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14">
+            <div class="container mx-auto px-6 main-content-area">
+                <div class="flex flex-col gap-8" id="newsTimelineContainer"></div>
+                <div id="newsPagination" class="mt-10 flex flex-wrap justify-center gap-3"></div>
+            </div>
+        </section>
+    </section>
+    <!-- CHI SIAMO -->
+    <section id="chi-siamo" class="section-blue">
+        <div class="relative h-[42vh] min-h-[320px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('panoramica-mirandola.jpg')"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 container mx-auto px-6">
+                <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-3 text-sm">Dal 1967 al servizio della comunità</p>
+                <h2 class="text-white text-4xl md:text-6xl font-black uppercase leading-[0.95] tracking-tighter">Chi <span class="text-[#FFC72C]">Siamo</span></h2>
+                <p class="text-white/90 text-base md:text-lg font-medium max-w-3xl mt-5">Oltre mezzo secolo di servizio, solidarietà e impegno &ndash; <span class="text-[#FFC72C] font-black italic">&ldquo;We Serve&rdquo;</span>.</p>
+            </div>
+        </div>
+
+        <div class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <p class="text-[#FFC72C] font-black uppercase tracking-[0.25em] mb-5">Lions Club Mirandola</p>
+                        <h3 class="text-3xl md:text-4xl font-black uppercase leading-[0.95] tracking-tighter mb-6">Una storia di servizio lunga <span class="gradient-text">60 anni</span></h3>
+                        <div class="space-y-4 text-base leading-relaxed text-gray-700 font-medium">
+                            <p>Il Lions Club Mirandola è stato fondato il <strong>27 aprile 1967</strong> e da oltre mezzo secolo rappresenta un punto di riferimento per il servizio alla comunità locale.</p>
+                            <p>La sede del Club si trova presso <strong>Villa Fondo Tagliata</strong>, in Via Dorando Pietri 23 a Mirandola.</p>
+                            <p>Il Club ha contribuito a diffondere il lionismo sul territorio e sostenuto la nascita di nuovi club locali.</p>
+                        </div>
+                    </div>
+                    <div class="relative pb-16 lg:pb-8">
+                        <img src="lions-foto.jpg" alt="Foto Lions Club Mirandola"
+                             class="w-full h-auto object-cover rounded-[2rem] border-[4px] border-black shadow-2xl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-[#034EA2] text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-black uppercase mb-4">Il Club Oggi</h3>
+                    <div class="w-28 h-1 bg-[#FFC72C] mx-auto"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div class="jackpot-stat bg-white text-[#034EA2] rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="48">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Soci Attivi</p>
+                    </div>
+                    <div class="jackpot-stat bg-[#FFC72C] text-black rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="55">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Anni di Service</p>
+                    </div>
+                    <div class="jackpot-stat bg-white text-[#034EA2] rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="1">
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">M+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Euro Donati</p>
+                    </div>
+                    <div class="jackpot-stat bg-[#FFC72C] text-black rounded-[2.5rem] py-12 px-6 border-[3px] border-black card-hover flex flex-col items-center justify-center min-h-[200px]">
+                        <div class="jackpot-container font-black mb-4" data-value="400">
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <div class="jackpot-digit d-0"></div>
+                            <span class="jackpot-static">+</span>
+                        </div>
+                        <p class="uppercase font-black tracking-widest text-sm text-center">Studenti Coinvolti</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-gray-50 relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-5xl relative">
+                <div class="text-center mb-12">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4">Momenti Significativi</p>
+                    <h3 class="text-3xl md:text-4xl font-black uppercase">La Nostra Storia</h3>
+                </div>
+                <div class="history-timeline">
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-white text-[#034EA2]">
+                            <span class="history-year text-[#FFC72C]">2009</span>
+                            <h4>Congresso Distrettuale</h4>
+                                <p class="text-gray-700 font-medium">Mirandola ospita il 34&deg; Congresso Distrettuale del Distretto 108 Tb.</p>
+                        </div>
+                    </article>
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-[#034EA2] text-white">
+                            <span class="history-year text-[#FFC72C]">2016</span>
+                            <h4 class="text-2xl font-black uppercase mb-3">50&deg; Anniversario</h4>
+                            <p class="font-medium text-white/90">Celebrazione del cinquantesimo anniversario del Club.</p>
+                        </div>
+                    </article>
+                    <article class="history-item">
+                        <span class="history-dot" aria-hidden="true"></span>
+                        <div class="history-card bg-[#FFC72C] text-black">
+                            <span class="history-year">2019</span>
+                            <h4>Melvin Jones Fellow</h4>
+                                <p class="font-bold opacity-80">Due soci ricevono il prestigioso riconoscimento internazionale.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-10">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4">Leadership</p>
+                    <h3 class="text-3xl md:text-4xl font-black uppercase mb-4">Consiglio Direttivo</h3>
+                    <div class="w-36 h-1 bg-[#FFC72C] mx-auto"></div>
+                </div>
+                <div class="bg-gradient-to-br from-[#034EA2] via-[#0B5FC2] to-[#034EA2] text-white rounded-[3rem] p-8 md:p-10 border-[4px] border-[#FFC72C] shadow-2xl mb-10 text-center">
+                    <p class="text-[#FFC72C] uppercase tracking-[0.35em] font-black mb-3 text-sm">Presidente</p>
+                    <h4 class="text-3xl md:text-4xl font-black uppercase mb-4">Enzo Ragazzi</h4>
+                    <span class="inline-block bg-[#FFC72C] text-black px-7 py-2 rounded-full font-black uppercase text-sm tracking-widest">Anno Sociale 2025 &ndash; 2026</span>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Past President</p><h4 class="text-2xl font-black uppercase">Nadia Poletti</h4></div>
+                    <div class="bg-[#034EA2] text-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Vice Presidente</p><h4 class="text-2xl font-black uppercase">Silvio Sacco</h4></div>
+                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">2&deg; Vice Presidente</p><h4 class="text-2xl font-black uppercase">Claudio Prandi</h4></div>
+                    <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Segretario</p><h4 class="text-2xl font-black uppercase">Alberto Barbi</h4></div>
+                    <div class="bg-white rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="text-[#FFC72C] font-black uppercase text-xs tracking-widest mb-3">Tesoriere</p><h4 class="text-2xl font-black uppercase">Lorella Silvestri</h4></div>
+                    <div class="bg-[#FFC72C] text-black rounded-[2rem] p-6 border-[3px] border-black card-hover"><p class="font-black uppercase text-xs tracking-widest mb-3">Officer Comunicazione</p><h4 class="text-2xl font-black uppercase">Ivo Panzani</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="galleria" class="section-white overflow-hidden">
+        <section class="relative h-[40vh] min-h-[350px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('Nuovi video-foto mirandola/dji_fly_20260603_200804_131_1780510681637_photo_optimized.jpg')">
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="max-w-4xl">
+                    <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">Memorie e Servizio</p>
+                    <h2 class="text-white text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter">
+                        Galleria <span class="text-[#FFC72C]">foto</span>
+                    </h2>
+                    <p class="text-white/90 text-lg font-medium mt-4 max-w-xl">
+                        Sfoglia i momenti pi&ugrave; significativi della nostra storia. Clicca su una copertina per esplorare l'intero album.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <article id="album-grid" class="gallery magnific-gallery">
+                </article>
+                <div id="galleryPagination" class="mt-12 flex flex-wrap justify-center gap-3"></div>
+            </div>
+        </section>
+    </section>
+    <!-- TROVA CLUB -->
+    <section id="trova-club" class="section-yellow">
+        <div class="app-container">
+        <aside class="sidebar">
+            <div class="search-area" style="padding: 28px 24px 20px 24px; background: #ffffff; border-bottom: 1px solid #F1F5F9;">
+                <div style="margin-bottom: 16px;">
+                    <h2 style="color: #0F172A; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin: 0; padding: 0; display: flex; align-items: center; gap: 8px;">
+                        Esplora i Club
+                        <span id="clubCounter" style="font-size: 12px; font-weight: 700; background: #000000; color: #ffffff; padding: 2px 9px; border-radius: 20px; font-family: 'Inter', sans-serif;"></span>
+                    </h2>
+                    <p style="color: #3a3e44; font-size: 12px; margin: 4px 0 0 0; font-weight: 500;">Solo alcuni di tutti quelli esistenti in Italia</p>
+                    <p style="color: #64748B; font-size: 12px; margin: 4px 0 0 0; font-weight: 500;">Cerca per nome del club o comune</p>
+                </div>
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Cerca città o nome club...">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+            </div>
+            <div class="club-list" id="clubList"></div>
+        </aside>
+
+        <div id="trova-map"></div>
+    </div>
+    </section>
+
+    
+
+    <!-- CONTATTI -->
+    <section id="contatti" class="py-24 section-white border-t-4 border-black overflow-hidden">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-[0.9fr_1.4fr] gap-10 lg:gap-14 items-start">
+                <div class="lg:sticky lg:top-32">
+                    <p class="text-[#034EA2] text-xs font-black uppercase tracking-[0.32em] mb-4">Parla con noi</p>
+                    <h2 class="text-4xl md:text-6xl font-black uppercase leading-[0.95] mb-6">Contatti</h2>
+                    <p class="text-lg md:text-xl text-gray-600 font-semibold leading-relaxed">
+                        Per informazioni sulle attivita del Lions Club Mirandola, iniziative di servizio e collaborazioni sul territorio.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <article class="bg-white border-[3px] border-black rounded-2xl p-7 md:p-8 shadow-[8px_8px_0_#FFC72C] card-hover">
+                        <div class="flex items-center gap-4 mb-7">
+                            <span class="w-14 h-14 rounded-full bg-[#034EA2] text-[#FFC72C] border-[3px] border-black flex items-center justify-center shrink-0">
+                                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.22em] text-gray-500">Presidente</p>
+                                <h3 class="text-2xl font-black uppercase leading-tight">Enzo Ragazzi</h3>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <a href="tel:+393398812809" class="group flex items-center gap-3 rounded-xl border-2 border-black px-4 py-3 font-black text-sm uppercase hover:bg-[#034EA2] hover:text-white transition-colors">
+                                <svg class="w-5 h-5 text-[#034EA2] group-hover:text-[#FFC72C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.8a2 2 0 0 1-.45 2.11L8.09 9.86a16 16 0 0 0 6.05 6.05l1.23-1.23a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.66A2 2 0 0 1 22 16.92Z"></path>
+                                </svg>
+                                +39 339 881 2809
+                            </a>
+                            <a href="mailto:enraga@tin.it" class="group flex items-center gap-3 rounded-xl border-2 border-black px-4 py-3 font-bold text-sm hover:bg-[#FFC72C] transition-colors break-all">
+                                <svg class="w-5 h-5 text-[#034EA2] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-10 6L2 7"></path>
+                                </svg>
+                                enraga@tin.it
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-[#034EA2] text-white border-[3px] border-black rounded-2xl p-7 md:p-8 shadow-[8px_8px_0_#FFC72C] card-hover">
+                        <div class="flex items-center gap-4 mb-7">
+                            <span class="w-14 h-14 rounded-full bg-[#FFC72C] text-black border-[3px] border-black flex items-center justify-center shrink-0">
+                                <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                    <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-[0.22em] text-[#FFC72C]">Segretario</p>
+                                <h3 class="text-2xl font-black uppercase leading-tight">Alberto Barbi</h3>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <a href="tel:+393487805622" class="group flex items-center gap-3 rounded-xl border-2 border-white px-4 py-3 font-black text-sm uppercase hover:bg-white hover:text-[#034EA2] transition-colors">
+                                <svg class="w-5 h-5 text-[#FFC72C] group-hover:text-[#034EA2]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.8a2 2 0 0 1-.45 2.11L8.09 9.86a16 16 0 0 0 6.05 6.05l1.23-1.23a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.66A2 2 0 0 1 22 16.92Z"></path>
+                                </svg>
+                                +39 348 780 5622
+                            </a>
+                            <a href="mailto:segretario@lionsclubmirandola.it" class="group flex items-center gap-3 rounded-xl border-2 border-white px-4 py-3 font-bold text-sm hover:bg-[#FFC72C] hover:text-black transition-colors break-all">
+                                <svg class="w-5 h-5 text-[#FFC72C] group-hover:text-black shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-10 6L2 7"></path>
+                                </svg>
+                                segretario@lionsclubmirandola.it
+                            </a>
+                        </div>
+                    </article>
+
+                    <div class="md:col-span-2 bg-gray-50 border-[3px] border-black rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+                        <div>
+                            <p class="text-xs font-black uppercase tracking-[0.26em] text-[#034EA2] mb-2">Lions Club Mirandola</p>
+                            <p class="text-2xl md:text-3xl font-black uppercase leading-tight">Siamo disponibili per progetti, service e iniziative locali.</p>
+                        </div>
+                        <a href="mailto:segretario@lionsclubmirandola.it" class="inline-flex items-center justify-center gap-3 bg-black text-white px-6 py-4 rounded-xl font-black uppercase text-sm hover:bg-[#034EA2] transition-colors shrink-0">
+                            <svg class="w-5 h-5 text-[#FFC72C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                            Scrivici
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lions-ai" class="py-16 section-yellow">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+            <h2 class="text-2xl font-black uppercase mb-3">LIONS AI</h2>
+            <p class="text-gray-600 font-medium">Assistente intelligente del Club &mdash; sezione in arrivo.</p>
+        </div>
+    </section>
+
+</main>
+
+<div id="detailOverlay" class="fixed inset-0 bg-black/80 z-[1200] flex justify-end opacity-0 pointer-events-none backdrop-blur-md" onclick="closeNews()">
+        <div id="detailModal" class="w-full max-w-7xl bg-[#f8fafc] h-full overflow-y-auto p-6 md:p-10 shadow-2xl translate-x-full flex flex-col" onclick="event.stopPropagation()">
+            <div>
+                <div class="flex justify-between items-center mb-8">
+                    <span id="modalTag" class="text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider"></span>
+                    <button onclick="closeNews()" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 text-slate-700 hover:bg-red-600 hover:text-white transition-all text-2xl shadow-sm font-light">
+                        &times;
+                    </button>
+                </div>
+                <p id="modalDate" class="text-sm text-slate-400 font-bold mb-2"></p>
+                <h2 id="modalTitle" class="text-3xl md:text-5xl font-black text-[#0d0c22] uppercase tracking-tight mb-8 leading-tight max-w-5xl"></h2>
+
+                <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] gap-8 lg:gap-12 items-start">
+                    <div id="modalContent" class="text-slate-700 font-medium text-lg md:text-xl leading-relaxed space-y-5 order-2 lg:order-1"></div>
+                    <aside class="order-1 lg:order-2 lg:sticky lg:top-8">
+                        <div class="w-full aspect-[4/5] max-h-[78vh] rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-200">
+                            <img id="modalImg" src="" class="w-full h-full object-cover cursor-zoom-in hover:scale-[1.03] transition-transform duration-300 ease-in-out" alt="Immagine Notizia" onclick="openLightbox(this.src)">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-slate-200 flex justify-end">
+                <button onclick="closeNews()" class="px-8 py-3.5 bg-[#0d0c22] text-white text-xs font-bold uppercase rounded-full tracking-widest hover:bg-opacity-90 transition-all shadow-md">Torna all'elenco notizie</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageLightbox" class="fixed inset-0 bg-black/95 z-[1300] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-zoom-out" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" class="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl" alt="Immagine ingrandita">
+    </div>
+
+    
+<div id="galleryLightbox" class="fixed inset-0 bg-black/95 z-[1250] hidden flex items-center justify-center p-1 md:p-2 select-none">
+    
+    <div class="absolute top-5 left-5 z-50 flex items-center gap-2 rounded-full bg-black/40 border border-white/20 p-2 backdrop-blur-sm">
+        <button type="button" onclick="galleryZoomOut()" class="w-10 h-10 rounded-full bg-white/10 text-white text-2xl font-bold leading-none hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Riduci zoom">−</button>
+        <button type="button" onclick="galleryResetZoom()" class="h-10 px-4 rounded-full bg-white/10 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Reimposta zoom">Reset</button>
+        <button type="button" onclick="galleryZoomIn()" class="w-10 h-10 rounded-full bg-white/10 text-white text-2xl font-bold leading-none hover:bg-[#FFC72C] hover:text-black transition-colors" aria-label="Aumenta zoom">+</button>
+    </div>
+
+    <button onclick="galleryCloseLightbox()" class="absolute top-6 right-6 text-white hover:text-[#FFC72C] transition-colors z-50">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+
+    <button onclick="galleryPrevImage()" class="absolute left-4 md:left-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+
+    <div class="w-[99vw] max-w-none max-h-[98vh] flex flex-col items-center justify-center overflow-hidden">
+        <img id="galleryLightboxImg" src="" alt="" class="max-w-[98vw] max-h-[94vh] rounded-md object-contain shadow-2xl transition-transform duration-200 ease-out origin-center">
+        <p id="galleryLightboxCounter" class="text-gray-300 font-bold text-xs uppercase tracking-widest mt-2"></p>
+    </div>
+
+    <button onclick="galleryNextImage()" class="absolute right-4 md:right-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+</div>
+
+
+<footer class="bg-black text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.15fr_1fr_0.85fr] text-center md:text-left">
+        <div>
+            <p class="text-[#FFC72C] text-xs font-black uppercase tracking-[0.28em] mb-4">Lions Club Mirandola</p>
+            <p class="text-2xl font-black uppercase leading-tight mb-4">We Serve &middot; Dal 1967</p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Sito sviluppato da Tabanelli, Tartari, Virgili, Cariani, Nguetsop, Miolato, Viterbo,
+                seguiti dal Prof. Comparato.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-xs font-black uppercase tracking-[0.28em] text-[#FFC72C] mb-4">Link utili</h2>
+            <ul class="space-y-3 text-sm font-bold">
+                <li><a href="https://www.lionsclubs.org/it" target="_blank" rel="noopener" class="text-gray-200 hover:text-[#FFC72C] transition-colors">Lions Internazionale</a></li>
+                <li><a href="https://www.lions108.info/lionsnotizie.htm" target="_blank" rel="noopener" class="text-gray-200 hover:text-[#FFC72C] transition-colors">Lions Notizie</a></li>
+                <li><a href="https://www.comune.mirandola.mo.it/lindicatore-mirandolese" target="_blank" rel="noopener" class="text-gray-200 hover:text-[#FFC72C] transition-colors">L'Indicatore Mirandolese</a></li>
+                <li><a href="https://albarnardon.it/" target="_blank" rel="noopener" class="text-gray-200 hover:text-[#FFC72C] transition-colors">Al Barnardon</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-xs font-black uppercase tracking-[0.28em] text-[#FFC72C] mb-4">Social</h2>
+            <div class="flex justify-center md:justify-start gap-3">
+                <a href="https://www.facebook.com/LionsClubMirandola" target="_blank" rel="noopener" aria-label="Lions Club Mirandola Facebook" class="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#FFC72C] transition-colors">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.77l-.44 2.91h-2.33V22C18.34 21.24 22 17.08 22 12.06Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/lions_mirandola/" target="_blank" rel="noopener" aria-label="Lions Club Mirandola Instagram" class="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#FFC72C] transition-colors">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-5 text-[10px] font-bold uppercase tracking-widest text-gray-400">&copy; 2026 Lions Mirandola</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="clubs-data.js"></script>
+<script src="site-content.js"></script>
+<script>
+/* ========== VIDEO HERO ========== */
+(function () {
+    const playlist = [
+        "Nuovi video-foto mirandola/Municp.mp4",
+        "https://res.cloudinary.com/deent2btf/video/upload/v1779980683/municipio3_vkicd7.mp4",
+        "Nuovi video-foto mirandola/Munic-360(1).mp4",
+        "https://res.cloudinary.com/deent2btf/video/upload/v1779980681/duomo_l3qipr.mp4"
+    ];
+
+    const hero = document.getElementById('heroVideo');
+    const prevBtn = document.getElementById('heroVideoPrev');
+    const nextBtn = document.getElementById('heroVideoNext');
+    const videos = playlist.filter(Boolean);
+    let index = 0;
+    let currentVideo = null;
+    let isTransitioning = false;
+    let transitionTimer = null;
+
+    function createVideo(src, className) {
+        const video = document.createElement('video');
+        video.className = className;
+        video.autoplay = true;
+        video.muted = true;
+        video.defaultMuted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = 'auto';
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = 'video/mp4';
+        video.appendChild(source);
+
+        return video;
+    }
+
+    function startVideo(video) {
+        if (!video) return;
+        video.muted = true;
+        video.load();
+
+        const play = () => video.play().catch(() => {});
+        play();
+        video.addEventListener('canplay', play, { once: true });
+        video.addEventListener('loadeddata', play, { once: true });
+    }
+
+    function renderVideo(i) {
+        if (!hero || !videos.length) return;
+        if (isTransitioning) return;
+
+        index = ((i % videos.length) + videos.length) % videos.length;
+        const src = videos[index];
+        const nextVideo = createVideo(src, currentVideo ? 'is-entering' : 'is-active');
+        hero.appendChild(nextVideo);
+        startVideo(nextVideo);
+
+        if (!currentVideo) {
+            currentVideo = nextVideo;
+            return;
+        }
+
+        isTransitioning = true;
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
+
+        function finishTransition() {
+            if (!isTransitioning) return;
+            if (transitionTimer) window.clearTimeout(transitionTimer);
+            if (currentVideo && currentVideo !== nextVideo) currentVideo.remove();
+            currentVideo = nextVideo;
+            isTransitioning = false;
+            if (prevBtn) prevBtn.disabled = false;
+            if (nextBtn) nextBtn.disabled = false;
+        }
+
+        requestAnimationFrame(() => {
+            currentVideo.classList.remove('is-active');
+            currentVideo.classList.add('is-leaving');
+            nextVideo.classList.remove('is-entering');
+            nextVideo.classList.add('is-active');
+        });
+
+        nextVideo.addEventListener('transitionend', finishTransition, { once: true });
+        transitionTimer = window.setTimeout(finishTransition, 1000);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => renderVideo(index - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => renderVideo(index + 1));
+    renderVideo(0);
+})();
+
+/* ========== NAV ATTIVA ========== */
+(function () {
+    const links = document.querySelectorAll('[data-nav]');
+    const sections = [...links].map(l => document.getElementById(l.getAttribute('href').slice(1))).filter(Boolean);
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    function setActive(id) {
+        links.forEach(link => {
+            const on = link.getAttribute('href') === '#' + id;
+            link.classList.toggle('active', on);
+            link.classList.remove('bg-black', 'text-white', 'ring-4', 'ring-black');
+        });
+    }
+
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            const hash = link.getAttribute('href');
+            if (!hash || hash === '#') return;
+
+            const target = document.getElementById(hash.slice(1));
+            if (!target) return;
+
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', hash);
+            setActive(target.id);
+        });
+    });
+
+    const obs = new IntersectionObserver(entries => {
+        const visible = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.2, 0.5] });
+
+    sections.forEach(s => obs.observe(s));
+})();
+
+
+
+/* ========== NOTIZIE ========== */
+                const newsPageSize = 6;
+        let activeNewsCategory = 'all';
+        let activeNewsPage = 1;
+
+        function filteredNews() {
+            return newsDatabase
+                .map((news, index) => ({ news, index }))
+                .filter(({ news }) => activeNewsCategory === 'all' || String(news.category || '').trim() === activeNewsCategory);
+        }
+
+        function scrollToPagedContent(elementId) {
+            const target = document.getElementById(elementId);
+            if (!target) return;
+            const fixedOffset = window.innerWidth < 768 ? 86 : 118;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - fixedOffset;
+            window.scrollTo({ top: Math.max(0, top), left: 0, behavior: 'smooth' });
+        }
+
+        function renderNewsPagination(totalPages) {
+            const pagination = document.getElementById('newsPagination');
+            if (!pagination) return;
+            pagination.innerHTML = '';
+            if (totalPages <= 1) return;
+
+            for (let page = 1; page <= totalPages; page++) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `pager-btn ${page === activeNewsPage ? 'active' : ''}`;
+                button.textContent = page;
+                button.setAttribute('aria-label', `Vai alla pagina notizie ${page}`);
+                button.addEventListener('click', () => {
+                    button.blur();
+                    activeNewsPage = page;
+                    generateNewsTimeline();
+                    requestAnimationFrame(() => scrollToPagedContent('newsTimelineContainer'));
+                });
+                pagination.appendChild(button);
+            }
+        }
+
+        // Funzione per generare dinamicamente le card HTML all'avvio
+        function generateNewsTimeline() {
+            const container = document.getElementById('newsTimelineContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            const items = filteredNews();
+            const totalPages = Math.max(1, Math.ceil(items.length / newsPageSize));
+            activeNewsPage = Math.min(activeNewsPage, totalPages);
+            const start = (activeNewsPage - 1) * newsPageSize;
+
+            items.slice(start, start + newsPageSize).forEach(({ news, index }) => {
+                const cardHtml = `
+                    <div class="news-card ${news.cardClass}" data-category="${news.category}" onclick="openNews(${index})">
+                        <div class="news-img-wrapper">
+                            <img src="${news.img}" alt="${news.title}">
+                        </div>
+                        <div class="flex flex-col justify-between p-6 md:p-8 flex-1">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="text-xs font-bold px-3 py-1 ${news.tagClass} rounded-full uppercase tracking-wider">${news.tag}</span>
+                                    <span class="text-xs text-gray-400 font-semibold">${news.date}</span>
+                                </div>
+                                <h3 class="news-title text-xl md:text-2xl font-extrabold uppercase tracking-tight text-[#0d0c22] mb-3 leading-snug transition-colors duration-300">
+                                    ${news.title}
+                                </h3>
+                                <p class="text-gray-500 font-medium text-sm md:text-[15px] leading-relaxed line-clamp-2">
+                                    ${news.excerpt}
+                                </p>
+                            </div>
+                            <div class="mt-4 flex items-center text-xs font-bold ${String(news.category || '').trim() === 'prima-pagina' ? 'text-[#034EA2]' : 'text-[#b58600]'} tracking-wider uppercase gap-1">
+                                Leggi l'articolo &rarr;
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+
+            renderNewsPagination(totalPages);
+
+        }
+
+        generateNewsTimeline();
+
+        // Filtri
+        function filterFeed(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            activeNewsCategory = category;
+            activeNewsPage = 1;
+            generateNewsTimeline();
+        }
+        // Apertura Notizia
+        function openNews(index) {
+            const data = newsDatabase[index];
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalTag').className = `text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider ${data.tagClass}`;
+            document.getElementById('modalDate').innerText = data.date;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('modalContent').innerHTML = data.content;
+
+            const overlay = document.getElementById('detailOverlay');
+            const modal = document.getElementById('detailModal');
+            modal.scrollTop = 0;
+            
+            overlay.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.remove('translate-x-full');
+            requestAnimationFrame(() => { modal.scrollTop = 0; });
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Chiusura Notizia
+        function closeNews() {
+            const overlay = document.getElementById('detailOverlay');
+            const modal = document.getElementById('detailModal');
+            
+            overlay.classList.add('pointer-events-none', 'opacity-0');
+            modal.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+
+        // --- SISTEMA LIGHTBOX ---
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            const lb = document.getElementById('imageLightbox');
+            lb.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('imageLightbox');
+            lb.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+/* ========== JACKPOT ========== */
+document.addEventListener('DOMContentLoaded', () => {
+    const animateJackpot = (entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const container = entry.target;
+            const value = (container.getAttribute('data-value') || '').split('');
+            const digits = container.querySelectorAll('.jackpot-digit');
+            digits.forEach((digit, i) => {
+                const vi = value.length - digits.length + i;
+                const d = vi >= 0 ? value[vi] : '0';
+                setTimeout(() => { digit.className = 'jackpot-digit d-' + d; }, i * 150);
+            });
+            observer.unobserve(container);
+        });
+    };
+    const obs = new IntersectionObserver(animateJackpot, { threshold: 0.35 });
+    document.querySelectorAll('.jackpot-container').forEach(c => obs.observe(c));
+});
+
+
+/* ========== GALLERIA ========== */
+    let galleryCurrentAlbum = [];
+    let galleryCurrentImageIndex = 0;
+    let galleryZoomLevel = 1;
+
+    function applyGalleryZoom() {
+        const img = document.getElementById('galleryLightboxImg');
+        if (!img) return;
+        img.style.transform = `scale(${galleryZoomLevel})`;
+        img.style.cursor = galleryZoomLevel > 1 ? 'zoom-out' : 'default';
+    }
+
+    function galleryZoomIn() {
+        galleryZoomLevel = Math.min(3, Number((galleryZoomLevel + 0.25).toFixed(2)));
+        applyGalleryZoom();
+    }
+
+    function galleryZoomOut() {
+        galleryZoomLevel = Math.max(1, Number((galleryZoomLevel - 0.25).toFixed(2)));
+        applyGalleryZoom();
+    }
+
+    function galleryResetZoom() {
+        galleryZoomLevel = 1;
+        applyGalleryZoom();
+    }
+
+    function galleryOpenAlbum(albumKey) {
+        if (!galleryAlbums[albumKey]) return;
+        galleryCurrentAlbum = galleryAlbums[albumKey];
+        galleryCurrentImageIndex = 0;
+        galleryResetZoom();
+        
+        updateGalleryLightboxContent();
+        document.getElementById('galleryLightbox').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function galleryCloseLightbox() {
+        document.getElementById('galleryLightbox').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function updateGalleryLightboxContent() {
+        const imgSrc = galleryCurrentAlbum[galleryCurrentImageIndex];
+        document.getElementById('galleryLightboxImg').src = imgSrc;
+        document.getElementById('galleryLightboxCounter').innerText = `Foto ${galleryCurrentImageIndex + 1} di ${galleryCurrentAlbum.length}`;
+        galleryResetZoom();
+    }
+
+    function galleryNextImage() {
+        if (galleryCurrentAlbum.length <= 1) return;
+        galleryCurrentImageIndex = (galleryCurrentImageIndex + 1) % galleryCurrentAlbum.length;
+        updateGalleryLightboxContent();
+    }
+
+    function galleryPrevImage() {
+        if (galleryCurrentAlbum.length <= 1) return;
+        galleryCurrentImageIndex = (galleryCurrentImageIndex - 1 + galleryCurrentAlbum.length) % galleryCurrentAlbum.length;
+        updateGalleryLightboxContent();
+    }
+
+    function escapeGalleryText(value) {
+        return String(value || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderGalleryAlbumGrid() {
+        const grid = document.getElementById('album-grid');
+        if (!grid) return;
+
+        grid.innerHTML = galleryAlbumCards.map(album => {
+            const photos = galleryAlbums[album.key] || [];
+            const count = photos.length || 1;
+            const title = escapeGalleryText(album.title);
+            const year = escapeGalleryText(album.year);
+            const alt = escapeGalleryText(album.alt || album.title);
+            const cover = album.cover || photos[0] || '';
+
+            return `
+                <a class="gallery-link" href="${cover}" onclick="event.preventDefault(); galleryOpenAlbum('${album.key}')" aria-label="Apri album ${title}">
+                    <figure class="gallery-image">
+                        <img src="${cover}" alt="${alt}" loading="lazy">
+                        <figcaption>
+                            <span class="gallery-count">${count} Foto</span>
+                            <strong>${title}</strong>
+                            <small>Anno ${year}</small>
+                        </figcaption>
+                    </figure>
+                </a>
+            `;
+        }).join('');
+    }
+
+    const galleryPageSize = 9;
+    let activeGalleryPage = 1;
+
+    function renderGalleryPage() {
+        const grid = document.getElementById('album-grid');
+        const pagination = document.getElementById('galleryPagination');
+        if (!grid || !pagination) return;
+
+        const cards = Array.from(grid.children);
+        const totalPages = Math.max(1, Math.ceil(cards.length / galleryPageSize));
+        activeGalleryPage = Math.min(activeGalleryPage, totalPages);
+        const start = (activeGalleryPage - 1) * galleryPageSize;
+
+        cards.forEach((card, index) => {
+            const visible = index >= start && index < start + galleryPageSize;
+            card.classList.toggle('hidden', !visible);
+        });
+
+        pagination.innerHTML = '';
+        if (totalPages <= 1) return;
+
+        for (let page = 1; page <= totalPages; page++) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = `pager-btn ${page === activeGalleryPage ? 'active' : ''}`;
+            button.textContent = page;
+            button.setAttribute('aria-label', `Vai alla pagina galleria ${page}`);
+            button.addEventListener('click', () => {
+                button.blur();
+                activeGalleryPage = page;
+                renderGalleryPage();
+                requestAnimationFrame(() => scrollToPagedContent('album-grid'));
+            });
+            pagination.appendChild(button);
+        }
+    }
+
+    renderGalleryAlbumGrid();
+    renderGalleryPage();
+
+    // Comandi tastiera
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('galleryLightbox');
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'Escape') galleryCloseLightbox();
+            if (e.key === 'ArrowRight') galleryNextImage();
+            if (e.key === 'ArrowLeft') galleryPrevImage();
+            if (e.key === '+' || e.key === '=') galleryZoomIn();
+            if (e.key === '-' || e.key === '_') galleryZoomOut();
+            if (e.key === '0') galleryResetZoom();
+        }
+    });
+
+/* ========== TROVA CLUB ========== */
+(function () {
+    const CLUBS = [];
+
+    let map, clusterGroup, allMarkers = [];
+    let clubsLoaded = false;
+    let searchBound = false;
+
+    function initTrovaClubMap() {
+        if (!document.getElementById('trova-map')) return;
+        if (map) return;
+
+        const bounds = L.latLngBounds(
+            L.latLng(35.0, 5.0),
+            L.latLng(48.0, 20.0)
+        );
+
+        map = L.map('trova-map', {
+            zoomControl: false,
+            minZoom: 5,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+        }).setView([42.0, 12.5], 6);
+
+        L.control.zoom({ position: 'topright' }).addTo(map);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            noWrap: true,
+            maxZoom: 19
+        }).addTo(map);
+
+        clusterGroup = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            spiderfyOnMaxZoom: true,
+            animate: true,
+            animateAddingMarkers: true,
+            animationDuration: 350,
+            chunkedLoading: true,
+            iconCreateFunction: function (cluster) {
+                const count = cluster.getChildCount();
+                return L.divIcon({
+                    html: `<div style="position:relative;width:36px;height:46px;display:flex;justify-content:center;">
+                            <svg width="36" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#7C3AED" stroke="#ffffff" stroke-width="1.5"/>
+                            </svg>
+                            <span style="position:absolute;top:9px;left:0;width:36px;text-align:center;color:white;font-size:11px;font-weight:800;font-family:'Inter',sans-serif;z-index:5;line-height:1;">${count}</span>
+                           </div>`,
+                    className: 'custom-lavender-cluster',
+                    iconSize: [36, 46],
+                    iconAnchor: [18, 46]
+                });
+            }
+        });
+        renderClubs('');
+    }
+
+    function renderClubs(filter = '') {
+        if (!map) return;
+
+        const query = String(filter || '').trim().toLowerCase();
+        clusterGroup.clearLayers();
+        allMarkers = [];
+
+        const filtered = CLUBS.filter(club => {
+            const name = String(club.name || '').toLowerCase();
+            const city = String(club.city || '').toLowerCase();
+            return name.includes(query) || city.includes(query);
+        });
+
+        const clubListEl = document.getElementById('clubList');
+        if (!clubListEl) return;
+        clubListEl.innerHTML = '';
+
+        const buildSiteUrl = (site) => {
+            if (!site) return '';
+            const trimmed = String(site).trim();
+            if (!trimmed) return '';
+            const asUrl = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+            try {
+                const u = new URL(asUrl);
+                // reject hosts without a dot or containing spaces
+                const host = String(u.hostname || '').toLowerCase();
+                if (host.indexOf(' ') !== -1) return '';
+                if (host.indexOf('.') === -1) return '';
+                // Nasconde solo le schede interne generiche di lions.it, lascia visibili gli altri siti validi.
+                if (host.includes('lions.it') && u.pathname.includes('/club/')) return '';
+                return u.href;
+            } catch (e) {
+                return '';
+            }
+        };
+
+        const lavenderIcon = L.divIcon({
+            html: `<svg width="32" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#7C3AED" stroke="#ffffff" stroke-width="1.5"/>
+                    <circle cx="12" cy="9" r="3" fill="#ffffff"/>
+                   </svg>`,
+            className: 'custom-lavender-pin',
+            iconSize: [32, 42],
+            iconAnchor: [16, 42],
+            popupAnchor: [0, -40]
+        });
+
+        const goldIcon = L.divIcon({
+            html: `<div style="position:relative;width:36px;height:46px;">
+                    <svg viewBox="0 0 24 24" width="36" height="46" style="position:absolute;top:0;left:0;">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" fill="#FFC82E" stroke="#ffffff" stroke-width="1.5"/>
+                    </svg>
+                   </div>`,
+            className: 'custom-gold-marker',
+            iconSize: [36, 46],
+            iconAnchor: [18, 46],
+            popupAnchor: [0, -40]
+        });
+
+        filtered.forEach(club => {
+            const isMirandola = String(club.name || '').toUpperCase().includes('MIRANDOLA');
+            const marker = L.marker([club.lat, club.lng], { title: club.name || '', icon: isMirandola ? goldIcon : lavenderIcon });
+            const siteUrl = buildSiteUrl(club.site);
+            const hasLink = !!siteUrl;
+            marker.bindPopup(`
+                <div class="popup-card">
+                    <h4>${club.name}</h4>
+                    <p><b>${club.city || ''}</b>${club.country ? `, ${club.country}` : ''}</p>
+                    ${hasLink ? `<a href="${siteUrl}" target="_blank" rel="noopener">Esplora Club &rarr;</a>` : ''}
+                </div>
+            `, { minWidth: 160 });
+
+            clusterGroup.addLayer(marker);
+            allMarkers.push(marker);
+
+            const item = document.createElement('div');
+            item.className = 'club-item';
+            const showQuickLink = !!siteUrl;
+            item.innerHTML = `
+                ${showQuickLink ? `<a href="${siteUrl}" target="_blank" rel="noopener" class="club-quick-link" onclick="event.stopPropagation();">Sito Web &nearr;</a>` : ''}
+                <h3>${club.name}</h3>
+                <p>
+                    <span class="icon-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </span>
+                    ${club.city || ''}${club.country ? `, ${club.country}` : ''}
+                </p>
+                <div><span class="club-tag-gold">Lions Club</span></div>
+            `;
+            item.addEventListener('click', () => {
+                const latLng = marker.getLatLng();
+                if (latLng) {
+                    map.flyTo(latLng, map.getZoom() < 12 ? 12 : map.getZoom(), {
+                        animate: true,
+                        duration: 0.8
+                    });
+                    window.setTimeout(() => {
+                        if (clusterGroup.zoomToShowLayer) {
+                            clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+                        } else {
+                            marker.openPopup();
+                        }
+                    }, 400);
+                }
+            });
+            clubListEl.appendChild(item);
+        });
+
+        const counter = document.getElementById('clubCounter');
+        if (counter) counter.textContent = `${filtered.length} CLUB`;
+
+        if (allMarkers.length > 0) {
+            clusterGroup.addTo(map);
+            if (!query) map.setView([42.0, 12.5], 6);
+        } else {
+            map.setView([42.0, 12.5], 6);
+        }
+
+        if (filtered.length === 0) {
+            clubListEl.innerHTML = '<div style="padding:40px 20px;color:#94a3b8;font-size:14px;text-align:center;font-weight:600;">Nessun club corrisponde alla ricerca.</div>';
+        }
+    }
+
+    
+    function parseClubsText(raw) {
+        const text = String(raw || '').trim();
+        if (!text) return [];
+
+        try {
+            const parsed = JSON.parse(text);
+            if (Array.isArray(parsed)) return parsed;
+        } catch (_) {}
+
+        return JSON.parse(`[${text.replace(/,\s*$/, '')}]`);
+    }
+
+    function clubsJsonUrl() {
+        return new URL('clubs.json', document.baseURI || window.location.href).href;
+    }
+
+    let clubsLoadPromise = null;
+
+    function loadClubsFromJson() {
+        if (clubsLoadPromise) return clubsLoadPromise;
+
+        clubsLoadPromise = (async () => {
+            const url = clubsJsonUrl();
+
+            const res = await fetch(url, { cache: 'no-store' });
+            if (!res.ok) {
+                throw new Error(`clubs.json non trovato (HTTP ${res.status})`);
+            }
+
+            const raw = await res.text();
+            const parsed = parseClubsText(raw);
+            if (!Array.isArray(parsed) || parsed.length === 0) {
+                throw new Error('clubs.json vuoto o formato non valido');
+            }
+            return parsed;
+        })();
+
+        return clubsLoadPromise;
+    }
+
+    function showTrovaClubLoadError(message) {
+        const mapEl = document.getElementById('trova-map');
+        const listEl = document.getElementById('clubList');
+        const text = `<p style="color:#94a3b8;padding:2rem;text-align:center;font-weight:600;">Impossibile caricare <code>clubs.json</code>.<br><span style="font-size:13px;font-weight:500;">${message}</span></p>`;
+        if (mapEl) mapEl.innerHTML = text;
+        if (listEl) listEl.innerHTML = text;
+    }
+
+    async function bootTrovaClub() {
+        if (!clubsLoaded) {
+            try {
+                const parsed = Array.isArray(window.CLUBS_DATA) && window.CLUBS_DATA.length
+                    ? window.CLUBS_DATA
+                    : await loadClubsFromJson();
+                CLUBS.splice(0, CLUBS.length, ...parsed);
+                clubsLoaded = true;
+            } catch (e) {
+                console.error('Trova Club:', e);
+                showTrovaClubLoadError(e && e.message ? e.message : 'Verifica che clubs.json sia nella stessa cartella di index.html.');
+                return;
+            }
+        }
+
+        initTrovaClubMap();
+        if (!searchBound) {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.addEventListener('input', (e) => renderClubs(e.target.value));
+            searchBound = true;
+        }
+    }
+
+    const trovaSection = document.getElementById('trova-club');
+    if (trovaSection) {
+        const trovaObs = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) bootTrovaClub();
+        }, { threshold: 0.05 });
+        trovaObs.observe(trovaSection);
+
+        if (location.hash === '#trova-club') {
+            setTimeout(bootTrovaClub, 100);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadClubsFromJson().catch(() => {});
+        });
+    }
+})();
+</script>
+<script src="widget.js?v=accessibilita-20260603-3"></script>
+</body>
+</html>
+
+

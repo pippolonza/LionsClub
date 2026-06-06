@@ -1,0 +1,691 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archivio Fotografico - Lions Club Mirandola</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght=400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .card-hover {
+            transition: all .35s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.01);
+        }
+
+        /* Ombre nette in stile "Chi Siamo" */
+        .brutal-shadow {
+            box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-[#030213]">
+
+<header class="fixed top-0 left-0 right-0 z-50">
+    <div class="bg-[#FFC72C] h-10 flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center text-[11px] font-bold uppercase tracking-tight text-black">
+            <span class="inline-flex items-center gap-2">
+                <img src="favicon.png" alt="" class="w-6 h-6 rounded-full" aria-hidden="true">
+                Lions Club Mirandola
+            </span>
+            <div class="flex gap-6 items-center">
+                <a href="lions-ai.html" class="hover:opacity-70">LIONS AI ✨</a>
+                <a href="lions-portal.html" class="hover:opacity-70">LIONS PORTAL</a>
+                <a href="contatti.html" class="hover:opacity-70">CONTATTI</a>
+                <a href="lingue.html">IT ▼</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-white border-b border-gray-200 py-4 shadow-sm">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-3">
+                <a href="index.html" class="px-6 py-2 border-2 border-black rounded-full text-[10px] font-bold uppercase hover:bg-gray-50">HOME</a>
+                <a href="chi-siamo.html" class="px-6 py-2 border-2 border-black rounded-full text-[10px] font-bold uppercase hover:bg-gray-50">CHI SIAMO</a>
+                <a href="#" class="px-6 py-2 bg-black text-white rounded-full text-[10px] font-bold uppercase">GALLERIA</a>
+            </div>
+            <div class="flex gap-3">
+                <a href="diventa-lions.html" class="px-6 py-2 bg-[#C5B4E3] rounded-full text-[10px] font-bold uppercase">DIVENTA LIONS</a>
+                <a href="dona.html" class="px-6 py-2 bg-[#FFC72C] rounded-full text-[10px] font-bold uppercase">♥ DONA</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-[90px]">
+
+    <section class="relative h-[40vh] min-h-[350px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('galleria-hero.jpg')">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-6">
+            <div class="max-w-4xl">
+                <p class="text-[#FFC72C] font-black uppercase tracking-[0.3em] mb-4 text-sm">Memorie e Servizio</p>
+                <h1 class="text-white text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tighter">
+                    Photo<span class="text-[#FFC72C]">gallery</span>
+                </h1>
+                <p class="text-white/90 text-lg font-medium mt-4 max-w-xl">
+                    Sfoglia i momenti più significativi della nostra storia. Clicca su una copertina per esplorare l'intero album.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-7xl">
+            
+            <div id="album-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('governatore_2021')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="galleria-hero.jpg" alt="Governatore 2021" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#FFC72C] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            10 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2021</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Governatore 2021</h3>
+                        <p class="text-xs font-medium text-gray-600">La visita del Governatore, la presentation dello staff e le cerimonie istituzionali.</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('apertura_ottobre_2021')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="apertura_ottobre_2021/aperura-mirandola-2021-001.jpg" alt="Apertura 26 Ottobre 2021" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#FFC72C] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            22 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2021</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Apertura 26 Ottobre 2021</h3>
+                        <p class="text-xs font-medium text-gray-600">Immagini e momenti salienti della serata inaugurale dell'annata lionistica 2021.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('acetum_2017')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="acetum_2017/IMG_1381.jpg" alt="Acetum 2017" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#FFC72C] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            10 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2017</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Acetum 2017</h3>
+                        <p class="text-xs font-medium text-gray-600">Immagini e momenti salienti della visita in acetum.</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('congresso_2009')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="congresso_2009/Eventi.jpg" alt="Congresso 2009" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#C5B4E3] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            9 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2009</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Congresso 2009</h3>
+                        <p class="text-xs font-medium text-gray-600">Documentazione storica degli eventi di chiusura anno, mappe e il nuovo presidente.</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('apertura_2013')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="apertura_2013/Foto_Apertura.jpg" alt="Apertura 2013" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            14 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2013</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Apertura 2013</h3>
+                        <p class="text-xs font-medium text-gray-600">Galleria fotografica dedicata alla serata di apertura dei servizi dell'anno 2013.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('pavia_2017')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="pavia_2017/IMG_1701.jpg" alt="Pav7ia 2017" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            13 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2017</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Pavia 2017</h3>
+                        <p class="text-xs font-medium text-gray-600">Galleria fotografica dedicata all'uscita a Pavia nell'anno 2017.</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('festa_auguri_2013')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="festa_auguri_2013/P1010020.jpg" alt="Festa auguri 2013" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            5 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2013</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Festa auguri 2013</h3>
+                        <p class="text-xs font-medium text-gray-600">I tradizionali auguri di Natale fra i soci e le famiglie del Club di Mirandola.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('auguri_2016')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="auguri_2016/cop.jpg" alt="Auguri 2016" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            14 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2016</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Festa auguri 2016</h3>
+                        <p class="text-xs font-medium text-gray-600">I tradizionali auguri di Natale fra i soci e le famiglie del Club di Mirandola.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('cena_governatore_2018')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="cena_governatore_2018/copp.jpg" alt="Cena governatore 2018" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            17 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2016</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Cena Governatore 2018</h3>
+                        <p class="text-xs font-medium text-gray-600">I momenti più belli e significativi della cena con il nostro governatore del 2018.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('lamborghini_2017')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="lamborghini_2017/l.jpg" alt="Evento Lamborghini 2017" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            23 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2017</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Evento Lamborghini 2017</h3>
+                        <p class="text-xs font-medium text-gray-600">I momenti più belli e significativi dell'evento presso Lamborghini nel 2017.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('apertura_2014')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="apertura_2014/copetina.jpg" alt="Apertura 2014" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            33 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2014</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Apertura Anno 2014</h3>
+                        <p class="text-xs font-medium text-gray-600">Serata per festeggiare l'apertura dell'anno 2014.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('chiusura_2019')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="chiusura_2019/co.jpg" alt="Chiusura 2019" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            13 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2019</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Chiusura Anno 2019</h3>
+                        <p class="text-xs font-medium text-gray-600">Serata per festeggiare la chiusura dell'anno 2019.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('martin_elliot')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="martin_elliot/m.jpg" alt="Martin Elliot" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            24 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno ND</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Martin Elliot</h3>
+                        <p class="text-xs font-medium text-gray-600">I momenti più salienti e significativi della serata in compagnia di Martin Elliot.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('mirandola_amatrice')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="mirandola_amatrice/a.jpg" alt="Mirandola Amatrice" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            18 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno ND</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Mirandola Amatrice</h3>
+                        <p class="text-xs font-medium text-gray-600">I momenti più salienti e significativi dell'evento Mirandola Amatrice.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('pagani_2017')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="pagani_2017/i.jpg" alt="Pagani 2017" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            10 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2017</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Pagani 2017</h3>
+                        <p class="text-xs font-medium text-gray-600">I momenti più salienti e significativi dell'evento presso l'azienda Pagani.</p>
+                    </div>
+                </div>
+				
+				<div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('intermeeting_2018')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="intermeeting_2018/c.jpg" alt="Intermeeting 2018" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            10 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2018</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Intermeeting 2018</h3>
+                        <p class="text-xs font-medium text-gray-600">Serata per festeggiare l'evento Intermeeting del 2018.</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-[2.5rem] border-[3px] border-black overflow-hidden brutal-shadow cursor-pointer" onclick="openAlbum('serata_dicembre_2013')">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="serata_dicembre_2013/P1010001.jpg" alt="Serata del 10/12/2013" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-[#6BBFAE] text-black px-4 py-1.5 rounded-full text-[10px] font-black uppercase border-2 border-black">
+                            3 Foto
+                        </div>
+                    </div>
+                    <div class="p-6 border-t-[3px] border-black bg-white">
+                        <div class="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-1">Anno 2013</div>
+                        <h3 class="text-xl font-black uppercase mb-2">Serata del 10/12/2013</h3>
+                        <p class="text-xs font-medium text-gray-600">Istantanee e momenti di convivialità istituzionale durante la serata di Dicembre.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 select-none">
+    
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-[#FFC72C] transition-colors z-50">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+
+    <button onclick="prevImage()" class="absolute left-4 md:left-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+
+    <div class="max-w-5xl max-h-[85vh] flex flex-col items-center">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[75vh] rounded-[1.5rem] border-[3px] border-white object-contain shadow-2xl">
+        <p id="lightbox-counter" class="text-gray-400 font-bold text-sm uppercase tracking-widest mt-4"></p>
+    </div>
+
+    <button onclick="nextImage()" class="absolute right-4 md:right-8 text-white hover:text-[#FFC72C] transition-colors p-2 z-50 bg-black/30 rounded-full border border-white/20">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+</div>
+
+<script>
+    const albums = {
+        governatore_2021: [
+            "galleria-hero.jpg",
+            "governatore_2021/1CD-Governatore-e-suo-staff.jpg",
+            "governatore_2021/2-MJF-Sonia-Menghini.jpg",
+            "governatore_2021/3-MJF-Antonella-Cavicchi.jpg",
+            "governatore_2021/4-Claudio-Trazzi-chevron.jpg",
+            "governatore_2021/5-Emanuele-Golinelli-chevron.jpg",
+            "governatore_2021/6-Luisa-Baraldi-chevron.jpg",
+            "governatore_2021/8-Nunzio-Borelli-chevron.jpg",
+            "governatore_2021/9-Scambio-gagliardetti.jpg",
+            "governatore_2021/9b-Governatore-signora-e-Sonia-Menghini.jpg"
+        ],
+        apertura_ottobre_2021: [
+            "apertura_ottobre_2021/aperura-mirandola-2021-001.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-003.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-005.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-006.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-009.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-011.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-012.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-014.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-016.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-019.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-021.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-022.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-024.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-025.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-028.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-029.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-030.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-032.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-034.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-037.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-040.jpg",
+            "apertura_ottobre_2021/aperura-mirandola-2021-042.jpg"
+        ],
+        congresso_2009: [
+            "congresso_2009/Eventi.jpg",
+            "congresso_2009/chiusura2009_1.jpg",
+            "congresso_2009/chiusura2009_2.jpg",
+            "congresso_2009/eventi_1.jpg",
+            "congresso_2009/eventi_2.jpg",
+            "congresso_2009/eventi_3.jpg",
+            "congresso_2009/eventi_5.jpg",
+            "congresso_2009/mappa_mirandola.jpg",
+            "congresso_2009/nuovo_presidente.jpg"
+        ],
+        apertura_2013: [
+            "apertura_2013/Foto_Apertura.jpg",
+            "apertura_2013/P1010012.jpg",
+            "apertura_2013/P1010013.jpg",
+            "apertura_2013/P1010014.jpg",
+            "apertura_2013/P1010016.jpg",
+            "apertura_2013/P1010019.jpg",
+            "apertura_2013/P1010020.jpg",
+            "apertura_2013/P1010021.jpg",
+            "apertura_2013/PA191669.jpg",
+            "apertura_2013/PA191670.jpg",
+            "apertura_2013/PA191671.jpg",
+            "apertura_2013/PA191672.jpg",
+            "apertura_2013/PA191673.jpg",
+            "apertura_2013/PA191674.jpg"
+        ],
+        festa_auguri_2013: [
+            "festa_auguri_2013/P1010020.jpg",
+            "festa_auguri_2013/P1010022.jpg",
+            "festa_auguri_2013/P1010023.jpg",
+            "festa_auguri_2013/P1010027.jpg",
+            "festa_auguri_2013/P1010028.jpg"
+        ],
+        serata_dicembre_2013: [
+            "serata_dicembre_2013/P1010001.jpg",
+            "serata_dicembre_2013/P1010003.jpg",
+            "serata_dicembre_2013/P1010008.jpg"
+        ],
+		pavia_2017: [
+			"pavia_2017/IMG_1645.jpg",
+			"pavia_2017/IMG_1650.jpg",
+			"pavia_2017/IMG_1671.jpg",
+			"pavia_2017/IMG_1672.jpg",
+			"pavia_2017/IMG_1673.jpg",
+			"pavia_2017/IMG_1675.jpg",
+			"pavia_2017/IMG_1701.jpg",
+			"pavia_2017/IMG_1730.jpg",
+			"pavia_2017/IMG_1748.jpg",
+			"pavia_2017/IMG_1772.jpg",
+			"pavia_2017/IMG_1757.jpg",
+			"pavia_2017/IMG_1758.jpg",
+			"pavia_2017/IMG_1771.jpg"
+		],
+		acetum_2017: [
+			"acetum_2017/IMG_1381.jpg",
+			"acetum_2017/IMG_1384.jpg",
+			"acetum_2017/IMG_1387.jpg",
+			"acetum_2017/IMG_1394.jpg",
+			"acetum_2017/IMG_1411.jpg",
+			"acetum_2017/IMG_1413.jpg",
+			"acetum_2017/IMG_1417.jpg",
+			"acetum_2017/IMG_1459.jpg",
+			"acetum_2017/IMG_1467.jpg",
+			"acetum_2017/IMG_1469.jpg"
+		],
+		apertura_2014: [
+			"apertura_2014/copetina.jpg",
+			"apertura_2014/a(13).jpg",
+			"apertura_2014/a(14).jpg",
+			"apertura_2014/a(15).jpg",
+			"apertura_2014/a(16).jpg",
+			"apertura_2014/a(17).jpg",
+			"apertura_2014/a(18).jpg",
+			"apertura_2014/a(19).jpg",
+			"apertura_2014/a(20).jpg",
+			"apertura_2014/a(21).jpg",
+			"apertura_2014/a(22).jpg",
+			"apertura_2014/a(23).jpg",
+			"apertura_2014/a(24).jpg",
+			"apertura_2014/a(25).jpg",
+			"apertura_2014/a(26).jpg",
+			"apertura_2014/a(27).jpg",
+			"apertura_2014/a(28).jpg",
+			"apertura_2014/a(29).jpg",
+			"apertura_2014/a(30).jpg",
+			"apertura_2014/a(31).jpg",
+			"apertura_2014/a(32).jpg",
+			"apertura_2014/a(33).jpg",
+			"apertura_2014/a(34).jpg",
+			"apertura_2014/a(35).jpg",
+			"apertura_2014/a(36).jpg",
+			"apertura_2014/a(37).jpg",
+			"apertura_2014/a(38).jpg",
+			"apertura_2014/a(39).jpg",
+			"apertura_2014/a(40).jpg",
+			"apertura_2014/a(41).jpg",
+			"apertura_2014/a(42).jpg",
+			"apertura_2014/a(43).jpg",
+			"apertura_2014/a(44).jpg"
+		],
+		auguri_2016: [
+			"auguri_2016/cop.jpg",
+			"auguri_2016/b(1).jpg",
+			"auguri_2016/b(2).jpg",
+			"auguri_2016/b(3).jpg",
+			"auguri_2016/b(4).jpg",
+			"auguri_2016/b(5).jpg",
+			"auguri_2016/b(6).jpg",
+			"auguri_2016/b(7).jpg",
+			"auguri_2016/b(8).jpg",
+			"auguri_2016/b(9).jpg",
+			"auguri_2016/b(10).jpg",
+			"auguri_2016/b(11).jpg",
+			"auguri_2016/b(12).jpg",
+			"auguri_2016/b(13).jpg"
+		],
+		cena_governatore_2018: [
+		"cena_governatore_2018/copp.jpg",
+		"cena_governatore_2018/c(1).jpg",
+		"cena_governatore_2018/c(2).jpg",
+		"cena_governatore_2018/c(3).jpg",
+		"cena_governatore_2018/c(4).jpg",
+		"cena_governatore_2018/c(5).jpg",
+		"cena_governatore_2018/c(6).jpg",
+		"cena_governatore_2018/c(7).jpg",
+		"cena_governatore_2018/c(8).jpg",
+		"cena_governatore_2018/c(9).jpg",
+		"cena_governatore_2018/c(10).jpg",
+		"cena_governatore_2018/c(11).jpg",
+		"cena_governatore_2018/c(12).jpg",
+		"cena_governatore_2018/c(13).jpg",
+		"cena_governatore_2018/c(14).jpg",
+		"cena_governatore_2018/c(15).jpg",
+		"cena_governatore_2018/c(16).jpg"
+		],
+		chiusura_2019: [
+		"chiusura_2019/co.jpg",
+		"chiusura_2019/d(1).jpg",
+		"chiusura_2019/d(2).jpg",
+		"chiusura_2019/d(3).jpg",
+		"chiusura_2019/d(4).jpg",
+		"chiusura_2019/d(5).jpg",
+		"chiusura_2019/d(6).jpg",
+		"chiusura_2019/d(7).jpg",
+		"chiusura_2019/d(8).jpg",
+		"chiusura_2019/d(9).jpg",
+		"chiusura_2019/d(10).jpg",
+		"chiusura_2019/d(11).jpg",
+		"chiusura_2019/d(12).jpg"
+		],
+		intermeeting_2018: [
+			"intermeeting_2018/c.jpg",
+			"intermeeting_2018/e(1).jpg",
+			"intermeeting_2018/e(2).jpg",
+			"intermeeting_2018/e(3).jpg",
+			"intermeeting_2018/e(4).jpg",
+			"intermeeting_2018/e(5).jpg",
+			"intermeeting_2018/e(6).jpg",
+			"intermeeting_2018/e(7).jpg",
+			"intermeeting_2018/e(8).jpg",
+			"intermeeting_2018/e(9).jpg"
+		],
+		lamborghini_2017: [
+			"lamborghini_2017/l.jpg",
+			"lamborghini_2017/f(1).jpg",
+			"lamborghini_2017/f(2).jpg",
+			"lamborghini_2017/f(3).jpg",
+			"lamborghini_2017/f(4).jpg",
+			"lamborghini_2017/f(5).jpg",
+			"lamborghini_2017/f(6).jpg",
+			"lamborghini_2017/f(7).jpg",
+			"lamborghini_2017/f(8).jpg",
+			"lamborghini_2017/f(9).jpg",
+			"lamborghini_2017/f(10).jpg",
+			"lamborghini_2017/f(11).jpg",
+			"lamborghini_2017/f(12).jpg",
+			"lamborghini_2017/f(13).jpg",
+			"lamborghini_2017/f(14).jpg",
+			"lamborghini_2017/f(15).jpg",
+			"lamborghini_2017/f(16).jpg",
+			"lamborghini_2017/f(17).jpg",
+			"lamborghini_2017/f(18).jpg",
+			"lamborghini_2017/f(19).jpg",
+			"lamborghini_2017/f(20).jpg",
+			"lamborghini_2017/f(21).jpg",
+			"lamborghini_2017/f(22).jpg"
+		],
+		martin_elliot: [
+			"martin_elliot/m.jpg",
+			"martin_elliot/g(1).jpg",
+			"martin_elliot/g(2).jpg",
+			"martin_elliot/g(3).jpg",
+			"martin_elliot/g(4).jpg",
+			"martin_elliot/g(5).jpg",
+			"martin_elliot/g(6).jpg",
+			"martin_elliot/g(7).jpg",
+			"martin_elliot/g(8).jpg",
+			"martin_elliot/g(9).jpg",
+			"martin_elliot/g(10).jpg",
+			"martin_elliot/g(11).jpg",
+			"martin_elliot/g(12).jpg",
+			"martin_elliot/g(13).jpg",
+			"martin_elliot/g(14).jpg",
+			"martin_elliot/g(15).jpg",
+			"martin_elliot/g(16).jpg",
+			"martin_elliot/g(17).jpg",
+			"martin_elliot/g(18).jpg",
+			"martin_elliot/g(19).jpg",
+			"martin_elliot/g(20).jpg",
+			"martin_elliot/g(21).jpg",
+			"martin_elliot/g(22).jpg",
+			"martin_elliot/g(23).jpg"
+		],
+		mirandola_amatrice: [
+			"mirandola_amatrice/a.jpg",
+			"mirandola_amatrice/h(1).jpg",
+			"mirandola_amatrice/h(2).jpg",
+			"mirandola_amatrice/h(3).jpg",
+			"mirandola_amatrice/h(4).jpg",
+			"mirandola_amatrice/h(5).jpg",
+			"mirandola_amatrice/h(6).jpg",
+			"mirandola_amatrice/h(7).jpg",
+			"mirandola_amatrice/h(8).jpg",
+			"mirandola_amatrice/h(9).jpg",
+			"mirandola_amatrice/h(10).jpg",
+			"mirandola_amatrice/h(11).jpg",
+			"mirandola_amatrice/h(12).jpg",
+			"mirandola_amatrice/h(13).jpg",
+			"mirandola_amatrice/h(14).jpg",
+			"mirandola_amatrice/h(15).jpg",
+			"mirandola_amatrice/h(16).jpg",
+			"mirandola_amatrice/h(17).jpg"
+		],
+		pagani_2017: [
+			"pagani_2017/i.jpg",
+			"pagani_2017/i(2).jpg",
+			"pagani_2017/i(3).jpg",
+			"pagani_2017/i(4).jpg",
+			"pagani_2017/i(5).jpg",
+			"pagani_2017/i(6).jpg",
+			"pagani_2017/i(7).jpg",
+			"pagani_2017/i(8).jpg",
+			"pagani_2017/i(9).jpg",
+			"pagani_2017/i(10).jpg"
+		]
+    };
+
+    let currentAlbum = [];
+    let currentImageIndex = 0;
+
+    function openAlbum(albumKey) {
+        if (!albums[albumKey]) return;
+        currentAlbum = albums[albumKey];
+        currentImageIndex = 0;
+        
+        updateLightboxContent();
+        document.getElementById('lightbox').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+        const imgSrc = currentAlbum[currentImageIndex];
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox-counter').innerText = `Foto ${currentImageIndex + 1} di ${currentAlbum.length}`;
+    }
+
+    function nextImage() {
+        if (currentAlbum.length <= 1) return;
+        currentImageIndex = (currentImageIndex + 1) % currentAlbum.length;
+        updateLightboxContent();
+    }
+
+    function prevImage() {
+        if (currentAlbum.length <= 1) return;
+        currentImageIndex = (currentImageIndex - 1 + currentAlbum.length) % currentAlbum.length;
+        updateLightboxContent();
+    }
+
+    // Comandi tastiera
+    document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox');
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        }
+    });
+  </script>
+  <script src="widget.js?v=accessibilita-20260603-3"></script>
+</body>
+</html>
+
+

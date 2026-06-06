@@ -1,0 +1,7912 @@
+﻿window.CLUBS_DATA = [
+        {
+                "id": "21066",
+                "name": "MIRANDOLA",
+                "city": "Mirandola",
+                "lat": 44.880394,
+                "lng": 11.076476,
+                "site": "https://lionsclubmirandola.it",
+                "address": "Club di Mirandola",
+                "country": "Italia"
+        },
+        {
+                "id": "21038",
+                "name": "CARPI HOST",
+                "city": "Carpi",
+                "lat": 44.781733,
+                "lng": 10.885483,
+                "site": "https://lionsclubcarpihost.it/",
+                "address": "Club di Carpi",
+                "country": "Italia"
+        },
+        {
+                "id": "21007",
+                "name": "OSTIGLIA",
+                "city": "Ostiglia",
+                "lat": 45.064438,
+                "lng": 11.135502,
+                "site": "https://www.lions108ib2.it/circoscrizioni/circoscrizione-mantova",
+                "address": "Club di Ostiglia",
+                "country": "Italia"
+        },
+        {
+                "id": "82562",
+                "name": "MANTOVA TERRE MATILDICHE",
+                "city": "Roncoferraro",
+                "lat": 45.086088,
+                "lng": 10.963142,
+                "site": "https://www.lions108ib2.it/circoscrizioni/circoscrizione-mantova",
+                "address": "Club di Roncoferraro",
+                "country": "Italia"
+        },
+        {
+                "id": "21050",
+                "name": "CORREGGIO ANTONIO ALLEGRI",
+                "city": "Correggio",
+                "lat": 44.771654,
+                "lng": 10.777925,
+                "site": "https://www.lionscorreggio.it/",
+                "address": "Club di Correggio",
+                "country": "Italia"
+        },
+        {
+                "id": "46651",
+                "name": "PIEVE DI CENTO",
+                "city": "Pieve Di Cento",
+                "lat": 44.713642,
+                "lng": 11.305955,
+                "site": "https://www.e-clubhouse.org/sites/pievedicento/",
+                "address": "Club di Pieve Di Cento",
+                "country": "Italia"
+        },
+        {
+                "id": "30446",
+                "name": "CASTELFRANCO EMILIA NONANTOLA",
+                "city": "Modena",
+                "lat": 44.644151,
+                "lng": 10.93425,
+                "site": "http://www.lionscastelfrancononantola.it/",
+                "address": "Club di Modena",
+                "country": "Italia"
+        },
+        {
+                "id": "48117",
+                "name": "MODENA ROMANICA",
+                "city": "Modena",
+                "lat": 44.644764,
+                "lng": 10.926786,
+                "site": "https://lions108tb.it/i-club-del-distretto/",
+                "address": "Club di Modena",
+                "country": "Italia"
+        },
+        {
+                "id": "88858",
+                "name": "FORMIGINE AVIA PERVIA MARANELLO",
+                "city": "Modena",
+                "lat": 44.638773,
+                "lng": 10.886522,
+                "site": "https://lions108tb.it/archivio-club/lions-club-formigine-avia-pervia-maranello/",
+                "address": "Club di Modena",
+                "country": "Italia"
+        },
+        {
+                "id": "21089",
+                "name": "SAN GIOVANNI IN PERSICETO",
+                "city": "San Giovanni In Persiceto",
+                "lat": 44.619856,
+                "lng": 11.190642,
+                "site": "https://www.e-clubhouse.org/sites/san_giovanni_persiceto/",
+                "address": "Club di San Giovanni In Persiceto",
+                "country": "Italia"
+        },
+        {
+                "id": "101070",
+                "name": "CASTELLO D'ARGILE PIANURA DEL RENO",
+                "city": "Argelato",
+                "lat": 44.641312,
+                "lng": 11.35155,
+                "site": "https://lions108tb.it/i-club-del-distretto/",
+                "address": "Club di Argelato",
+                "country": "Italia"
+        },
+        {
+                "id": "146489",
+                "name": "Rovigo Lions for Pets",
+                "city": "Bagnolo Di Po",
+                "lat": 44.987689,
+                "lng": 11.496016,
+                "site": "https://www.lions.it/",
+                "address": "Club di Bagnolo Di Po",
+                "country": "Italia"
+        },
+        {
+                "id": "41366",
+                "name": "MANTOVA DUCALE",
+                "city": "Mantova",
+                "lat": 45.16195,
+                "lng": 10.815065,
+                "site": "https://www.lions108ib2.it/circoscrizioni/circoscrizione-mantova",
+                "address": "Club di Mantova",
+                "country": "Italia"
+        },
+        {
+                "id": "107741",
+                "name": "MANTOVA ANDREA MANTEGNA",
+                "city": "Mantova",
+                "lat": 45.16195,
+                "lng": 10.815065,
+                "site": "https://e-clubhouse.org/sites/mantovaam/",
+                "address": "Club di Mantova",
+                "country": "Italia"
+        },
+        {
+                "id": "47986",
+                "name": "MANTOVA BARBARA GONZAGA",
+                "city": "Mantova",
+                "lat": 45.16195,
+                "lng": 10.815065,
+                "site": "https://www.lionsclubmantovahost.it/tag/lions-club-mantova-barbara-gonzaga/",
+                "address": "Club di Mantova",
+                "country": "Italia"
+        },
+        {
+                "id": "21081",
+                "name": "REGGIO EMILIA HOST CITTA' DEL TRICOLORE",
+                "city": "Reggio Emilia",
+                "lat": 44.703806,
+                "lng": 10.63455,
+                "site": "https://www.lionshost.re.it/",
+                "address": "Club di Reggio Emilia",
+                "country": "Italia"
+        },
+        {
+                "id": "21091",
+                "name": "SANTA MARIA MADDALENA ALTO POLESINE",
+                "city": "Occhiobello",
+                "lat": 44.920641,
+                "lng": 11.581112,
+                "site": "https://e-clubhouse.org/sites/santa_maria_maddalena_alto_polesine/",
+                "address": "Club di Occhiobello",
+                "country": "Italia"
+        },
+        {
+                "id": "47987",
+                "name": "MALALBERGO LYDA BORELLI",
+                "city": "Argelato",
+                "lat": 44.588445,
+                "lng": 11.371743,
+                "site": "https://lions108tb.it/archivio-club/malalbergo-lyda-borelli/",
+                "address": "Club di Argelato",
+                "country": "Italia"
+        },
+        {
+                "id": "56987",
+                "name": "ARGELATO SAN MICHELE",
+                "city": "Centergross Funo Di Argelato",
+                "lat": 44.58947,
+                "lng": 11.374295,
+                "site": "https://lions108tb.it/archivio-club/lions-argelato-san-michele/",
+                "address": "Club di Centergross Funo Di Argelato",
+                "country": "Italia"
+        },
+        {
+                "id": "60304",
+                "name": "BADIA POLESINE ADIGE PO",
+                "city": "Masi",
+                "lat": 45.110041,
+                "lng": 11.487857,
+                "site": "https://www.comune.badiapolesine.ro.it/vivere-il-comune/associazione/lions-lions-club-badia-adige-po/",
+                "address": "Club di Masi",
+                "country": "Italia"
+        },
+        {
+                "id": "21059",
+                "name": "ISOLA DELLA SCALA BOVOLONE",
+                "city": "Isola Della Scala",
+                "lat": 45.264043,
+                "lng": 11.012453,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/lions-club-villafranca-e-reutte-in-tirol-un-gemellaggio-che-dura-da-piu-di-trentanni/",
+                "address": "Club di Isola Della Scala",
+                "country": "Italia"
+        },
+        {
+                "id": "21037",
+                "name": "CANOSSA VAL D'ENZA",
+                "city": "Reggio Nell'Emilia",
+                "lat": 44.640623,
+                "lng": 10.653763,
+                "site": "https://lions108tb.it/archivio-club/lions-club-canossa-val-denza/",
+                "address": "Club di Reggio Nell'Emilia",
+                "country": "Italia"
+        },
+        {
+                "id": "21053",
+                "name": "FERRARA HOST",
+                "city": "Ferrara",
+                "lat": 44.81875,
+                "lng": 11.598641,
+                "site": "https://www.lionsferrarahost.eu/",
+                "address": "Club di Ferrara",
+                "country": "Italia"
+        },
+        {
+                "id": "39897",
+                "name": "VIADANA OGLIO PO",
+                "city": "Viadana",
+                "lat": 44.926111,
+                "lng": 10.52067,
+                "site": "https://www.lions108ib2.it/news-del-distretto/autismo-oltre-lo-spettro-meeting-a-viadana-a-cura-del-lions-club-viadana-oglio-po",
+                "address": "Club di Viadana",
+                "country": "Italia"
+        },
+        {
+                "id": "21094",
+                "name": "SCANDIANO",
+                "city": "Scandiano",
+                "lat": 44.597801,
+                "lng": 10.690285,
+                "site": "https://e-clubhouse.org/sites/scandiano/index.php",
+                "address": "Club di Scandiano",
+                "country": "Italia"
+        },
+        {
+                "id": "21093",
+                "name": "SASSUOLO",
+                "city": "Sassuolo",
+                "lat": 44.542034,
+                "lng": 10.783292,
+                "site": "https://www.e-clubhouse.org/sites/sassuolo//",
+                "address": "Club di Sassuolo",
+                "country": "Italia"
+        },
+        {
+                "id": "51627",
+                "name": "FERRARA DIAMANTI",
+                "city": "Ferrara",
+                "lat": 44.838112,
+                "lng": 11.627257,
+                "site": "https://centrostudidistretto108tb.it/oldsite/club/ferrara-diamanti.php?id=45",
+                "address": "Club di Ferrara",
+                "country": "Italia"
+        },
+        {
+                "id": "21108",
+                "name": "VIGNOLA CASTELLI MEDIOEVALI",
+                "city": "Vignola",
+                "lat": 44.479332,
+                "lng": 11.009361,
+                "site": "https://lions108tb.it/archivio-club/lions-club-vignola-e-castelli-medioevali/",
+                "address": "Club di Vignola",
+                "country": "Italia"
+        },
+        {
+                "id": "97192",
+                "name": "ZOLA PREDOSA",
+                "city": "Zola Predosa",
+                "lat": 44.491607,
+                "lng": 11.215331,
+                "site": "https://lions108tb.it/archivio-club/lions-club-zola-predosa/",
+                "address": "Club di Zola Predosa",
+                "country": "Italia"
+        },
+        {
+                "id": "55919",
+                "name": "CASTELLO DI SERRAVALLE BONONIA",
+                "city": "Monteveglio",
+                "lat": 44.475102,
+                "lng": 11.067795,
+                "site": "https://lions108tb.it/archivio-club/lions-club-castello-di-serravalle/",
+                "address": "Club di Monteveglio",
+                "country": "Italia"
+        },
+        {
+                "id": "171221",
+                "name": "Borgo Panigale Emilia Ponente",
+                "city": "Bologna",
+                "lat": 44.502625,
+                "lng": 11.277246,
+                "site": "https://lions108tb.it/archivio-club/lions-club-borgo-panigale-emilia-ponente/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "48265",
+                "name": "ALBINEA LUDOVICO ARIOSTO",
+                "city": "Albinea",
+                "lat": 44.62144,
+                "lng": 10.604992,
+                "site": "https://lionsclub-albinea-ludovicoariosto.it/",
+                "address": "Club di Albinea",
+                "country": "Italia"
+        },
+        {
+                "id": "21062",
+                "name": "LEGNAGO",
+                "city": "Bevilacqua",
+                "lat": 45.233477,
+                "lng": 11.401063,
+                "site": "http://lionsclublegnago.it/",
+                "address": "Club di Bevilacqua",
+                "country": "Italia"
+        },
+        {
+                "id": "21103",
+                "name": "BOLOGNA VALLI LAVINO SAMOGGIA",
+                "city": "Bologna",
+                "lat": 44.51294,
+                "lng": 11.359036,
+                "site": "https://lions108tb.it/archivio-club/lions-club-bologna-valli-lavinio-samoggia/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "21079",
+                "name": "BOLOGNA GUGLIELMO MARCONI",
+                "city": "Bologna",
+                "lat": 44.51294,
+                "lng": 11.359036,
+                "site": "https://e-clubhouse.org/sites/bolognagm/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "21032",
+                "name": "BOLOGNA",
+                "city": "Bologna",
+                "lat": 44.504657,
+                "lng": 11.341301,
+                "site": "https://www.lionsclubbologna.it/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "65258",
+                "name": "BOLOGNA SAN LUCA",
+                "city": "Bologna",
+                "lat": 44.494659,
+                "lng": 11.322594,
+                "site": "https://lions108tb.it/archivio-club/lions-club-bologna-san-luca/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "34583",
+                "name": "BOLOGNA GALVANI",
+                "city": "Bologna",
+                "lat": 44.488394,
+                "lng": 11.319236,
+                "site": "https://lions108tb.it/archivio-club/lions-club-bologna-galvani/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "29307",
+                "name": "BOLOGNA \"I PORTICI\"",
+                "city": "Bologna",
+                "lat": 44.496594,
+                "lng": 11.346268,
+                "site": "https://lions108tb.it/archivio-club/lions-club-bologna-i-portici/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "21090",
+                "name": "BOLOGNA SAN LAZZARO CASTENASO GOZZADINI",
+                "city": "Bologna",
+                "lat": 44.509703,
+                "lng": 11.385362,
+                "site": "https://lions108tb.it/archivio-club/lions-club-bologna-san-lazzaro-castenaso-gozzadini-2/",
+                "address": "Club di Bologna",
+                "country": "Italia"
+        },
+        {
+                "id": "49417",
+                "name": "PARMA MARIA LUIGIA",
+                "city": "Monticelli",
+                "lat": 44.732184,
+                "lng": 10.400704,
+                "site": "https://lions108tb.it/archivio-club/lions-club-parma-maria-luigia/",
+                "address": "Club di Monticelli",
+                "country": "Italia"
+        },
+        {
+                "id": "39434",
+                "name": "PARMA FARNESE",
+                "city": "Parma",
+                "lat": 44.790596,
+                "lng": 10.37355,
+                "site": "https://lions108tb.it/archivio-club/lions-club-parma-farnese/",
+                "address": "Club di Parma",
+                "country": "Italia"
+        },
+        {
+                "id": "21074",
+                "name": "PARMA HOST",
+                "city": "Parma",
+                "lat": 44.790596,
+                "lng": 10.37355,
+                "site": "https://www.lionsparmahost.org/",
+                "address": "Club di Parma",
+                "country": "Italia"
+        },
+        {
+                "id": "55267",
+                "name": "PARMA DUCALE",
+                "city": "Parma",
+                "lat": 44.790596,
+                "lng": 10.37355,
+                "site": "https://lions108tb.it/archivio-club/lions-club-parma-ducale/",
+                "address": "Club di Parma",
+                "country": "Italia"
+        },
+        {
+                "id": "21075",
+                "name": "PAVULLO E DEL FRIGNANO",
+                "city": "Pavullo Nel Frignano",
+                "lat": 44.340105,
+                "lng": 10.835402,
+                "site": "https://www.lionspavullo.org/",
+                "address": "Club di Pavullo Nel Frignano",
+                "country": "Italia"
+        },
+        {
+                "id": "103888",
+                "name": "COLORNO LA REGGIA",
+                "city": "Parma",
+                "lat": 44.818903,
+                "lng": 10.248442,
+                "site": "https://www.lionsclubcolorno.it/real/home.aspx?idArea=0&lang=ITA",
+                "address": "Club di Parma",
+                "country": "Italia"
+        },
+        {
+                "id": "30833",
+                "name": "CASTEL SAN PIETRO TERME",
+                "city": "Castel San Pietro Terme",
+                "lat": 44.389381,
+                "lng": 11.588248,
+                "site": "https://www.leolionscspt.it/",
+                "address": "Club di Castel San Pietro Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "21049",
+                "name": "COPPARO",
+                "city": "Copparo",
+                "lat": 44.892728,
+                "lng": 11.823972,
+                "site": "https://lions108tb.it/archivio-club/copparo/",
+                "address": "Club di Copparo",
+                "country": "Italia"
+        },
+        {
+                "id": "21083",
+                "name": "ROVIGO HOST",
+                "city": "Rovigo",
+                "lat": 45.076992,
+                "lng": 11.784908,
+                "site": "https://www.lionsrovigo.it/",
+                "address": "Club di Rovigo",
+                "country": "Italia"
+        },
+        {
+                "id": "142993",
+                "name": "Chiese Colli Storici",
+                "city": "Castel Goffredo",
+                "lat": 45.297505,
+                "lng": 10.475509,
+                "site": "https://lions.it/mantova-lions-club-chiese-colli-storici/",
+                "address": "Club di Castel Goffredo",
+                "country": "Italia"
+        },
+        {
+                "id": "36594",
+                "name": "PESCHIERA DEL GARDA",
+                "city": "Castelnuovo Del Garda",
+                "lat": 45.424717,
+                "lng": 10.709936,
+                "site": "https://www.e-clubhouse.org/sites/peschieradg/",
+                "address": "Club di Castelnuovo Del Garda",
+                "country": "Italia"
+        },
+        {
+                "id": "54535",
+                "name": "SAN GIOVANNI LUPATOTO ZEVIO DESTRA ADIGE",
+                "city": "Verona",
+                "lat": 45.412637,
+                "lng": 10.970211,
+                "site": "https://e-clubhouse.org/sites/sangiovannilda/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "65294",
+                "name": "VERONA GALLIENO",
+                "city": "Verona",
+                "lat": 45.459373,
+                "lng": 10.901737,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "82411",
+                "name": "VERONA ARENA NEW CENTURY",
+                "city": "Verona",
+                "lat": 45.459373,
+                "lng": 10.901737,
+                "site": "https://e-clubhouse.org/sites/veronaanc/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "21105",
+                "name": "VERONA HOST",
+                "city": "Verona",
+                "lat": 45.439858,
+                "lng": 10.989553,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "36397",
+                "name": "VERONA CATULLO",
+                "city": "Verona",
+                "lat": 45.439402,
+                "lng": 10.992637,
+                "site": "https://e-clubhouse.org/sites/veronacatullo/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "119545",
+                "name": "Verona Dante Alighieri",
+                "city": "Verona",
+                "lat": 45.439402,
+                "lng": 10.992637,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/",
+                "address": "Club di Verona",
+                "country": "Italia"
+        },
+        {
+                "id": "58584",
+                "name": "SIRMIONE",
+                "city": "Sirmione",
+                "lat": 45.458087,
+                "lng": 10.636346,
+                "site": "https://www.lionsclubsirmione.it/",
+                "address": "Club di Sirmione",
+                "country": "Italia"
+        },
+        {
+                "id": "39432",
+                "name": "BUSSOLENGO",
+                "city": "Settimo Di Pescantina",
+                "lat": 45.476397,
+                "lng": 10.903794,
+                "site": "https://lionsbussolengo.it/",
+                "address": "Club di Settimo Di Pescantina",
+                "country": "Italia"
+        },
+        {
+                "id": "51509",
+                "name": "VERONA EUROPA",
+                "city": "San Martino Buon Albergo",
+                "lat": 45.443465,
+                "lng": 11.078592,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/",
+                "address": "Club di San Martino Buon Albergo",
+                "country": "Italia"
+        },
+        {
+                "id": "43645",
+                "name": "VALPOLICELLA",
+                "city": "Pescantina",
+                "lat": 45.505596,
+                "lng": 10.844681,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/",
+                "address": "Club di Pescantina",
+                "country": "Italia"
+        },
+        {
+                "id": "42685",
+                "name": "DESENZANO LAGO",
+                "city": "Desenzano Del Garda",
+                "lat": 45.481277,
+                "lng": 10.538088,
+                "site": "https://www.lionsclubdesenzanolago.com/",
+                "address": "Club di Desenzano Del Garda",
+                "country": "Italia"
+        },
+        {
+                "id": "21087",
+                "name": "SAN BONIFACIO SOAVE",
+                "city": "Illasi",
+                "lat": 45.445702,
+                "lng": 11.162912,
+                "site": "https://e-clubhouse.org/sites/san_bonifacio_soave/",
+                "address": "Club di Illasi",
+                "country": "Italia"
+        },
+        {
+                "id": "20982",
+                "name": "COLLI MORENICI",
+                "city": "Calcinato",
+                "lat": 45.444846,
+                "lng": 10.411586,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Calcinato",
+                "country": "Italia"
+        },
+        {
+                "id": "64139",
+                "name": "VESCOVATO",
+                "city": "Vescovato",
+                "lat": 45.168351,
+                "lng": 10.160823,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Vescovato",
+                "country": "Italia"
+        },
+        {
+                "id": "21045",
+                "name": "CODIGORO",
+                "city": "Codigoro",
+                "lat": 44.830929,
+                "lng": 12.109053,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Codigoro",
+                "country": "Italia"
+        },
+        {
+                "id": "21048",
+                "name": "CONTARINA DELTA PO",
+                "city": "Adria",
+                "lat": 45.058492,
+                "lng": 12.055527,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Adria",
+                "country": "Italia"
+        },
+        {
+                "id": "54576",
+                "name": "ESTE COLLI EUGANEI",
+                "city": "Este",
+                "lat": 45.230606,
+                "lng": 11.65999,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Este",
+                "country": "Italia"
+        },
+        {
+                "id": "62071",
+                "name": "CONSELVE",
+                "city": "Conselve",
+                "lat": 45.234711,
+                "lng": 11.86373,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Conselve",
+                "country": "Italia"
+        },
+        {
+                "id": "136498",
+                "name": "Montegrotto Terme Via Annia- Per La Disabilita",
+                "city": "Montegrotto Terme",
+                "lat": 45.330955,
+                "lng": 11.789085,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Montegrotto Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "21027",
+                "name": "ABANO TERME EUGANEE",
+                "city": "Montegrotto Terme",
+                "lat": 45.337202,
+                "lng": 11.791518,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Montegrotto Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "58283",
+                "name": "PADOVA RUZZANTE RUBIANUS",
+                "city": "Selvazzano Dentro",
+                "lat": 45.388512,
+                "lng": 11.755335,
+                "site": "https://lions108ta3.org/club-del-distretto/padova-ruzzante-rubianus/",
+                "address": "Club di Selvazzano Dentro",
+                "country": "Italia"
+        },
+        {
+                "id": "64078",
+                "name": "PADOVA CARRARESI",
+                "city": "Padova",
+                "lat": 45.408836,
+                "lng": 11.84757,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "47790",
+                "name": "PADOVA ELENA CORNARO PISCOPIA",
+                "city": "Padova",
+                "lat": 45.408137,
+                "lng": 11.87923,
+                "site": "https://lions108ta3.org/club-del-distretto/padova-elena-cornaro-piscopia/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "32378",
+                "name": "PADOVA CERTOSA",
+                "city": "Selvazzano Dentro",
+                "lat": 45.416103,
+                "lng": 11.798761,
+                "site": "https://lions108ta3.org/club-del-distretto/padova-certosa/",
+                "address": "Club di Selvazzano Dentro",
+                "country": "Italia"
+        },
+        {
+                "id": "59173",
+                "name": "PADOVA JAPPELLI",
+                "city": "Padova",
+                "lat": 45.420532,
+                "lng": 11.931664,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "36488",
+                "name": "PADOVA GATTAMELATA",
+                "city": "Padova",
+                "lat": 45.420532,
+                "lng": 11.931664,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "59133",
+                "name": "PADOVA GRATICOLATO ROMANO",
+                "city": "Padova",
+                "lat": 45.42064,
+                "lng": 11.931589,
+                "site": "https://e-clubhouse.org/sites/padova_graticolato_romano/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "35081",
+                "name": "PADOVA MORGAGNI",
+                "city": "Padova",
+                "lat": 45.434214,
+                "lng": 11.868852,
+                "site": "https://e-clubhouse.org/sites/padova_morgagni/index.php",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "121893",
+                "name": "Padova Galileo Galilei",
+                "city": "Padova",
+                "lat": 45.441715,
+                "lng": 11.863577,
+                "site": "https://lions108ta3.org/club-del-distretto/padova-galileo-galilei/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "47788",
+                "name": "ABANO TERME GASPARA STAMPA",
+                "city": "Padova",
+                "lat": 45.445021,
+                "lng": 11.86283,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "21043",
+                "name": "CHIOGGIA SOTTOMARINA",
+                "city": "Chioggia",
+                "lat": 45.224212,
+                "lng": 12.277918,
+                "site": "https://lions108ta3.org/club-del-distretto/chioggia-sottomarina/",
+                "address": "Club di Chioggia",
+                "country": "Italia"
+        },
+        {
+                "id": "47791",
+                "name": "STRA RIVIERA DEL BRENTA ROSALBA CARRIERA",
+                "city": "Stra",
+                "lat": 45.405979,
+                "lng": 12.049999,
+                "site": "https://lions108ta3.org/club-del-distretto/stra-riviera-del-brenta-rosalba-carriera/",
+                "address": "Club di Stra",
+                "country": "Italia"
+        },
+        {
+                "id": "60338",
+                "name": "MESTRINO VILLA GAMBAZZI",
+                "city": "Padova",
+                "lat": 45.451863,
+                "lng": 11.864423,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Padova",
+                "country": "Italia"
+        },
+        {
+                "id": "39433",
+                "name": "LONIGO",
+                "city": "Lonigo",
+                "lat": 45.393772,
+                "lng": 11.395816,
+                "site": "https://e-clubhouse.org/sites/lonigo/",
+                "address": "Club di Lonigo",
+                "country": "Italia"
+        },
+        {
+                "id": "51265",
+                "name": "BUSSETO GIUSEPPE VERDI",
+                "city": "Busseto",
+                "lat": 44.951486,
+                "lng": 10.074785,
+                "site": "https://lions108tb.it/archivio-club/lions-club-busseto-g-verdi/",
+                "address": "Club di Busseto",
+                "country": "Italia"
+        },
+        {
+                "id": "51576",
+                "name": "TORINO SOLFERINO",
+                "city": "Torino",
+                "lat": 45.061696,
+                "lng": 7.676344,
+                "site": "https://www.lionsclubtorinosolferino.it/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "37638",
+                "name": "TORINO COLLINA",
+                "city": "Torino",
+                "lat": 45.064314,
+                "lng": 7.668889,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "20958",
+                "name": "TORINO CASTELLO",
+                "city": "Torino",
+                "lat": 45.064422,
+                "lng": 7.668393,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "57630",
+                "name": "TORINO PRINCIPE EUGENIO",
+                "city": "Torino",
+                "lat": 45.064422,
+                "lng": 7.668393,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "61615",
+                "name": "TORINO PIETRO MICCA",
+                "city": "Torino",
+                "lat": 45.064422,
+                "lng": 7.668393,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "44650",
+                "name": "TORINO LA MOLE",
+                "city": "10100Torino",
+                "lat": 45.064422,
+                "lng": 7.668393,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di 10100Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "44756",
+                "name": "TORINO AUGUSTA TAURINORUM",
+                "city": "Torino",
+                "lat": 45.064422,
+                "lng": 7.668393,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "55654",
+                "name": "TORINO MONVISO",
+                "city": "Torino",
+                "lat": 45.064381,
+                "lng": 7.668335,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "123408",
+                "name": "Torino Risorgimento",
+                "city": "Torino",
+                "lat": 45.064381,
+                "lng": 7.668335,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "20957",
+                "name": "TORINO",
+                "city": "Torino",
+                "lat": 45.067874,
+                "lng": 7.665286,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "49285",
+                "name": "TORINO SAN CARLO",
+                "city": "Torino",
+                "lat": 45.066055,
+                "lng": 7.664148,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "55468",
+                "name": "RIVOLI CASTELLO",
+                "city": "Torino",
+                "lat": 45.073069,
+                "lng": 7.655029,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "53451",
+                "name": "TORINO SABAUDA",
+                "city": "Torinoi",
+                "lat": 45.073069,
+                "lng": 7.655029,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torinoi",
+                "country": "Italia"
+        },
+        {
+                "id": "65351",
+                "name": "TORINO NEW CENTURY",
+                "city": "Torino",
+                "lat": 45.073069,
+                "lng": 7.655029,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "64233",
+                "name": "PINO TORINESE",
+                "city": "Torino",
+                "lat": 45.073137,
+                "lng": 7.655023,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "20950",
+                "name": "RIVOLI HOST",
+                "city": "Torino",
+                "lat": 45.080063,
+                "lng": 7.647045,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "36914",
+                "name": "TORINO CITTADELLA",
+                "city": "Torino",
+                "lat": 45.036092,
+                "lng": 7.66744,
+                "site": "https://lionsclubtorinocittadella.it/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "99349",
+                "name": "COLLEGNO CERTOSA REALE",
+                "city": "Torino",
+                "lat": 45.031572,
+                "lng": 7.666778,
+                "site": "https://e-clubhouse.org/sites/torinoh/",
+                "address": "Club di Torino",
+                "country": "Italia"
+        },
+        {
+                "id": "33872",
+                "name": "MONCALIERI HOST",
+                "city": "Moncalieri",
+                "lat": 44.99873,
+                "lng": 7.720039,
+                "site": "https://www.lionsmoncalierihost.it/",
+                "address": "Club di Moncalieri",
+                "country": "Italia"
+        },
+        {
+                "id": "105517",
+                "name": "VENARIA REALE LA MANDRIA",
+                "city": "Collegno",
+                "lat": 45.08804,
+                "lng": 7.574433,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Collegno",
+                "country": "Italia"
+        },
+        {
+                "id": "41365",
+                "name": "CHIERI",
+                "city": "Baldissero Torinese",
+                "lat": 45.069199,
+                "lng": 7.815837,
+                "site": "https://lionsclubchieri.it",
+                "address": "Club di Baldissero Torinese",
+                "country": "Italia"
+        },
+        {
+                "id": "110031",
+                "name": "ORBASSANO",
+                "city": "Orbassano",
+                "lat": 45.010909,
+                "lng": 7.536643,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Orbassano",
+                "country": "Italia"
+        },
+        {
+                "id": "102045",
+                "name": "CARIGNANO VILLASTELLONE",
+                "city": "Villastellone",
+                "lat": 44.925036,
+                "lng": 7.736007,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Villastellone",
+                "country": "Italia"
+        },
+        {
+                "id": "20961",
+                "name": "VALLI DI LANZO TORINESE",
+                "city": "San Francesco Al Campo",
+                "lat": 45.223377,
+                "lng": 7.66285,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di San Francesco Al Campo",
+                "country": "Italia"
+        },
+        {
+                "id": "55729",
+                "name": "CIRIE' D'ORIA",
+                "city": "S.Francesco Al Campo",
+                "lat": 45.223377,
+                "lng": 7.66285,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di S.Francesco Al Campo",
+                "country": "Italia"
+        },
+        {
+                "id": "137762",
+                "name": "Caselle Torinese Airport",
+                "city": "San Francesco Al Campo",
+                "lat": 45.223377,
+                "lng": 7.66285,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di San Francesco Al Campo",
+                "country": "Italia"
+        },
+        {
+                "id": "38079",
+                "name": "VENARIA REALE HOST",
+                "city": "Fiano",
+                "lat": 45.20799,
+                "lng": 7.549009,
+                "site": "https://www.lions108ia1.eu/sito/index.php/i-club",
+                "address": "Club di Fiano",
+                "country": "Italia"
+        },
+        {
+                "id": "58113",
+                "name": "POIRINO - SANTENA",
+                "city": "Poirino",
+                "lat": 44.927717,
+                "lng": 7.836007,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Poirino",
+                "country": "Italia"
+        },
+        {
+                "id": "60640",
+                "name": "CHIVASSO DUOMO",
+                "city": "Chivasso",
+                "lat": 45.198206,
+                "lng": 7.883253,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Chivasso",
+                "country": "Italia"
+        },
+        {
+                "id": "35391",
+                "name": "GIAVENO VAL SANGONE",
+                "city": "Avigliana",
+                "lat": 45.063903,
+                "lng": 7.376988,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Avigliana",
+                "country": "Italia"
+        },
+        {
+                "id": "153306",
+                "name": "Canavese Centro",
+                "city": "Rivarolo Canavese",
+                "lat": 45.334549,
+                "lng": 7.722202,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Rivarolo Canavese",
+                "country": "Italia"
+        },
+        {
+                "id": "102260",
+                "name": "RACCONIGI",
+                "city": "Racconigi",
+                "lat": 44.769736,
+                "lng": 7.679335,
+                "site": "https://e-clubhouse.org/sites/racconigi/",
+                "address": "Club di Racconigi",
+                "country": "Italia"
+        },
+        {
+                "id": "64308",
+                "name": "PINEROLO ACAJA",
+                "city": "Pinerolo",
+                "lat": 44.883909,
+                "lng": 7.330936,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Pinerolo",
+                "country": "Italia"
+        },
+        {
+                "id": "29141",
+                "name": "ALTO CANAVESE",
+                "city": "Castellamonte",
+                "lat": 45.383327,
+                "lng": 7.70948,
+                "site": "https://lionsclubaltocanavese.it",
+                "address": "Club di Castellamonte",
+                "country": "Italia"
+        },
+        {
+                "id": "28059",
+                "name": "CARMAGNOLA",
+                "city": "Caramagna Piemonte",
+                "lat": 44.74713,
+                "lng": 7.732523,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Caramagna Piemonte",
+                "country": "Italia"
+        },
+        {
+                "id": "33728",
+                "name": "VAL CERRINA",
+                "city": "Murisengo",
+                "lat": 45.087154,
+                "lng": 8.149406,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Murisengo",
+                "country": "Italia"
+        },
+        {
+                "id": "54257",
+                "name": "VILLANOVA D'ASTI",
+                "city": "Cisterna D'Asti",
+                "lat": 44.824982,
+                "lng": 8.002014,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Cisterna D'Asti",
+                "country": "Italia"
+        },
+        {
+                "id": "46063",
+                "name": "CALUSO CANAVESE SUD EST",
+                "city": "Crotte",
+                "lat": 45.375214,
+                "lng": 7.906054,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Crotte",
+                "country": "Italia"
+        },
+        {
+                "id": "50236",
+                "name": "CANALE ROERO",
+                "city": "Canale",
+                "lat": 44.796794,
+                "lng": 7.990404,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Canale",
+                "country": "Italia"
+        },
+        {
+                "id": "65485",
+                "name": "BARGE, BAGNOLO P.TE E CAVOUR",
+                "city": "Cavour",
+                "lat": 44.784941,
+                "lng": 7.375241,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Cavour",
+                "country": "Italia"
+        },
+        {
+                "id": "20925",
+                "name": "ASTI HOST",
+                "city": "Asti",
+                "lat": 44.890421,
+                "lng": 8.140516,
+                "site": "https://e-clubhouse.org/sites/asti_host/",
+                "address": "Club di Asti",
+                "country": "Italia"
+        },
+        {
+                "id": "47878",
+                "name": "BRA DEL ROERO",
+                "city": "Bra",
+                "lat": 44.711111,
+                "lng": 7.836873,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Bra",
+                "country": "Italia"
+        },
+        {
+                "id": "33727",
+                "name": "SUSA ROCCIAMELONE",
+                "city": "Bussoleno",
+                "lat": 45.139702,
+                "lng": 7.148062,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Bussoleno",
+                "country": "Italia"
+        },
+        {
+                "id": "59339",
+                "name": "MONCALVO ALERAMICA",
+                "city": "Moncalvo",
+                "lat": 45.05192,
+                "lng": 8.260055,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Moncalvo",
+                "country": "Italia"
+        },
+        {
+                "id": "86021",
+                "name": "ASTI ALFIERI",
+                "city": "Asti",
+                "lat": 44.88036,
+                "lng": 8.199972,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Asti",
+                "country": "Italia"
+        },
+        {
+                "id": "30280",
+                "name": "BRA HOST",
+                "city": "Cherasco",
+                "lat": 44.663333,
+                "lng": 7.779688,
+                "site": "https://lionsclubs108ia3.it/elenco-alfabetico-club/lions-club-bra-host/",
+                "address": "Club di Cherasco",
+                "country": "Italia"
+        },
+        {
+                "id": "59130",
+                "name": "LUSERNA SAN GIOVANNI - TORRE PELLICE",
+                "city": "Torre Pellice",
+                "lat": 44.820166,
+                "lng": 7.223114,
+                "site": "https://e-clubhouse.org/sites/lusernasgtp/",
+                "address": "Club di Torre Pellice",
+                "country": "Italia"
+        },
+        {
+                "id": "20941",
+                "name": "IVREA",
+                "city": "Ivrea",
+                "lat": 45.481539,
+                "lng": 7.891398,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Ivrea",
+                "country": "Italia"
+        },
+        {
+                "id": "97198",
+                "name": "COSTIGLIOLE D'ASTI",
+                "city": "Costigliole D'Asti",
+                "lat": 44.791885,
+                "lng": 8.168377,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Costigliole D'Asti",
+                "country": "Italia"
+        },
+        {
+                "id": "58333",
+                "name": "BIELLA LA SERRA",
+                "city": "Roppolo",
+                "lat": 45.423229,
+                "lng": 8.069714,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Roppolo",
+                "country": "Italia"
+        },
+        {
+                "id": "40646",
+                "name": "SANTHIA'",
+                "city": "CavagliÃ ",
+                "lat": 45.39003,
+                "lng": 8.128786,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di CavagliÃ ",
+                "country": "Italia"
+        },
+        {
+                "id": "72939",
+                "name": "SANTHIA",
+                "city": "CavagliÃ ",
+                "lat": 45.39003,
+                "lng": 8.128786,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di CavagliÃ ",
+                "country": "Italia"
+        },
+        {
+                "id": "63502",
+                "name": "VIGNALE MONFERRATO",
+                "city": "Vignale Monferrato",
+                "lat": 45.009309,
+                "lng": 8.395398,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Vignale Monferrato",
+                "country": "Italia"
+        },
+        {
+                "id": "58314",
+                "name": "ALESSANDRIA MARENGO",
+                "city": "Alessandria",
+                "lat": 44.911226,
+                "lng": 8.6165,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Alessandria",
+                "country": "Italia"
+        },
+        {
+                "id": "153149",
+                "name": "Alessandria Valmadonna Valle delle Grazie",
+                "city": "Alessandria",
+                "lat": 44.915894,
+                "lng": 8.61779,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Alessandria",
+                "country": "Italia"
+        },
+        {
+                "id": "128749",
+                "name": "Casale Monferrato",
+                "city": "Casale Monferrato",
+                "lat": 45.136144,
+                "lng": 8.453317,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Casale Monferrato",
+                "country": "Italia"
+        },
+        {
+                "id": "20917",
+                "name": "ACQUI TERME HOST",
+                "city": "Acqui Terme",
+                "lat": 44.673949,
+                "lng": 8.469199,
+                "site": "https://lionsclubacquiterme.it/",
+                "address": "Club di Acqui Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "108207",
+                "name": "ACQUI E COLLINE ACQUESI",
+                "city": "Acqui Terme",
+                "lat": 44.672532,
+                "lng": 8.468594,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Acqui Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "125705",
+                "name": "Valenza Adamas",
+                "city": "Valenza",
+                "lat": 44.994501,
+                "lng": 8.606071,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Valenza",
+                "country": "Italia"
+        },
+        {
+                "id": "20919",
+                "name": "ALBA LANGHE",
+                "city": "Alba",
+                "lat": 44.642401,
+                "lng": 7.974435,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Alba",
+                "country": "Italia"
+        },
+        {
+                "id": "71175",
+                "name": "VALENZA",
+                "city": "Valenza",
+                "lat": 45.006364,
+                "lng": 8.632556,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Valenza",
+                "country": "Italia"
+        },
+        {
+                "id": "20960",
+                "name": "VALENZA HOST",
+                "city": "Valenza",
+                "lat": 45.05263,
+                "lng": 8.608799,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Valenza",
+                "country": "Italia"
+        },
+        {
+                "id": "63090",
+                "name": "CORTEMILIA E VALLI",
+                "city": "Cortemilia",
+                "lat": 44.576347,
+                "lng": 8.197834,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Cortemilia",
+                "country": "Italia"
+        },
+        {
+                "id": "56003",
+                "name": "OVADA",
+                "city": "Ovada",
+                "lat": 44.641719,
+                "lng": 8.646846,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Ovada",
+                "country": "Italia"
+        },
+        {
+                "id": "76083",
+                "name": "CARRU' - DOGLIANI",
+                "city": "Dogliani",
+                "lat": 44.543011,
+                "lng": 7.926645,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Dogliani",
+                "country": "Italia"
+        },
+        {
+                "id": "111045",
+                "name": "POZZOLO FORMIGARO",
+                "city": "Pozzolo Formigaro",
+                "lat": 44.792477,
+                "lng": 8.782488,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Pozzolo Formigaro",
+                "country": "Italia"
+        },
+        {
+                "id": "39366",
+                "name": "LOMELLINA HOST",
+                "city": "Mede",
+                "lat": 45.095665,
+                "lng": 8.736986,
+                "site": "https://www.lions108ib3.it/il-distretto/quinta-circoscrizione/zona-c/lomellina-host",
+                "address": "Club di Mede",
+                "country": "Italia"
+        },
+        {
+                "id": "20929",
+                "name": "CASALE MONFERRATO HOST",
+                "city": "Rosignano Monferrato",
+                "lat": 44.762409,
+                "lng": 8.785346,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Rosignano Monferrato",
+                "country": "Italia"
+        },
+        {
+                "id": "110932",
+                "name": "CASTELNUOVO SCRIVIA MATTEO BANDELLO",
+                "city": "Isola Sant'Antonio",
+                "lat": 45.035421,
+                "lng": 8.825314,
+                "site": "https://e-clubhouse.org/sites/castelnuovosmb/",
+                "address": "Club di Isola Sant'Antonio",
+                "country": "Italia"
+        },
+        {
+                "id": "20945",
+                "name": "NOVI LIGURE",
+                "city": "Novi Ligure",
+                "lat": 44.746644,
+                "lng": 8.813866,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Novi Ligure",
+                "country": "Italia"
+        },
+        {
+                "id": "84410",
+                "name": "LOMELLINA RIVA DEL PO",
+                "city": "Mezzana Bigli",
+                "lat": 45.059683,
+                "lng": 8.846619,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Mezzana Bigli",
+                "country": "Italia"
+        },
+        {
+                "id": "149731",
+                "name": "Mornese-Oltregiogo e Alto Monferrato Orientale",
+                "city": "Mornese",
+                "lat": 44.638948,
+                "lng": 8.756188,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Mornese",
+                "country": "Italia"
+        },
+        {
+                "id": "48727",
+                "name": "VOGHERA LA COLLEGIATA",
+                "city": "Voghera",
+                "lat": 44.993889,
+                "lng": 9.007024,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Voghera",
+                "country": "Italia"
+        },
+        {
+                "id": "53321",
+                "name": "BORGHETTO VALLI BORBERA E SPINTI",
+                "city": "Borghetto Borbera",
+                "lat": 44.728486,
+                "lng": 8.971606,
+                "site": "https://e-clubhouse.org/sites/borghettovbes/",
+                "address": "Club di Borghetto Borbera",
+                "country": "Italia"
+        },
+        {
+                "id": "21026",
+                "name": "VOGHERA HOST",
+                "city": "Cervesina",
+                "lat": 45.047733,
+                "lng": 9.00791,
+                "site": "https://www.lions108ib3.it/il-distretto/seconda-circoscrizione/zona-b/voghera-la-collegiata",
+                "address": "Club di Cervesina",
+                "country": "Italia"
+        },
+        {
+                "id": "56728",
+                "name": "GARLASCO HOST LE BOZZOLE",
+                "city": "Garlasco",
+                "lat": 45.189504,
+                "lng": 8.910541,
+                "site": "https://www.lions108ib3.it/il-distretto/quinta-circoscrizione/zona/garlasco-host-le-bozzole",
+                "address": "Club di Garlasco",
+                "country": "Italia"
+        },
+        {
+                "id": "108912",
+                "name": "LOMELLINA PARCO DEL TICINO",
+                "city": "Garlasco",
+                "lat": 45.199873,
+                "lng": 8.954176,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Garlasco",
+                "country": "Italia"
+        },
+        {
+                "id": "58466",
+                "name": "ROBBIO",
+                "city": "Robbio",
+                "lat": 45.289657,
+                "lng": 8.592393,
+                "site": "https://e-clubhouse.org/sites/robbio/",
+                "address": "Club di Robbio",
+                "country": "Italia"
+        },
+        {
+                "id": "45153",
+                "name": "CASTEGGIO OLTRE PO PAVESE",
+                "city": "Casteggio",
+                "lat": 45.032769,
+                "lng": 9.128316,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Casteggio",
+                "country": "Italia"
+        },
+        {
+                "id": "103427",
+                "name": "VIGEVANO LE ROBINIE",
+                "city": "Vigevano",
+                "lat": 45.283193,
+                "lng": 8.855498,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Vigevano",
+                "country": "Italia"
+        },
+        {
+                "id": "21025",
+                "name": "VIGEVANO HOST",
+                "city": "Vigevano",
+                "lat": 45.283193,
+                "lng": 8.855498,
+                "site": "https://www.lionsvigevanohost.com/",
+                "address": "Club di Vigevano",
+                "country": "Italia"
+        },
+        {
+                "id": "55688",
+                "name": "VIGEVANO TICINUM",
+                "city": "Vigevano",
+                "lat": 45.285576,
+                "lng": 8.869546,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Vigevano",
+                "country": "Italia"
+        },
+        {
+                "id": "140868",
+                "name": "Gravellona La Melagrana",
+                "city": "Vigevani",
+                "lat": 45.28899,
+                "lng": 8.88443,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Vigevani",
+                "country": "Italia"
+        },
+        {
+                "id": "48376",
+                "name": "VIGEVANO SFORZESCO",
+                "city": "Vigevano",
+                "lat": 45.28899,
+                "lng": 8.88443,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Vigevano",
+                "country": "Italia"
+        },
+        {
+                "id": "20965",
+                "name": "VERCELLI",
+                "city": "Vercelli",
+                "lat": 45.326588,
+                "lng": 8.421422,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Vercelli",
+                "country": "Italia"
+        },
+        {
+                "id": "20933",
+                "name": "CUNEO",
+                "city": "Cuneo",
+                "lat": 44.384076,
+                "lng": 7.54278,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Cuneo",
+                "country": "Italia"
+        },
+        {
+                "id": "64089",
+                "name": "BORGO SAN DALMAZZO BESIMAUDA",
+                "city": "Borgo San Dalmazzo",
+                "lat": 44.325661,
+                "lng": 7.479815,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Borgo San Dalmazzo",
+                "country": "Italia"
+        },
+        {
+                "id": "20944",
+                "name": "NOVARA HOST",
+                "city": "Novara",
+                "lat": 45.445819,
+                "lng": 8.618398,
+                "site": "https://www.fondazionenovarese.it/news/in-fcn-nasce-il-fondo-rotary-club-novara-e-lions-club-novara-host/",
+                "address": "Club di Novara",
+                "country": "Italia"
+        },
+        {
+                "id": "63303",
+                "name": "NOVARA BROLETTO",
+                "city": "Novara",
+                "lat": 45.445819,
+                "lng": 8.618398,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Novara",
+                "country": "Italia"
+        },
+        {
+                "id": "119303",
+                "name": "NOVARA OVEST TICINO",
+                "city": "Novara",
+                "lat": 45.426876,
+                "lng": 8.640979,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Novara",
+                "country": "Italia"
+        },
+        {
+                "id": "67470",
+                "name": "TICINO TORRE DEL BASTO",
+                "city": "Boffalora Sopra Ticino",
+                "lat": 45.454723,
+                "lng": 8.805282,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Boffalora Sopra Ticino",
+                "country": "Italia"
+        },
+        {
+                "id": "21017",
+                "name": "SESTO CALENDE SOMMA LOMBARDO HOST",
+                "city": "Vizzola Ticino",
+                "lat": 45.625531,
+                "lng": 8.697521,
+                "site": "https://lionsclub-sestosomma.eu/",
+                "address": "Club di Vizzola Ticino",
+                "country": "Italia"
+        },
+        {
+                "id": "177658",
+                "name": "Milano Ovest",
+                "city": "Corbetta",
+                "lat": 45.465496,
+                "lng": 8.919812,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Corbetta",
+                "country": "Italia"
+        },
+        {
+                "id": "30832",
+                "name": "BUSTO ARSIZIO BRAMANTESCO",
+                "city": "Busto Arsizio",
+                "lat": 45.612162,
+                "lng": 8.842321,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Busto Arsizio",
+                "country": "Italia"
+        },
+        {
+                "id": "49944",
+                "name": "CASTELLANZA MALPENSA",
+                "city": "Busto Arsizio",
+                "lat": 45.612162,
+                "lng": 8.842321,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Busto Arsizio",
+                "country": "Italia"
+        },
+        {
+                "id": "39898",
+                "name": "BUSTO ARSIZIO EUROPA CISALPINO",
+                "city": "Busto Arsizio",
+                "lat": 45.612162,
+                "lng": 8.842321,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Busto Arsizio",
+                "country": "Italia"
+        },
+        {
+                "id": "71190",
+                "name": "GALLARATE",
+                "city": "Gallarate",
+                "lat": 45.654413,
+                "lng": 8.789494,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Gallarate",
+                "country": "Italia"
+        },
+        {
+                "id": "59340",
+                "name": "SOLBIATE ARNO VALLE ARNO",
+                "city": "Gallarate",
+                "lat": 45.658701,
+                "lng": 8.779475,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Gallarate",
+                "country": "Italia"
+        },
+        {
+                "id": "122853",
+                "name": "Somma Lombardo Castello Visconti di San Vito",
+                "city": "Somma Lombardo",
+                "lat": 45.683589,
+                "lng": 8.706196,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Somma Lombardo",
+                "country": "Italia"
+        },
+        {
+                "id": "57302",
+                "name": "LEGNANO CASTELLO LE ROBINIE",
+                "city": "Legnano",
+                "lat": 45.584578,
+                "lng": 8.911178,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Legnano",
+                "country": "Italia"
+        },
+        {
+                "id": "43375",
+                "name": "GALLARATE SEPRIO",
+                "city": "Gallarate",
+                "lat": 45.67396,
+                "lng": 8.78096,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Gallarate",
+                "country": "Italia"
+        },
+        {
+                "id": "36486",
+                "name": "ABBIATEGRASSO",
+                "city": "Cisliano",
+                "lat": 45.436555,
+                "lng": 8.982862,
+                "site": "https://e-clubhouse.org/sites/abbiategrasso/",
+                "address": "Club di Cisliano",
+                "country": "Italia"
+        },
+        {
+                "id": "40899",
+                "name": "LEGNANO CARROCCIO",
+                "city": "Legnano",
+                "lat": 45.594988,
+                "lng": 8.918593,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Legnano",
+                "country": "Italia"
+        },
+        {
+                "id": "145743",
+                "name": "OLONA GREEN WAY CHAMPIONS",
+                "city": "San Vittore Olona",
+                "lat": 45.581502,
+                "lng": 8.949544,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di San Vittore Olona",
+                "country": "Italia"
+        },
+        {
+                "id": "64492",
+                "name": "BORGOMANERO CUSIO",
+                "city": "Borgomanero",
+                "lat": 45.702559,
+                "lng": 8.445472,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Borgomanero",
+                "country": "Italia"
+        },
+        {
+                "id": "20928",
+                "name": "BORGOMANERO HOST",
+                "city": "Borgomanero",
+                "lat": 45.702559,
+                "lng": 8.445472,
+                "site": "https://e-clubhouse.org/sites/borgomanero_host/page-7.php",
+                "address": "Club di Borgomanero",
+                "country": "Italia"
+        },
+        {
+                "id": "130211",
+                "name": "Rho Fiera",
+                "city": "Pregnana Milanese",
+                "lat": 45.511005,
+                "lng": 9.01323,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Pregnana Milanese",
+                "country": "Italia"
+        },
+        {
+                "id": "21011",
+                "name": "RHO HOST",
+                "city": "Rho",
+                "lat": 45.535016,
+                "lng": 9.017654,
+                "site": "https://www.lionsclublainate.it/etica-e-scopi-del-lionismo/",
+                "address": "Club di Rho",
+                "country": "Italia"
+        },
+        {
+                "id": "20924",
+                "name": "ARONA STRESA",
+                "city": "Arona",
+                "lat": 45.750093,
+                "lng": 8.561379,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Arona",
+                "country": "Italia"
+        },
+        {
+                "id": "43770",
+                "name": "LAINATE",
+                "city": "Lainate",
+                "lat": 45.571376,
+                "lng": 9.018985,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Lainate",
+                "country": "Italia"
+        },
+        {
+                "id": "21014",
+                "name": "SARONNO HOST SOLIDALIA",
+                "city": "Saronno",
+                "lat": 45.616325,
+                "lng": 9.023589,
+                "site": "https://ilsaronno.it/tag/lions-club-saronno-host-solidalia/",
+                "address": "Club di Saronno",
+                "country": "Italia"
+        },
+        {
+                "id": "189901",
+                "name": "Lombardia Lago Maggiore",
+                "city": "Varano Borghi",
+                "lat": 45.773036,
+                "lng": 8.704378,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varano Borghi",
+                "country": "Italia"
+        },
+        {
+                "id": "130975",
+                "name": "Busto Arsizio Onda Rossa",
+                "city": "Caronno Pertusella",
+                "lat": 45.604824,
+                "lng": 9.041047,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Caronno Pertusella",
+                "country": "Italia"
+        },
+        {
+                "id": "30836",
+                "name": "TRADATE SEPRIO",
+                "city": "Tradate",
+                "lat": 45.716777,
+                "lng": 8.906123,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Tradate",
+                "country": "Italia"
+        },
+        {
+                "id": "53729",
+                "name": "SARONNO DEL TEATRO",
+                "city": "Saronno",
+                "lat": 45.632331,
+                "lng": 9.042929,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Saronno",
+                "country": "Italia"
+        },
+        {
+                "id": "32107",
+                "name": "MILANO BRERA",
+                "city": "Milano",
+                "lat": 45.474657,
+                "lng": 9.142712,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "127394",
+                "name": "Milano Colonne Di San Lorenzo",
+                "city": "Italia",
+                "lat": 45.464075,
+                "lng": 9.152486,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "157565",
+                "name": "Appiano Gentile",
+                "city": "Appiano Gentile",
+                "lat": 45.734939,
+                "lng": 8.982477,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Appiano Gentile",
+                "country": "Italia"
+        },
+        {
+                "id": "125795",
+                "name": "Varese Insubria",
+                "city": "Varese",
+                "lat": 45.811066,
+                "lng": 8.799401,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varese",
+                "country": "Italia"
+        },
+        {
+                "id": "40647",
+                "name": "VARESE VARISIUM",
+                "city": "Varese",
+                "lat": 45.81775,
+                "lng": 8.776426,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varese",
+                "country": "Italia"
+        },
+        {
+                "id": "53868",
+                "name": "MILANO METROPOLIS",
+                "city": "Milano",
+                "lat": 45.457667,
+                "lng": 9.172498,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "119121",
+                "name": "Bramante - Cinque Giornate",
+                "city": "Milano",
+                "lat": 45.443408,
+                "lng": 9.177762,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "36825",
+                "name": "MILANO AI CENACOLI",
+                "city": "Milano",
+                "lat": 45.480266,
+                "lng": 9.176759,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "29810",
+                "name": "VALSESIA",
+                "city": "Quarona",
+                "lat": 45.761586,
+                "lng": 8.270374,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Quarona",
+                "country": "Italia"
+        },
+        {
+                "id": "21024",
+                "name": "VARESE SETTE LAGHI",
+                "city": "Varese",
+                "lat": 45.822108,
+                "lng": 8.809645,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varese",
+                "country": "Italia"
+        },
+        {
+                "id": "35794",
+                "name": "VARESE EUROPA",
+                "city": "Varese",
+                "lat": 45.822108,
+                "lng": 8.809645,
+                "site": "https://lionsclubvareseeuropa.it",
+                "address": "Club di Varese",
+                "country": "Italia"
+        },
+        {
+                "id": "67506",
+                "name": "GAVIRATE",
+                "city": "Gavirate",
+                "lat": 45.820473,
+                "lng": 8.824984,
+                "site": "https://e-clubhouse.org/sites/gavirate/",
+                "address": "Club di Gavirate",
+                "country": "Italia"
+        },
+        {
+                "id": "40159",
+                "name": "PADERNO DUGNANO",
+                "city": "Paderno Dugnano",
+                "lat": 45.564521,
+                "lng": 9.164846,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Paderno Dugnano",
+                "country": "Italia"
+        },
+        {
+                "id": "33729",
+                "name": "MILANO BORROMEO",
+                "city": "Milano",
+                "lat": 45.446553,
+                "lng": 9.189783,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "44176",
+                "name": "MILANO PARCO NORD",
+                "city": "Milano",
+                "lat": 45.446559,
+                "lng": 9.189929,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "48164",
+                "name": "VARESE EUROPAE CIVITAS",
+                "city": "Luvinate",
+                "lat": 45.839991,
+                "lng": 8.762196,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Luvinate",
+                "country": "Italia"
+        },
+        {
+                "id": "28152",
+                "name": "MILANO DUOMO",
+                "city": "Milano",
+                "lat": 45.476937,
+                "lng": 9.196618,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "44371",
+                "name": "MILANO C. PORTA SAN BABILA",
+                "city": "Milano",
+                "lat": 45.463125,
+                "lng": 9.197818,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "146181",
+                "name": "INSUBRIA GOLF",
+                "city": "Varese",
+                "lat": 45.819472,
+                "lng": 8.85971,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varese",
+                "country": "Italia"
+        },
+        {
+                "id": "21002",
+                "name": "MILANO ALLA SCALA AMBROSIANO",
+                "city": "Milano",
+                "lat": 45.466615,
+                "lng": 9.202793,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "52636",
+                "name": "MILANO NORD 92",
+                "city": "Milano",
+                "lat": 45.478138,
+                "lng": 9.20185,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "127264",
+                "name": "Cesano Maderno E Brianza Occidentale",
+                "city": "Cesano Maderno",
+                "lat": 45.6292,
+                "lng": 9.146906,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Cesano Maderno",
+                "country": "Italia"
+        },
+        {
+                "id": "41199",
+                "name": "BIELLA VALLI BIELLESI",
+                "city": "Biella",
+                "lat": 45.568599,
+                "lng": 8.051631,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Biella",
+                "country": "Italia"
+        },
+        {
+                "id": "20926",
+                "name": "BIELLA HOST",
+                "city": "Biella",
+                "lat": 45.568599,
+                "lng": 8.051631,
+                "site": "https://lionsbiellahost.it/",
+                "address": "Club di Biella",
+                "country": "Italia"
+        },
+        {
+                "id": "47816",
+                "name": "BIELLA BUGELLA CIVITAS",
+                "city": "Biella",
+                "lat": 45.568599,
+                "lng": 8.051631,
+                "site": "https://www.lions108ia1.it/",
+                "address": "Club di Biella",
+                "country": "Italia"
+        },
+        {
+                "id": "33875",
+                "name": "MONTICELLO",
+                "city": "Cassina Rizzardi",
+                "lat": 45.75251,
+                "lng": 9.017947,
+                "site": "https://e-clubhouse.org/sites/monticello/",
+                "address": "Club di Cassina Rizzardi",
+                "country": "Italia"
+        },
+        {
+                "id": "28200",
+                "name": "CORSICO",
+                "city": "Milano",
+                "lat": 45.483951,
+                "lng": 9.207595,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "29306",
+                "name": "OLGIATE COMASCO",
+                "city": "Lurate Caccivio",
+                "lat": 45.774898,
+                "lng": 8.99729,
+                "site": "https://lionsclubolgiatecomasco.it",
+                "address": "Club di Lurate Caccivio",
+                "country": "Italia"
+        },
+        {
+                "id": "50582",
+                "name": "MILANO VIA DELLA SPIGA",
+                "city": "Milano",
+                "lat": 45.457428,
+                "lng": 9.222672,
+                "site": "https://e-clubhouse.org/sites/milanovds/",
+                "address": "Club di Milano",
+                "country": "Italia"
+        },
+        {
+                "id": "20975",
+                "name": "CANTU' MARIANO COMENSE",
+                "city": "Carimate",
+                "lat": 45.702797,
+                "lng": 9.114562,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Carimate",
+                "country": "Italia"
+        },
+        {
+                "id": "20980",
+                "name": "CINISELLO BALSAMO",
+                "city": "Cinisello Balsamo",
+                "lat": 45.55602,
+                "lng": 9.214921,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Cinisello Balsamo",
+                "country": "Italia"
+        },
+        {
+                "id": "49895",
+                "name": "SESTO SAN GIOVANNI CENTRO",
+                "city": "Sesto San Giovanni",
+                "lat": 45.533532,
+                "lng": 9.228555,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Sesto San Giovanni",
+                "country": "Italia"
+        },
+        {
+                "id": "37435",
+                "name": "LAVENO MOMBELLO SANTA CATERINA DEL SASSO",
+                "city": "Cittiglio",
+                "lat": 45.892869,
+                "lng": 8.667295,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Cittiglio",
+                "country": "Italia"
+        },
+        {
+                "id": "30447",
+                "name": "SEGRATE-MILANO PORTA ORIENTALE",
+                "city": "Italia",
+                "lat": 45.498569,
+                "lng": 9.267006,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "62844",
+                "name": "COLOGNO MONZESE MEDIO LAMBRO",
+                "city": "Cologno Monzese",
+                "lat": 45.528427,
+                "lng": 9.27923,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Cologno Monzese",
+                "country": "Italia"
+        },
+        {
+                "id": "49051",
+                "name": "CASSINA DE' PECCHI E VIGNATE",
+                "city": "Vignate",
+                "lat": 45.504514,
+                "lng": 9.360579,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Vignate",
+                "country": "Italia"
+        },
+        {
+                "id": "21005",
+                "name": "MONZA HOST",
+                "city": "Monza",
+                "lat": 45.591521,
+                "lng": 9.271552,
+                "site": "https://lionsclubmonzahost.it/",
+                "address": "Club di Monza",
+                "country": "Italia"
+        },
+        {
+                "id": "62037",
+                "name": "MONZA DUOMO",
+                "city": "Monza",
+                "lat": 45.592614,
+                "lng": 9.271417,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Monza",
+                "country": "Italia"
+        },
+        {
+                "id": "37639",
+                "name": "EST MILANO",
+                "city": "Zoate Di Tribiano",
+                "lat": 45.404138,
+                "lng": 9.361862,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Zoate Di Tribiano",
+                "country": "Italia"
+        },
+        {
+                "id": "71198",
+                "name": "MONZA",
+                "city": "Monza",
+                "lat": 45.586343,
+                "lng": 9.298857,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Monza",
+                "country": "Italia"
+        },
+        {
+                "id": "20987",
+                "name": "DESIO",
+                "city": "Monza",
+                "lat": 45.599502,
+                "lng": 9.269617,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Monza",
+                "country": "Italia"
+        },
+        {
+                "id": "29645",
+                "name": "VIMERCATE",
+                "city": "Vimercate",
+                "lat": 45.601089,
+                "lng": 9.362312,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Vimercate",
+                "country": "Italia"
+        },
+        {
+                "id": "129675",
+                "name": "Arcore Borromeo",
+                "city": "Arcore",
+                "lat": 45.627658,
+                "lng": 9.326105,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Arcore",
+                "country": "Italia"
+        },
+        {
+                "id": "33874",
+                "name": "CANONICA LAMBRO",
+                "city": "Canonica Di Triuggio",
+                "lat": 45.648926,
+                "lng": 9.280425,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Canonica Di Triuggio",
+                "country": "Italia"
+        },
+        {
+                "id": "36651",
+                "name": "SEREGNO BRIANZA",
+                "city": "Giussano",
+                "lat": 45.677593,
+                "lng": 9.204622,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Giussano",
+                "country": "Italia"
+        },
+        {
+                "id": "99979",
+                "name": "INZAGO",
+                "city": "Rivolta D'Adda",
+                "lat": 45.473172,
+                "lng": 9.499521,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Rivolta D'Adda",
+                "country": "Italia"
+        },
+        {
+                "id": "20996",
+                "name": "ADDA MILANESE",
+                "city": "Rivolta Dadda",
+                "lat": 45.473172,
+                "lng": 9.499521,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Rivolta Dadda",
+                "country": "Italia"
+        },
+        {
+                "id": "135151",
+                "name": "Carate Brianza Cavalieri",
+                "city": "Besana In Brianza",
+                "lat": 45.699931,
+                "lng": 9.283139,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Besana In Brianza",
+                "country": "Italia"
+        },
+        {
+                "id": "20971",
+                "name": "BRIANZA HOST",
+                "city": "Briosco",
+                "lat": 45.709174,
+                "lng": 9.2397,
+                "site": "https://www.lionsclubbrianzahost.it/",
+                "address": "Club di Briosco",
+                "country": "Italia"
+        },
+        {
+                "id": "102167",
+                "name": "CASSANO D'ADDA",
+                "city": "Cassano Dadda",
+                "lat": 45.525621,
+                "lng": 9.524577,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Cassano Dadda",
+                "country": "Italia"
+        },
+        {
+                "id": "30445",
+                "name": "BRIANZA COLLI",
+                "city": "Missaglia",
+                "lat": 45.708528,
+                "lng": 9.334914,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Missaglia",
+                "country": "Italia"
+        },
+        {
+                "id": "67539",
+                "name": "PARCO ADDA NORD",
+                "city": "Vaprio D'Adda",
+                "lat": 45.575604,
+                "lng": 9.525724,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Vaprio D'Adda",
+                "country": "Italia"
+        },
+        {
+                "id": "21012",
+                "name": "SANT'ANGELO LODIGIANO",
+                "city": "Sant'Angelo Lodigiano",
+                "lat": 45.242162,
+                "lng": 9.406476,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Sant'Angelo Lodigiano",
+                "country": "Italia"
+        },
+        {
+                "id": "47521",
+                "name": "LODI TORRIONE",
+                "city": "Lodi",
+                "lat": 45.316347,
+                "lng": 9.512078,
+                "site": "https://lionsclubloditorrione.it",
+                "address": "Club di Lodi",
+                "country": "Italia"
+        },
+        {
+                "id": "47838",
+                "name": "LODI QUADRIFOGLIO",
+                "city": "Lodi",
+                "lat": 45.316347,
+                "lng": 9.512078,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Lodi",
+                "country": "Italia"
+        },
+        {
+                "id": "20993",
+                "name": "LODI HOST",
+                "city": "Lodi",
+                "lat": 45.316347,
+                "lng": 9.512078,
+                "site": "https://www.lions108ib3.it/il-distretto/prima-circoscrizione/zona/lodi-host",
+                "address": "Club di Lodi",
+                "country": "Italia"
+        },
+        {
+                "id": "64411",
+                "name": "AGER LAUDENSIS NEW CENTURY",
+                "city": "Lodi",
+                "lat": 45.316347,
+                "lng": 9.512078,
+                "site": "https://www.lions108ib4.it/",
+                "address": "Club di Lodi",
+                "country": "Italia"
+        },
+        {
+                "id": "141497",
+                "name": "Pavia Minerva",
+                "city": "Pavia",
+                "lat": 45.188279,
+                "lng": 9.161055,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Pavia",
+                "country": "Italia"
+        },
+        {
+                "id": "121149",
+                "name": "Ticinum Via Francigena",
+                "city": "Pavia",
+                "lat": 45.188279,
+                "lng": 9.161055,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Pavia",
+                "country": "Italia"
+        },
+        {
+                "id": "56992",
+                "name": "PONTE SAN PIETRO ISOLA",
+                "city": "Bottanuco",
+                "lat": 45.644126,
+                "lng": 9.506117,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Bottanuco",
+                "country": "Italia"
+        },
+        {
+                "id": "21009",
+                "name": "PAVIA HOST",
+                "city": "Pavia",
+                "lat": 45.17914,
+                "lng": 9.142204,
+                "site": "https://www.lions108ib3.it/il-distretto/seconda-circoscrizione/zona/pavia-host",
+                "address": "Club di Pavia",
+                "country": "Italia"
+        },
+        {
+                "id": "20999",
+                "name": "MERATE",
+                "city": "Imbersago",
+                "lat": 45.708015,
+                "lng": 9.455401,
+                "site": "https://e-clubhouse.org/sites/merate/",
+                "address": "Club di Imbersago",
+                "country": "Italia"
+        },
+        {
+                "id": "44865",
+                "name": "PANDINO GERA D'ADDA VISCONTEA",
+                "city": "Quintano",
+                "lat": 45.42014,
+                "lng": 9.617912,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Quintano",
+                "country": "Italia"
+        },
+        {
+                "id": "150811",
+                "name": "MONTORFANO L.D.",
+                "city": "Montorfano",
+                "lat": 45.777474,
+                "lng": 9.135672,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Montorfano",
+                "country": "Italia"
+        },
+        {
+                "id": "21019",
+                "name": "TREVIGLIO HOST",
+                "city": "Misano Gera D'Adda",
+                "lat": 45.478335,
+                "lng": 9.626891,
+                "site": "https://e-clubhouse.org/sites/trevigliohost/index.php",
+                "address": "Club di Misano Gera D'Adda",
+                "country": "Italia"
+        },
+        {
+                "id": "122100",
+                "name": "Capiago Intimiano",
+                "city": "Como",
+                "lat": 45.775368,
+                "lng": 9.102645,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Como",
+                "country": "Italia"
+        },
+        {
+                "id": "46482",
+                "name": "CASTELLO BRIANZA LAGHI",
+                "city": "Bosisio Parini",
+                "lat": 45.797645,
+                "lng": 9.307949,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Bosisio Parini",
+                "country": "Italia"
+        },
+        {
+                "id": "154180",
+                "name": "I Medeghini Pliniani",
+                "city": "Como",
+                "lat": 45.806382,
+                "lng": 9.085187,
+                "site": "https://e-clubhouse.org/sites/imp/",
+                "address": "Club di Como",
+                "country": "Italia"
+        },
+        {
+                "id": "68809",
+                "name": "CREMA SERENISSIMA",
+                "city": "Crema",
+                "lat": 45.36047,
+                "lng": 9.650416,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Crema",
+                "country": "Italia"
+        },
+        {
+                "id": "109776",
+                "name": "CITTA' DI DALMINE",
+                "city": "Dalmine",
+                "lat": 45.637035,
+                "lng": 9.619349,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Dalmine",
+                "country": "Italia"
+        },
+        {
+                "id": "48961",
+                "name": "COMO PLINIO IL GIOVANE",
+                "city": "Como",
+                "lat": 45.811625,
+                "lng": 9.084397,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Como",
+                "country": "Italia"
+        },
+        {
+                "id": "101916",
+                "name": "SAN FERMO DELLA BATTAGLIA",
+                "city": "San Fermo Della Battaglia",
+                "lat": 45.81374,
+                "lng": 9.031935,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di San Fermo Della Battaglia",
+                "country": "Italia"
+        },
+        {
+                "id": "156985",
+                "name": "Crema Duomo Oltre le Mura",
+                "city": "Crema",
+                "lat": 45.717612,
+                "lng": 9.578292,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Crema",
+                "country": "Italia"
+        },
+        {
+                "id": "47915",
+                "name": "CREMA GERUNDO",
+                "city": "Crema",
+                "lat": 45.36221,
+                "lng": 9.700731,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Crema",
+                "country": "Italia"
+        },
+        {
+                "id": "98933",
+                "name": "CERNOBBIO",
+                "city": "Cernobbio",
+                "lat": 45.842177,
+                "lng": 9.07326,
+                "site": "https://e-clubhouse.org/sites/cernobbio/",
+                "address": "Club di Cernobbio",
+                "country": "Italia"
+        },
+        {
+                "id": "20984",
+                "name": "CREMA HOST",
+                "city": "Crema",
+                "lat": 45.364147,
+                "lng": 9.713674,
+                "site": "https://www.lions108ib3.it/il-distretto/terza-circoscrizione/zona/crema-host",
+                "address": "Club di Crema",
+                "country": "Italia"
+        },
+        {
+                "id": "20991",
+                "name": "LECCO HOST",
+                "city": "Malgrate",
+                "lat": 45.849492,
+                "lng": 9.380864,
+                "site": "https://lionsclubleccohost.it/",
+                "address": "Club di Malgrate",
+                "country": "Italia"
+        },
+        {
+                "id": "56911",
+                "name": "LECCO SAN NICOLO'",
+                "city": "Lecco",
+                "lat": 45.85241,
+                "lng": 9.39517,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Lecco",
+                "country": "Italia"
+        },
+        {
+                "id": "34543",
+                "name": "BERGAMO SAN MARCO",
+                "city": "Bergamo",
+                "lat": 45.686228,
+                "lng": 9.669703,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Bergamo",
+                "country": "Italia"
+        },
+        {
+                "id": "20968",
+                "name": "BERGAMO HOST",
+                "city": "Bergamo",
+                "lat": 45.69826,
+                "lng": 9.667439,
+                "site": "https://www.lions108ib2.it/i-club-leo",
+                "address": "Club di Bergamo",
+                "country": "Italia"
+        },
+        {
+                "id": "102259",
+                "name": "ROMANO DI LOMBARDIA",
+                "city": "Cortenuova",
+                "lat": 45.54001,
+                "lng": 9.786227,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Cortenuova",
+                "country": "Italia"
+        },
+        {
+                "id": "35793",
+                "name": "VALLE BREMBANA",
+                "city": "San Pellegrino Terme",
+                "lat": 45.840126,
+                "lng": 9.665323,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di San Pellegrino Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "32545",
+                "name": "VALSASSINA",
+                "city": "Barzio",
+                "lat": 45.947645,
+                "lng": 9.445361,
+                "site": "https://e-clubhouse.org/sites/valsassina/",
+                "address": "Club di Barzio",
+                "country": "Italia"
+        },
+        {
+                "id": "116107",
+                "name": "BELLAGIO-BELLAXIO",
+                "city": "Bellagio",
+                "lat": 45.971885,
+                "lng": 9.264281,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Bellagio",
+                "country": "Italia"
+        },
+        {
+                "id": "102032",
+                "name": "VAL CALEPIO VAL CAVALLINA",
+                "city": "Castelli Calepio",
+                "lat": 45.627142,
+                "lng": 9.900987,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Castelli Calepio",
+                "country": "Italia"
+        },
+        {
+                "id": "21008",
+                "name": "PALAZZOLO SULL'OGLIO",
+                "city": "Coccaglio",
+                "lat": 45.561675,
+                "lng": 9.984669,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Coccaglio",
+                "country": "Italia"
+        },
+        {
+                "id": "29387",
+                "name": "MONTORFANO FRANCIACORTA",
+                "city": "Coccaglio",
+                "lat": 45.561675,
+                "lng": 9.984669,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Coccaglio",
+                "country": "Italia"
+        },
+        {
+                "id": "38814",
+                "name": "CHIARI LE QUADRE",
+                "city": "Coccaglio",
+                "lat": 45.561675,
+                "lng": 9.984669,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Coccaglio",
+                "country": "Italia"
+        },
+        {
+                "id": "37170",
+                "name": "SEBINO",
+                "city": "Iseo",
+                "lat": 45.657972,
+                "lng": 10.034878,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Iseo",
+                "country": "Italia"
+        },
+        {
+                "id": "146217",
+                "name": "Sarnico e Franciacorta",
+                "city": "Iseo",
+                "lat": 45.658105,
+                "lng": 10.03517,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Iseo",
+                "country": "Italia"
+        },
+        {
+                "id": "45293",
+                "name": "LOVERE",
+                "city": "Lovere",
+                "lat": 45.816694,
+                "lng": 10.075224,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Lovere",
+                "country": "Italia"
+        },
+        {
+                "id": "44757",
+                "name": "SONCINO",
+                "city": "Soncino",
+                "lat": 45.401981,
+                "lng": 9.871211,
+                "site": "https://lionsclubsoncino.it",
+                "address": "Club di Soncino",
+                "country": "Italia"
+        },
+        {
+                "id": "21022",
+                "name": "VALTROMPIA",
+                "city": "Gardone Vt",
+                "lat": 45.697787,
+                "lng": 10.185987,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Gardone Vt",
+                "country": "Italia"
+        },
+        {
+                "id": "57648",
+                "name": "COLLEBEATO",
+                "city": "Collebetao",
+                "lat": 45.58157,
+                "lng": 10.195149,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Collebetao",
+                "country": "Italia"
+        },
+        {
+                "id": "88004",
+                "name": "CASTELLEONE",
+                "city": "Castelleone",
+                "lat": 45.316032,
+                "lng": 9.770338,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Castelleone",
+                "country": "Italia"
+        },
+        {
+                "id": "20972",
+                "name": "BRESCIA LEONESSA DIECI GIORNATE",
+                "city": "Brescia",
+                "lat": 45.526772,
+                "lng": 10.18859,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "20970",
+                "name": "BRESCIA HOST",
+                "city": "Brescia",
+                "lat": 45.542789,
+                "lng": 10.219968,
+                "site": "https://www.lions108ib2.it/i-club-leo",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "129317",
+                "name": "Brescia Loggia Lodoiga",
+                "city": "Brescia",
+                "lat": 45.536302,
+                "lng": 10.218045,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "20967",
+                "name": "RIVIERA DEL LARIO",
+                "city": "Varenna",
+                "lat": 46.010004,
+                "lng": 9.283717,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Varenna",
+                "country": "Italia"
+        },
+        {
+                "id": "47984",
+                "name": "BRESCIA CAPITOLIUM",
+                "city": "Brescia",
+                "lat": 45.5346,
+                "lng": 10.229283,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "51108",
+                "name": "BRESCIA VITTORIA ALATA",
+                "city": "Brescia",
+                "lat": 45.574541,
+                "lng": 10.25046,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "37128",
+                "name": "BRESCIA CIDNEO",
+                "city": "Italia",
+                "lat": 45.532415,
+                "lng": 10.246459,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "31043",
+                "name": "MORBEGNO",
+                "city": "Morbegno",
+                "lat": 46.130722,
+                "lng": 9.566896,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Morbegno",
+                "country": "Italia"
+        },
+        {
+                "id": "20998",
+                "name": "MENAGGIO CENTRO LAGO COMO",
+                "city": "Menaggio",
+                "lat": 46.019209,
+                "lng": 9.237494,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Menaggio",
+                "country": "Italia"
+        },
+        {
+                "id": "71181",
+                "name": "BRESCIA HOST",
+                "city": "Brescia",
+                "lat": 45.524541,
+                "lng": 10.267311,
+                "site": "https://www.lions108ib2.it/i-club-leo",
+                "address": "Club di Brescia",
+                "country": "Italia"
+        },
+        {
+                "id": "66697",
+                "name": "REZZATO GIUSEPPE ZANARDELLI",
+                "city": "Rezzato",
+                "lat": 45.51543,
+                "lng": 10.31369,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Rezzato",
+                "country": "Italia"
+        },
+        {
+                "id": "51466",
+                "name": "GARDA VALTENESI",
+                "city": "SalÃ²",
+                "lat": 45.597309,
+                "lng": 10.518681,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di SalÃ²",
+                "country": "Italia"
+        },
+        {
+                "id": "67675",
+                "name": "CASALBUTTANO",
+                "city": "Corte De' Cortesi",
+                "lat": 45.27247,
+                "lng": 10.007064,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Corte De' Cortesi",
+                "country": "Italia"
+        },
+        {
+                "id": "20985",
+                "name": "CREMONA HOST",
+                "city": "Cremona",
+                "lat": 45.162882,
+                "lng": 9.984903,
+                "site": "https://www.lions108ib3.it/il-distretto/terza-circoscrizione/zona-b/cremona-host",
+                "address": "Club di Cremona",
+                "country": "Italia"
+        },
+        {
+                "id": "21020",
+                "name": "VALLE CAMONICA",
+                "city": "Breno",
+                "lat": 45.958084,
+                "lng": 10.305239,
+                "site": "https://www.lions108ib2.it/",
+                "address": "Club di Breno",
+                "country": "Italia"
+        },
+        {
+                "id": "46247",
+                "name": "CREMONA STRADIVARI",
+                "city": "Cremona",
+                "lat": 45.13762,
+                "lng": 10.022424,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Cremona",
+                "country": "Italia"
+        },
+        {
+                "id": "133795",
+                "name": "Torrazzo",
+                "city": "Cremona",
+                "lat": 45.136445,
+                "lng": 10.014156,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Cremona",
+                "country": "Italia"
+        },
+        {
+                "id": "88471",
+                "name": "CAMPUS CLUB UNIVERSITAS NOVA",
+                "city": "Cremona",
+                "lat": 45.137015,
+                "lng": 10.001227,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Cremona",
+                "country": "Italia"
+        },
+        {
+                "id": "153563",
+                "name": "Cremona Lido Po",
+                "city": "Cremona",
+                "lat": 45.126277,
+                "lng": 10.000472,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Cremona",
+                "country": "Italia"
+        },
+        {
+                "id": "20974",
+                "name": "CAMPIONE D'ITALIA",
+                "city": "Campione D'Italia",
+                "lat": 45.97194,
+                "lng": 8.971852,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Campione D'Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "20964",
+                "name": "VERBANIA",
+                "city": "Verbania Intra",
+                "lat": 45.937034,
+                "lng": 8.570874,
+                "site": "https://e-clubhouse.org/sites/verbania/",
+                "address": "Club di Verbania Intra",
+                "country": "Italia"
+        },
+        {
+                "id": "87778",
+                "name": "VERBANO BORROMEO",
+                "city": "Baveno",
+                "lat": 45.929934,
+                "lng": 8.478914,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Baveno",
+                "country": "Italia"
+        },
+        {
+                "id": "118724",
+                "name": "COLICO",
+                "city": "Colico",
+                "lat": 46.14153,
+                "lng": 9.369679,
+                "site": "https://www.lions108ib1.it/",
+                "address": "Club di Colico",
+                "country": "Italia"
+        },
+        {
+                "id": "21016",
+                "name": "STRADELLA-BRONI HOST",
+                "city": "Broni",
+                "lat": 45.075042,
+                "lng": 9.276978,
+                "site": "https://www.lions108ib3.it/il-distretto/seconda-circoscrizione/zona-c/stradella-broni-host",
+                "address": "Club di Broni",
+                "country": "Italia"
+        },
+        {
+                "id": "62499",
+                "name": "MONTU' BECCARIA-LE VIGNE",
+                "city": "Stradella",
+                "lat": 45.076229,
+                "lng": 9.302046,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Stradella",
+                "country": "Italia"
+        },
+        {
+                "id": "116254",
+                "name": "SAN ROCCO AL PORTO E BASSO LODIGIANO",
+                "city": "Guardamiglio",
+                "lat": 45.143308,
+                "lng": 9.632915,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Guardamiglio",
+                "country": "Italia"
+        },
+        {
+                "id": "20981",
+                "name": "CODOGNO CASALPUSTERLENGO",
+                "city": "Bertonico",
+                "lat": 45.2346,
+                "lng": 9.668788,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Bertonico",
+                "country": "Italia"
+        },
+        {
+                "id": "39899",
+                "name": "LUNGOPO LODIGIANO",
+                "city": "Terranova Dei Passerini",
+                "lat": 45.190437,
+                "lng": 9.677903,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Terranova Dei Passerini",
+                "country": "Italia"
+        },
+        {
+                "id": "21010",
+                "name": "PIACENZA HOST",
+                "city": "Piacenza",
+                "lat": 45.053591,
+                "lng": 9.693359,
+                "site": "https://www.lions108ib3.it/il-distretto/quarta-circoscrizione/zona-unica/piacenza-host",
+                "address": "Club di Piacenza",
+                "country": "Italia"
+        },
+        {
+                "id": "63738",
+                "name": "PIACENZA IL FARNESE",
+                "city": "Piacenza",
+                "lat": 45.028273,
+                "lng": 9.686296,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Piacenza",
+                "country": "Italia"
+        },
+        {
+                "id": "140490",
+                "name": "Castelgerundo",
+                "city": "Castelgerundo",
+                "lat": 45.189322,
+                "lng": 9.745484,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Castelgerundo",
+                "country": "Italia"
+        },
+        {
+                "id": "36487",
+                "name": "VAL D'ARDA",
+                "city": "Castel'Arquato",
+                "lat": 44.862254,
+                "lng": 9.87657,
+                "site": "https://www.lions108ib3.it/",
+                "address": "Club di Castel'Arquato",
+                "country": "Italia"
+        },
+        {
+                "id": "44178",
+                "name": "LANGHIRANO TRE VALLI",
+                "city": "Salsomaggiore Terme",
+                "lat": 44.815176,
+                "lng": 9.979973,
+                "site": "https://www.lions108tb.it/",
+                "address": "Club di Salsomaggiore Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "63529",
+                "name": "GENOVA SANT'AGATA ALTA VALBISAGNO",
+                "city": "Genova",
+                "lat": 44.407681,
+                "lng": 8.932566,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "59395",
+                "name": "GENOVA SAN LORENZO",
+                "city": "Genova",
+                "lat": 44.408587,
+                "lng": 8.931923,
+                "site": "https://e-clubhouse.org/sites/genovasl/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "43374",
+                "name": "GENOVA GUGLIELMO EMBRIACO",
+                "city": "Genova",
+                "lat": 44.410562,
+                "lng": 8.939167,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "47357",
+                "name": "GENOVA STURLA LA MAONA",
+                "city": "Genova",
+                "lat": 44.403453,
+                "lng": 8.941957,
+                "site": "https://e-clubhouse.org/sites/genovaslm/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "108236",
+                "name": "GENOVA MARE NOSTRUM",
+                "city": "Genova",
+                "lat": 44.403571,
+                "lng": 8.942732,
+                "site": "https://e-clubhouse.org/sites/genovamn/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "97162",
+                "name": "GENOVA DIAMANTE",
+                "city": "Genova",
+                "lat": 44.403289,
+                "lng": 8.942712,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "61426",
+                "name": "GENOVA PORTO ANTICO",
+                "city": "Genova",
+                "lat": 44.402885,
+                "lng": 8.94551,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "137865",
+                "name": "Genova Insieme",
+                "city": "Genova",
+                "lat": 44.39474,
+                "lng": 8.95759,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "119688",
+                "name": "Genova Giuseppe Mazzini",
+                "city": "Genova",
+                "lat": 44.411893,
+                "lng": 8.884825,
+                "site": "https://e-clubhouse.org/sites/genovagm/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "29644",
+                "name": "GENOVA SAMPIERDARENA",
+                "city": "Genova",
+                "lat": 44.438743,
+                "lng": 8.830763,
+                "site": "https://e-clubhouse.org/sites/genovas/",
+                "address": "Club di Genova",
+                "country": "Italia"
+        },
+        {
+                "id": "59455",
+                "name": "GENOVA ALTA VAL POLCEVERA",
+                "city": "Serra RiccÃ²",
+                "lat": 44.497098,
+                "lng": 8.9126,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Serra RiccÃ²",
+                "country": "Italia"
+        },
+        {
+                "id": "20927",
+                "name": "GOLFO PARADISO",
+                "city": "Recco",
+                "lat": 44.368942,
+                "lng": 9.15061,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Recco",
+                "country": "Italia"
+        },
+        {
+                "id": "30516",
+                "name": "SANTA MARGHERITA LIGURE-PORTOFINO",
+                "city": "Santa Margherita Ligure",
+                "lat": 44.333625,
+                "lng": 9.211565,
+                "site": "https://e-clubhouse.org/sites/santaml/",
+                "address": "Club di Santa Margherita Ligure",
+                "country": "Italia"
+        },
+        {
+                "id": "20955",
+                "name": "RAPALLO HOST",
+                "city": "Rapallo",
+                "lat": 44.349233,
+                "lng": 9.234176,
+                "site": "https://lionsclubrapallohost.it/",
+                "address": "Club di Rapallo",
+                "country": "Italia"
+        },
+        {
+                "id": "20962",
+                "name": "VARAZZE-CELLE LIGURE",
+                "city": "Varazze",
+                "lat": 44.357172,
+                "lng": 8.565584,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Varazze",
+                "country": "Italia"
+        },
+        {
+                "id": "20953",
+                "name": "SAVONA HOST",
+                "city": "Albisola Superiore",
+                "lat": 44.330941,
+                "lng": 8.51689,
+                "site": "https://lionsclubs108ia3.it/",
+                "address": "Club di Albisola Superiore",
+                "country": "Italia"
+        },
+        {
+                "id": "59659",
+                "name": "ALBISSOLA MARINA E ALBISOLA SUPERIORE ALBA DOCILIA",
+                "city": "Albisola Superiore",
+                "lat": 44.347141,
+                "lng": 8.490314,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Albisola Superiore",
+                "country": "Italia"
+        },
+        {
+                "id": "64310",
+                "name": "SAVONA PRIAMAR",
+                "city": "Savona",
+                "lat": 44.309057,
+                "lng": 8.479106,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Savona",
+                "country": "Italia"
+        },
+        {
+                "id": "20954",
+                "name": "SESTRI LEVANTE",
+                "city": "Sestri Levante",
+                "lat": 44.269019,
+                "lng": 9.391655,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Sestri Levante",
+                "country": "Italia"
+        },
+        {
+                "id": "39067",
+                "name": "SAVONA TORRETTA",
+                "city": "Savona",
+                "lat": 44.316536,
+                "lng": 8.447373,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Savona",
+                "country": "Italia"
+        },
+        {
+                "id": "66784",
+                "name": "VADO LIGURE - QUILIANO VADA SABATIA",
+                "city": "Vado Ligure",
+                "lat": 44.272422,
+                "lng": 8.437295,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Vado Ligure",
+                "country": "Italia"
+        },
+        {
+                "id": "48667",
+                "name": "SPOTORNO NOLI BERGEGGI VEZZI PORTIO",
+                "city": "Spotorno",
+                "lat": 44.228626,
+                "lng": 8.41784,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Spotorno",
+                "country": "Italia"
+        },
+        {
+                "id": "20952",
+                "name": "SANREMO HOST",
+                "city": "Sanremo",
+                "lat": 43.832421,
+                "lng": 7.755153,
+                "site": "https://lionsclubs108ia3.it/event/lions-club-sanremo-host-2/",
+                "address": "Club di Sanremo",
+                "country": "Italia"
+        },
+        {
+                "id": "29227",
+                "name": "ARMA E TAGGIA",
+                "city": "Arma Di Taggia",
+                "lat": 43.831081,
+                "lng": 7.848483,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Arma Di Taggia",
+                "country": "Italia"
+        },
+        {
+                "id": "59660",
+                "name": "BORDIGHERA OTTO LUOGHI",
+                "city": "Bordighera",
+                "lat": 43.786105,
+                "lng": 7.686494,
+                "site": "https://e-clubhouse.org/sites/bordigheraol/",
+                "address": "Club di Bordighera",
+                "country": "Italia"
+        },
+        {
+                "id": "71176",
+                "name": "VENTIMIGLIA",
+                "city": "Bordighera",
+                "lat": 43.786105,
+                "lng": 7.686494,
+                "site": "https://e-clubhouse.org/sites/ventimiglia/",
+                "address": "Club di Bordighera",
+                "country": "Italia"
+        },
+        {
+                "id": "45794",
+                "name": "BORDIGHERA CAPO NERO HOST",
+                "city": "Bordighera",
+                "lat": 43.781186,
+                "lng": 7.665115,
+                "site": "https://e-clubhouse.org/sites/bordighera_capo_nero_host/index.php",
+                "address": "Club di Bordighera",
+                "country": "Italia"
+        },
+        {
+                "id": "154273",
+                "name": "Sanremo - Ufficiali dItalia - Alpi Marittime",
+                "city": "Bordighera",
+                "lat": 43.779662,
+                "lng": 7.664376,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Bordighera",
+                "country": "Italia"
+        },
+        {
+                "id": "99209",
+                "name": "RIVA SANTO STEFANO GOLFO DELLE TORRI",
+                "city": "Santo Stefano Al Mare",
+                "lat": 43.837284,
+                "lng": 7.905514,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Santo Stefano Al Mare",
+                "country": "Italia"
+        },
+        {
+                "id": "20963",
+                "name": "VENTIMIGLIA",
+                "city": "Ventimiglia",
+                "lat": 43.790543,
+                "lng": 7.59536,
+                "site": "https://e-clubhouse.org/sites/ventimiglia/",
+                "address": "Club di Ventimiglia",
+                "country": "Italia"
+        },
+        {
+                "id": "55323",
+                "name": "IMPERIA LA TORRE",
+                "city": "Imperia",
+                "lat": 43.868521,
+                "lng": 8.00064,
+                "site": "https://lionsclubimperialatorre.it",
+                "address": "Club di Imperia",
+                "country": "Italia"
+        },
+        {
+                "id": "45292",
+                "name": "NAVA ALPI MARITTIME",
+                "city": "Imperia",
+                "lat": 43.873717,
+                "lng": 8.017034,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Imperia",
+                "country": "Italia"
+        },
+        {
+                "id": "40029",
+                "name": "DIANO MARINA HOST",
+                "city": "Diano Marina",
+                "lat": 43.916101,
+                "lng": 8.091442,
+                "site": "https://e-clubhouse.org/sites/dianomarinagolfo/page-10.php",
+                "address": "Club di Diano Marina",
+                "country": "Italia"
+        },
+        {
+                "id": "64141",
+                "name": "ANDORA VALLE DEL MERULA",
+                "city": "Andora",
+                "lat": 43.953038,
+                "lng": 8.160615,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Andora",
+                "country": "Italia"
+        },
+        {
+                "id": "47981",
+                "name": "ALBENGA - VALLE DEL LERRONE - GARLENDA",
+                "city": "Villanova D'Albenga",
+                "lat": 44.04074,
+                "lng": 8.123488,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Villanova D'Albenga",
+                "country": "Italia"
+        },
+        {
+                "id": "71143",
+                "name": "ALASSIO BAIA DEL SOLE",
+                "city": "Alassio",
+                "lat": 44.009714,
+                "lng": 8.17572,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Alassio",
+                "country": "Italia"
+        },
+        {
+                "id": "20918",
+                "name": "ALASSIO BAIA DEL SOLE",
+                "city": "Alassio",
+                "lat": 44.009904,
+                "lng": 8.175762,
+                "site": "https://www.lions108ia3.it/",
+                "address": "Club di Alassio",
+                "country": "Italia"
+        },
+        {
+                "id": "181450",
+                "name": "GOLFO DELLA SPEZIA",
+                "city": "La Spezia",
+                "lat": 44.103294,
+                "lng": 9.819912,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di La Spezia",
+                "country": "Italia"
+        },
+        {
+                "id": "34042",
+                "name": "VARA SUD",
+                "city": "La Spezia",
+                "lat": 44.103294,
+                "lng": 9.819912,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di La Spezia",
+                "country": "Italia"
+        },
+        {
+                "id": "41537",
+                "name": "COLLI SPEZZINI",
+                "city": "La Spezia",
+                "lat": 44.103178,
+                "lng": 9.818561,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di La Spezia",
+                "country": "Italia"
+        },
+        {
+                "id": "21060",
+                "name": "LA SPEZIA HOST",
+                "city": "La Spezoa",
+                "lat": 44.107334,
+                "lng": 9.826978,
+                "site": "https://lions108tb.it/archivio-club/lions-club-la-spezia-host/",
+                "address": "Club di La Spezoa",
+                "country": "Italia"
+        },
+        {
+                "id": "119521",
+                "name": "ROVERANO",
+                "city": "La  Spezia",
+                "lat": 44.108163,
+                "lng": 9.828028,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di La  Spezia",
+                "country": "Italia"
+        },
+        {
+                "id": "59553",
+                "name": "VALLE DEL VARA-BORGHETTO-BRUGNATO ROCCHETTA ZIGNAGO",
+                "city": "La Spezia",
+                "lat": 44.109738,
+                "lng": 9.828016,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di La Spezia",
+                "country": "Italia"
+        },
+        {
+                "id": "39717",
+                "name": "LERICI GOLFO DEI POETI",
+                "city": "Lerici",
+                "lat": 44.075551,
+                "lng": 9.91698,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Lerici",
+                "country": "Italia"
+        },
+        {
+                "id": "21092",
+                "name": "SARZANA",
+                "city": "Sarzana",
+                "lat": 44.1245,
+                "lng": 9.943571,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Sarzana",
+                "country": "Italia"
+        },
+        {
+                "id": "150864",
+                "name": "Luni",
+                "city": "Santo Stefano Di Magra",
+                "lat": 44.156098,
+                "lng": 9.924181,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Santo Stefano Di Magra",
+                "country": "Italia"
+        },
+        {
+                "id": "52727",
+                "name": "MASSA E CARRARA APUANIA",
+                "city": "Massa",
+                "lat": 44.007696,
+                "lng": 10.100627,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Massa",
+                "country": "Italia"
+        },
+        {
+                "id": "21207",
+                "name": "PONTREMOLI LUNIGIANA",
+                "city": "Pontremoli",
+                "lat": 44.376102,
+                "lng": 9.881658,
+                "site": "https://www.lions108tb.it/",
+                "address": "Club di Pontremoli",
+                "country": "Italia"
+        },
+        {
+                "id": "124251",
+                "name": "Forte Dei Marmi",
+                "city": "Forte Dei Marmi",
+                "lat": 43.963551,
+                "lng": 10.180433,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Forte Dei Marmi",
+                "country": "Italia"
+        },
+        {
+                "id": "122636",
+                "name": "Viareggio Versilia",
+                "city": "Viareggio",
+                "lat": 43.928171,
+                "lng": 10.198257,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Viareggio",
+                "country": "Italia"
+        },
+        {
+                "id": "33726",
+                "name": "ALTA VARA AVETO GRAVEGLIA STURLA",
+                "city": "Varese Ligure",
+                "lat": 44.37803,
+                "lng": 9.595155,
+                "site": "https://www.lions108ia2.it/",
+                "address": "Club di Varese Ligure",
+                "country": "Italia"
+        },
+        {
+                "id": "21033",
+                "name": "BORGO VAL DI TARO",
+                "city": "Borgo Val Di Taro",
+                "lat": 44.486962,
+                "lng": 9.765523,
+                "site": "https://www.lions108tb.it/",
+                "address": "Club di Borgo Val Di Taro",
+                "country": "Italia"
+        },
+        {
+                "id": "21183",
+                "name": "GARFAGNANA",
+                "city": "Castelnuovo Di Garfagnana",
+                "lat": 44.109993,
+                "lng": 10.408111,
+                "site": "https://lionsclubgarfagnana.it",
+                "address": "Club di Castelnuovo Di Garfagnana",
+                "country": "Italia"
+        },
+        {
+                "id": "58263",
+                "name": "LOANO DORIA",
+                "city": "Loano",
+                "lat": 44.133089,
+                "lng": 8.241978,
+                "site": "https://lionsclubloanodoria.it",
+                "address": "Club di Loano",
+                "country": "Italia"
+        },
+        {
+                "id": "21104",
+                "name": "VENEZIA HOST",
+                "city": "Venezia",
+                "lat": 45.443997,
+                "lng": 12.328568,
+                "site": "https://www.lionsvenezia.it/",
+                "address": "Club di Venezia",
+                "country": "Italia"
+        },
+        {
+                "id": "35604",
+                "name": "VENEZIA LIDO",
+                "city": "Venezia",
+                "lat": 45.422927,
+                "lng": 12.377374,
+                "site": "https://lions108ta3.org/club-del-distretto/venezia-lido/",
+                "address": "Club di Venezia",
+                "country": "Italia"
+        },
+        {
+                "id": "21065",
+                "name": "MESTRE HOST",
+                "city": "Mestre",
+                "lat": 45.482921,
+                "lng": 12.23203,
+                "site": "https://e-clubhouse.org/sites/mestre/",
+                "address": "Club di Mestre",
+                "country": "Italia"
+        },
+        {
+                "id": "47549",
+                "name": "SPINEA MIRANO",
+                "city": "Mestre",
+                "lat": 45.486541,
+                "lng": 12.217755,
+                "site": "https://e-clubhouse.org/sites/spinea/contact.php",
+                "address": "Club di Mestre",
+                "country": "Italia"
+        },
+        {
+                "id": "56850",
+                "name": "VENEZIA MARGHERA",
+                "city": "Mestre",
+                "lat": 45.486564,
+                "lng": 12.217736,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Mestre",
+                "country": "Italia"
+        },
+        {
+                "id": "21096",
+                "name": "STRA' RIVIERA DEL BRENTA HOST",
+                "city": "Mira",
+                "lat": 45.446281,
+                "lng": 12.159983,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di Mira",
+                "country": "Italia"
+        },
+        {
+                "id": "43771",
+                "name": "NOALE",
+                "city": "ScorzÃ¨",
+                "lat": 45.578983,
+                "lng": 12.073166,
+                "site": "https://lions108ta3.org/i-club-del-distretto/",
+                "address": "Club di ScorzÃ¨",
+                "country": "Italia"
+        },
+        {
+                "id": "21099",
+                "name": "TREVISO HOST",
+                "city": "Treviso",
+                "lat": 45.668776,
+                "lng": 12.225536,
+                "site": "https://www.lionsclubtrevisohost.it/",
+                "address": "Club di Treviso",
+                "country": "Italia"
+        },
+        {
+                "id": "47792",
+                "name": "TREVISO ELEONORA DUSE",
+                "city": "Treviso",
+                "lat": 45.668776,
+                "lng": 12.225536,
+                "site": "https://e-clubhouse.org/sites/trevisoed/index.php",
+                "address": "Club di Treviso",
+                "country": "Italia"
+        },
+        {
+                "id": "42686",
+                "name": "TREVISO SILE",
+                "city": "Treviso",
+                "lat": 45.668776,
+                "lng": 12.225536,
+                "site": "https://www.lionstrevisosile.com/",
+                "address": "Club di Treviso",
+                "country": "Italia"
+        },
+        {
+                "id": "21058",
+                "name": "JESOLO LIDO",
+                "city": "Jesolo",
+                "lat": 45.5433,
+                "lng": 12.650471,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Jesolo",
+                "country": "Italia"
+        },
+        {
+                "id": "63989",
+                "name": "SUSEGANA CASTELLO DI COLLALTO",
+                "city": "Villorba",
+                "lat": 45.707542,
+                "lng": 12.256285,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Villorba",
+                "country": "Italia"
+        },
+        {
+                "id": "21088",
+                "name": "SAN DONA' DI PIAVE",
+                "city": "Noventa Di Piave",
+                "lat": 45.663834,
+                "lng": 12.53754,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Noventa Di Piave",
+                "country": "Italia"
+        },
+        {
+                "id": "99292",
+                "name": "VEDELAGO PALLADIUM",
+                "city": "Cavasagra Di Vedelago",
+                "lat": 45.663127,
+                "lng": 12.049955,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Cavasagra Di Vedelago",
+                "country": "Italia"
+        },
+        {
+                "id": "21036",
+                "name": "CAMPOSAMPIERO",
+                "city": "Camposampiero",
+                "lat": 45.566775,
+                "lng": 11.93235,
+                "site": "https://lionsclubcamposampiero.it",
+                "address": "Club di Camposampiero",
+                "country": "Italia"
+        },
+        {
+                "id": "98458",
+                "name": "SANTO STINO DI LIVENZA LIQUENTIA",
+                "city": "Ceggia",
+                "lat": 45.68849,
+                "lng": 12.640805,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Ceggia",
+                "country": "Italia"
+        },
+        {
+                "id": "21039",
+                "name": "CASTELFRANCO VENETO",
+                "city": "Castelfranco Veneto",
+                "lat": 45.685807,
+                "lng": 11.954429,
+                "site": "https://lionsclubcastelfrancoveneto.it",
+                "address": "Club di Castelfranco Veneto",
+                "country": "Italia"
+        },
+        {
+                "id": "21072",
+                "name": "ODERZO",
+                "city": "Oderzo",
+                "lat": 45.77679,
+                "lng": 12.491281,
+                "site": "https://lionscluboderzo.it",
+                "address": "Club di Oderzo",
+                "country": "Italia"
+        },
+        {
+                "id": "48116",
+                "name": "MOTTA DI LIVENZA",
+                "city": "Motta Di Livenza",
+                "lat": 45.775644,
+                "lng": 12.609127,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Motta Di Livenza",
+                "country": "Italia"
+        },
+        {
+                "id": "21071",
+                "name": "MONTEBELLUNA",
+                "city": "Montebelluna",
+                "lat": 45.797943,
+                "lng": 12.074999,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Montebelluna",
+                "country": "Italia"
+        },
+        {
+                "id": "82725",
+                "name": "NERVESA DELLA BATTAGLIA TARVISIUM",
+                "city": "Nervesa Della Battaglia",
+                "lat": 45.830959,
+                "lng": 12.198909,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Nervesa Della Battaglia",
+                "country": "Italia"
+        },
+        {
+                "id": "56849",
+                "name": "CAORLE",
+                "city": "Caorle",
+                "lat": 45.596461,
+                "lng": 12.878515,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Caorle",
+                "country": "Italia"
+        },
+        {
+                "id": "38336",
+                "name": "CITTADELLA",
+                "city": "Cittadella",
+                "lat": 45.65547,
+                "lng": 11.781679,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Cittadella",
+                "country": "Italia"
+        },
+        {
+                "id": "21047",
+                "name": "CONEGLIANO",
+                "city": "Conegliano",
+                "lat": 45.886779,
+                "lng": 12.296977,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Conegliano",
+                "country": "Italia"
+        },
+        {
+                "id": "65110",
+                "name": "VALDALPONE",
+                "city": "Montecchia Di Crosara",
+                "lat": 45.464202,
+                "lng": 11.283029,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Montecchia Di Crosara",
+                "country": "Italia"
+        },
+        {
+                "id": "39900",
+                "name": "VICENZA PALLADIO",
+                "city": "Brendola",
+                "lat": 45.471778,
+                "lng": 11.447238,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Brendola",
+                "country": "Italia"
+        },
+        {
+                "id": "65295",
+                "name": "VICENZA LA ROTONDA",
+                "city": "Altavilla Vicentina",
+                "lat": 45.496045,
+                "lng": 11.452231,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Altavilla Vicentina",
+                "country": "Italia"
+        },
+        {
+                "id": "40786",
+                "name": "ARZIGNANO",
+                "city": "Creazzo",
+                "lat": 45.535715,
+                "lng": 11.482201,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Creazzo",
+                "country": "Italia"
+        },
+        {
+                "id": "21095",
+                "name": "SCHIO",
+                "city": "Malo",
+                "lat": 45.656146,
+                "lng": 11.402961,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Malo",
+                "country": "Italia"
+        },
+        {
+                "id": "21107",
+                "name": "VICENZA HOST",
+                "city": "Vicenza",
+                "lat": 45.551718,
+                "lng": 11.537548,
+                "site": "https://e-clubhouse.org/sites/vicenzahost/",
+                "address": "Club di Vicenza",
+                "country": "Italia"
+        },
+        {
+                "id": "59456",
+                "name": "PIAZZOLA SUL BRENTA",
+                "city": "Gazzo Padovano",
+                "lat": 45.579682,
+                "lng": 11.680673,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Gazzo Padovano",
+                "country": "Italia"
+        },
+        {
+                "id": "62556",
+                "name": "MAROSTICA",
+                "city": "Marostica",
+                "lat": 45.775465,
+                "lng": 11.663977,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Marostica",
+                "country": "Italia"
+        },
+        {
+                "id": "21030",
+                "name": "BASSANO DEL GRAPPA HOST",
+                "city": "Marostica",
+                "lat": 45.775465,
+                "lng": 11.663977,
+                "site": "https://e-clubhouse.org/sites/bassanogh/",
+                "address": "Club di Marostica",
+                "country": "Italia"
+        },
+        {
+                "id": "58693",
+                "name": "PIEVE DI SOLIGO HOST",
+                "city": "Solighetto",
+                "lat": 45.917446,
+                "lng": 12.162955,
+                "site": "https://www.lionsitaliainrete.it/directory-clubs/listing/club-pieve-di-soligo-host/",
+                "address": "Club di Solighetto",
+                "country": "Italia"
+        },
+        {
+                "id": "31074",
+                "name": "VALDOBBIADENE QUARTIER DEL PIAVE",
+                "city": "Valdobbiadene",
+                "lat": 45.885366,
+                "lng": 12.0057,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Valdobbiadene",
+                "country": "Italia"
+        },
+        {
+                "id": "48165",
+                "name": "ASOLO PEDEMONTANA DEL GRAPPA",
+                "city": "Cavaso Del Tomba",
+                "lat": 45.86445,
+                "lng": 11.92605,
+                "site": "https://www.lions108ta3.it/",
+                "address": "Club di Cavaso Del Tomba",
+                "country": "Italia"
+        },
+        {
+                "id": "21109",
+                "name": "VITTORIO VENETO",
+                "city": "Vittorio Veneto",
+                "lat": 45.978647,
+                "lng": 12.309833,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Vittorio Veneto",
+                "country": "Italia"
+        },
+        {
+                "id": "21085",
+                "name": "SACILE",
+                "city": "Sacile",
+                "lat": 45.941003,
+                "lng": 12.498469,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Sacile",
+                "country": "Italia"
+        },
+        {
+                "id": "99211",
+                "name": "BRUGNERA PASIANO PRATA",
+                "city": "Prata Di Pordenone",
+                "lat": 45.897638,
+                "lng": 12.603006,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Prata Di Pordenone",
+                "country": "Italia"
+        },
+        {
+                "id": "108127",
+                "name": "PORCIA",
+                "city": "Porcia",
+                "lat": 45.960326,
+                "lng": 12.613678,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Porcia",
+                "country": "Italia"
+        },
+        {
+                "id": "98260",
+                "name": "PORDENONE NAONIS",
+                "city": "Pordenone",
+                "lat": 45.956364,
+                "lng": 12.661209,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Pordenone",
+                "country": "Italia"
+        },
+        {
+                "id": "21080",
+                "name": "PORTOGRUARO",
+                "city": "Portogruaro",
+                "lat": 45.78593,
+                "lng": 12.830729,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Portogruaro",
+                "country": "Italia"
+        },
+        {
+                "id": "62746",
+                "name": "SESTO AL REGHENA IN SYLVIS",
+                "city": "Sesto Al Reghena",
+                "lat": 45.847558,
+                "lng": 12.815478,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Sesto Al Reghena",
+                "country": "Italia"
+        },
+        {
+                "id": "21052",
+                "name": "FELTRE HOST",
+                "city": "Pedavena",
+                "lat": 46.034533,
+                "lng": 11.883712,
+                "site": "https://lions.it/leader/distretto-ta2/",
+                "address": "Club di Pedavena",
+                "country": "Italia"
+        },
+        {
+                "id": "62290",
+                "name": "FELTRE CASTELLO DI ALBOINO",
+                "city": "Feltre",
+                "lat": 46.035219,
+                "lng": 11.88309,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Feltre",
+                "country": "Italia"
+        },
+        {
+                "id": "48343",
+                "name": "TRENTO DEL CONCILIO",
+                "city": "Trento",
+                "lat": 46.070803,
+                "lng": 11.121765,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Trento",
+                "country": "Italia"
+        },
+        {
+                "id": "21098",
+                "name": "TRENTO HOST",
+                "city": "Trento",
+                "lat": 46.071027,
+                "lng": 11.12198,
+                "site": "https://e-clubhouse.org/sites/trentohost/",
+                "address": "Club di Trento",
+                "country": "Italia"
+        },
+        {
+                "id": "123325",
+                "name": "Tridentum",
+                "city": "Trento",
+                "lat": 46.061497,
+                "lng": 11.156708,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Trento",
+                "country": "Italia"
+        },
+        {
+                "id": "60365",
+                "name": "TRENTO CLESIO",
+                "city": "Trento",
+                "lat": 46.11745,
+                "lng": 11.131294,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Trento",
+                "country": "Italia"
+        },
+        {
+                "id": "41678",
+                "name": "VALSUGANA",
+                "city": "Pergine Valsugana",
+                "lat": 46.027576,
+                "lng": 11.229391,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Pergine Valsugana",
+                "country": "Italia"
+        },
+        {
+                "id": "21082",
+                "name": "ROVERETO HOST",
+                "city": "Rovereto",
+                "lat": 45.890685,
+                "lng": 11.037735,
+                "site": "https://www.lionsdepero.it/",
+                "address": "Club di Rovereto",
+                "country": "Italia"
+        },
+        {
+                "id": "52248",
+                "name": "ROVERETO SAN MARCO",
+                "city": "Rovereto",
+                "lat": 45.890685,
+                "lng": 11.037735,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Rovereto",
+                "country": "Italia"
+        },
+        {
+                "id": "65030",
+                "name": "EGNA-NEUMARKT UNTERLAND",
+                "city": "Neumarkt/Egna",
+                "lat": 46.314064,
+                "lng": 11.272793,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Neumarkt/Egna",
+                "country": "Italia"
+        },
+        {
+                "id": "21035",
+                "name": "BOLZANO-BOZEN HOST",
+                "city": "Bolzano",
+                "lat": 46.497836,
+                "lng": 11.355943,
+                "site": "https://lionsnordestitalia.it/distretto108ta1/importanti-iniziative-del-lions-club-bolzano-host/",
+                "address": "Club di Bolzano",
+                "country": "Italia"
+        },
+        {
+                "id": "58181",
+                "name": "BOZEN-BOLZANO LAURIN",
+                "city": "Bozen",
+                "lat": 46.499131,
+                "lng": 11.360542,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Bozen",
+                "country": "Italia"
+        },
+        {
+                "id": "96946",
+                "name": "BOZEN BOLZANO ROSENGARTEN",
+                "city": "Bolzano",
+                "lat": 46.500303,
+                "lng": 11.360665,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Bolzano",
+                "country": "Italia"
+        },
+        {
+                "id": "55430",
+                "name": "MERANO MERAN MAIENSE",
+                "city": "Merano",
+                "lat": 46.670608,
+                "lng": 11.158902,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Merano",
+                "country": "Italia"
+        },
+        {
+                "id": "54886",
+                "name": "STERZING - VIPITENO WIPPTAL",
+                "city": "Vipiteno",
+                "lat": 46.890122,
+                "lng": 11.430352,
+                "site": "https://www.lions108ta1.it/",
+                "address": "Club di Vipiteno",
+                "country": "Italia"
+        },
+        {
+                "id": "39196",
+                "name": "UDINE LIONELLO",
+                "city": "Udine",
+                "lat": 46.060973,
+                "lng": 13.234105,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Udine",
+                "country": "Italia"
+        },
+        {
+                "id": "47793",
+                "name": "UDINE CASTELLO",
+                "city": "Udine",
+                "lat": 46.060973,
+                "lng": 13.234105,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Udine",
+                "country": "Italia"
+        },
+        {
+                "id": "60641",
+                "name": "UDINE DUOMO",
+                "city": "Udine",
+                "lat": 46.059083,
+                "lng": 13.240657,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Udine",
+                "country": "Italia"
+        },
+        {
+                "id": "21101",
+                "name": "UDINE HOST",
+                "city": "Udine",
+                "lat": 46.098045,
+                "lng": 13.229403,
+                "site": "https://e-clubhouse.org/sites/udine_host/",
+                "address": "Club di Udine",
+                "country": "Italia"
+        },
+        {
+                "id": "50091",
+                "name": "TARCENTO",
+                "city": "Collalto Di Tarcento",
+                "lat": 46.196953,
+                "lng": 13.19555,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Collalto Di Tarcento",
+                "country": "Italia"
+        },
+        {
+                "id": "45707",
+                "name": "CIVIDALE DEL FRIULI MANZANO",
+                "city": "Cividale Del Friuli",
+                "lat": 46.092461,
+                "lng": 13.429664,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Cividale Del Friuli",
+                "country": "Italia"
+        },
+        {
+                "id": "157408",
+                "name": "DEL COLLIO",
+                "city": "Cividale Del Friuli",
+                "lat": 46.092461,
+                "lng": 13.429664,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Cividale Del Friuli",
+                "country": "Italia"
+        },
+        {
+                "id": "21084",
+                "name": "SAN DANIELE DEL FRIULI",
+                "city": "San Daniele Del Friuli",
+                "lat": 46.160975,
+                "lng": 13.010434,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di San Daniele Del Friuli",
+                "country": "Italia"
+        },
+        {
+                "id": "97987",
+                "name": "GEMONA CELTI",
+                "city": "Gemona Del Friuli",
+                "lat": 46.280544,
+                "lng": 13.132751,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Gemona Del Friuli",
+                "country": "Italia"
+        },
+        {
+                "id": "21042",
+                "name": "CERVIGNANO-PALMANOVA-AQUILEIA",
+                "city": "Cervignano Del Fiuli",
+                "lat": 45.827815,
+                "lng": 13.341227,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Cervignano Del Fiuli",
+                "country": "Italia"
+        },
+        {
+                "id": "42958",
+                "name": "GRADISCA D'ISONZO CORMONS",
+                "city": "Gradisca D'Isonzo",
+                "lat": 45.889897,
+                "lng": 13.502858,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Gradisca D'Isonzo",
+                "country": "Italia"
+        },
+        {
+                "id": "48214",
+                "name": "GORIZIA MARIA THERESIA",
+                "city": "Gorizia",
+                "lat": 45.941899,
+                "lng": 13.618654,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Gorizia",
+                "country": "Italia"
+        },
+        {
+                "id": "21057",
+                "name": "GORIZIA HOST",
+                "city": "Gorizia",
+                "lat": 45.941899,
+                "lng": 13.618654,
+                "site": "http://www.lionsclubgoriziahost.com/",
+                "address": "Club di Gorizia",
+                "country": "Italia"
+        },
+        {
+                "id": "87843",
+                "name": "VENZONE VIA JULIA AUGUSTA",
+                "city": "Venzone",
+                "lat": 46.364269,
+                "lng": 13.135495,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Venzone",
+                "country": "Italia"
+        },
+        {
+                "id": "61616",
+                "name": "CONCORDIA SAGITTARIA",
+                "city": "San Michele Al Tagliamento",
+                "lat": 45.772793,
+                "lng": 12.962554,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di San Michele Al Tagliamento",
+                "country": "Italia"
+        },
+        {
+                "id": "30421",
+                "name": "MONFALCONE",
+                "city": "Monfalcone",
+                "lat": 45.796389,
+                "lng": 13.561164,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Monfalcone",
+                "country": "Italia"
+        },
+        {
+                "id": "21078",
+                "name": "PORDENONE HOST",
+                "city": "Zoppola",
+                "lat": 45.95776,
+                "lng": 12.735942,
+                "site": "https://www.e-clubhouse.org/sites/pordenone_host/",
+                "address": "Club di Zoppola",
+                "country": "Italia"
+        },
+        {
+                "id": "21097",
+                "name": "TOLMEZZO",
+                "city": "Tolmezzo",
+                "lat": 46.406159,
+                "lng": 13.015754,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Tolmezzo",
+                "country": "Italia"
+        },
+        {
+                "id": "38180",
+                "name": "MANIAGO-SPILIMBERGO",
+                "city": "Maniago",
+                "lat": 46.169305,
+                "lng": 12.706447,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Maniago",
+                "country": "Italia"
+        },
+        {
+                "id": "21061",
+                "name": "LIGNANO SABBIADORO",
+                "city": "Lignano Sabbiadoro",
+                "lat": 45.68482,
+                "lng": 13.137422,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Lignano Sabbiadoro",
+                "country": "Italia"
+        },
+        {
+                "id": "93606",
+                "name": "DUINO AURISINA",
+                "city": "Duino Aurisina",
+                "lat": 45.773388,
+                "lng": 13.604407,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Duino Aurisina",
+                "country": "Italia"
+        },
+        {
+                "id": "68718",
+                "name": "TRIESTE ALTO ADRIATICO",
+                "city": "Trieste",
+                "lat": 45.64949,
+                "lng": 13.765631,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Trieste",
+                "country": "Italia"
+        },
+        {
+                "id": "42440",
+                "name": "TRIESTE SAN GIUSTO",
+                "city": "Trieste",
+                "lat": 45.650407,
+                "lng": 13.77414,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Trieste",
+                "country": "Italia"
+        },
+        {
+                "id": "68814",
+                "name": "TRIESTE EUROPA",
+                "city": "Trieste",
+                "lat": 45.645828,
+                "lng": 13.761181,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Trieste",
+                "country": "Italia"
+        },
+        {
+                "id": "21100",
+                "name": "TRIESTE HOST",
+                "city": "Trieste",
+                "lat": 45.653379,
+                "lng": 13.808187,
+                "site": "https://e-clubhouse.org/sites/trieste_host/",
+                "address": "Club di Trieste",
+                "country": "Italia"
+        },
+        {
+                "id": "52725",
+                "name": "TRIESTE MIRAMAR",
+                "city": "Trieste",
+                "lat": 45.653379,
+                "lng": 13.808187,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Trieste",
+                "country": "Italia"
+        },
+        {
+                "id": "60465",
+                "name": "SAN MICHELE AL TAGLIAMENTO-BIBIONE",
+                "city": "Bibione",
+                "lat": 45.633363,
+                "lng": 13.04234,
+                "site": "https://www.lions108ta2.it/",
+                "address": "Club di Bibione",
+                "country": "Italia"
+        },
+        {
+                "id": "40648",
+                "name": "VALLI SAVENA IDICE E SAMBRO",
+                "city": "Loiano",
+                "lat": 44.26307,
+                "lng": 11.326664,
+                "site": "https://www.lions108tb.it/",
+                "address": "Club di Loiano",
+                "country": "Italia"
+        },
+        {
+                "id": "21132",
+                "name": "IMOLA HOST",
+                "city": "Imola",
+                "lat": 44.360089,
+                "lng": 11.722709,
+                "site": "https://e-clubhouse.org/sites/imola_host/",
+                "address": "Club di Imola",
+                "country": "Italia"
+        },
+        {
+                "id": "21123",
+                "name": "FAENZA HOST",
+                "city": "Faenza",
+                "lat": 44.285674,
+                "lng": 11.882246,
+                "site": "https://www.lionsfaenzahost.org/",
+                "address": "Club di Faenza",
+                "country": "Italia"
+        },
+        {
+                "id": "21127",
+                "name": "FORLI' HOST",
+                "city": "Forli'",
+                "lat": 44.220664,
+                "lng": 12.040662,
+                "site": "https://www.lionsforlihost.com/",
+                "address": "Club di Forli'",
+                "country": "Italia"
+        },
+        {
+                "id": "21151",
+                "name": "RAVENNA HOST",
+                "city": "Ravenna",
+                "lat": 44.416149,
+                "lng": 12.199979,
+                "site": "https://www.lionsravennahost.it/home.php?Lang=it",
+                "address": "Club di Ravenna",
+                "country": "Italia"
+        },
+        {
+                "id": "62563",
+                "name": "RAVENNA ROMAGNA PADUSA",
+                "city": "Ravenna",
+                "lat": 44.416149,
+                "lng": 12.199979,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Ravenna",
+                "country": "Italia"
+        },
+        {
+                "id": "37172",
+                "name": "CERVIA-CESENATICO HOST",
+                "city": "Cervia",
+                "lat": 44.270308,
+                "lng": 12.221927,
+                "site": "https://lions108a.it/la-veleggiata-lc-cervia-cesenatico-host-7-giugno-2025/",
+                "address": "Club di Cervia",
+                "country": "Italia"
+        },
+        {
+                "id": "21120",
+                "name": "CESENA",
+                "city": "Cesena",
+                "lat": 44.110779,
+                "lng": 12.201998,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Cesena",
+                "country": "Italia"
+        },
+        {
+                "id": "44561",
+                "name": "BOBBIO",
+                "city": "Bobbio",
+                "lat": 44.769035,
+                "lng": 9.38647,
+                "site": "https://e-clubhouse.org/sites/bobbio/",
+                "address": "Club di Bobbio",
+                "country": "Italia"
+        },
+        {
+                "id": "21046",
+                "name": "COMACCHIO SETTE LIDI",
+                "city": "Portogaribaldi",
+                "lat": 44.739584,
+                "lng": 12.242124,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Portogaribaldi",
+                "country": "Italia"
+        },
+        {
+                "id": "72300",
+                "name": "RUBICONE",
+                "city": "Santarcangelo Di Romagna",
+                "lat": 44.060626,
+                "lng": 12.417674,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Santarcangelo Di Romagna",
+                "country": "Italia"
+        },
+        {
+                "id": "31366",
+                "name": "RUBICONE",
+                "city": "Santarcangelo Di Romagna",
+                "lat": 44.060626,
+                "lng": 12.417674,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Santarcangelo Di Romagna",
+                "country": "Italia"
+        },
+        {
+                "id": "66593",
+                "name": "SANTÂ´ARCANGELO DI ROMAGNA",
+                "city": "Santarcangelo Di R.",
+                "lat": 44.063531,
+                "lng": 12.444696,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Santarcangelo Di R.",
+                "country": "Italia"
+        },
+        {
+                "id": "39719",
+                "name": "RIMINI MALATESTA",
+                "city": "Rimini",
+                "lat": 44.070441,
+                "lng": 12.57777,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Rimini",
+                "country": "Italia"
+        },
+        {
+                "id": "21161",
+                "name": "VALLE DEL SAVIO",
+                "city": "Cella Di Mercato Saraceno",
+                "lat": 43.965675,
+                "lng": 12.200089,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Cella Di Mercato Saraceno",
+                "country": "Italia"
+        },
+        {
+                "id": "45710",
+                "name": "RICCIONE",
+                "city": "Riccione",
+                "lat": 43.979286,
+                "lng": 12.690631,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Riccione",
+                "country": "Italia"
+        },
+        {
+                "id": "154459",
+                "name": "Misano Adriatico",
+                "city": "Misano Adriatico",
+                "lat": 43.964368,
+                "lng": 12.706869,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Misano Adriatico",
+                "country": "Italia"
+        },
+        {
+                "id": "63687",
+                "name": "GABICCE MARE",
+                "city": "Gabicce Mare",
+                "lat": 43.966359,
+                "lng": 12.758517,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Gabicce Mare",
+                "country": "Italia"
+        },
+        {
+                "id": "21149",
+                "name": "PESARO HOST",
+                "city": "Pesaro",
+                "lat": 43.921867,
+                "lng": 12.898244,
+                "site": "https://www.lionspesarohost.com/",
+                "address": "Club di Pesaro",
+                "country": "Italia"
+        },
+        {
+                "id": "64460",
+                "name": "PESARO DELLA ROVERE",
+                "city": "Pesaro",
+                "lat": 43.914091,
+                "lng": 12.916314,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Pesaro",
+                "country": "Italia"
+        },
+        {
+                "id": "21124",
+                "name": "FANO",
+                "city": "Fano",
+                "lat": 43.847248,
+                "lng": 13.012789,
+                "site": "https://e-clubhouse.org/sites/fano/",
+                "address": "Club di Fano",
+                "country": "Italia"
+        },
+        {
+                "id": "153214",
+                "name": "Ancona La Mole",
+                "city": "Ancona",
+                "lat": 43.615076,
+                "lng": 13.506015,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Ancona",
+                "country": "Italia"
+        },
+        {
+                "id": "40788",
+                "name": "ANCONA COLLE GUASCO",
+                "city": "Ancona",
+                "lat": 43.616018,
+                "lng": 13.506616,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Ancona",
+                "country": "Italia"
+        },
+        {
+                "id": "21111",
+                "name": "ANCONA HOST",
+                "city": "Torrette Di Ancona",
+                "lat": 43.607695,
+                "lng": 13.442557,
+                "site": "https://lionsclubanconahost.it/",
+                "address": "Club di Torrette Di Ancona",
+                "country": "Italia"
+        },
+        {
+                "id": "38080",
+                "name": "OSIMO",
+                "city": "Osimo",
+                "lat": 43.48596,
+                "lng": 13.485822,
+                "site": "https://lionsclubosimo.it",
+                "address": "Club di Osimo",
+                "country": "Italia"
+        },
+        {
+                "id": "104989",
+                "name": "CASTELFIDARDO RIVIERA DEL CONERO",
+                "city": "Loreto",
+                "lat": 43.4366,
+                "lng": 13.608565,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Loreto",
+                "country": "Italia"
+        },
+        {
+                "id": "21134",
+                "name": "JESI",
+                "city": "Jesi",
+                "lat": 43.531117,
+                "lng": 13.248864,
+                "site": "https://lionsclubjesi.it",
+                "address": "Club di Jesi",
+                "country": "Italia"
+        },
+        {
+                "id": "21156",
+                "name": "SENIGALLIA",
+                "city": "Senigallia",
+                "lat": 43.717366,
+                "lng": 13.220679,
+                "site": "https://e-clubhouse.org/sites/senigallia/",
+                "address": "Club di Senigallia",
+                "country": "Italia"
+        },
+        {
+                "id": "21139",
+                "name": "MACERATA",
+                "city": "Macerata",
+                "lat": 43.300035,
+                "lng": 13.451807,
+                "site": "https://e-clubhouse.org/sites/macerata/",
+                "address": "Club di Macerata",
+                "country": "Italia"
+        },
+        {
+                "id": "98232",
+                "name": "MACERATA SFERISTERIO",
+                "city": "Pollenza",
+                "lat": 43.272564,
+                "lng": 13.345166,
+                "site": "https://e-clubhouse.org/sites/maceratas/",
+                "address": "Club di Pollenza",
+                "country": "Italia"
+        },
+        {
+                "id": "45709",
+                "name": "PERGOLA VAL CESANO",
+                "city": "San Lorenzo In Campo",
+                "lat": 43.596326,
+                "lng": 12.932086,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di San Lorenzo In Campo",
+                "country": "Italia"
+        },
+        {
+                "id": "48480",
+                "name": "PERUGIA AUGUSTA PERUSIA",
+                "city": "Perugia",
+                "lat": 43.109401,
+                "lng": 12.38941,
+                "site": "https://www.lions.it/",
+                "address": "Club di Perugia",
+                "country": "Italia"
+        },
+        {
+                "id": "57649",
+                "name": "PERUGIA FONTI DI VEGGIO",
+                "city": "Perugia",
+                "lat": 43.106184,
+                "lng": 12.388058,
+                "site": "https://www.lions.it/",
+                "address": "Club di Perugia",
+                "country": "Italia"
+        },
+        {
+                "id": "130178",
+                "name": "Perugia Centenario",
+                "city": "Perugia",
+                "lat": 43.11127,
+                "lng": 12.37779,
+                "site": "https://www.lions.it/",
+                "address": "Club di Perugia",
+                "country": "Italia"
+        },
+        {
+                "id": "21202",
+                "name": "PERUGIA HOST",
+                "city": "Perugia",
+                "lat": 43.10175,
+                "lng": 12.384377,
+                "site": "https://www.lions.it/",
+                "address": "Club di Perugia",
+                "country": "Italia"
+        },
+        {
+                "id": "56739",
+                "name": "PERUGIA CONCORDIA",
+                "city": "Perugia",
+                "lat": 43.099338,
+                "lng": 12.384702,
+                "site": "https://www.lions.it/",
+                "address": "Club di Perugia",
+                "country": "Italia"
+        },
+        {
+                "id": "102580",
+                "name": "DERUTA",
+                "city": "Deruta",
+                "lat": 42.981175,
+                "lng": 12.415818,
+                "site": "https://www.lions.it/",
+                "address": "Club di Deruta",
+                "country": "Italia"
+        },
+        {
+                "id": "43376",
+                "name": "UMBERTIDE",
+                "city": "Umbertide",
+                "lat": 43.291494,
+                "lng": 12.373993,
+                "site": "https://www.lions.it/",
+                "address": "Club di Umbertide",
+                "country": "Italia"
+        },
+        {
+                "id": "41040",
+                "name": "MARSCIANO",
+                "city": "Marsciano",
+                "lat": 42.910914,
+                "lng": 12.337968,
+                "site": "https://www.lions.it/",
+                "address": "Club di Marsciano",
+                "country": "Italia"
+        },
+        {
+                "id": "21179",
+                "name": "FOLIGNO",
+                "city": "Foligno",
+                "lat": 42.955346,
+                "lng": 12.705768,
+                "site": "https://www.lions.it/",
+                "address": "Club di Foligno",
+                "country": "Italia"
+        },
+        {
+                "id": "47437",
+                "name": "GUALDO TADINO",
+                "city": "Gualdo Tadino",
+                "lat": 43.230405,
+                "lng": 12.794362,
+                "site": "https://www.lions.it/",
+                "address": "Club di Gualdo Tadino",
+                "country": "Italia"
+        },
+        {
+                "id": "21174",
+                "name": "CITTA' DELLA PIEVE",
+                "city": "CittÃ  Della Pieve",
+                "lat": 42.969654,
+                "lng": 11.997661,
+                "site": "https://www.lions.it/",
+                "address": "Club di CittÃ  Della Pieve",
+                "country": "Italia"
+        },
+        {
+                "id": "21176",
+                "name": "CORTONA VAL DI CHIANA HOST",
+                "city": "Cortona",
+                "lat": 43.273765,
+                "lng": 11.987106,
+                "site": "https://comune.foiano.ar.it/associazioni/181397/lions-club-cortona-valdichiana-host",
+                "address": "Club di Cortona",
+                "country": "Italia"
+        },
+        {
+                "id": "126377",
+                "name": "Citta di Castello Tiferno",
+                "city": "CittÃ  Di Castello",
+                "lat": 43.453934,
+                "lng": 12.251619,
+                "site": "https://www.lions.it/",
+                "address": "Club di CittÃ  Di Castello",
+                "country": "Italia"
+        },
+        {
+                "id": "54743",
+                "name": "CHIUSI",
+                "city": "Chiusi Citta'",
+                "lat": 43.015694,
+                "lng": 11.909245,
+                "site": "https://www.lions.it/",
+                "address": "Club di Chiusi Citta'",
+                "country": "Italia"
+        },
+        {
+                "id": "21173",
+                "name": "CHIANCIANO TERME",
+                "city": "Chianciano Terme",
+                "lat": 43.046244,
+                "lng": 11.815992,
+                "site": "https://www.lions.it/",
+                "address": "Club di Chianciano Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "88201",
+                "name": "VALDICHIANA I CHIARI",
+                "city": "Montepulciano",
+                "lat": 43.094274,
+                "lng": 11.782114,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Montepulciano",
+                "country": "Italia"
+        },
+        {
+                "id": "21226",
+                "name": "TERNI HOST",
+                "city": "Terni",
+                "lat": 42.572222,
+                "lng": 12.630502,
+                "site": "https://www.lions.it/",
+                "address": "Club di Terni",
+                "country": "Italia"
+        },
+        {
+                "id": "21223",
+                "name": "SPOLETO",
+                "city": "Spoleto",
+                "lat": 42.732781,
+                "lng": 12.735015,
+                "site": "https://e-clubhouse.org/sites/spoleto/",
+                "address": "Club di Spoleto",
+                "country": "Italia"
+        },
+        {
+                "id": "117933",
+                "name": "CITTADUCALE",
+                "city": "Castelfranco",
+                "lat": 42.43493,
+                "lng": 12.887855,
+                "site": "https://e-clubhouse.org/sites/cittaducale/",
+                "address": "Club di Castelfranco",
+                "country": "Italia"
+        },
+        {
+                "id": "52789",
+                "name": "RIETI FLAVIA GENS",
+                "city": "Rieti",
+                "lat": 42.402269,
+                "lng": 12.86001,
+                "site": "https://www.lions.it/",
+                "address": "Club di Rieti",
+                "country": "Italia"
+        },
+        {
+                "id": "32546",
+                "name": "RIETI VARRONE",
+                "city": "Rieti",
+                "lat": 42.393794,
+                "lng": 12.85715,
+                "site": "https://e-clubhouse.org/sites/rietiv/",
+                "address": "Club di Rieti",
+                "country": "Italia"
+        },
+        {
+                "id": "131489",
+                "name": "Poggio Mirteto Farfa Cures",
+                "city": "Montopoli Di Sabina",
+                "lat": 42.234955,
+                "lng": 12.64692,
+                "site": "https://www.lions.it/",
+                "address": "Club di Montopoli Di Sabina",
+                "country": "Italia"
+        },
+        {
+                "id": "21150",
+                "name": "PESCARA HOST",
+                "city": "Spoltore",
+                "lat": 42.451486,
+                "lng": 14.182368,
+                "site": "https://lionsclubpescarahost.it/",
+                "address": "Club di Spoltore",
+                "country": "Italia"
+        },
+        {
+                "id": "34220",
+                "name": "MONTESILVANO",
+                "city": "Montesilvano",
+                "lat": 42.522548,
+                "lng": 14.155764,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Montesilvano",
+                "country": "Italia"
+        },
+        {
+                "id": "52519",
+                "name": "CHIETI I MARRUCINI",
+                "city": "Chieti",
+                "lat": 42.349729,
+                "lng": 14.167782,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Chieti",
+                "country": "Italia"
+        },
+        {
+                "id": "21121",
+                "name": "CHIETI HOST",
+                "city": "Chieti",
+                "lat": 42.349542,
+                "lng": 14.167478,
+                "site": "https://lions108a.it/",
+                "address": "Club di Chieti",
+                "country": "Italia"
+        },
+        {
+                "id": "182720",
+                "name": "Lanciano Frentania",
+                "city": "Lanciano",
+                "lat": 42.229548,
+                "lng": 14.3949,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Lanciano",
+                "country": "Italia"
+        },
+        {
+                "id": "39721",
+                "name": "VAL VIBRATA",
+                "city": "Tortoreto",
+                "lat": 42.812169,
+                "lng": 13.921831,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Tortoreto",
+                "country": "Italia"
+        },
+        {
+                "id": "21136",
+                "name": "L'AQUILA",
+                "city": "L'Aquila",
+                "lat": 42.352859,
+                "lng": 13.396001,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di L'Aquila",
+                "country": "Italia"
+        },
+        {
+                "id": "71256",
+                "name": "L'AQUILA",
+                "city": "L'Aquila",
+                "lat": 42.370571,
+                "lng": 13.366105,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di L'Aquila",
+                "country": "Italia"
+        },
+        {
+                "id": "21113",
+                "name": "AVEZZANO",
+                "city": "Avezzano",
+                "lat": 42.045767,
+                "lng": 13.405689,
+                "site": "https://www.lions.it/",
+                "address": "Club di Avezzano",
+                "country": "Italia"
+        },
+        {
+                "id": "21154",
+                "name": "SULMONA",
+                "city": "Sulmona",
+                "lat": 42.044105,
+                "lng": 13.923594,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Sulmona",
+                "country": "Italia"
+        },
+        {
+                "id": "89514",
+                "name": "FIRENZE DANTE ALIGHIERI",
+                "city": "Firenze",
+                "lat": 43.76615,
+                "lng": 11.272181,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "47988",
+                "name": "FIRENZE BARGELLO",
+                "city": "Firenze",
+                "lat": 43.782577,
+                "lng": 11.258641,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "21178",
+                "name": "FIRENZE",
+                "city": "Firenze",
+                "lat": 43.782845,
+                "lng": 11.258101,
+                "site": "https://lionsclubfirenze.it",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "48548",
+                "name": "FIRENZE GIOTTO",
+                "city": "Firenze",
+                "lat": 43.755836,
+                "lng": 11.251391,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "72434",
+                "name": "FIRENZE-SCANDICCI",
+                "city": "Firenze",
+                "lat": 43.779406,
+                "lng": 11.273856,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "43907",
+                "name": "PONTASSIEVE - STIBBERT",
+                "city": "Firenze",
+                "lat": 43.754812,
+                "lng": 11.25787,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "35218",
+                "name": "FIRENZE BAGNO A RIPOLI",
+                "city": "Firenze",
+                "lat": 43.785515,
+                "lng": 11.274832,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "84429",
+                "name": "FIRENZE POGGIO IMPERIALE",
+                "city": "Firenze",
+                "lat": 43.757866,
+                "lng": 11.234499,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "47989",
+                "name": "FIRENZE PONTE VECCHIO",
+                "city": "Firenze",
+                "lat": 43.756335,
+                "lng": 11.312264,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "41996",
+                "name": "FIRENZE PITTI",
+                "city": "Firenze",
+                "lat": 43.812293,
+                "lng": 11.258201,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "119305",
+                "name": "FIRENZE BRUNELLESCHI",
+                "city": "Firenze",
+                "lat": 43.779299,
+                "lng": 11.315349,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Firenze",
+                "country": "Italia"
+        },
+        {
+                "id": "144968",
+                "name": "Vaglia",
+                "city": "Pratolino",
+                "lat": 43.869523,
+                "lng": 11.319397,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Pratolino",
+                "country": "Italia"
+        },
+        {
+                "id": "55324",
+                "name": "PRATO CASTELLO DELL'IMPERATORE",
+                "city": "Prato",
+                "lat": 43.860098,
+                "lng": 11.109594,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Prato",
+                "country": "Italia"
+        },
+        {
+                "id": "44758",
+                "name": "POGGIO A CAIANO - CARMIGNANO - MEDICEI",
+                "city": "Prato",
+                "lat": 43.847636,
+                "lng": 11.063038,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Prato",
+                "country": "Italia"
+        },
+        {
+                "id": "88402",
+                "name": "PRATO CURZIO MALAPARTE",
+                "city": "Prato",
+                "lat": 43.847636,
+                "lng": 11.063038,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Prato",
+                "country": "Italia"
+        },
+        {
+                "id": "36994",
+                "name": "VALDARNO HOST",
+                "city": "Figline E Incisa Valdarno",
+                "lat": 43.619465,
+                "lng": 11.411205,
+                "site": "https://www.comunefiv.it/punto_contatto/lions-club-valdarno-host/",
+                "address": "Club di Figline E Incisa Valdarno",
+                "country": "Italia"
+        },
+        {
+                "id": "127181",
+                "name": "Montemurlo",
+                "city": "Montemurlo",
+                "lat": 43.922846,
+                "lng": 11.052389,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Montemurlo",
+                "country": "Italia"
+        },
+        {
+                "id": "151135",
+                "name": "Valdarno Masaccio",
+                "city": "Figline Valdarno",
+                "lat": 43.620762,
+                "lng": 11.46805,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Figline Valdarno",
+                "country": "Italia"
+        },
+        {
+                "id": "44999",
+                "name": "QUARRATA-AGLIANA PIANURA PISTOIESE",
+                "city": "Italia",
+                "lat": 43.89141,
+                "lng": 10.937381,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "97660",
+                "name": "PISTOIA FUORCIVITAS",
+                "city": "Pistoia",
+                "lat": 43.941605,
+                "lng": 10.980769,
+                "site": "https://lionsclubpistoiafuorcivitas.it",
+                "address": "Club di Pistoia",
+                "country": "Italia"
+        },
+        {
+                "id": "39723",
+                "name": "CERTALDO BOCCACCIO",
+                "city": "Gambassi Terme",
+                "lat": 43.564342,
+                "lng": 10.956163,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Gambassi Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "35606",
+                "name": "CHIANTI",
+                "city": "Castellina In Chianti",
+                "lat": 43.469414,
+                "lng": 11.287409,
+                "site": "https://lionsclubchianti.it",
+                "address": "Club di Castellina In Chianti",
+                "country": "Italia"
+        },
+        {
+                "id": "72601",
+                "name": "SAENA CLANTE VALDELSA",
+                "city": "Castellina In Chianti",
+                "lat": 43.469366,
+                "lng": 11.28737,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Castellina In Chianti",
+                "country": "Italia"
+        },
+        {
+                "id": "21230",
+                "name": "VALDELSA",
+                "city": "Poggibonsi",
+                "lat": 43.472816,
+                "lng": 11.146459,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Poggibonsi",
+                "country": "Italia"
+        },
+        {
+                "id": "58074",
+                "name": "VALDARNO MASACCIO",
+                "city": "Montevarchi",
+                "lat": 43.489571,
+                "lng": 11.560252,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Montevarchi",
+                "country": "Italia"
+        },
+        {
+                "id": "33877",
+                "name": "CASENTINO",
+                "city": "Bibbiena",
+                "lat": 43.692339,
+                "lng": 11.811697,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Bibbiena",
+                "country": "Italia"
+        },
+        {
+                "id": "49559",
+                "name": "PESCIA",
+                "city": "Pescia",
+                "lat": 43.886053,
+                "lng": 10.680866,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Pescia",
+                "country": "Italia"
+        },
+        {
+                "id": "48478",
+                "name": "PORRETTA TERME-ALTO RENO",
+                "city": "Alto Reno Terme",
+                "lat": 44.148669,
+                "lng": 10.924196,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Alto Reno Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "71295",
+                "name": "PISA",
+                "city": "Pisa",
+                "lat": 43.721101,
+                "lng": 10.397193,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Pisa",
+                "country": "Italia"
+        },
+        {
+                "id": "21204",
+                "name": "PISA HOST",
+                "city": "Pisa",
+                "lat": 43.721101,
+                "lng": 10.397193,
+                "site": "https://www.lionsclubpisahost.it/",
+                "address": "Club di Pisa",
+                "country": "Italia"
+        },
+        {
+                "id": "61793",
+                "name": "LIVORNO PORTO MEDICEO",
+                "city": "Livorno",
+                "lat": 43.5344,
+                "lng": 10.309531,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Livorno",
+                "country": "Italia"
+        },
+        {
+                "id": "41041",
+                "name": "ORBETELLO I PRESIDI",
+                "city": "Orbetello",
+                "lat": 43.465384,
+                "lng": 10.342424,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Orbetello",
+                "country": "Italia"
+        },
+        {
+                "id": "21172",
+                "name": "CECINA",
+                "city": "Cecina",
+                "lat": 43.312017,
+                "lng": 10.517802,
+                "site": "https://lionsclubcecina.it",
+                "address": "Club di Cecina",
+                "country": "Italia"
+        },
+        {
+                "id": "121888",
+                "name": "Siena",
+                "city": "Siena",
+                "lat": 43.31359,
+                "lng": 11.33944,
+                "site": "https://lionsclubsiena.it",
+                "address": "Club di Siena",
+                "country": "Italia"
+        },
+        {
+                "id": "21222",
+                "name": "SIENA",
+                "city": "Siena",
+                "lat": 43.31359,
+                "lng": 11.33944,
+                "site": "https://lionsclubsiena.it",
+                "address": "Club di Siena",
+                "country": "Italia"
+        },
+        {
+                "id": "59292",
+                "name": "LUCIGNANO E VAL D'ESSE",
+                "city": "Monte San Savino",
+                "lat": 43.341109,
+                "lng": 11.672519,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Monte San Savino",
+                "country": "Italia"
+        },
+        {
+                "id": "51267",
+                "name": "MONTALCINO VALLI D'ARBIA E D'ORCIA",
+                "city": "Bagno Vignoni",
+                "lat": 43.028349,
+                "lng": 11.618282,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Bagno Vignoni",
+                "country": "Italia"
+        },
+        {
+                "id": "56866",
+                "name": "AREZZO MECENATE",
+                "city": "Arezzo",
+                "lat": 43.469302,
+                "lng": 11.853486,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Arezzo",
+                "country": "Italia"
+        },
+        {
+                "id": "48118",
+                "name": "AREZZO NORD EST",
+                "city": "Arezzo",
+                "lat": 43.470855,
+                "lng": 11.864928,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Arezzo",
+                "country": "Italia"
+        },
+        {
+                "id": "129509",
+                "name": "Arezzo Chimera",
+                "city": "Arezzo",
+                "lat": 43.463832,
+                "lng": 11.881528,
+                "site": "https://www.lions108la.it/",
+                "address": "Club di Arezzo",
+                "country": "Italia"
+        },
+        {
+                "id": "21215",
+                "name": "ROMA PALATINUM",
+                "city": "Roma",
+                "lat": 41.904011,
+                "lng": 12.489364,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "21216",
+                "name": "ROMA PARIOLI",
+                "city": "Roma",
+                "lat": 41.906347,
+                "lng": 12.489575,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "48618",
+                "name": "ROMA PANTHEON",
+                "city": "Roma",
+                "lat": 41.90342,
+                "lng": 12.51037,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "54785",
+                "name": "ROMA AMICITIA",
+                "city": "Roma",
+                "lat": 41.917589,
+                "lng": 12.491761,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "48433",
+                "name": "ROMA AUGUSTUS",
+                "city": "Roma",
+                "lat": 41.899856,
+                "lng": 12.440382,
+                "site": "https://www.lionsromaaugustus.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "38477",
+                "name": "ROMA NOMENTANUM",
+                "city": "Roma",
+                "lat": 41.891822,
+                "lng": 12.439178,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "21212",
+                "name": "ROMA HOST",
+                "city": "Roma",
+                "lat": 41.899687,
+                "lng": 12.431015,
+                "site": "https://www.lionsclubroma.org/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "30422",
+                "name": "ROMA MARE",
+                "city": "Roma",
+                "lat": 41.789053,
+                "lng": 12.448265,
+                "site": "https://www.lions.it/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "154903",
+                "name": "Roma Sibylla",
+                "city": "Roma",
+                "lat": 41.954748,
+                "lng": 12.611987,
+                "site": "https://www.lionsclubromasibylla.org/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "117240",
+                "name": "Roma Mare",
+                "city": "Roma",
+                "lat": 41.752925,
+                "lng": 12.371983,
+                "site": "https://e-leoclubhouse.org/sites/romamare/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "116805",
+                "name": "MONTEPORZIO CATONE",
+                "city": "Frascati",
+                "lat": 41.827368,
+                "lng": 12.687336,
+                "site": "https://www.e-clubhouse.org/sites/monte_porzio_catone/",
+                "address": "Club di Frascati",
+                "country": "Italia"
+        },
+        {
+                "id": "88672",
+                "name": "ROMA PARCO NOMENTUM",
+                "city": "Mentana",
+                "lat": 42.03747,
+                "lng": 12.639822,
+                "site": "https://www.lions.it/",
+                "address": "Club di Mentana",
+                "country": "Italia"
+        },
+        {
+                "id": "98732",
+                "name": "SACROFANO-FORMELLO",
+                "city": "Formello",
+                "lat": 42.064834,
+                "lng": 12.377728,
+                "site": "https://www.lions.it/",
+                "address": "Club di Formello",
+                "country": "Italia"
+        },
+        {
+                "id": "99835",
+                "name": "FIUMICINO PORTUS",
+                "city": "Isola Sacra",
+                "lat": 41.756657,
+                "lng": 12.273481,
+                "site": "https://www.lions.it/",
+                "address": "Club di Isola Sacra",
+                "country": "Italia"
+        },
+        {
+                "id": "124252",
+                "name": "Roma Iustinianus",
+                "city": "Roma",
+                "lat": 42.114248,
+                "lng": 12.516227,
+                "site": "https://e-clubhouse.org/sites/romaiustinianus/",
+                "address": "Club di Roma",
+                "country": "Italia"
+        },
+        {
+                "id": "48377",
+                "name": "TIVOLI D'ESTE GUIDONIA",
+                "city": "Tivoli",
+                "lat": 41.937862,
+                "lng": 12.77306,
+                "site": "https://www.lions.it/",
+                "address": "Club di Tivoli",
+                "country": "Italia"
+        },
+        {
+                "id": "30613",
+                "name": "TIVOLI HOST",
+                "city": "Tivoli",
+                "lat": 41.966668,
+                "lng": 12.800466,
+                "site": "https://lctivolihost.blogspot.com/",
+                "address": "Club di Tivoli",
+                "country": "Italia"
+        },
+        {
+                "id": "33732",
+                "name": "VELLETRI HOST COLLI ALBANI",
+                "city": "Velletri",
+                "lat": 41.705705,
+                "lng": 12.773316,
+                "site": "https://www.lionsvelletri.it/",
+                "address": "Club di Velletri",
+                "country": "Italia"
+        },
+        {
+                "id": "21167",
+                "name": "BRACCIANO-ANGUILLARA SABAZIA MONTI SABATINI",
+                "city": "Bracciano",
+                "lat": 42.117038,
+                "lng": 12.174502,
+                "site": "https://www.lions.it/",
+                "address": "Club di Bracciano",
+                "country": "Italia"
+        },
+        {
+                "id": "21164",
+                "name": "ANZIO NETTUNO HOST",
+                "city": "Anzio",
+                "lat": 41.458321,
+                "lng": 12.614992,
+                "site": "https://e-clubhouse.org/sites/anzio_nettuno_host/",
+                "address": "Club di Anzio",
+                "country": "Italia"
+        },
+        {
+                "id": "56912",
+                "name": "MONTEFIASCONE FALISCO-VULSINEO",
+                "city": "Montefiascone",
+                "lat": 42.537214,
+                "lng": 12.030529,
+                "site": "https://www.lions.it/",
+                "address": "Club di Montefiascone",
+                "country": "Italia"
+        },
+        {
+                "id": "71305",
+                "name": "CIVITAVECCHIA SANTA MARINELLA",
+                "city": "Civitavecchia",
+                "lat": 42.088856,
+                "lng": 11.793665,
+                "site": "https://e-clubhouse.org/sites/civitavecchiasm/",
+                "address": "Club di Civitavecchia",
+                "country": "Italia"
+        },
+        {
+                "id": "48940",
+                "name": "CIVITAVECCHIA PORTO TRAIANO",
+                "city": "Civitavecchia",
+                "lat": 42.088856,
+                "lng": 11.793665,
+                "site": "https://www.lions.it/",
+                "address": "Club di Civitavecchia",
+                "country": "Italia"
+        },
+        {
+                "id": "21219",
+                "name": "CIVITAVECCHIA SANTA MARINELLA HOST",
+                "city": "Civitavecchia",
+                "lat": 42.088856,
+                "lng": 11.793665,
+                "site": "https://www.lions.it/",
+                "address": "Club di Civitavecchia",
+                "country": "Italia"
+        },
+        {
+                "id": "21181",
+                "name": "FROSINONE HOST NOVA CIVITAS",
+                "city": "Frosinone",
+                "lat": 41.621046,
+                "lng": 13.323264,
+                "site": "https://www.lions.it/",
+                "address": "Club di Frosinone",
+                "country": "Italia"
+        },
+        {
+                "id": "30612",
+                "name": "SORA - ISOLA DEL LIRI",
+                "city": "Arpino",
+                "lat": 41.676437,
+                "lng": 13.611028,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Arpino",
+                "country": "Italia"
+        },
+        {
+                "id": "42567",
+                "name": "VAL DI COMINO",
+                "city": "Atina",
+                "lat": 41.61923,
+                "lng": 13.801622,
+                "site": "https://www.lions108a.it/",
+                "address": "Club di Atina",
+                "country": "Italia"
+        },
+        {
+                "id": "21227",
+                "name": "TERRACINA",
+                "city": "Terracina",
+                "lat": 41.288117,
+                "lng": 13.20675,
+                "site": "https://www.lions.it/",
+                "address": "Club di Terracina",
+                "country": "Italia"
+        },
+        {
+                "id": "134689",
+                "name": "Sabaudia San Felice Circeo Host II",
+                "city": "Latina",
+                "lat": 41.45767,
+                "lng": 12.90564,
+                "site": "https://www.lions.it/",
+                "address": "Club di Latina",
+                "country": "Italia"
+        },
+        {
+                "id": "44997",
+                "name": "FONDI",
+                "city": "Fondi",
+                "lat": 41.290737,
+                "lng": 13.524647,
+                "site": "https://e-clubhouse.org/sites/fondi/",
+                "address": "Club di Fondi",
+                "country": "Italia"
+        },
+        {
+                "id": "21170",
+                "name": "CASSINO",
+                "city": "Cassino",
+                "lat": 41.479916,
+                "lng": 13.809836,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Cassino",
+                "country": "Italia"
+        },
+        {
+                "id": "120922",
+                "name": "Latina Terre Pontine",
+                "city": "Sabaudia",
+                "lat": 41.293608,
+                "lng": 13.01358,
+                "site": "https://www.lions.it/",
+                "address": "Club di Sabaudia",
+                "country": "Italia"
+        },
+        {
+                "id": "37365",
+                "name": "CAMPI FLEGREI - CUMA",
+                "city": "Pozzuoli",
+                "lat": 41.2635,
+                "lng": 13.620734,
+                "site": "https://www.lions108ya.it/",
+                "address": "Club di Pozzuoli",
+                "country": "Italia"
+        },
+        {
+                "id": "21180",
+                "name": "FORMIA",
+                "city": "Formia",
+                "lat": 41.26151,
+                "lng": 13.629732,
+                "site": "https://www.lions108ya.it/",
+                "address": "Club di Formia",
+                "country": "Italia"
+        },
+        {
+                "id": "129298",
+                "name": "Roma Litorale Sud",
+                "city": "Nettuno",
+                "lat": 41.462055,
+                "lng": 12.657513,
+                "site": "https://www.lions.it/",
+                "address": "Club di Nettuno",
+                "country": "Italia"
+        },
+        {
+                "id": "21247",
+                "name": "CAPRI",
+                "city": "Napoli",
+                "lat": 40.854731,
+                "lng": 14.27508,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "58334",
+                "name": "NAPOLI SVEVO",
+                "city": "Napoli",
+                "lat": 40.831583,
+                "lng": 14.243741,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-napoli-svevo/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "48169",
+                "name": "NAPOLI PARTENOPE - PALAZZO REALE",
+                "city": "Napoli",
+                "lat": 40.840037,
+                "lng": 14.217601,
+                "site": "https://www.lionsclubpartenopepalazzoreale.it/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "56045",
+                "name": "OTTAVIANO",
+                "city": "Napoli",
+                "lat": 40.829453,
+                "lng": 14.220212,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-nola-ottaviano-augusto/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "46067",
+                "name": "SAN GIORGIO A CREMANO HOST",
+                "city": "San Giorgio A Cremano",
+                "lat": 40.826512,
+                "lng": 14.32875,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-san-giorgio-a-cremano-host/",
+                "address": "Club di San Giorgio A Cremano",
+                "country": "Italia"
+        },
+        {
+                "id": "46322",
+                "name": "NAPOLI MEGARIDE",
+                "city": "Napoli",
+                "lat": 40.819165,
+                "lng": 14.208255,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-napoli-megaride/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "77996",
+                "name": "NAPOLI CAMALDOLI",
+                "city": "Napoli",
+                "lat": 40.819165,
+                "lng": 14.208255,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-napoli-camaldoli/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "65328",
+                "name": "NAPOLI NORD-EST",
+                "city": "Casoria",
+                "lat": 40.906487,
+                "lng": 14.288899,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-napoli-nord-est/",
+                "address": "Club di Casoria",
+                "country": "Italia"
+        },
+        {
+                "id": "51361",
+                "name": "NAPOLI VIRGILIANO",
+                "city": "Napoli",
+                "lat": 40.81149,
+                "lng": 14.204526,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-napoli-virgiliano/",
+                "address": "Club di Napoli",
+                "country": "Italia"
+        },
+        {
+                "id": "59663",
+                "name": "PORTICI MIGLIO D'ORO",
+                "city": "Ercolano",
+                "lat": 40.808169,
+                "lng": 14.342028,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-portici-miglio-doro/",
+                "address": "Club di Ercolano",
+                "country": "Italia"
+        },
+        {
+                "id": "99842",
+                "name": "SAN SEBASTIANO AL VESUVIO SANDRA CAMPA GIACON",
+                "city": "San Sebastiano Al Vesuvio",
+                "lat": 40.842146,
+                "lng": 14.371735,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-san-sebastiano-al-vesuvio-sandra-campa-giacon/",
+                "address": "Club di San Sebastiano Al Vesuvio",
+                "country": "Italia"
+        },
+        {
+                "id": "51450",
+                "name": "SANT'ANASTASIA MONTE SOMMA",
+                "city": "Sant'Anastasia",
+                "lat": 40.867706,
+                "lng": 14.396052,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-santanastasia-monte-somma/",
+                "address": "Club di Sant'Anastasia",
+                "country": "Italia"
+        },
+        {
+                "id": "33234",
+                "name": "DUE TORRI-TORRE DEL GRECO",
+                "city": "Italia",
+                "lat": 40.785116,
+                "lng": 14.363622,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-due-torri-torre-del-greco/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "65191",
+                "name": "CASTELLO DI CISTERNA VESUVIO NORD",
+                "city": "Pomigliano D'Arco",
+                "lat": 40.906903,
+                "lng": 14.396908,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-castello-di-cisterna-vesuvio-nord/",
+                "address": "Club di Pomigliano D'Arco",
+                "country": "Italia"
+        },
+        {
+                "id": "109099",
+                "name": "ACERRA VALLE DI SUESSOLA",
+                "city": "Acerra",
+                "lat": 40.939896,
+                "lng": 14.369214,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Acerra",
+                "country": "Italia"
+        },
+        {
+                "id": "56450",
+                "name": "AVERSA CITTA' NORMANNA",
+                "city": "Aversa",
+                "lat": 40.971261,
+                "lng": 14.211944,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Aversa",
+                "country": "Italia"
+        },
+        {
+                "id": "135621",
+                "name": "Nola Ottaviano Augusto",
+                "city": "Nola",
+                "lat": 40.902262,
+                "lng": 14.468184,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Nola",
+                "country": "Italia"
+        },
+        {
+                "id": "140811",
+                "name": "San Giuseppe Terre del Vesuvio",
+                "city": "S Giuseppe Vesuviano",
+                "lat": 40.828694,
+                "lng": 14.489536,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di S Giuseppe Vesuviano",
+                "country": "Italia"
+        },
+        {
+                "id": "61473",
+                "name": "SAN GIUSEPPE VESUVIANO HOST",
+                "city": "San Giuseppe Vesuviano",
+                "lat": 40.828694,
+                "lng": 14.489536,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-san-giuseppe-vesuviano-host/",
+                "address": "Club di San Giuseppe Vesuviano",
+                "country": "Italia"
+        },
+        {
+                "id": "45598",
+                "name": "POMPEI HOST",
+                "city": "Pompei",
+                "lat": 40.742101,
+                "lng": 14.480625,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-pompei-host/",
+                "address": "Club di Pompei",
+                "country": "Italia"
+        },
+        {
+                "id": "51109",
+                "name": "PALMA CAMPANIA VESUVIO EST",
+                "city": "Nola",
+                "lat": 40.928433,
+                "lng": 14.525478,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Nola",
+                "country": "Italia"
+        },
+        {
+                "id": "73692",
+                "name": "NOLA GIORDANO BRUNO",
+                "city": "Nola",
+                "lat": 40.92801,
+                "lng": 14.530168,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Nola",
+                "country": "Italia"
+        },
+        {
+                "id": "73742",
+                "name": "PALMA VESUVIO EST",
+                "city": "Palma Campania",
+                "lat": 40.867918,
+                "lng": 14.554069,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Palma Campania",
+                "country": "Italia"
+        },
+        {
+                "id": "125175",
+                "name": "Santa Maria Capua Vetere Altera Roma",
+                "city": "Santa Maria Capua Vetere",
+                "lat": 41.075109,
+                "lng": 14.257038,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Santa Maria Capua Vetere",
+                "country": "Italia"
+        },
+        {
+                "id": "62710",
+                "name": "CASERTA VANVITELLI",
+                "city": "Caserta",
+                "lat": 41.070429,
+                "lng": 14.331053,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Caserta",
+                "country": "Italia"
+        },
+        {
+                "id": "63976",
+                "name": "CASERTA REGGIA",
+                "city": "Caserta",
+                "lat": 41.070429,
+                "lng": 14.331053,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Caserta",
+                "country": "Italia"
+        },
+        {
+                "id": "125798",
+                "name": "Caserta Terra Di Lavoro Reloaded",
+                "city": "Caserta",
+                "lat": 41.073428,
+                "lng": 14.339052,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Caserta",
+                "country": "Italia"
+        },
+        {
+                "id": "21248",
+                "name": "CASERTA HOST",
+                "city": "Italia",
+                "lat": 41.073428,
+                "lng": 14.339052,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-caserta-host/",
+                "address": "Club di Italia",
+                "country": "Italia"
+        },
+        {
+                "id": "64296",
+                "name": "CASERTA VILLA REALE NEW CENTURY",
+                "city": "Caserta",
+                "lat": 41.074978,
+                "lng": 14.33224,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Caserta",
+                "country": "Italia"
+        },
+        {
+                "id": "52819",
+                "name": "CASTELLAMMARE DI STABIA TERME",
+                "city": "Castellammare Di Stabia",
+                "lat": 40.69562,
+                "lng": 14.491019,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Castellammare Di Stabia",
+                "country": "Italia"
+        },
+        {
+                "id": "57270",
+                "name": "SANTA MARIA CAPUA VETERE",
+                "city": "Santa Maria Capua Vetere",
+                "lat": 41.086881,
+                "lng": 14.258997,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Santa Maria Capua Vetere",
+                "country": "Italia"
+        },
+        {
+                "id": "21273",
+                "name": "PENISOLA SORRENTINA",
+                "city": "Sant'Agnello",
+                "lat": 40.632513,
+                "lng": 14.399568,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Sant'Agnello",
+                "country": "Italia"
+        },
+        {
+                "id": "106121",
+                "name": "PENISOLA SORRENTINA",
+                "city": "Sorrento",
+                "lat": 40.628792,
+                "lng": 14.388898,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Sorrento",
+                "country": "Italia"
+        },
+        {
+                "id": "21258",
+                "name": "ISOLA D'ISCHIA",
+                "city": "Forio",
+                "lat": 40.742453,
+                "lng": 13.866924,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Forio",
+                "country": "Italia"
+        },
+        {
+                "id": "42687",
+                "name": "CAVA DEI TIRRENI VIETRI",
+                "city": "Cava De' Tirreni",
+                "lat": 40.682749,
+                "lng": 14.692537,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Cava De' Tirreni",
+                "country": "Italia"
+        },
+        {
+                "id": "36739",
+                "name": "MERCATO SAN SEVERINO",
+                "city": "Montoro",
+                "lat": 40.820388,
+                "lng": 14.775672,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Montoro",
+                "country": "Italia"
+        },
+        {
+                "id": "97983",
+                "name": "SESSA AURUNCA LITORALE DOMITIO",
+                "city": "Mondragone",
+                "lat": 41.112248,
+                "lng": 13.883511,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Mondragone",
+                "country": "Italia"
+        },
+        {
+                "id": "47990",
+                "name": "SALERNO HIPPOCRATICA CIVITAS",
+                "city": "Salerno",
+                "lat": 40.677967,
+                "lng": 14.748316,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Salerno",
+                "country": "Italia"
+        },
+        {
+                "id": "60814",
+                "name": "SALERNO 2000",
+                "city": "Salerno",
+                "lat": 40.677861,
+                "lng": 14.749225,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Salerno",
+                "country": "Italia"
+        },
+        {
+                "id": "179579",
+                "name": "Salerno Forte La Carnale Giovanna Gattola Lacava",
+                "city": "Salerno",
+                "lat": 40.677861,
+                "lng": 14.749225,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Salerno",
+                "country": "Italia"
+        },
+        {
+                "id": "21279",
+                "name": "SALERNO HOST",
+                "city": "Salerno",
+                "lat": 40.681331,
+                "lng": 14.774358,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-salerno-host/",
+                "address": "Club di Salerno",
+                "country": "Italia"
+        },
+        {
+                "id": "48588",
+                "name": "SALERNO ARECHI",
+                "city": "Salerno",
+                "lat": 40.671387,
+                "lng": 14.778661,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Salerno",
+                "country": "Italia"
+        },
+        {
+                "id": "150700",
+                "name": "Battipaglia",
+                "city": "Battipaglia",
+                "lat": 40.603941,
+                "lng": 14.97351,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Battipaglia",
+                "country": "Italia"
+        },
+        {
+                "id": "44868",
+                "name": "EBOLI-BATTIPAGLIA HOST",
+                "city": "Battipaglia",
+                "lat": 40.603722,
+                "lng": 14.973576,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-eboli-battipaglia-host/",
+                "address": "Club di Battipaglia",
+                "country": "Italia"
+        },
+        {
+                "id": "145920",
+                "name": "Eboli Valle del Sele",
+                "city": "Eboli",
+                "lat": 40.615363,
+                "lng": 15.058403,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Eboli",
+                "country": "Italia"
+        },
+        {
+                "id": "126070",
+                "name": "Campagna Silarus",
+                "city": "Campagna",
+                "lat": 40.635384,
+                "lng": 15.104606,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Campagna",
+                "country": "Italia"
+        },
+        {
+                "id": "156436",
+                "name": "Capaccio Paestum Magna Graecia",
+                "city": "Capaccio Paestum",
+                "lat": 40.45157,
+                "lng": 14.975931,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Capaccio Paestum",
+                "country": "Italia"
+        },
+        {
+                "id": "48346",
+                "name": "PAESTUM HOST",
+                "city": "Capaccio",
+                "lat": 40.433903,
+                "lng": 14.988721,
+                "site": "https://comune.capaccio.sa.it/vivere-il-comune/associazioni/",
+                "address": "Club di Capaccio",
+                "country": "Italia"
+        },
+        {
+                "id": "145753",
+                "name": "Agropoli Faro del Cilento",
+                "city": "Agropoli",
+                "lat": 40.385227,
+                "lng": 15.026528,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Agropoli",
+                "country": "Italia"
+        },
+        {
+                "id": "60444",
+                "name": "CASTELLABATE CILENTO ANTICO",
+                "city": "Castellabate",
+                "lat": 40.264664,
+                "lng": 14.940932,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Castellabate",
+                "country": "Italia"
+        },
+        {
+                "id": "21243",
+                "name": "BENEVENTO HOST",
+                "city": "Benevento",
+                "lat": 41.1261,
+                "lng": 14.779974,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-benevento-host/",
+                "address": "Club di Benevento",
+                "country": "Italia"
+        },
+        {
+                "id": "78577",
+                "name": "BENEVENTO ARCO TRAIANO",
+                "city": "Benevento",
+                "lat": 41.128584,
+                "lng": 14.788997,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Benevento",
+                "country": "Italia"
+        },
+        {
+                "id": "134657",
+                "name": "Piedimonte Matese \"I Sanniti\"",
+                "city": "Piedimonte Matese",
+                "lat": 41.35657,
+                "lng": 14.374492,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Piedimonte Matese",
+                "country": "Italia"
+        },
+        {
+                "id": "35605",
+                "name": "BOJANO",
+                "city": "Bojano",
+                "lat": 41.486416,
+                "lng": 14.474659,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Bojano",
+                "country": "Italia"
+        },
+        {
+                "id": "21238",
+                "name": "ARIANO IRPINO",
+                "city": "Ariano Irpino",
+                "lat": 41.152761,
+                "lng": 15.088138,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Ariano Irpino",
+                "country": "Italia"
+        },
+        {
+                "id": "33731",
+                "name": "BARI TRIGGIANO MARINA",
+                "city": "Bari",
+                "lat": 41.098816,
+                "lng": 16.855795,
+                "site": "https://www.lions108ab.it/category/bari-triggiano-marina/",
+                "address": "Club di Bari",
+                "country": "Italia"
+        },
+        {
+                "id": "133615",
+                "name": "Bari Citta Metropolitana",
+                "city": "Bari",
+                "lat": 41.099096,
+                "lng": 16.854892,
+                "site": "https://www.lions108ab.it/category/bari-citta-metropolitana/",
+                "address": "Club di Bari",
+                "country": "Italia"
+        },
+        {
+                "id": "21114",
+                "name": "BARI",
+                "city": "Bari",
+                "lat": 41.099096,
+                "lng": 16.854892,
+                "site": "https://www.lions108ab.it/category/bari/",
+                "address": "Club di Bari",
+                "country": "Italia"
+        },
+        {
+                "id": "51577",
+                "name": "BARI G. MURAT",
+                "city": "Bari",
+                "lat": 41.125662,
+                "lng": 16.788832,
+                "site": "https://www.e-clubhouse.org/sites/bari_gioacchino_murat/",
+                "address": "Club di Bari",
+                "country": "Italia"
+        },
+        {
+                "id": "53201",
+                "name": "BARI MELVIN JONES",
+                "city": "Bari",
+                "lat": 41.153827,
+                "lng": 16.771113,
+                "site": "https://www.lions108ab.it/category/bari-melvin-jones/",
+                "address": "Club di Bari",
+                "country": "Italia"
+        },
+        {
+                "id": "103347",
+                "name": "BARI SAN GIORGIO",
+                "city": "Noicattaro",
+                "lat": 41.079387,
+                "lng": 17.00059,
+                "site": "https://e-clubhouse.org/sites/bari_san_giorgio/",
+                "address": "Club di Noicattaro",
+                "country": "Italia"
+        },
+        {
+                "id": "45708",
+                "name": "BITONTO",
+                "city": "Bitonto",
+                "lat": 41.111533,
+                "lng": 16.6919,
+                "site": "https://www.lions108ab.it/category/bitonto-palo-del-colle/",
+                "address": "Club di Bitonto",
+                "country": "Italia"
+        },
+        {
+                "id": "123726",
+                "name": "Palo del Colle - Auricarro",
+                "city": "Palo Del Colle",
+                "lat": 41.058442,
+                "lng": 16.706643,
+                "site": "https://lionsclubpalodelcolleauricarro.it/",
+                "address": "Club di Palo Del Colle",
+                "country": "Italia"
+        },
+        {
+                "id": "21144",
+                "name": "MOLFETTA",
+                "city": "Giovinazzo",
+                "lat": 41.178964,
+                "lng": 16.656746,
+                "site": "https://www.e-clubhouse.org/sites/molfettait/",
+                "address": "Club di Giovinazzo",
+                "country": "Italia"
+        },
+        {
+                "id": "63173",
+                "name": "TORITTO",
+                "city": "Toritto",
+                "lat": 40.99599,
+                "lng": 16.683774,
+                "site": "https://www.lions108ab.it/category/toritto/",
+                "address": "Club di Toritto",
+                "country": "Italia"
+        },
+        {
+                "id": "102227",
+                "name": "ACQUAVIVA DELLE FONTI PURA DEFLUIT",
+                "city": "Acquaviva Delle Fonti",
+                "lat": 40.896809,
+                "lng": 16.846438,
+                "site": "https://www.lions108ab.it/category/acquaviva-delle-fonti-pura-defluit/",
+                "address": "Club di Acquaviva Delle Fonti",
+                "country": "Italia"
+        },
+        {
+                "id": "75997",
+                "name": "RUVO DI PUGLIA TALOS HOST",
+                "city": "Ruvo Di Puglia",
+                "lat": 41.11628,
+                "lng": 16.4856,
+                "site": "https://www.lions108ab.it/category/ruvo-di-puglia-talos/",
+                "address": "Club di Ruvo Di Puglia",
+                "country": "Italia"
+        },
+        {
+                "id": "57047",
+                "name": "BISCEGLIE",
+                "city": "Bisceglie",
+                "lat": 41.240352,
+                "lng": 16.500827,
+                "site": "https://www.lionsbisceglie.com/",
+                "address": "Club di Bisceglie",
+                "country": "Italia"
+        },
+        {
+                "id": "21145",
+                "name": "MONOPOLI",
+                "city": "Monopoli",
+                "lat": 40.951144,
+                "lng": 17.287256,
+                "site": "https://www.lions108ab.it/category/monopoli/",
+                "address": "Club di Monopoli",
+                "country": "Italia"
+        },
+        {
+                "id": "122460",
+                "name": "Trani Ordinamenta Maris",
+                "city": "Trani",
+                "lat": 41.274337,
+                "lng": 16.418062,
+                "site": "https://www.lions108ab.it/category/trani-ordinamenta-maris/",
+                "address": "Club di Trani",
+                "country": "Italia"
+        },
+        {
+                "id": "48616",
+                "name": "ANDRIA COSTANZA D'ARAGONA",
+                "city": "Andria",
+                "lat": 41.225213,
+                "lng": 16.300672,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Andria",
+                "country": "Italia"
+        },
+        {
+                "id": "98755",
+                "name": "COPERTINO SALENTO ?PINO CORDELLA?",
+                "city": "Lecce",
+                "lat": 40.352672,
+                "lng": 18.177834,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Lecce",
+                "country": "Italia"
+        },
+        {
+                "id": "134123",
+                "name": "Puglia Dei Patrimoni E Dei Cittadini",
+                "city": "Lecce",
+                "lat": 40.35383,
+                "lng": 18.188439,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Lecce",
+                "country": "Italia"
+        },
+        {
+                "id": "53107",
+                "name": "LECCE RUDIAE",
+                "city": "Lecce",
+                "lat": 40.363972,
+                "lng": 18.165864,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Lecce",
+                "country": "Italia"
+        },
+        {
+                "id": "41539",
+                "name": "LECCE SANTA CROCE",
+                "city": "Lecce",
+                "lat": 40.363972,
+                "lng": 18.165864,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Lecce",
+                "country": "Italia"
+        },
+        {
+                "id": "59510",
+                "name": "LECCE MESSAPIA",
+                "city": "Lecce",
+                "lat": 40.31101,
+                "lng": 18.201365,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Lecce",
+                "country": "Italia"
+        },
+        {
+                "id": "21140",
+                "name": "MAGLIE",
+                "city": "Maglie",
+                "lat": 40.121177,
+                "lng": 18.299223,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Maglie",
+                "country": "Italia"
+        },
+        {
+                "id": "133782",
+                "name": "Salento Territorio ed Ambiente",
+                "city": "Maglie",
+                "lat": 40.120209,
+                "lng": 18.303511,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Maglie",
+                "country": "Italia"
+        },
+        {
+                "id": "72133",
+                "name": "CASARANO",
+                "city": "Parabita",
+                "lat": 40.049874,
+                "lng": 18.129464,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Parabita",
+                "country": "Italia"
+        },
+        {
+                "id": "51578",
+                "name": "GALLIPOLI",
+                "city": "Gallipoli",
+                "lat": 40.056066,
+                "lng": 17.986615,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Gallipoli",
+                "country": "Italia"
+        },
+        {
+                "id": "21116",
+                "name": "BRINDISI",
+                "city": "Brindisi",
+                "lat": 40.634542,
+                "lng": 17.94043,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Brindisi",
+                "country": "Italia"
+        },
+        {
+                "id": "150772",
+                "name": "Poggiardo UNICRIS",
+                "city": "Poggiardo",
+                "lat": 40.053071,
+                "lng": 18.381133,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Poggiardo",
+                "country": "Italia"
+        },
+        {
+                "id": "29415",
+                "name": "CASARANO",
+                "city": "Casarano",
+                "lat": 40.012525,
+                "lng": 18.1632,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Casarano",
+                "country": "Italia"
+        },
+        {
+                "id": "41200",
+                "name": "MESAGNE",
+                "city": "Mesagne",
+                "lat": 40.565197,
+                "lng": 17.816772,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Mesagne",
+                "country": "Italia"
+        },
+        {
+                "id": "21126",
+                "name": "FOGGIA HOST",
+                "city": "Foggia",
+                "lat": 41.463875,
+                "lng": 15.55417,
+                "site": "https://www.lions108ab.it/category/foggia-host/",
+                "address": "Club di Foggia",
+                "country": "Italia"
+        },
+        {
+                "id": "52476",
+                "name": "FOGGIA ARPI",
+                "city": "Foggia",
+                "lat": 41.453707,
+                "lng": 15.547822,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Foggia",
+                "country": "Italia"
+        },
+        {
+                "id": "138332",
+                "name": "Monti Dauni Meridionali",
+                "city": "Foggia",
+                "lat": 41.450061,
+                "lng": 15.563136,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Foggia",
+                "country": "Italia"
+        },
+        {
+                "id": "54584",
+                "name": "FOGGIA UMBERTO GIORDANO",
+                "city": "Foggia",
+                "lat": 41.440371,
+                "lng": 15.557908,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Foggia",
+                "country": "Italia"
+        },
+        {
+                "id": "21157",
+                "name": "SAN SEVERO",
+                "city": "San Severo",
+                "lat": 41.689268,
+                "lng": 15.38776,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di San Severo",
+                "country": "Italia"
+        },
+        {
+                "id": "39720",
+                "name": "SAN MARCO IN LAMIS",
+                "city": "San Marco In Lamis",
+                "lat": 41.704403,
+                "lng": 15.656275,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di San Marco In Lamis",
+                "country": "Italia"
+        },
+        {
+                "id": "117278",
+                "name": "GARGANO SAN GIOVANNI ROTONDO",
+                "city": "San Giovanni Rotondo",
+                "lat": 41.703811,
+                "lng": 15.720663,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di San Giovanni Rotondo",
+                "country": "Italia"
+        },
+        {
+                "id": "21142",
+                "name": "MANFREDONIA HOST",
+                "city": "Manfredeonia",
+                "lat": 41.641564,
+                "lng": 15.868477,
+                "site": "https://e-clubhouse.org/sites/manfredoniahost/",
+                "address": "Club di Manfredeonia",
+                "country": "Italia"
+        },
+        {
+                "id": "65502",
+                "name": "MANFREDONIA SIPONTUM",
+                "city": "Manfredonia",
+                "lat": 41.621439,
+                "lng": 15.909552,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Manfredonia",
+                "country": "Italia"
+        },
+        {
+                "id": "138496",
+                "name": "Cerignola Torre Alemanna",
+                "city": "Cerignola",
+                "lat": 41.2714,
+                "lng": 15.914555,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Cerignola",
+                "country": "Italia"
+        },
+        {
+                "id": "21119",
+                "name": "CERIGNOLA HOST",
+                "city": "Cerignola",
+                "lat": 41.2714,
+                "lng": 15.914555,
+                "site": "https://www.lions108ab.it/category/cerignola/",
+                "address": "Club di Cerignola",
+                "country": "Italia"
+        },
+        {
+                "id": "21155",
+                "name": "TARANTO HOST",
+                "city": "Taranto",
+                "lat": 40.474531,
+                "lng": 17.240498,
+                "site": "https://www.lionstarantohost.it/",
+                "address": "Club di Taranto",
+                "country": "Italia"
+        },
+        {
+                "id": "101021",
+                "name": "TARANTO FALANTO",
+                "city": "Taranto",
+                "lat": 40.398341,
+                "lng": 17.270856,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Taranto",
+                "country": "Italia"
+        },
+        {
+                "id": "73897",
+                "name": "MASSAFRA MOTTOLA LE CRIPTE",
+                "city": "Massafra",
+                "lat": 40.586333,
+                "lng": 17.125016,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Massafra",
+                "country": "Italia"
+        },
+        {
+                "id": "52861",
+                "name": "MASSAFRA MOTTOLA LE CRIPTE",
+                "city": "Massafra",
+                "lat": 40.587263,
+                "lng": 17.124222,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Massafra",
+                "country": "Italia"
+        },
+        {
+                "id": "63172",
+                "name": "MARTINA FRANCA VALLE D'ITRIA",
+                "city": "Martina Franca",
+                "lat": 40.700792,
+                "lng": 17.341079,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Martina Franca",
+                "country": "Italia"
+        },
+        {
+                "id": "21143",
+                "name": "MARTINA FRANCA HOST",
+                "city": "Martina Franca",
+                "lat": 40.701104,
+                "lng": 17.341966,
+                "site": "https://www.lionsclubmartinafrancahost.it/",
+                "address": "Club di Martina Franca",
+                "country": "Italia"
+        },
+        {
+                "id": "21141",
+                "name": "MANDURIA",
+                "city": "Maruggio",
+                "lat": 40.318854,
+                "lng": 17.540737,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Maruggio",
+                "country": "Italia"
+        },
+        {
+                "id": "98465",
+                "name": "CEGLIE MESSAPICA ALTO SALENTO",
+                "city": "Ceglie Messapica",
+                "lat": 40.648639,
+                "lng": 17.509163,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Ceglie Messapica",
+                "country": "Italia"
+        },
+        {
+                "id": "21148",
+                "name": "OSTUNI HOST",
+                "city": "Ostuni",
+                "lat": 40.732198,
+                "lng": 17.557332,
+                "site": "https://www.lions108ab.it/category/ostuni-host/",
+                "address": "Club di Ostuni",
+                "country": "Italia"
+        },
+        {
+                "id": "98932",
+                "name": "OSTUNI CITTÃ€ BIANCA",
+                "city": "Ostuni",
+                "lat": 40.728586,
+                "lng": 17.575044,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Ostuni",
+                "country": "Italia"
+        },
+        {
+                "id": "82733",
+                "name": "POTENZA DUOMO",
+                "city": "Potenza",
+                "lat": 40.646004,
+                "lng": 15.801393,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Potenza",
+                "country": "Italia"
+        },
+        {
+                "id": "37600",
+                "name": "VULTURE",
+                "city": "Melfi",
+                "lat": 40.995339,
+                "lng": 15.659491,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Melfi",
+                "country": "Italia"
+        },
+        {
+                "id": "53454",
+                "name": "MELFI",
+                "city": "Melfi",
+                "lat": 40.993263,
+                "lng": 15.63654,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Melfi",
+                "country": "Italia"
+        },
+        {
+                "id": "21264",
+                "name": "MATERA HOST",
+                "city": "Matera",
+                "lat": 40.666877,
+                "lng": 16.604907,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-matera-host/",
+                "address": "Club di Matera",
+                "country": "Italia"
+        },
+        {
+                "id": "61015",
+                "name": "MATERA CITTA' DEI SASSI",
+                "city": "Matera",
+                "lat": 40.667214,
+                "lng": 16.60442,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Matera",
+                "country": "Italia"
+        },
+        {
+                "id": "58919",
+                "name": "GRAVINA IN PUGLIA",
+                "city": "Gravina In P.",
+                "lat": 40.822468,
+                "lng": 16.418025,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Gravina In P.",
+                "country": "Italia"
+        },
+        {
+                "id": "21252",
+                "name": "CATANZARO HOST",
+                "city": "Catanzaro",
+                "lat": 38.911903,
+                "lng": 16.58663,
+                "site": "https://lionsclubs108ya.it/i-nostri-club/club-catanzaro-host/",
+                "address": "Club di Catanzaro",
+                "country": "Italia"
+        },
+        {
+                "id": "132325",
+                "name": "Catanzaro Temesa",
+                "city": "Catanzaro",
+                "lat": 38.914535,
+                "lng": 16.583554,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Catanzaro",
+                "country": "Italia"
+        },
+        {
+                "id": "65324",
+                "name": "CROPANI-BOTRICELLO-SELLIA MARINA M.J.",
+                "city": "Cropani Marina",
+                "lat": 38.923717,
+                "lng": 16.808899,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Cropani Marina",
+                "country": "Italia"
+        },
+        {
+                "id": "181123",
+                "name": "Maida Feudo",
+                "city": "Lamezia Terme",
+                "lat": 38.955109,
+                "lng": 16.330479,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Lamezia Terme",
+                "country": "Italia"
+        },
+        {
+                "id": "46248",
+                "name": "SOVERATO E VERSANTE IONICO DELLE SERRE",
+                "city": "Soverato",
+                "lat": 38.686224,
+                "lng": 16.550742,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Soverato",
+                "country": "Italia"
+        },
+        {
+                "id": "21284",
+                "name": "VIBO VALENTIA",
+                "city": "Vibo Valentia",
+                "lat": 38.69842,
+                "lng": 16.088406,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Vibo Valentia",
+                "country": "Italia"
+        },
+        {
+                "id": "136269",
+                "name": "Crotone Hera Lacinia",
+                "city": "Crotone",
+                "lat": 39.081202,
+                "lng": 17.11936,
+                "site": "https://www.lions108ab.it/",
+                "address": "Club di Crotone",
+                "country": "Italia"
+        },
+        {
+                "id": "67410",
+                "name": "REGGIO CALABRIA-CASTELLO ARAGONESE",
+                "city": "Reggio Di Calabria",
+                "lat": 38.111685,
+                "lng": 15.657169,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Reggio Di Calabria",
+                "country": "Italia"
+        },
+        {
+                "id": "73393",
+                "name": "MESSINA IONIO",
+                "city": "Messina",
+                "lat": 38.184664,
+                "lng": 15.558445,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Messina",
+                "country": "Italia"
+        },
+        {
+                "id": "54744",
+                "name": "MESSINA PELORO",
+                "city": "Messina",
+                "lat": 38.184672,
+                "lng": 15.558452,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Messina",
+                "country": "Italia"
+        },
+        {
+                "id": "181261",
+                "name": "Messina Cristo Re",
+                "city": "Messina",
+                "lat": 38.188492,
+                "lng": 15.557511,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Messina",
+                "country": "Italia"
+        },
+        {
+                "id": "59723",
+                "name": "VILLA SAN GIOVANNI FATA MORGANA",
+                "city": "Villa San Giovanni",
+                "lat": 38.229505,
+                "lng": 15.651935,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Villa San Giovanni",
+                "country": "Italia"
+        },
+        {
+                "id": "141859",
+                "name": "Roccalumera Quasimodo",
+                "city": "Roccalumera",
+                "lat": 37.969454,
+                "lng": 15.388922,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Roccalumera",
+                "country": "Italia"
+        },
+        {
+                "id": "21271",
+                "name": "PALMI",
+                "city": "Palmi",
+                "lat": 38.357581,
+                "lng": 15.855828,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Palmi",
+                "country": "Italia"
+        },
+        {
+                "id": "132326",
+                "name": "Gioia Tauro-Piana",
+                "city": "Gioia Tauro",
+                "lat": 38.427914,
+                "lng": 15.899795,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Gioia Tauro",
+                "country": "Italia"
+        },
+        {
+                "id": "82558",
+                "name": "TAURIANOVA VALLIS SALINARUM",
+                "city": "Taurianova",
+                "lat": 38.353597,
+                "lng": 16.010901,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Taurianova",
+                "country": "Italia"
+        },
+        {
+                "id": "71347",
+                "name": "TAORMINA",
+                "city": "Taormina",
+                "lat": 37.850241,
+                "lng": 15.291259,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Taormina",
+                "country": "Italia"
+        },
+        {
+                "id": "21282",
+                "name": "TAORMINA",
+                "city": "Taormina",
+                "lat": 37.849962,
+                "lng": 15.283426,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Taormina",
+                "country": "Italia"
+        },
+        {
+                "id": "55265",
+                "name": "POLISTENA BRUTIUM",
+                "city": "Polistena",
+                "lat": 38.402366,
+                "lng": 16.069942,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Polistena",
+                "country": "Italia"
+        },
+        {
+                "id": "71325",
+                "name": "Cosenza Marlena Parisi",
+                "city": "Rende",
+                "lat": 39.326496,
+                "lng": 16.242941,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Rende",
+                "country": "Italia"
+        },
+        {
+                "id": "21254",
+                "name": "COSENZA HOST",
+                "city": "Rende",
+                "lat": 39.327773,
+                "lng": 16.244147,
+                "site": "https://www.lionscosenzahost.it/",
+                "address": "Club di Rende",
+                "country": "Italia"
+        },
+        {
+                "id": "59800",
+                "name": "COSENZA CASTELLO SVEVO",
+                "city": "Rende",
+                "lat": 39.332774,
+                "lng": 16.245088,
+                "site": "https://lionsclub-cosenzacastellosvevo.it",
+                "address": "Club di Rende",
+                "country": "Italia"
+        },
+        {
+                "id": "57866",
+                "name": "ACRI",
+                "city": "Acri",
+                "lat": 39.490118,
+                "lng": 16.382696,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Acri",
+                "country": "Italia"
+        },
+        {
+                "id": "61547",
+                "name": "AMANTEA",
+                "city": "Amantea",
+                "lat": 39.133934,
+                "lng": 16.071687,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Amantea",
+                "country": "Italia"
+        },
+        {
+                "id": "61873",
+                "name": "GUARDIA PIEMONTESE CITTA' DEI VALDESI",
+                "city": "Guardia Piemontese",
+                "lat": 39.466449,
+                "lng": 15.97726,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Guardia Piemontese",
+                "country": "Italia"
+        },
+        {
+                "id": "141554",
+                "name": "Belvedere Marittimo - Riviera dei Cedri",
+                "city": "Belvedere Marittimo",
+                "lat": 39.620707,
+                "lng": 15.852124,
+                "site": "https://lionsclubs108ya.it/",
+                "address": "Club di Belvedere Marittimo",
+                "country": "Italia"
+        },
+        {
+                "id": "78232",
+                "name": "PALERMO MONTE PELLEGRINO",
+                "city": "Palermo",
+                "lat": 38.122746,
+                "lng": 13.353903,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Palermo",
+                "country": "Italia"
+        },
+        {
+                "id": "132910",
+                "name": "Palermo Guglielmo II",
+                "city": "Palermo",
+                "lat": 38.122399,
+                "lng": 13.353303,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Palermo",
+                "country": "Italia"
+        },
+        {
+                "id": "72282",
+                "name": "BAGHERIA",
+                "city": "Bagheria Palermo",
+                "lat": 38.077002,
+                "lng": 13.509603,
+                "site": "https://lionsclubbagheria.it",
+                "address": "Club di Bagheria Palermo",
+                "country": "Italia"
+        },
+        {
+                "id": "44866",
+                "name": "ALCAMO",
+                "city": "Alcamo",
+                "lat": 37.981481,
+                "lng": 12.964198,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Alcamo",
+                "country": "Italia"
+        },
+        {
+                "id": "59972",
+                "name": "CATANIA PORTO ULISSE",
+                "city": "Catania",
+                "lat": 37.507884,
+                "lng": 15.083003,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "78489",
+                "name": "CATANIA VAL DIRILLO",
+                "city": "Catania",
+                "lat": 37.505789,
+                "lng": 15.08435,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "106711",
+                "name": "CATANIA MEDITERRANEO",
+                "city": "Catania",
+                "lat": 37.5101,
+                "lng": 15.078009,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "53508",
+                "name": "CATANIA ALCANTARA",
+                "city": "Catania",
+                "lat": 37.511156,
+                "lng": 15.091504,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "142277",
+                "name": "Catania Brancati",
+                "city": "Catania",
+                "lat": 37.513936,
+                "lng": 15.074364,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "51628",
+                "name": "CATANIA GIOENI",
+                "city": "Catania",
+                "lat": 37.505278,
+                "lng": 15.095423,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "135923",
+                "name": "Catania For An Absolute Serve",
+                "city": "Catania",
+                "lat": 37.517773,
+                "lng": 15.086302,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "136184",
+                "name": "Catania Lago di Nicito",
+                "city": "Catania",
+                "lat": 37.522822,
+                "lng": 15.095332,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "21251",
+                "name": "CATANIA HOST",
+                "city": "Catania",
+                "lat": 37.519993,
+                "lng": 15.104052,
+                "site": "https://www.lionscataniahost.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "99466",
+                "name": "CATANIA OVEST",
+                "city": "Catania",
+                "lat": 37.521123,
+                "lng": 15.112184,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "52809",
+                "name": "ACITREZZA VERGA",
+                "city": "Catania",
+                "lat": 37.529617,
+                "lng": 15.112883,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Catania",
+                "country": "Italia"
+        },
+        {
+                "id": "139296",
+                "name": "San Giovanni La Punta-San Gregorio Terre Gentilizie",
+                "city": "San Giovanni La Punta",
+                "lat": 37.551483,
+                "lng": 15.087582,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di San Giovanni La Punta",
+                "country": "Italia"
+        },
+        {
+                "id": "145989",
+                "name": "Monasterum Album - Misterbianco",
+                "city": "Misterbianco",
+                "lat": 37.55155,
+                "lng": 15.050148,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Misterbianco",
+                "country": "Italia"
+        },
+        {
+                "id": "85029",
+                "name": "CATANIA FARO BISCARI",
+                "city": "Aci Castello",
+                "lat": 37.542487,
+                "lng": 15.136677,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Aci Castello",
+                "country": "Italia"
+        },
+        {
+                "id": "43773",
+                "name": "MISTERBIANCO",
+                "city": "Misterbianco",
+                "lat": 37.517014,
+                "lng": 15.008184,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Misterbianco",
+                "country": "Italia"
+        },
+        {
+                "id": "21235",
+                "name": "ACIREALE",
+                "city": "Acireale",
+                "lat": 37.614455,
+                "lng": 15.165968,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Acireale",
+                "country": "Italia"
+        },
+        {
+                "id": "21236",
+                "name": "ADRANO-BRONTE-BIANCAVILLA",
+                "city": "Biancavilla",
+                "lat": 37.64273,
+                "lng": 14.865917,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Biancavilla",
+                "country": "Italia"
+        },
+        {
+                "id": "71314",
+                "name": "AUGUSTA",
+                "city": "Augusta",
+                "lat": 37.223209,
+                "lng": 15.220478,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Augusta",
+                "country": "Italia"
+        },
+        {
+                "id": "21281",
+                "name": "SIRACUSA HOST",
+                "city": "Siracusa",
+                "lat": 37.066341,
+                "lng": 15.292116,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Siracusa",
+                "country": "Italia"
+        },
+        {
+                "id": "60287",
+                "name": "PALAZZOLO ACREIDE",
+                "city": "Palazzolo Acreide",
+                "lat": 37.066412,
+                "lng": 14.907687,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Palazzolo Acreide",
+                "country": "Italia"
+        },
+        {
+                "id": "124129",
+                "name": "Modica II",
+                "city": "Modica",
+                "lat": 36.866129,
+                "lng": 14.80716,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Modica",
+                "country": "Italia"
+        },
+        {
+                "id": "52603",
+                "name": "SCICLI PLAGA IBLEA",
+                "city": "Ragusa",
+                "lat": 36.917141,
+                "lng": 14.723947,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Ragusa",
+                "country": "Italia"
+        },
+        {
+                "id": "29308",
+                "name": "VITTORIA",
+                "city": "Vittoria",
+                "lat": 36.945957,
+                "lng": 14.526218,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Vittoria",
+                "country": "Italia"
+        },
+        {
+                "id": "48170",
+                "name": "NISCEMI",
+                "city": "Niscemi",
+                "lat": 37.148656,
+                "lng": 14.387469,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Niscemi",
+                "country": "Italia"
+        },
+        {
+                "id": "96430",
+                "name": "DEL GOLFO DI GELA",
+                "city": "Gela",
+                "lat": 37.064945,
+                "lng": 14.253707,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Gela",
+                "country": "Italia"
+        },
+        {
+                "id": "155163",
+                "name": "Butera e Terre Federiciane",
+                "city": "Gela",
+                "lat": 37.073025,
+                "lng": 14.233776,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di Gela",
+                "country": "Italia"
+        },
+        {
+                "id": "130948",
+                "name": "Del Golfo Di Gela",
+                "city": "San Michele Di Ganzaria",
+                "lat": 37.278728,
+                "lng": 14.4296,
+                "site": "https://www.lions108yb.it/",
+                "address": "Club di San Michele Di Ganzaria",
+                "country": "Italia"
+        },
+        {
+                "id": "146741",
+                "name": "Cagliari Lioness",
+                "city": "Cagliari",
+                "lat": 39.2066,
+                "lng": 9.142071,
+                "site": "https://www.lions.it/",
+                "address": "Club di Cagliari",
+                "country": "Italia"
+        },
+        {
+                "id": "110178",
+                "name": "CAGLIARI MONTE URPINU",
+                "city": "Cagliari",
+                "lat": 39.2066,
+                "lng": 9.142071,
+                "site": "https://www.lions.it/",
+                "address": "Club di Cagliari",
+                "country": "Italia"
+        },
+        {
+                "id": "49512",
+                "name": "CAGLIARI KAREL",
+                "city": "Cagliari",
+                "lat": 39.20679,
+                "lng": 9.142401,
+                "site": "https://www.lions.it/",
+                "address": "Club di Cagliari",
+                "country": "Italia"
+        },
+        {
+                "id": "44653",
+                "name": "CAGLIARI CASTELLO",
+                "city": "Cagliari",
+                "lat": 39.20679,
+                "lng": 9.142401,
+                "site": "https://www.lions.it/",
+                "address": "Club di Cagliari",
+                "country": "Italia"
+        },
+        {
+                "id": "48168",
+                "name": "SELARGIUS",
+                "city": "Selargius",
+                "lat": 39.25367,
+                "lng": 9.170279,
+                "site": "https://www.lions.it/",
+                "address": "Club di Selargius",
+                "country": "Italia"
+        },
+        {
+                "id": "37851",
+                "name": "QUARTU SANT'ELENA",
+                "city": "Quartu Sant'Elena",
+                "lat": 39.241851,
+                "lng": 9.179878,
+                "site": "https://www.lions.it/",
+                "address": "Club di Quartu Sant'Elena",
+                "country": "Italia"
+        },
+        {
+                "id": "65377",
+                "name": "VILLACIDRO MEDIO - CAMPIDANO",
+                "city": "San Gavino Monreale",
+                "lat": 39.551918,
+                "lng": 8.797651,
+                "site": "https://www.lions.it/",
+                "address": "Club di San Gavino Monreale",
+                "country": "Italia"
+        },
+        {
+                "id": "102072",
+                "name": "SASSARI MONTE ORO",
+                "city": "Sassari",
+                "lat": 40.718638,
+                "lng": 8.549976,
+                "site": "https://www.lions.it/",
+                "address": "Club di Sassari",
+                "country": "Italia"
+        },
+        {
+                "id": "21220",
+                "name": "SASSARI HOST",
+                "city": "Sassari",
+                "lat": 40.745104,
+                "lng": 8.558314,
+                "site": "https://www.lions.it/",
+                "address": "Club di Sassari",
+                "country": "Italia"
+        },
+        {
+                "id": "21208",
+                "name": "PORTO TORRES",
+                "city": "Porto Torres",
+                "lat": 40.828371,
+                "lng": 8.341701,
+                "site": "https://www.lions.it/",
+                "address": "Club di Porto Torres",
+                "country": "Italia"
+        },
+        {
+                "id": "45797",
+                "name": "CASTELSARDO",
+                "city": "Castelsardo",
+                "lat": 40.911448,
+                "lng": 8.703693,
+                "site": "https://www.lions.it/",
+                "address": "Club di Castelsardo",
+                "country": "Italia"
+        },
+        {
+                "id": "41541",
+                "name": "ALGHERO",
+                "city": "Alghero",
+                "lat": 40.560753,
+                "lng": 8.317184,
+                "site": "https://www.lions.it/",
+                "address": "Club di Alghero",
+                "country": "Italia"
+        },
+        {
+                "id": "21201",
+                "name": "OZIERI",
+                "city": "Ozieri",
+                "lat": 40.58545,
+                "lng": 9.001693,
+                "site": "https://www.lions.it/",
+                "address": "Club di Ozieri",
+                "country": "Italia"
+        },
+        {
+                "id": "21197",
+                "name": "NUORO HOST",
+                "city": "Nuoro",
+                "lat": 40.316764,
+                "lng": 9.311793,
+                "site": "https://www.lions.it/",
+                "address": "Club di Nuoro",
+                "country": "Italia"
+        },
+        {
+                "id": "21193",
+                "name": "MACOMER",
+                "city": "Macomer",
+                "lat": 40.26643,
+                "lng": 8.776226,
+                "site": "https://www.lions.it/",
+                "address": "Club di Macomer",
+                "country": "Italia"
+        },
+        {
+                "id": "21199",
+                "name": "ORISTANO",
+                "city": "Oristano",
+                "lat": 39.904483,
+                "lng": 8.585918,
+                "site": "https://www.lions.it/",
+                "address": "Club di Oristano",
+                "country": "Italia"
+        },
+        {
+                "id": "141720",
+                "name": "Monreale",
+                "city": "Sardara",
+                "lat": 39.613589,
+                "lng": 8.820923,
+                "site": "https://www.lions.it/",
+                "address": "Club di Sardara",
+                "country": "Italia"
+        }
+];
