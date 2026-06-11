@@ -3737,27 +3737,10 @@
   if (window.__lionsCookieBannerLoaded) return;
   window.__lionsCookieBannerLoaded = true;
 
-  const STORAGE_KEY = "lions_mirandola_cookie_choice_v2";
   const privacyHref = "privacy.html";
 
-  function getStoredChoice() {
-    try {
-      return localStorage.getItem(STORAGE_KEY);
-    } catch (_) {
-      return null;
-    }
-  }
-
-  function storeChoice(value) {
-    try {
-      localStorage.setItem(STORAGE_KEY, value);
-    } catch (_) {
-      /* ignore */
-    }
-  }
-
   function buildBanner() {
-    if (getStoredChoice()) return;
+    if (document.getElementById("lions-cookie-banner")) return;
 
     const style = document.createElement("style");
     style.textContent = `
@@ -3881,7 +3864,6 @@
         ? event.target.closest("[data-cookie-choice]")
         : null;
       if (!button) return;
-      storeChoice(button.getAttribute("data-cookie-choice") || "accepted");
       banner.remove();
     });
 
