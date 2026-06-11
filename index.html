@@ -757,6 +757,81 @@
             #trova-club .sidebar { width: 100%; max-height: 45vh; }
             #trova-club #trova-map { min-height: 50vh; }
         }
+        #lions-ai .lions-ai-frame-shell {
+            height: calc(100vh - 160px);
+            min-height: 450px;
+        }
+        #lions-ai iframe {
+            width: 90%;
+            height: 90%;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+        #lions-ai .lions-ai-unavailable {
+            width: min(90%, 760px);
+            min-height: 70%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 3px solid #030213;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: clamp(1.5rem, 4vw, 3rem);
+            text-align: center;
+        }
+        #lions-ai .lions-ai-unavailable h2 {
+            margin: 0;
+            font-size: clamp(1.75rem, 4vw, 3rem);
+            line-height: .95;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        #lions-ai .lions-ai-unavailable p {
+            max-width: 620px;
+            margin: 0;
+            color: #475569;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+        #lions-ai .lions-ai-unavailable a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 1.25rem;
+            border-radius: 999px;
+            background: #034EA2;
+            color: #ffffff;
+            font-size: .75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            #lions-ai .lions-ai-frame-shell {
+                height: calc(100vh - 100px) !important;
+                min-height: 400px !important;
+            }
+            #lions-ai iframe {
+                width: 95% !important;
+                height: 95% !important;
+            }
+            #lions-ai .bubble,
+            #lions-ai .user-bubble,
+            #lions-ai .ai-bubble,
+            #lions-ai input,
+            #lions-ai button {
+                font-size: 14px !important;
+            }
+        }
 
         /* POPUP MAPPA (imported from trova_club1.html) */
         #map { flex: 1; background-color: #0B0F19; }
@@ -871,7 +946,6 @@
     <!-- HOME -->
     <section id="home" class="relative h-[75vh] min-h-[520px] flex items-end overflow-hidden">
         <div id="heroVideo" class="hero-video"></div>
-        <button type="button" id="heroVideoPrev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Torna al video precedente">&lsaquo;</button>
         <button type="button" id="heroVideoNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFC72C] text-black text-2xl font-black leading-none hover:bg-[#FFD666] transition-all shadow-lg" aria-label="Salta al video successivo">&rsaquo;</button>
         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none"></div>
         <div class="relative z-10 container mx-auto px-6 pb-16 w-full pointer-events-none">
@@ -1244,10 +1318,16 @@
         </div>
     </section>
 
-    <section id="lions-ai" class="py-16 section-yellow">
-        <div class="container mx-auto px-6 text-center max-w-2xl">
-            <h2 class="text-2xl font-black uppercase mb-3">LIONS AI</h2>
-            <p class="text-gray-600 font-medium">Assistente intelligente del Club &mdash; sezione in arrivo.</p>
+    <section id="lions-ai" class="py-8 section-yellow">
+        <div class="container mx-auto px-6 h-full">
+            <div class="lions-ai-frame-shell">
+                <iframe
+                    src="https://script.google.com/macros/s/AKfycbzrSsWDNH8O5r5qQVWcyevdjPpbMsovnn-BqguuNJemaYRLTRxu9vjwVjYRIWtyLiFpA/exec"
+                    allow="microphone"
+                    title="Lions AI Chatbot"
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -1368,7 +1448,6 @@
     ];
 
     const hero = document.getElementById('heroVideo');
-    const prevBtn = document.getElementById('heroVideoPrev');
     const nextBtn = document.getElementById('heroVideoNext');
     const videos = playlist.filter(Boolean);
     let index = 0;
@@ -1424,7 +1503,6 @@
         }
 
         isTransitioning = true;
-        if (prevBtn) prevBtn.disabled = true;
         if (nextBtn) nextBtn.disabled = true;
 
         function finishTransition() {
@@ -1433,7 +1511,6 @@
             if (currentVideo && currentVideo !== nextVideo) currentVideo.remove();
             currentVideo = nextVideo;
             isTransitioning = false;
-            if (prevBtn) prevBtn.disabled = false;
             if (nextBtn) nextBtn.disabled = false;
         }
 
@@ -1448,7 +1525,6 @@
         transitionTimer = window.setTimeout(finishTransition, 1000);
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => renderVideo(index - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => renderVideo(index + 1));
     renderVideo(0);
 })();
