@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy e Cookie - Lions Club Mirandola</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #f8fafc;
+            color: #030213;
+        }
+        .top-yellow-bar {
+            background-color: #FFC72C;
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0 40px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-brand img {
+            width: 24px;
+            height: 24px;
+            border-radius: 999px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 82px;
+            padding: 16px 40px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .nav-item {
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            border: 2px solid #030213;
+            border-radius: 999px;
+            padding: 0 18px;
+            color: #030213;
+            font-size: 11px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .nav-item.active {
+            background: #030213;
+            color: #ffffff;
+        }
+        .legal-hero {
+            background: #034EA2;
+            color: #ffffff;
+            padding: 72px 40px 64px;
+        }
+        .legal-shell {
+            width: min(1040px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+        .legal-card {
+            margin-top: -36px;
+            padding: clamp(24px, 4vw, 46px);
+            border: 3px solid #030213;
+            border-radius: 18px;
+            background: #ffffff;
+            box-shadow: 12px 12px 0 #FFC72C;
+        }
+        .legal-card h2 {
+            margin: 0 0 12px;
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .legal-card p,
+        .legal-card li {
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 600;
+        }
+        .legal-card a {
+            color: #034EA2;
+            font-weight: 900;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .notice {
+            margin: 28px 0;
+            padding: 18px;
+            border-left: 6px solid #FFC72C;
+            background: #f8fafc;
+        }
+        .legal-footer {
+            padding: 36px 16px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #64748b;
+        }
+        @media (max-width: 720px) {
+            .top-yellow-bar,
+            .main-nav {
+                padding-left: 18px;
+                padding-right: 18px;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+            .legal-hero {
+                padding: 52px 18px 56px;
+            }
+            .legal-card {
+                box-shadow: 8px 8px 0 #FFC72C;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-yellow-bar">
+        <div class="header-brand">
+            <img src="favicon.png" alt="" aria-hidden="true">
+            <span>Lions Club Mirandola</span>
+        </div>
+        <a href="index.html" class="text-black no-underline uppercase">Torna al sito</a>
+    </div>
+
+    <nav class="main-nav" aria-label="Navigazione principale">
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="Notizie.html" class="nav-item">Notizie</a>
+            <a href="Galleria.html" class="nav-item">Galleria</a>
+            <a href="trova_club1.html" class="nav-item">Trova i Club</a>
+            <a href="privacy.html" class="nav-item active">Privacy</a>
+        </div>
+    </nav>
+
+    <header class="legal-hero">
+        <div class="legal-shell">
+            <p class="text-[#FFC72C] text-sm font-black uppercase tracking-[0.3em] mb-4">Informativa</p>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none">Privacy e Cookie</h1>
+            <p class="mt-5 max-w-2xl text-white/90 text-lg font-semibold leading-relaxed">
+                Pagina informativa per i visitatori del sito Lions Club Mirandola.
+            </p>
+        </div>
+    </header>
+
+    <main class="legal-shell legal-card">
+        <section aria-labelledby="privacy-title">
+            <h2 id="privacy-title">Privacy policy</h2>
+            <p>
+                Per l'informativa privacy completa si rimanda alla pagina ufficiale della Fondazione Lions Milano:
+                <a href="https://www.fondazionelionsmilano.it/privacy-policy/" target="_blank" rel="noopener">
+                    www.fondazionelionsmilano.it/privacy-policy/
+                </a>.
+            </p>
+            <div class="notice">
+                <p>
+                    Questa pagina interna facilita l'accesso all'informativa dal sito. In caso di differenze o aggiornamenti,
+                    fa fede il testo pubblicato nella policy ufficiale collegata.
+                </p>
+            </div>
+        </section>
+
+        <section aria-labelledby="cookie-title" class="mt-10">
+            <h2 id="cookie-title">Cookie</h2>
+            <p>
+                Il sito puo utilizzare cookie tecnici necessari alla navigazione e al salvataggio delle preferenze, inclusa
+                la scelta espressa nel banner cookie. Alcune risorse esterne, come librerie, mappe o font, possono essere
+                caricate da fornitori terzi e seguire le rispettive condizioni di trattamento.
+            </p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+                <li>Cookie tecnici: necessari per ricordare preferenze e garantire il funzionamento del sito.</li>
+                <li>Cookie non essenziali: possono essere accettati o rifiutati dal banner mostrato alla prima visita.</li>
+                <li>Preferenza cookie: la scelta viene salvata nel browser e puo essere cancellata eliminando i dati del sito.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="legal-footer">
+        Lions Club Mirandola
+    </footer>
+
+    <script src="widget.js?v=privacy-cookie-20260611"></script>
+</body>
+</html>

@@ -3732,3 +3732,165 @@
     void hydrateTranslateLanguages();
   })();
   
+
+(function initLionsCookieBanner() {
+  if (window.__lionsCookieBannerLoaded) return;
+  window.__lionsCookieBannerLoaded = true;
+
+  const STORAGE_KEY = "lions_mirandola_cookie_choice_v1";
+  const privacyHref = "privacy.html";
+
+  function getStoredChoice() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function storeChoice(value) {
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function buildBanner() {
+    if (getStoredChoice()) return;
+
+    const style = document.createElement("style");
+    style.textContent = `
+      #lions-cookie-banner,
+      #lions-cookie-banner * {
+        box-sizing: border-box;
+      }
+      #lions-cookie-banner {
+        position: fixed;
+        left: 18px;
+        right: 116px;
+        bottom: 18px;
+        z-index: 2147483600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        max-width: 980px;
+        padding: 18px;
+        border: 2px solid #030213;
+        border-radius: 18px;
+        background: #ffffff;
+        color: #030213;
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.22);
+        font-family: Montserrat, Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      .lions-cookie-copy {
+        min-width: 0;
+      }
+      .lions-cookie-title {
+        display: block;
+        margin: 0 0 6px;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .lions-cookie-text {
+        margin: 0;
+        max-width: 680px;
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: #475569;
+      }
+      .lions-cookie-text a {
+        color: #034EA2;
+        font-weight: 900;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .lions-cookie-actions {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 10px;
+      }
+      .lions-cookie-btn {
+        min-height: 42px;
+        padding: 0 16px;
+        border: 2px solid #030213;
+        border-radius: 999px;
+        cursor: pointer;
+        font: inherit;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        background: #ffffff;
+        color: #030213;
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      }
+      .lions-cookie-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
+      }
+      .lions-cookie-btn-primary {
+        background: #FFC72C;
+      }
+      @media (max-width: 760px) {
+        #lions-cookie-banner {
+          left: 12px;
+          right: 12px;
+          bottom: 84px;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 14px;
+          padding: 16px;
+          border-radius: 14px;
+        }
+        .lions-cookie-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .lions-cookie-btn {
+          width: 100%;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    const banner = document.createElement("section");
+    banner.id = "lions-cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-live", "polite");
+    banner.setAttribute("aria-label", "Informativa cookie");
+    banner.innerHTML = `
+      <div class="lions-cookie-copy">
+        <strong class="lions-cookie-title">Cookie e privacy</strong>
+        <p class="lions-cookie-text">
+          Usiamo cookie tecnici e servizi esterni necessari al funzionamento del sito. Puoi accettare o rifiutare i cookie non essenziali.
+          Leggi la <a href="${privacyHref}">privacy policy</a>.
+        </p>
+      </div>
+      <div class="lions-cookie-actions">
+        <button type="button" class="lions-cookie-btn" data-cookie-choice="rejected">Rifiuta non essenziali</button>
+        <button type="button" class="lions-cookie-btn lions-cookie-btn-primary" data-cookie-choice="accepted">Accetta</button>
+      </div>
+    `;
+
+    banner.addEventListener("click", (event) => {
+      const button = event.target instanceof Element
+        ? event.target.closest("[data-cookie-choice]")
+        : null;
+      if (!button) return;
+      storeChoice(button.getAttribute("data-cookie-choice") || "accepted");
+      banner.remove();
+    });
+
+    document.body.appendChild(banner);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", buildBanner, { once: true });
+  } else {
+    buildBanner();
+  }
+})();
