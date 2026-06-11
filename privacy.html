@@ -24,6 +24,17 @@
             padding: 0 40px;
             font-size: 12px;
             font-weight: 800;
+            color: #000000;
+        }
+        .top-yellow-bar a {
+            color: #000000;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: opacity .2s ease;
+        }
+        .top-yellow-bar a:hover {
+            opacity: .7;
         }
         .header-brand {
             display: inline-flex;
@@ -38,34 +49,48 @@
         .main-nav {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 1rem;
             min-height: 82px;
             padding: 16px 40px;
             background: #ffffff;
             border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
         }
         .nav-links {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 8px;
         }
         .nav-item {
             display: inline-flex;
             align-items: center;
             min-height: 36px;
-            border: 2px solid #030213;
+            border: 0;
             border-radius: 999px;
-            padding: 0 18px;
+            padding: 0 6px;
             color: #030213;
             font-size: 11px;
             font-weight: 900;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+            position: relative;
         }
         .nav-item.active {
-            background: #030213;
-            color: #ffffff;
+            background: transparent;
+            color: #030213;
+        }
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -7px;
+            height: 3px;
+            border-radius: 999px;
+            background: #034EA2;
         }
         .legal-hero {
             background: #034EA2;
@@ -122,7 +147,7 @@
             .main-nav {
                 padding-left: 18px;
                 padding-right: 18px;
-                align-items: flex-start;
+                align-items: center;
                 flex-direction: column;
             }
             .legal-hero {
@@ -140,15 +165,11 @@
             <img src="favicon.png" alt="" aria-hidden="true">
             <span>Lions Club Mirandola</span>
         </div>
-        <a href="index.html" class="text-black no-underline uppercase">Torna al sito</a>
+        <a href="index.html">Torna al sito</a>
     </div>
 
     <nav class="main-nav" aria-label="Navigazione principale">
         <div class="nav-links">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="Notizie.html" class="nav-item">Notizie</a>
-            <a href="Galleria.html" class="nav-item">Galleria</a>
-            <a href="trova_club1.html" class="nav-item">Trova i Club</a>
             <a href="privacy.html" class="nav-item active">Privacy</a>
         </div>
     </nav>
@@ -199,6 +220,6 @@
         Lions Club Mirandola
     </footer>
 
-    <script src="widget.js?v=privacy-cookie-20260611"></script>
+    <script src="widget.js?v=privacy-banner-20260611"></script>
 </body>
 </html>

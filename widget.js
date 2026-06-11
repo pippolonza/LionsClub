@@ -3737,7 +3737,7 @@
   if (window.__lionsCookieBannerLoaded) return;
   window.__lionsCookieBannerLoaded = true;
 
-  const STORAGE_KEY = "lions_mirandola_cookie_choice_v1";
+  const STORAGE_KEY = "lions_mirandola_cookie_choice_v2";
   const privacyHref = "privacy.html";
 
   function getStoredChoice() {
