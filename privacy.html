@@ -1,376 +1,187 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy e Cookie - Lions Club Mirandola</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: #f8fafc;
-            color: #030213;
-        }
-        .top-yellow-bar {
-            background-color: #FFC72C;
-            min-height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 0 40px;
-            font-size: 12px;
-            font-weight: 800;
-            color: #000000;
-        }
-        .top-yellow-bar a {
-            color: #000000;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            transition: opacity .2s ease;
-        }
-        .top-yellow-bar a:hover { opacity: .7; }
-        .header-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .header-brand img {
-            width: 24px;
-            height: 24px;
-            border-radius: 999px;
-        }
-        .main-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            min-height: 82px;
-            padding: 16px 40px;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
-        }
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-        }
-        .nav-item {
-            display: inline-flex;
-            align-items: center;
-            min-height: 36px;
-            border: 0;
-            border-radius: 999px;
-            padding: 0 6px;
-            color: #030213;
-            font-size: 11px;
-            font-weight: 900;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            position: relative;
-        }
-        .nav-item::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -7px;
-            height: 3px;
-            border-radius: 999px;
-            background: #034EA2;
-        }
-        .legal-hero {
-            background: #034EA2;
-            color: #ffffff;
-            padding: 72px 40px 64px;
-        }
-        .legal-shell {
-            width: min(1040px, calc(100% - 32px));
-            margin: 0 auto;
-        }
-        .legal-card {
-            margin-top: -36px;
-            padding: clamp(24px, 4vw, 46px);
-            border: 3px solid #030213;
-            border-radius: 18px;
-            background: #ffffff;
-            box-shadow: 12px 12px 0 #FFC72C;
-        }
-        .legal-card h2 {
-            margin: 0 0 12px;
-            font-size: clamp(1.35rem, 3vw, 2rem);
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-        .legal-card h3 {
-            margin: 1.6rem 0 .55rem;
-            font-size: 1.05rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #034EA2;
-        }
-        .legal-card p,
-        .legal-card li {
-            color: #475569;
-            font-size: 1rem;
-            line-height: 1.7;
-            font-weight: 600;
-        }
-        .legal-card a {
-            color: #034EA2;
-            font-weight: 900;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-        .legal-card section + section {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        .legal-footer {
-            padding: 36px 16px;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #64748b;
-        }
-        @media (max-width: 720px) {
-            .top-yellow-bar,
-            .main-nav {
-                padding-left: 18px;
-                padding-right: 18px;
-                align-items: center;
-                flex-direction: column;
-            }
-            .legal-hero { padding: 52px 18px 56px; }
-            .legal-card { box-shadow: 8px 8px 0 #FFC72C; }
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #ffffff; }
+        section[id] { scroll-margin-top: 5rem; }
     </style>
 </head>
-<body>
-    <div class="top-yellow-bar">
-        <div class="header-brand">
-            <img src="favicon.png" alt="" aria-hidden="true">
+<body class="text-[#030213] antialiased selection:bg-[#FFC72C] selection:text-[#002244]">
+
+    <div class="bg-[#FFC72C] min-h-[50px] flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-16 py-2 text-xs font-black text-[#002244] uppercase tracking-wider rounded-none relative z-20">
+        <div class="flex items-center gap-2">
+            <span class="inline-block w-5 h-5 bg-[#002244] rounded-full opacity-20 md:hidden"></span> 
             <span>Lions Club Mirandola</span>
         </div>
-        <a href="index.html">Torna al sito</a>
+        <a href="index.html" class="hover:opacity-70 transition-opacity duration-200 font-black tracking-widest text-xs">
+            Torna al sito
+        </a>
     </div>
 
-    <nav class="main-nav" aria-label="Navigazione principale">
-        <div class="nav-links">
-            <a href="privacy.html" class="nav-item">Privacy</a>
-        </div>
-    </nav>
+    <div class="bg-white py-4 text-center border-b border-slate-100">
+        <span class="text-[11px] font-black uppercase tracking-[0.2em] text-[#002244] relative inline-block after:content-[''] after:block after:w-8 after:h-[3px] after:bg-[#002244] after:mx-auto after:mt-1">
+            Privacy
+        </span>
+    </div>
 
-    <header class="legal-hero">
-        <div class="legal-shell">
-            <p class="text-[#FFC72C] text-sm font-black uppercase tracking-[0.3em] mb-4">Informativa</p>
-            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none">Privacy e Cookie</h1>
-            <p class="mt-5 max-w-2xl text-white/90 text-lg font-semibold leading-relaxed">
+    <header class="bg-[#0047A3] text-white pt-20 pb-24 px-4 sm:px-6 lg:px-24 rounded-none relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <span class="text-xs font-black text-[#FFC72C] uppercase tracking-[0.2em] block mb-3">
+                Informativa
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4">
+                Privacy e <span class="text-[#FFC72C]">Cookie</span>
+            </h1>
+            <p class="text-sm md:text-base font-semibold text-white/90 tracking-wide max-w-2xl">
                 Policy di utilizzo, privacy e cookie del sito Lions Club Mirandola.
             </p>
         </div>
     </header>
 
-    <main class="legal-shell legal-card">
-        <section aria-labelledby="use-title">
-            <h2 id="use-title">Policy di utilizzo del sito</h2>
-            <p>
-                L'accesso al sito internet <strong>www.lionsclubmirandola.it</strong> (di seguito "Sito") e gratuito.
-                Lions Club Mirandola (di seguito "Amministratore titolare del sito") ha il diritto di modificare,
-                in tutto o in parte, senza preavviso e a propria discrezione, contenuti, immagini, termini e condizioni
-                di accesso al Sito.
-            </p>
-        </section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1 lg:sticky lg:top-6 h-fit hidden lg:block py-2">
+            <p class="text-[11px] font-extrabold uppercase tracking-widest text-[#002244]/60 mb-4 pl-2 border-b-[3px] border-black pb-2">Indice Documento</p>
+            <nav class="space-y-1">
+                <a href="#policy-utilizzo" class="block text-xs font-bold text-slate-600 hover:text-[#002244] uppercase tracking-wider py-2.5 px-2 transition-all border-l-4 border-transparent hover:border-[#FFC72C]">
+                    1. Policy di Utilizzo
+                </a>
+                <a href="#web-privacy" class="block text-xs font-bold text-slate-600 hover:text-[#002244] uppercase tracking-wider py-2.5 px-2 transition-all border-l-4 border-transparent hover:border-[#FFC72C]">
+                    2. Web Privacy Policy
+                </a>
+                <a href="#copyright-analitica" class="block text-xs font-bold text-slate-600 hover:text-[#002244] uppercase tracking-wider py-2.5 px-2 transition-all border-l-4 border-transparent hover:border-[#FFC72C]">
+                    3. Copyright e Analitica
+                </a>
+            </nav>
+        </aside>
 
-        <section aria-labelledby="ip-title">
-            <h2 id="ip-title">Proprieta intellettuale</h2>
-            <p>
-                Tutti i diritti di autore e di proprieta intellettuale relativi alla configurazione, al layout e ai
-                contenuti appartengono all'Amministratore titolare del sito, ai legittimi titolari e/o ai loro danti
-                causa. Gli articoli pubblicati sono riproducibili solo previa autorizzazione scritta e a condizione di
-                indicarne con precisione autore e fonte.
-            </p>
-            <p>
-                Il Sito e i servizi sono resi accessibili al lettore esclusivamente per uso personale e privato. Il
-                lettore non puo sublicenziare, noleggiare, vendere, distribuire, trasformare, modificare, tradurre,
-                copiare o usare il Sito o sue parti in modo diverso da quanto consentito dalla legge o da espressa
-                autorizzazione scritta.
-            </p>
-        </section>
+        <main class="lg:col-span-3 space-y-12">
+            
+            <div class="-mt-16 relative z-30 bg-white p-6 md:p-8 rounded-xl border-[3px] border-black space-y-4 shadow-sm">
+                <p class="text-base leading-relaxed text-slate-900 font-medium">
+                    In questa pagina si descrivono le modalità di gestione del sito in riferimento al trattamento dei dati personali degli utenti che lo consultano. Si trata di un'informativa resa nel rispetto della trasparenza e delle normative vigenti per tutti coloro che interagiscono con i servizi web del sito.
+                </p>
+                <p class="text-base leading-relaxed text-slate-700 font-medium italic">
+                    I dati personali forniti dagli utenti sono tutelati in conformità a quanto disposto dal Decreto legislativo 196/2003 ("Codice in materia di protezione dei dati personali") e successive modifiche, nonché in armonia con i regolamenti europei sulla riservatezza.
+                </p>
+            </div>
 
-        <section aria-labelledby="reader-title">
-            <h2 id="reader-title">Comportamento del lettore</h2>
-            <p>L'utilizzo del Sito e destinato all'uso personale e privato. Non e consentito usare il Sito:</p>
-            <ul class="list-disc pl-6 mt-4 space-y-2">
-                <li>per finalita illecite;</li>
-                <li>per interrompere, danneggiare o rendere meno efficiente il Sito o i servizi;</li>
-                <li>per trasmettere virus, codici, file o programmi dannosi;</li>
-                <li>per pubblicare materiale diffamatorio, offensivo, razzista, volgare, osceno o minaccioso;</li>
-                <li>per minacciare, molestare, perseguitare o insultare terzi;</li>
-                <li>in violazione di diritti di terzi, compresi copyright e riservatezza;</li>
-                <li>per trasmettere pubblicita non autorizzata, spam o messaggi non sollecitati.</li>
-            </ul>
-            <p>
-                Il titolare del Sito si riserva il diritto di rifiutare, rimuovere o ricollocare pubblicazioni o
-                informazioni a proprio insindacabile giudizio.
-            </p>
-        </section>
+            <section id="policy-utilizzo" class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#002244] uppercase tracking-tight border-b-[3px] border-black pb-3 flex items-center gap-2">
+                    <span class="text-[#FFC72C]">■</span> 1. Policy di utilizzo del sito
+                </h2>
+                
+                <div class="text-slate-800 leading-relaxed text-base space-y-6">
+                    <p><strong>1.1 Conditions di Accesso:</strong> L’accesso al Sito Internet <a href="https://lionsmirandola.vercel.app/index.html" class="text-[#002244] font-bold underline hover:text-[#FFC72C] transition-colors">https://lionsmirandola.vercel.app/index.html</a> è gratuito. Gli amministratori del Lions Club di Mirandola hanno il diritto di modificare, in tutto o in parte, senza alcun preavviso e a propria assoluta discrezione, il contenuto, gli immagini, i termini e/o le conditions di accesso al sito.</p>
+                    
+                    <p><strong>2.1 Proprietà Intellettuale:</strong> Tutti i diritti di autore e di proprietà intellettuale relativi alla configurazione, al layout e ai contenuti appartengono all’Amministratore titolare del sito. Gli Articoli pubblicati nel sito sono di proprietà dell’Amministratore titolare del sito e sono riproducibili solo previa autorizzazione scritta e a patto di indicarne con precisione autore e fonte. Riproduzioni effettuate senza queste indicazioni saranno considerate illecite e perseguite a norma di legge. Il Sito e i Servizi forniti dal sito sono resi accessibili al Lettore esclusivamente per uso personale e privato, salvo il diritto di riprodurli e diffonderli indicandone autore e fonte e sempre dietro autorizzazione scritta.</p>
+                    
+                    <p><strong>2.3 Diritti e Limitazioni:</strong> Il copyright, i marchi, i segni distintivi e gli altri diritti inerenti alla proprietà intellettuale del Sito e dei Servizi sono e remain conferiti all’Amministratore titolare del sito, ai legittimi titolari e/o ai loro danti causa. In caso di citazione di materiali e contenuti pubblicati sul Sito, nei limites consentiti dalla legge è obbligatorio il link per indicare correttamente la fonte dei contenuti. Il lettore riconosce che il Sito contiene informazioni riservate e sono protetti dalle leggi in materia di proprietà intellettuale e/o industriale.</p>
+                    
+                    <p><strong>2.5 Divieti di Riproduzione:</strong> Resta in ogni caso inteso che il Lettore non può (né può consentire che terzi lo facciano) sublicenziare, noleggiare, vendere, distribuire, mettere in circolazione, a disposizione, trasformare anche solo in parte, decodificare, decompilare, disassemblare, modificare, tradurre il Sito effettuare operazioni di reverse engineering e comunque riprodruire, copiare, usare o disporre del Sito o di sue parti, in ogni altro modo che non sia qui espressamente consentito o consentito da normas inderogabili di legge. Inoltre il Lettore non è autorizzato a creare lavori derivati, o in qualsiasi modo tentare di scoprire qualunque codice sorgente, o sviluppare prodotti o applicazioni software basate sui Servizi o che facciano in qualsiasi modo uso degli stessi.</p>
 
-        <section aria-labelledby="responsibility-title">
-            <h2 id="responsibility-title">Limitazione di responsabilita</h2>
-            <p>
-                La responsabilita della navigazione sul Sito e a carico del lettore. L'Amministratore titolare del sito
-                non riconosce garanzie, espresse o implicite, in relazione al Sito, ai contenuti e ai servizi, anche sul
-                piano della completezza, accuratezza e qualita.
-            </p>
-            <p>Il lettore accetta che:</p>
-            <ul class="list-disc pl-6 mt-4 space-y-2">
-                <li>e tecnicamente impossibile fornire un Sito privo di difetti;</li>
-                <li>il Sito potrebbe essere temporaneamente inaccessibile;</li>
-                <li>il funzionamento potrebbe risentire di condizioni fuori dal controllo del titolare;</li>
-                <li>alcuni contenuti potrebbero contenere inesattezze o refusi.</li>
-            </ul>
-            <p>
-                Il Sito si rivolge a un pubblico vasto ed eterogeneo; i genitori sono invitati a sorvegliare i minori e
-                a stabilire quali aree siano adatte alla loro consultazione.
-            </p>
-        </section>
+                    <div class="space-y-3 pt-2">
+                        <p><strong>3.1 Comportamento del Lettore ed Utilizzo dei Servizi:</strong> L’utilizzo del Sito e dei Servizi è destinato all’uso personale e privato; essi pertanto non potranno essere utilizzati:</p>
+                        <ul class="space-y-2 pl-5 text-slate-700 text-base list-disc">
+                            <li>per finalità illecite;</li>
+                            <li>per interrompere, danneggiare o rendre meno efficiente una parte o la totalità del Sito e/o dei Servizi o in modo da danneggiare in qualche modo l’efficacia o la funzionalità del Sito e/o dei Servizi;</li>
+                            <li>in qualsiasi modo che possa danneggiare il computer di un altro lettore o causare disagi;</li>
+                            <li>per la trasmissione, il caricamento (upload) o la pubblicazione sul Sito di qualsiasi virus o di altri codici, file o programmi creati per interrompere, distruggere o limitare il funzionamento dei software, degli hardware o degli impianti di telecomunicazioni di terzi;</li>
+                            <li>per trasmettere, caricare (upload) o pubblicare materiale diffamatorio, offensivo, razzista, volgare, sedizioso, di carattere osceno o minaccioso, o comunque reprensibile;</li>
+                            <li>come mezzo per minacciare, molestare, perseguitare o insultare terzi ovvero per raccogliere e conservare dati personali di questi ultimi;</li>
+                            <li>in violazione di diritti (ivi compresi quelli di copyright o di riservatezza) di terzi;</li>
+                            <li>per trasmettere qualsiasi materiale a scopo meramente pubblicitario senza previo consenso scritto da parte dell’Amministratore titolare del sito;</li>
+                            <li>per trasmettere, caricare (upload), pubblicare sul Sito o mettere in altro modo a disposizione di altri, qualsiasi tipo di pubblicità non autorizzata, materiale promovionale, “posta indesiderata” (junkmail), “spam”, “modelli piramidali” (pyramid schemes), o altri messaggi non sollecitati di qualunque forma e genere.</li>
+                        </ul>
+                    </div>
+                    
+                    <p><strong>3.2 Gestione Accessi:</strong> Il titolare del Sito si riserva il diritto di rifiutare a proprio insindacabile giudizio l’accesso a qualsiasi pubblicazione o informazione, nonché anche successivamente di cambiarne la collocazione.</p>
 
-        <section aria-labelledby="warranty-title">
-            <h2 id="warranty-title">Garanzie</h2>
-            <p>
-                Il Sito e gli eventuali servizi accessori sono forniti "come sono" e "come disponibili". E esclusa ogni
-                garanzia da parte del titolare del sito. Qualsiasi contenuto scaricato o ottenuto tramite il Sito e
-                acquisito a esclusivo rischio del lettore.
-            </p>
-        </section>
+                    <p><strong>4.1 Limitazioni e Garanzie:</strong> La responsabilità della navigazione sul Sito è totalmente a carico del Lettore. In particolare l'Amministratore titolare del sito non riconosce nessuna garanzia, sia espressa sia implicita, in relazione al Sito ai Contenuti e alle Opere, nonché ai Servizi, anche sul piano della completezza, accuratezza e qualità. Il lettore del Sito accetta che: è tecnicamente impossibile fornire un Sito privo di difetti, e che l'Amministratore titolare del Sito non si assume tale responsabilità; il Sito potrebbe essere temporaneamente inaccessibile; il funzionamento del Sito potrebbe risentire di condizioni e prestazioni fuori del controllo del titolare; alcuni Contenuti e/o Opere potrebbero contenere inesattezze o refusi. Il Sito e i Servizi si rivolgono a un pubblico vasto ed eterogeneo: l'Amministratore titolare del sito invita pertanto i genitori a sorvegliare i minori e stabilire quali aree del Sito siano adatte ai minori.</p>
+                    
+                    <p><strong>4.3 Esclusioni di Responsabilità:</strong> L’Amministratore titolare del sito non è responsabile di alcuna perdita o di eventuali danni derivanti dalla mancata osservanza, da parte del Fruitore dei primi termini e condizioni, fatto salvo il caso in cui gli stessi fossero dovuti a negligenza o a colpa da parte dell’Amministratore. Fatti salvi i casi di danni alla persona causati da negligenza, colpa grave nonché dolo, l’Amministratore titolare del sito non sarà responsabili di qualsiasi perdita o daño derivante, o collegato in qualunque modo all’uso e al funzionamento del Sito, ivi compresi senza limitazione alcuna, danni per perdita di affari, perdita di utili, interruzione dell’attività, perdita di informazioni commerciali, qualsiasi altro tipo di perdita pecuniaria.</p>
 
-        <section aria-labelledby="links-title">
-            <h2 id="links-title">Altri siti web</h2>
-            <p>
-                Il Sito potrebbe contenere collegamenti ad altri siti web non sotto il controllo del titolare. I presenti
-                termini si applicano esclusivamente a questo Sito; l'Amministratore titolare non e responsabile dei
-                materiali contenuti in siti esterni. La presenza di collegamenti non implica approvazione o condivisione
-                dei relativi contenuti.
-            </p>
-        </section>
+                    <p><strong>5.1 Condizioni Operative ("Come Sono"):</strong> Il lettore riconosce e accetta espressamente che il Sito e gli eventuali servizi accessori sono forniti “COME SONO” e “COME DISPONIBILI”. È espressamente esclusa qualsivoglia garanzia da parte del titolare del sito. Il titolare del sito non garante (I) che il Sito e gli eventuali servizi accessori soddisferanno le esigenze del Lettore, (II) che il Sito e i Servizi saranno forniti senza interruzioni, con puntualità, in modo sicuro o esente da errori, (III) l’aspettativa del Lettore che i risultati ottenuti dall’utilizzo del Sito e dei Servizi siano veritieri e affidabili (IV) che la qualità dei prodotti, servizi, informazioni o altri materiais acquisiti o ottenuti per il tramite del sito e/o dei software possano soddisfare le esigenze degli lettori, né che (V) eventuali errori nel materiale pubblicato siano corretti.</p>
+                    
+                    <p class="text-slate-900 bg-white p-4 border-[3px] border-black font-semibold rounded-xl shadow-sm">
+                        Qualsiasi Contenuto scaricato o altrimenti ottenuto dal o per il tramite del Sito è ottenuto a sola ed esclusiva discrezione e a esclusivo risco degli Lettori che sono i primi ed exclusivi responsabili per ogni danno al proprio computer o per la perdita di dati derivante dall’aver scaricato tali Contenuti e/o Opere o dall’avere utilizzato il Sito e i Servizi.
+                    </p>
+                    
+                    <p><strong>5.2 Obbligo di Manleva:</strong> Il lettore dichiara e garantisce di tenere indenne e manlevare il titolare del sito nonché i soggetti a essa collegati o da essa controllati, i suoi rappresentanti, da qualsiasi obbligo risarcitorio, incluse evenutali spese legali, che possa derivare dai Contenuti e/o dalle Opere pubblicate, dall’utilizzo del Sito o dei Servizi da parte degli lettori, dalla violazione delle normas che ne regolamentano l’uso ovvero da una eventuale violazione dei diritti di terzi. Il lettore dichiara di essere consapevole del fait che l’Amministratore titolare del sito esercita un controllo parziale e successivo relativamente alla natura e al contenuto delle informazioni riportate nelle parti del sito eventualmente aperte al contributo di autori esterni alla propria organizzazione.</p>
 
-        <section aria-labelledby="law-title">
-            <h2 id="law-title">Integrazioni, modifiche e legge applicabile</h2>
-            <p>
-                L'Amministratore titolare del sito si riserva il diritto di modificare periodicamente il Sito e di
-                aggiornare i presenti termini, pubblicando sul Sito i cambiamenti destinati a vincolare i lettori.
-            </p>
-            <p>
-                I presenti termini e condizioni sono disciplinati dalla legge italiana. Ogni eventuale controversia sara
-                decisa dal giudice competente secondo la normativa vigente.
-            </p>
-        </section>
+                    <p><strong>6.1 Clausole Finali e Sospensione:</strong> L'Amministratore titolare del sito si riserva il diritto di sospendere l’accesso al Sito e agli eventuali servizi accessori, nel caso in cui si verificasse una violazione, da parte del lettore, dei primi termini e condizioni. Il Sito potrebbe contenere collegamenti ad altri siti, che non sono sotto il controllo del titolare del Sito stesso. Il lettore prende atto che i primi termini e condizioni si applicano esclusivamente all’uso di questo Sito e dei relativi Servizi; l’Amministratore titolare del sito non è pertanto responsabile del materiale contenuto negli altri siti web. Qualsiasi collegamento ad altri siti non implica inoltre la promozione degli stessi e/o del loro contenuto, nonché la condivisione dei valori promossi dagli altri siti.</p>
+                    
+                    <p><strong>8.1 Aggiornamenti:</strong> L’Amministratore titolare del sito si riserva il diritto di modificare periodicamente il Sito, nonché il diritto di aggiornare i primi termini e le condizioni, pubblicando sul Sito i cambiamenti atti a vincolare i Lettori. Ogni disposizione dei primi termini e condizioni, che esclude o limita la responsabilità, deve essere interpretata separatamente dalle altre: tali previsioni si applicano e sussistono anche se, per qualsiasi ragione, si dovesse ritenere che una o alcune disposizioni non fossero applicabili o efficaci, restando in vigore nonostante la mancata osservanza dei primi termini di utilizzazioni del Sito.</p>
 
-        <section aria-labelledby="privacy-title">
-            <h2 id="privacy-title">Web privacy policy</h2>
-            <p>
-                Con la presente Privacy Policy l'Amministratore titolare del sito rende note le modalita di gestione con
-                cui tutela la privacy dei lettori che consultano il Sito.
-            </p>
-            <p>
-                Il Titolare del trattamento e <strong>Lions Club Mirandola</strong>, con sede in Via Dorando Pietri 23,
-                41037 Mirandola (MO). Per qualunque necessita e possibile scrivere a
-                <a href="mailto:segretario@lionsclubmirandola.it">segretario@lionsclubmirandola.it</a>.
-            </p>
-            <p>
-                I dati personali forniti dal lettore sono tutelati in conformita alla normativa vigente in materia di
-                protezione dei dati personali, incluso il Regolamento UE 2016/679 (GDPR) e il D.Lgs. 196/2003 come
-                modificato dal D.Lgs. 101/2018.
-            </p>
-        </section>
+                    <p class="p-4 border-[3px] border-black rounded-xl bg-white shadow-sm">
+                        <strong>10.1 Legge applicabile. Giurisdizione Italiana e competenza:</strong> I primi termini e condizioni sono disciplinati dalle leggi vigenti in Italia; essi dovranno essere interpretati in conformità alle stesse. Ai termini e alle condizioni di cui al presente documento si applica la legge italiana. Ogni eventuale controversia tra il titolare del sito, l'Amministratore titolare del sito e i Lettori sarà decisa dal giudice competente secondo la legge della Repubblica Italiana presso il Tribunale competente per il territorio di Mirandola.
+                    </p>
+                </div>
+            </section>
 
-        <section aria-labelledby="data-title">
-            <h2 id="data-title">Tipologia di dati trattati</h2>
-            <h3>Dati di navigazione</h3>
-            <p>
-                Durante la navigazione possono essere acquisite informazioni tecniche relative all'hardware e al software
-                utilizzati dai visitatori, quali indirizzo IP, tipo di browser, provider internet, sistema operativo,
-                pagine visitate, orario di accesso, permanenza sulle pagine, percorso interno, risoluzione video, tipo
-                di connessione e nazione di collegamento.
-            </p>
-            <p>
-                Tali informazioni sono utilizzate in forma aggregata e anonima allo scopo di migliorare la qualita del
-                servizio e fornire statistiche sull'uso del sito.
-            </p>
-            <h3>Dati forniti dal lettore</h3>
-            <p>
-                Si tratta dei dati forniti volontariamente per accedere a servizi o inoltrare richieste tramite posta
-                elettronica o moduli di contatto. Questo comporta l'acquisizione dell'indirizzo del mittente e degli
-                altri dati personali eventualmente indicati, trattati esclusivamente per rispondere alle richieste o
-                erogare il servizio richiesto.
-            </p>
-        </section>
+            <section id="web-privacy" class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#002244] uppercase tracking-tight border-b-[3px] border-black pb-3 flex items-center gap-2">
+                    <span class="text-[#FFC72C]">■</span> 2. Web privacy policy
+                </h2>
+                
+                <div class="text-slate-800 leading-relaxed text-base space-y-6">
+                    <p><strong>Informativa Generale:</strong> Con la presente Privacy Policy l’Amministratore titolare del sito rende note le modalità di gestione con cui tutela la privacy dei Lettori che consultano il sito. Informative sul trattamento dettagliate, rece ai sensi dell’art. 13 del D.Lgs 196/03 – Codice in materia di protezione dei dati personali – sono riportate di volta in volta nelle pagine relative ai singoli servizi offerti. Tali informative sono dirette a definire limits e modalità del trattamento dei dati di ciascun servizio in base alle quali poi, il Lettore potrà espresso liberamente il proprio consenso e autorizzare la raccolta dei dati ed il successivo utilizzo. In relazione ai vari servizi saranno comunicati i nominativi degli ulteriori eventuali Titolari o Responsabili del trattamento.</p>
+                    
+                    <p class="text-base font-bold text-black border-l-[6px] border-l-black pl-3 py-1">
+                        <strong>Responsabile Trattamento & Protezione Dati:</strong> Lions Club di Mirandola, Mirandola (MO)
+                    </p>
 
-        <section aria-labelledby="cookie-title">
-            <h2 id="cookie-title">Cookie</h2>
-            <p>
-                I cookie sono porzioni di informazione memorizzabili nel dispositivo durante la navigazione di un sito
-                web, al fine di elaborare e identificare dati d'utilizzo. Possono essere permanenti, temporanei o di
-                sessione, oppure generati da terze parti.
-            </p>
-            <p>
-                Il sito utilizza cookie tecnici necessari alla navigazione e al funzionamento delle pagine. Alcune
-                risorse esterne, come librerie, mappe o font, possono essere caricate da fornitori terzi e seguire le
-                rispettive condizioni di trattamento.
-            </p>
-            <p>
-                Il lettore puo impostare il proprio browser in modo da accettare tutti i cookie, solo alcuni oppure
-                rifiutarli. La mancata accettazione dei cookie potrebbe limitare alcune funzionalita. Alla fine di ogni
-                sessione di navigazione il lettore puo cancellare dal proprio dispositivo cache e cookie raccolti.
-            </p>
-        </section>
+                    <p><strong>Tipologia di dati trattati dal portale informativo ed interattivo:</strong></p>
+                    
+                    <div class="space-y-6">
+                        <div class="p-5 border-[3px] border-black rounded-xl bg-white shadow-sm">
+                            <p class="font-bold text-black uppercase tracking-wider mb-2">A) Dati di navigazione</p>
+                            <p class="text-slate-800">Il sito web raccogles informazioni tecniche relative all’hardware e al software utilizzati dai Lettori, autonomamente attraverso l’ausilio di strumenti per l’analisi dei file di collegamento. Tali informazioni riguardano: indirizzo IP, tipo di browser, Internet service provider, sistema operativo, nome di dominio e indirizzi di siti Web dai quali ha effettuato l’accesso o l’uscita (referring/exit pages), informazioni sulle pagine visitate dagli lettori all’interno del sito, orario d’accesso, permanenza sulla singola pagina, analisi di percorso interno (clickstream), risoluzione video, tipo di connessione, nazione da cui il cliente/visitatore si collega, presenza di plugin java installati. Tali informazioni non forniscono dati personali del Lettore ma solo dati di carattere tecnico/informatico che sono raccolti ed utilizzati in maniera aggregata ed anonima al solo scopo di migliorare la qualità del servizio e fornire statistiche concernenti l’uso del sito. Per verificar e variare le preferenze in merito, si veda il paragrafo "Funzionalità Analitiche" più oltre.</p>
+                        </div>
 
-        <section aria-labelledby="treatment-title">
-            <h2 id="treatment-title">Modalita del trattamento</h2>
-            <p>
-                Il trattamento dei dati viene effettuato attraverso strumenti automatizzati e/o manualmente, per il tempo
-                strettamente necessario a conseguire gli scopi per i quali i dati sono stati raccolti e nel rispetto
-                della normativa vigente.
-            </p>
-        </section>
+                        <div class="p-5 border-[3px] border-black rounded-xl bg-white shadow-sm">
+                            <p class="font-bold text-black uppercase tracking-wider mb-2">B) Dati forniti dal Lettore</p>
+                            <p class="text-slate-800">Si tratta dei casi in cui è lo stesso Lettore a rilasciare sul sito, previa lettura di informativa dettagliata, i propri dati personali per accedere a determinati servizi ovvero per inoltrare richieste a mezzo di posta elettronica. Ciò comporta l’acquisizione da parte del titolare del sito dell’indirizzo del mittente e/o di altri eventuali dati personali che saranno trattati esclusivamente per rispondere alle richieste effettuate ovvero per l’erogazione del servizio richiesto. Policy di “Opt-In” e “Opt-Out”: in tutti i casi, prima di procedere all’attivazione di un determinato servizio sarà fornita idonea informativa e, dove necessario, acquisito il relativo consenso al trattamento dei dati personali. Tale consenso potrà essere in seguito revocato in qualsiasi momento, facendo decadere la possibilità di utilizzo del servizio in questione. La conservazione dei dati raccolti avviene per il tempo strettamente necessario al conseguimento della finalità per la quale il trattamento è effettuato, ossia l’attivazione/gestione del servizio richiesto.</p>
+                        </div>
 
-        <section aria-labelledby="copyright-title">
-            <h2 id="copyright-title">Copyright</h2>
-            <p>
-                La riproduzione, la pubblicazione e la distribuzione, totale o parziale, del materiale originale
-                contenuto in questo sito, inclusi testi, immagini ed elaborazioni grafiche, sono vietate in assenza di
-                autorizzazione scritta. Qualora venga concessa l'autorizzazione alla riproduzione, e obbligatorio
-                citarne fonte e autore.
-            </p>
-            <p>
-                Tutti i marchi citati appartengono ai rispettivi aventi diritto e sono riportati a scopo informativo.
-                Nel caso in cui un titolare ritenga di detenere diritti su immagini o materiali pubblicati nel sito,
-                puo contattarci per richiederne la correzione o la rimozione.
-            </p>
-        </section>
+                        <div class="p-5 border-[3px] border-black rounded-xl bg-white shadow-sm">
+                            <p class="font-bold text-black uppercase tracking-wider mb-2">C) Cookie</p>
+                            <p class="text-slate-800">I cookie sono porzioni d’informazione memorizzabili nel computer durante la navigazione di un sito Web, al fine di elaborare ed identificare i dati d’utilizzo. Il file di cookie è solitamente di ridottissime dimensioni e non contribuisce alla saturazione dello spazio fisico del disco rigido. Il cookie è trasferito sul disco del Lettore a fini di registrazione per “memorizzare” quali aree di un sito Web sono state visitate. Questa scelta consente di risparmiare tempo, permettendo al Lettore di raggiungere più velocemente le parti principali di un sito in prevenzione visitate. Esistono diversi tipi di cookie: permanenti (ossia che rimangono sul disco fisso anche una volta chiuso el browser), temporanei o di sessione (che sono memorizzati unicamente per la durata della navigazione e vengono cancellati con la chiusura del browser) e di terzi (generati da un sito web diverso). I cookie utilizzati dal titolare del sito sono una combinazione di queste tre tipologie. Al fine di offrire un sito che risponda alle attese, viene costantemente effettuata un’analisi dei dati raccolti sui cookie in forma anonima. È data al Lettore la facoltà di impostare il proprio browser in modo da accettare tutti i cookie, solo alcuni, oppure rifiutarli. La mancata accettazione dei cookie potrebbe comportare l’impossibilità di erogazione di determinati servizi sotto autenticazione. Si ricorda che alla fine di ogni sessione il Lettore potrà cancellare dal proprio disco fisso sia la cache di navigazione sia i cookie raccolti.</p>
+                        </div>
+                    </div>
 
-        <section aria-labelledby="analytics-title">
-            <h2 id="analytics-title">Funzionalita analitiche</h2>
-            <p>
-                Il sito puo raccogliere in modo anonimo dati statistici sull'utilizzo del sito a scopo di gestione,
-                manutenzione e miglioramento dell'esperienza di navigazione, rispettando le impostazioni di privacy
-                definite dal lettore sul proprio browser.
-            </p>
-        </section>
-    </main>
+                    <p><strong>Modalità di Trattamento:</strong> Il trattamento viene effettuato attraverso strumenti automatizzati (ad es. utilizzando procedure e supporti elettronici) e/o manualmente (ad es. su supporto cartaceo) per il tempo strettamente necessario a conseguire gli scopi per i quali i dati sono stati raccolti e, comunque, nel rispetto della normativa vigente in materia.</p>
+                </div>
+            </section>
 
-    <footer class="legal-footer">
-        Copyright &copy; 2026 Lions Club Mirandola. Tutti i diritti riservati.
+            <section id="copyright-analitica" class="space-y-6">
+                <h2 class="text-xl md:text-2xl font-black text-[#002244] uppercase tracking-tight border-b-[3px] border-black pb-3 flex items-center gap-2">
+                    <span class="text-[#FFC72C]">■</span> 3. Copyright e funzionalità analitiche
+                </h2>
+                
+                <div class="text-slate-800 leading-relaxed text-base space-y-4">
+                    <p><strong>Copyright e Proprietà dei Materiali:</strong> La riproduzione, la pubblicazione e la distribuzione, totale o parziale, di tutto il materiale originale contenuto in questo sito anche in assenza di finalità di lucro (tra cui testi, immagini, elaborazioni grafiche) sono espressamente vietate in assenza di autorizzazione scritta. Qualora venga concessa l’autorizzazione alla riproduzione è fatto obbligo di citarne la fonte, autore e relativo link con assenza del tag “nofollow”. Rimane in ogni caso vietata la riproduzione automatica tramite Feed Rss su altri blog o aggregatori di notizie.</p>
+                    
+                    <p><strong>Utilizzo di Marchi e Immagini:</strong> Tutti i marchi citati su questo sito sono esclusiva degli aventi diritto, citati a solo scopo informativo e/o didattico. Alcune tra le foto pubblicate sono state ottenute da internet. Nel caso in cui riteniate di detenere diritti per foto o immagini pubblicate, mettetevi in contatto con noi: saremo lieti di poter inserire il link corretto e menzionare gli autori della foto, oppure di procedere alla cancellazione dell’immagine se questo è il vostro desiderio.</p>
+                    
+                    <p><strong>Funzionalità analitiche:</strong> Questo sito raccoglie in modo del tutto anonimo dati statistici sull'utilizzo del sito stesso a scopo di gestione e manutenzione, rispettando le impostazioni di privacy definite dal Lettore sul proprio browser. La raccolta e memorizzazione dei dati avviene internamente al sito stesso; i dati non sono comunicati, trasmessi o altrimenti forniti a terze parti.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-[#002244] border-t-4 border-[#FFC72C] text-center py-12 text-xs font-bold text-slate-400 mt-20 rounded-none shadow-md">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-white uppercase tracking-wider text-sm font-black">Lions Club Mirandola</p>
+            <p class="font-medium text-slate-500">Copyright &copy; 2026 Lions Club Mirandola. Tutti i diritti riservati.</p>
+        </div>
     </footer>
 
     <script src="widget.js?v=privacy-banner-always-20260611"></script>
