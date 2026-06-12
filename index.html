@@ -63,6 +63,29 @@
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #FFC72C; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; background: #034EA2; }
         .nav-link.active::after { width: 100%; background: #034EA2; }
+        .nav-link-ai {
+            color: #7C3AED !important;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(124, 58, 237, 0.3), 0 0 18px rgba(255, 199, 44, 0.34);
+            animation: aiPulse 1.8s ease-in-out infinite;
+        }
+        .nav-link-ai::after {
+            background: linear-gradient(90deg, #7C3AED, #034EA2, #FFC72C) !important;
+            height: 3px;
+        }
+        .nav-link-ai:hover {
+            color: #034EA2 !important;
+        }
+        @keyframes aiPulse {
+            0%, 100% {
+                transform: translateY(0);
+                filter: brightness(1);
+            }
+            50% {
+                transform: translateY(-1px);
+                filter: brightness(1.28);
+            }
+        }
         .nav-top { color: #000; text-decoration: none; position: relative; font-size: 0.75rem; }
         @media (max-width: 767px) {
             header .h-10 { height: 2rem; }
@@ -757,6 +780,30 @@
             #trova-club .sidebar { width: 100%; max-height: 45vh; }
             #trova-club #trova-map { min-height: 50vh; }
         }
+        #lions-ai .lions-ai-frame-shell {
+            height: calc(100vh - 160px);
+            min-height: 450px;
+        }
+        #lions-ai iframe {
+            width: 90%;
+            height: 90%;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+        }
+        @media (max-width: 768px) {
+            #lions-ai .lions-ai-frame-shell {
+                height: calc(100vh - 100px) !important;
+                min-height: 400px !important;
+            }
+            #lions-ai iframe {
+                width: 95% !important;
+                height: 95% !important;
+            }
+        }
         /* POPUP MAPPA (imported from trova_club1.html) */
         #map { flex: 1; background-color: #0B0F19; }
 
@@ -860,6 +907,7 @@
             <a href="#trova-club" data-nav="trova-club" class="nav-link">TROVA CLUB</a>
             <a href="#contatti" data-nav="contatti" class="nav-link">CONTATTI</a>
             <a href="privacy.html" class="nav-link">PRIVACY</a>
+            <a href="#lions-ai" data-nav="lions-ai" class="nav-link nav-link-ai">LIONS AI</a>
         </div>
     </nav>
 </header>
@@ -1237,6 +1285,19 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lions-ai" class="py-8 section-yellow">
+        <div class="container mx-auto px-6 h-full">
+            <div class="lions-ai-frame-shell">
+                <iframe
+                    src="https://script.google.com/a/macros/galileimirandola.it/s/AKfycbzrSsWDNH8O5r5qQVWcyevdjPpbMsovnn-BqguuNJemaYRLTR_xu9vjwVjYRlWtyLiFpA/exec"
+                    allow="microphone"
+                    title="Lions AI Chatbot"
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
